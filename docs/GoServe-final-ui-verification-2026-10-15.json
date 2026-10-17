@@ -1,0 +1,457 @@
+{
+  "date": "2026-10-15",
+  "scope": "Figma UI only",
+  "status": "ready_for_user_ui_review",
+  "uiApproved": false,
+  "androidImplementation": "held_until_ui_approval",
+  "organization": {
+    "sourceCount": 777,
+    "allSourcesGrouped": true,
+    "sections": [
+      {
+        "key": "start",
+        "id": "189:7484",
+        "parentId": "14:2",
+        "bounds": [
+          0,
+          0,
+          1896,
+          4682
+        ],
+        "visible": true
+      },
+      {
+        "key": "components",
+        "id": "189:7485",
+        "parentId": "14:2",
+        "bounds": [
+          2080,
+          0,
+          4400,
+          1792
+        ],
+        "visible": true
+      },
+      {
+        "key": "auth",
+        "id": "189:7504",
+        "parentId": "14:2",
+        "bounds": [
+          0,
+          5000,
+          1840,
+          21908
+        ],
+        "visible": true
+      },
+      {
+        "key": "student",
+        "id": "189:7513",
+        "parentId": "14:2",
+        "bounds": [
+          0,
+          27088,
+          1936,
+          16912
+        ],
+        "visible": true
+      },
+      {
+        "key": "home",
+        "id": "189:7514",
+        "parentId": "189:7513",
+        "bounds": [
+          48,
+          72,
+          1840,
+          4956
+        ],
+        "visible": true
+      },
+      {
+        "key": "requests",
+        "id": "189:7535",
+        "parentId": "189:7513",
+        "bounds": [
+          48,
+          5148,
+          1840,
+          6160
+        ],
+        "visible": true
+      },
+      {
+        "key": "consult",
+        "id": "189:7560",
+        "parentId": "189:7513",
+        "bounds": [
+          48,
+          11428,
+          1840,
+          1128
+        ],
+        "visible": true
+      },
+      {
+        "key": "account",
+        "id": "189:7565",
+        "parentId": "189:7513",
+        "bounds": [
+          48,
+          12676,
+          1840,
+          4188
+        ],
+        "visible": true
+      },
+      {
+        "key": "staff",
+        "id": "189:7582",
+        "parentId": "14:2",
+        "bounds": [
+          2200,
+          5000,
+          1840,
+          10060
+        ],
+        "visible": true
+      },
+      {
+        "key": "teller",
+        "id": "189:7621",
+        "parentId": "14:2",
+        "bounds": [
+          2200,
+          15240,
+          1840,
+          3108
+        ],
+        "visible": true
+      },
+      {
+        "key": "seryo",
+        "id": "189:7634",
+        "parentId": "14:2",
+        "bounds": [
+          2200,
+          18528,
+          1840,
+          2996
+        ],
+        "visible": true
+      },
+      {
+        "key": "demo",
+        "id": "189:7645",
+        "parentId": "14:2",
+        "bounds": [
+          2200,
+          21704,
+          1840,
+          3976
+        ],
+        "visible": true
+      },
+      {
+        "key": "states",
+        "id": "189:7660",
+        "parentId": "14:2",
+        "bounds": [
+          4280,
+          5000,
+          3936,
+          31664
+        ],
+        "visible": true
+      },
+      {
+        "key": "G01",
+        "id": "189:7661",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          72,
+          1840,
+          4232
+        ],
+        "visible": true
+      },
+      {
+        "key": "G02",
+        "id": "189:7676",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          4424,
+          1840,
+          3400
+        ],
+        "visible": true
+      },
+      {
+        "key": "G03",
+        "id": "189:7687",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          7944,
+          1840,
+          2168
+        ],
+        "visible": true
+      },
+      {
+        "key": "G04",
+        "id": "189:7696",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          10232,
+          1840,
+          5584
+        ],
+        "visible": true
+      },
+      {
+        "key": "G05",
+        "id": "189:7713",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          15936,
+          1840,
+          3424
+        ],
+        "visible": true
+      },
+      {
+        "key": "G06",
+        "id": "189:7724",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          19480,
+          1840,
+          8776
+        ],
+        "visible": true
+      },
+      {
+        "key": "G07",
+        "id": "189:7753",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          28376,
+          1840,
+          3240
+        ],
+        "visible": true
+      },
+      {
+        "key": "G08",
+        "id": "189:7766",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          72,
+          1840,
+          3224
+        ],
+        "visible": true
+      },
+      {
+        "key": "G09",
+        "id": "189:7777",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          3416,
+          1840,
+          5424
+        ],
+        "visible": true
+      },
+      {
+        "key": "G10",
+        "id": "189:7796",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          8960,
+          1840,
+          4352
+        ],
+        "visible": true
+      },
+      {
+        "key": "G11",
+        "id": "189:7811",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          13432,
+          1840,
+          3208
+        ],
+        "visible": true
+      },
+      {
+        "key": "G12",
+        "id": "189:7822",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          16760,
+          1840,
+          5368
+        ],
+        "visible": true
+      },
+      {
+        "key": "G13",
+        "id": "189:7841",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          22248,
+          1840,
+          2168
+        ],
+        "visible": true
+      },
+      {
+        "key": "G14",
+        "id": "189:7848",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          24536,
+          1840,
+          4480
+        ],
+        "visible": true
+      },
+      {
+        "key": "proofs",
+        "id": "189:7863",
+        "parentId": "14:2",
+        "bounds": [
+          8520,
+          5000,
+          1840,
+          6668
+        ],
+        "visible": true
+      },
+      {
+        "key": "retained",
+        "id": "189:7878",
+        "parentId": "14:2",
+        "bounds": [
+          8520,
+          11848,
+          2100,
+          12446
+        ],
+        "visible": false
+      }
+    ],
+    "groupingChangedContents": [],
+    "screenFrames": 434,
+    "lightDarkPairs": 217,
+    "phoneProofFrames": 26
+  },
+  "geometry": {
+    "changedAuthAndContext": {
+      "brandExceptionIds": [],
+      "rootCount": 109,
+      "totalTextCount": 1782,
+      "totalIssueCount": 0,
+      "totalLegacyCount": 0,
+      "passedRootCount": 109,
+      "reports": []
+    },
+    "noticeRemovalAndSettings": {
+      "brandExceptionIds": [],
+      "rootCount": 22,
+      "totalTextCount": 458,
+      "totalIssueCount": 0,
+      "totalLegacyCount": 0,
+      "passedRootCount": 22,
+      "reports": []
+    }
+  },
+  "authentication": {
+    "stats": {
+      "caseCount": 39,
+      "authRootsChecked": 78,
+      "authProofsChecked": 12,
+      "generalProofsSkipped": 0,
+      "settingsChecked": 6,
+      "ordinaryTextCount": 1000,
+      "passwordTargetsChecked": 40,
+      "forgotLinksChecked": 8,
+      "termsReadersChecked": 4
+    },
+    "issueCount": 0,
+    "counts": {},
+    "issues": [],
+    "findingsTruncated": false
+  },
+  "prototype": {
+    "rootCount": 435,
+    "routeCount": 2952,
+    "destinationCount": 394,
+    "sourceMissing": [],
+    "ungrouped": [],
+    "topLevelCount": 11,
+    "topLevelSections": 11,
+    "overlaps": [],
+    "sectionOverflow": [],
+    "issueCount": 0,
+    "issues": [],
+    "imageCount": 0,
+    "images": []
+  },
+  "noticeRemoval": {
+    "removedCount": 16,
+    "changedRoots": [
+      "19:93",
+      "36:93",
+      "127:1124",
+      "127:1329",
+      "127:1254",
+      "127:1459",
+      "23:95",
+      "36:440",
+      "106:662",
+      "107:1063",
+      "106:663",
+      "107:1064",
+      "170:6790",
+      "170:6919",
+      "170:7188",
+      "170:7317"
+    ],
+    "remaining": []
+  },
+  "visualReview": {
+    "passed": [
+      "Welcome Light19:2",
+      "Welcome Dark36:2",
+      "Terms Dark213:7515",
+      "Home Light19:93 after removal",
+      "Requests example Light127:1254 after removal",
+      "Settings Light33:106 after spacing fix"
+    ],
+    "findingsResolved": [
+      "Appearance moon overlapped label; left/right text insets corrected across six Settings screens."
+    ]
+  },
+  "limitations": [
+    "Figma does not create or sign in accounts, send recovery emails, reset passwords, restore sessions, process payments or call Seryo.",
+    "Native Android rendering, system font scaling, keyboard/IME and backend/provider validation remain pending UI approval.",
+    "Terms content is draft and needs institutional approval before release."
+  ]
+}

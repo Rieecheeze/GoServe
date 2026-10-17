@@ -1,0 +1,11 @@
+.tools/
+android/.gradle/
+android/.idea/
+android/**/build/
+android/local.properties
+android/goserve.properties
+backend/.env
+backend/.env.local
+android/captures/
+*.iml
+output/android/

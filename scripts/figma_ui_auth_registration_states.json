@@ -1,0 +1,3426 @@
+[
+  {
+    "key": "sign-in",
+    "rootIds": {
+      "Light": "19:2",
+      "Dark": "36:2"
+    },
+    "title": "Welcome",
+    "body": "Sign in or create an account to get started.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Continue with Google",
+        "target": "google-busy",
+        "style": "google"
+      },
+      {
+        "type": "divider",
+        "text": "or"
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "student1@demo.com",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Enter password",
+        "required": true,
+        "isPassword": true
+      },
+      {
+        "type": "button",
+        "label": "Forgot password?",
+        "target": "reset-email",
+        "style": "link"
+      },
+      {
+        "type": "button",
+        "label": "Sign in",
+        "target": "sign-in-error",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Create an account",
+        "target": "sign-up",
+        "style": "secondary"
+      },
+      {
+        "type": "button",
+        "label": "Terms and Conditions",
+        "target": "terms-view",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "rootId": "19:2"
+  },
+  {
+    "key": "sign-in",
+    "rootIds": {
+      "Light": "19:2",
+      "Dark": "36:2"
+    },
+    "title": "Welcome",
+    "body": "Sign in or create an account to get started.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Continue with Google",
+        "target": "google-busy",
+        "style": "google"
+      },
+      {
+        "type": "divider",
+        "text": "or"
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "student1@demo.com",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Enter password",
+        "required": true,
+        "isPassword": true
+      },
+      {
+        "type": "button",
+        "label": "Forgot password?",
+        "target": "reset-email",
+        "style": "link"
+      },
+      {
+        "type": "button",
+        "label": "Sign in",
+        "target": "sign-in-error",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Create an account",
+        "target": "sign-up",
+        "style": "secondary"
+      },
+      {
+        "type": "button",
+        "label": "Terms and Conditions",
+        "target": "terms-view",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "rootId": "36:2"
+  },
+  {
+    "key": "sign-up",
+    "rootIds": {
+      "Light": "56:38",
+      "Dark": "56:66"
+    },
+    "title": "Create your account",
+    "body": "Choose Google or email after reviewing the terms.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Terms and Conditions",
+        "target": "terms-view",
+        "style": "secondary"
+      },
+      {
+        "type": "checkbox",
+        "label": "I agree to the Terms and Conditions and Privacy Notice.",
+        "checked": false,
+        "target": "sign-up-ready"
+      },
+      {
+        "type": "button",
+        "label": "Continue with Google",
+        "target": null,
+        "style": "disabled"
+      },
+      {
+        "type": "divider",
+        "text": "or"
+      },
+      {
+        "type": "button",
+        "label": "Sign up with email",
+        "target": null,
+        "style": "disabled"
+      },
+      {
+        "type": "button",
+        "label": "Already registered? Sign in",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "rootId": "56:38"
+  },
+  {
+    "key": "sign-up",
+    "rootIds": {
+      "Light": "56:38",
+      "Dark": "56:66"
+    },
+    "title": "Create your account",
+    "body": "Choose Google or email after reviewing the terms.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Terms and Conditions",
+        "target": "terms-view",
+        "style": "secondary"
+      },
+      {
+        "type": "checkbox",
+        "label": "I agree to the Terms and Conditions and Privacy Notice.",
+        "checked": false,
+        "target": "sign-up-ready"
+      },
+      {
+        "type": "button",
+        "label": "Continue with Google",
+        "target": null,
+        "style": "disabled"
+      },
+      {
+        "type": "divider",
+        "text": "or"
+      },
+      {
+        "type": "button",
+        "label": "Sign up with email",
+        "target": null,
+        "style": "disabled"
+      },
+      {
+        "type": "button",
+        "label": "Already registered? Sign in",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "rootId": "56:66"
+  },
+  {
+    "key": "sign-up-ready",
+    "title": "Create your account",
+    "body": "Choose Google or email to create your student account.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Terms and Conditions",
+        "target": "terms-view",
+        "style": "secondary"
+      },
+      {
+        "type": "checkbox",
+        "label": "I agree to the Terms and Conditions and Privacy Notice.",
+        "checked": true,
+        "target": "sign-up"
+      },
+      {
+        "type": "button",
+        "label": "Continue with Google",
+        "target": "google-busy",
+        "style": "google"
+      },
+      {
+        "type": "divider",
+        "text": "or"
+      },
+      {
+        "type": "button",
+        "label": "Sign up with email",
+        "target": "email-credentials",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Already registered? Sign in",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/sign-up-ready"
+  },
+  {
+    "key": "sign-up-ready",
+    "title": "Create your account",
+    "body": "Choose Google or email to create your student account.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Terms and Conditions",
+        "target": "terms-view",
+        "style": "secondary"
+      },
+      {
+        "type": "checkbox",
+        "label": "I agree to the Terms and Conditions and Privacy Notice.",
+        "checked": true,
+        "target": "sign-up"
+      },
+      {
+        "type": "button",
+        "label": "Continue with Google",
+        "target": "google-busy",
+        "style": "google"
+      },
+      {
+        "type": "divider",
+        "text": "or"
+      },
+      {
+        "type": "button",
+        "label": "Sign up with email",
+        "target": "email-credentials",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Already registered? Sign in",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/sign-up-ready"
+  },
+  {
+    "key": "terms",
+    "title": "Terms and Conditions",
+    "body": "Review how GoServe uses your information before you register.",
+    "annotation": "Draft notice for UI review. Final terms, institutional contact, retention and privacy wording must be approved before public release. No legal compliance claim. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Information you provide",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Your name, student ID, course or program, year level, mobile number, gender and email address.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Why it is collected",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "To create your student profile, identify you on service requests and contact you about those requests.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Account security",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Keep your password private. Passwords are handled by the sign-in service and are not displayed in your profile.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Access to your information",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "You can view your own records. Authorized office staff can access records needed for their assigned work.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Separate choices",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Google and email registration use the same student profile. Profile photos and AI document sharing are separate, optional actions.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "I agree and continue",
+        "target": "sign-up-ready",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back without agreeing",
+        "target": "sign-up",
+        "style": "secondary"
+      }
+    ],
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/terms",
+    "eyebrow": "Draft terms · UI preview"
+  },
+  {
+    "key": "terms",
+    "title": "Terms and Conditions",
+    "body": "Review how GoServe uses your information before you register.",
+    "annotation": "Draft notice for UI review. Final terms, institutional contact, retention and privacy wording must be approved before public release. No legal compliance claim. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Information you provide",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Your name, student ID, course or program, year level, mobile number, gender and email address.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Why it is collected",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "To create your student profile, identify you on service requests and contact you about those requests.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Account security",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Keep your password private. Passwords are handled by the sign-in service and are not displayed in your profile.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Access to your information",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "You can view your own records. Authorized office staff can access records needed for their assigned work.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Separate choices",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Google and email registration use the same student profile. Profile photos and AI document sharing are separate, optional actions.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "I agree and continue",
+        "target": "sign-up-ready",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back without agreeing",
+        "target": "sign-up",
+        "style": "secondary"
+      }
+    ],
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/terms",
+    "eyebrow": "Draft terms · UI preview"
+  },
+  {
+    "key": "email-profile",
+    "title": "Your student details",
+    "body": "Step 2 of 2 · Complete your student profile.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Enter middle name",
+        "required": true,
+        "disabled": false,
+        "helper": "Select No middle name if you do not have one."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": false,
+        "target": "email-profile-no-middle"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your sign-in email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the email entered in the previous step."
+      },
+      {
+        "type": "button",
+        "label": "Create account",
+        "target": "create-busy",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "email-credentials",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/email-profile"
+  },
+  {
+    "key": "email-profile",
+    "title": "Your student details",
+    "body": "Step 2 of 2 · Complete your student profile.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Enter middle name",
+        "required": true,
+        "disabled": false,
+        "helper": "Select No middle name if you do not have one."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": false,
+        "target": "email-profile-no-middle"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your sign-in email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the email entered in the previous step."
+      },
+      {
+        "type": "button",
+        "label": "Create account",
+        "target": "create-busy",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "email-credentials",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/email-profile"
+  },
+  {
+    "key": "email-credentials",
+    "title": "Set up sign-in",
+    "body": "Step 1 of 2 · Create and confirm your password.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "student1@demo.com",
+        "required": true,
+        "helper": "Use the same email when you sign in."
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Create a password",
+        "required": true,
+        "isPassword": true,
+        "helper": "Use at least 6 characters, including a letter, a number and a symbol."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "hint": "Re-enter password",
+        "required": true,
+        "isPassword": true
+      },
+      {
+        "type": "text",
+        "text": "You agreed to the Terms and Conditions and Privacy Notice.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "Terms and Conditions",
+        "target": "terms-view",
+        "style": "link"
+      },
+      {
+        "type": "button",
+        "label": "Continue",
+        "target": "email-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "sign-up-ready",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/email-credentials"
+  },
+  {
+    "key": "email-credentials",
+    "title": "Set up sign-in",
+    "body": "Step 1 of 2 · Create and confirm your password.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "student1@demo.com",
+        "required": true,
+        "helper": "Use the same email when you sign in."
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Create a password",
+        "required": true,
+        "isPassword": true,
+        "helper": "Use at least 6 characters, including a letter, a number and a symbol."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "hint": "Re-enter password",
+        "required": true,
+        "isPassword": true
+      },
+      {
+        "type": "text",
+        "text": "You agreed to the Terms and Conditions and Privacy Notice.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "Terms and Conditions",
+        "target": "terms-view",
+        "style": "link"
+      },
+      {
+        "type": "button",
+        "label": "Continue",
+        "target": "email-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "sign-up-ready",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/email-credentials"
+  },
+  {
+    "key": "account-created",
+    "title": "Account created",
+    "body": "Sign in with the email and password you just created.",
+    "annotation": "Success-state fixture only. Show after server-confirmed account creation. student1@demo.com is the user's demonstration example, not a seeded or created account. No password is displayed. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Example email address",
+        "role": "Label"
+      },
+      {
+        "type": "text",
+        "text": "student1@demo.com",
+        "role": "Body"
+      },
+      {
+        "type": "button",
+        "label": "Go to sign in",
+        "target": "sign-in-return",
+        "style": "primary"
+      }
+    ],
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/account-created"
+  },
+  {
+    "key": "account-created",
+    "title": "Account created",
+    "body": "Sign in with the email and password you just created.",
+    "annotation": "Success-state fixture only. Show after server-confirmed account creation. student1@demo.com is the user's demonstration example, not a seeded or created account. No password is displayed. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Example email address",
+        "role": "Label"
+      },
+      {
+        "type": "text",
+        "text": "student1@demo.com",
+        "role": "Body"
+      },
+      {
+        "type": "button",
+        "label": "Go to sign in",
+        "target": "sign-in-return",
+        "style": "primary"
+      }
+    ],
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/account-created"
+  },
+  {
+    "key": "sign-in-return",
+    "title": "Sign in",
+    "body": "Use Google or your email and password.",
+    "annotation": "Shared sign-in destination after registration or password recovery. Preserve the actual account email only when safely known; otherwise leave it empty. Clear password fields. Never seed demo credentials or restart completed onboarding. Native authentication and profile/consent/role checks decide dashboard access.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Continue with Google",
+        "target": "google-busy",
+        "style": "google"
+      },
+      {
+        "type": "divider",
+        "text": "or"
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Enter email",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Enter password",
+        "required": true,
+        "isPassword": true
+      },
+      {
+        "type": "button",
+        "label": "Forgot password?",
+        "target": "reset-email",
+        "style": "link"
+      },
+      {
+        "type": "button",
+        "label": "Sign in",
+        "target": "auth-busy",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Use a different email",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/sign-in-return"
+  },
+  {
+    "key": "sign-in-return",
+    "title": "Sign in",
+    "body": "Use Google or your email and password.",
+    "annotation": "Shared sign-in destination after registration or password recovery. Preserve the actual account email only when safely known; otherwise leave it empty. Clear password fields. Never seed demo credentials or restart completed onboarding. Native authentication and profile/consent/role checks decide dashboard access.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Continue with Google",
+        "target": "google-busy",
+        "style": "google"
+      },
+      {
+        "type": "divider",
+        "text": "or"
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Enter email",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Enter password",
+        "required": true,
+        "isPassword": true
+      },
+      {
+        "type": "button",
+        "label": "Forgot password?",
+        "target": "reset-email",
+        "style": "link"
+      },
+      {
+        "type": "button",
+        "label": "Sign in",
+        "target": "auth-busy",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Use a different email",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/sign-in-return"
+  },
+  {
+    "key": "google-profile",
+    "rootIds": {
+      "Light": "19:61",
+      "Dark": "36:61"
+    },
+    "title": "Your student details",
+    "body": "Complete your profile before entering GoServe.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Enter middle name",
+        "required": true,
+        "disabled": false,
+        "helper": "Select No middle name if you do not have one."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": false,
+        "target": "google-profile-no-middle"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your Google account email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the Google account you selected."
+      },
+      {
+        "type": "button",
+        "label": "Finish setup",
+        "target": "profile-busy",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "rootId": "19:61"
+  },
+  {
+    "key": "google-profile",
+    "rootIds": {
+      "Light": "19:61",
+      "Dark": "36:61"
+    },
+    "title": "Your student details",
+    "body": "Complete your profile before entering GoServe.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Enter middle name",
+        "required": true,
+        "disabled": false,
+        "helper": "Select No middle name if you do not have one."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": false,
+        "target": "google-profile-no-middle"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your Google account email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the Google account you selected."
+      },
+      {
+        "type": "button",
+        "label": "Finish setup",
+        "target": "profile-busy",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "rootId": "36:61"
+  },
+  {
+    "key": "auth-busy",
+    "title": "Signing in…",
+    "body": "Checking your account. Please wait.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Signing in…",
+        "target": null,
+        "style": "disabled"
+      }
+    ],
+    "annotation": "No automatic dashboard route. Native implementation proceeds only after a verified session and completed profile/consent. No account is authenticated by this Figma panel. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/auth-busy"
+  },
+  {
+    "key": "auth-busy",
+    "title": "Signing in…",
+    "body": "Checking your account. Please wait.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Signing in…",
+        "target": null,
+        "style": "disabled"
+      }
+    ],
+    "annotation": "No automatic dashboard route. Native implementation proceeds only after a verified session and completed profile/consent. No account is authenticated by this Figma panel. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/auth-busy"
+  },
+  {
+    "key": "create-busy",
+    "title": "Creating account…",
+    "body": "Saving your student registration. Please wait.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Creating account…",
+        "target": null,
+        "style": "disabled"
+      }
+    ],
+    "annotation": "No real account write or automatic success route. Actual success must be server confirmed; demo-email verification policy must be explicitly configured and tested later. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/create-busy"
+  },
+  {
+    "key": "create-busy",
+    "title": "Creating account…",
+    "body": "Saving your student registration. Please wait.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Creating account…",
+        "target": null,
+        "style": "disabled"
+      }
+    ],
+    "annotation": "No real account write or automatic success route. Actual success must be server confirmed; demo-email verification policy must be explicitly configured and tested later. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/create-busy"
+  },
+  {
+    "key": "google-busy",
+    "title": "Connecting to Google…",
+    "body": "Choose your Google account to continue.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Connecting…",
+        "target": null,
+        "style": "disabled"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Google account selection takes place in the provider's supported screen. Do not draw a fake account picker or claim authentication. New users must accept terms and complete the student profile before dashboard access. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/google-busy"
+  },
+  {
+    "key": "google-busy",
+    "title": "Connecting to Google…",
+    "body": "Choose your Google account to continue.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Connecting…",
+        "target": null,
+        "style": "disabled"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Google account selection takes place in the provider's supported screen. Do not draw a fake account picker or claim authentication. New users must accept terms and complete the student profile before dashboard access. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/google-busy"
+  },
+  {
+    "key": "profile-busy",
+    "title": "Saving your profile…",
+    "body": "Completing your student account. Please wait.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Saving profile…",
+        "target": null,
+        "style": "disabled"
+      }
+    ],
+    "annotation": "Dashboard opens only after authenticated profile and required consent are saved. No role selection or staff/teller self-provisioning. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/profile-busy"
+  },
+  {
+    "key": "profile-busy",
+    "title": "Saving your profile…",
+    "body": "Completing your student account. Please wait.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Saving profile…",
+        "target": null,
+        "style": "disabled"
+      }
+    ],
+    "annotation": "Dashboard opens only after authenticated profile and required consent are saved. No role selection or staff/teller self-provisioning. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/profile-busy"
+  },
+  {
+    "key": "sign-in-error",
+    "rootIds": {
+      "Light": "145:1518",
+      "Dark": "145:1520"
+    },
+    "title": "Check your sign-in details",
+    "body": "Enter your email and password to sign in.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "student1@demo.com",
+        "required": true,
+        "error": "Enter your email."
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Enter password",
+        "required": true,
+        "isPassword": true,
+        "error": "Enter your password."
+      },
+      {
+        "type": "button",
+        "label": "Forgot password?",
+        "target": "reset-email",
+        "style": "link"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Create an account",
+        "target": "sign-up",
+        "style": "secondary"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "rootId": "145:1518"
+  },
+  {
+    "key": "sign-in-error",
+    "rootIds": {
+      "Light": "145:1518",
+      "Dark": "145:1520"
+    },
+    "title": "Check your sign-in details",
+    "body": "Enter your email and password to sign in.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "student1@demo.com",
+        "required": true,
+        "error": "Enter your email."
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Enter password",
+        "required": true,
+        "isPassword": true,
+        "error": "Enter your password."
+      },
+      {
+        "type": "button",
+        "label": "Forgot password?",
+        "target": "reset-email",
+        "style": "link"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Create an account",
+        "target": "sign-up",
+        "style": "secondary"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "rootId": "145:1520"
+  },
+  {
+    "key": "profile-required",
+    "rootIds": {
+      "Light": "145:1522",
+      "Dark": "145:1524"
+    },
+    "title": "Complete your profile",
+    "body": "Your student profile is required before you enter GoServe.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Add your name, student ID, academic details, mobile number and gender.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "Complete profile",
+        "target": "google-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Sign out",
+        "target": "sign-in",
+        "style": "secondary"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "rootId": "145:1522"
+  },
+  {
+    "key": "profile-required",
+    "rootIds": {
+      "Light": "145:1522",
+      "Dark": "145:1524"
+    },
+    "title": "Complete your profile",
+    "body": "Your student profile is required before you enter GoServe.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Add your name, student ID, academic details, mobile number and gender.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "Complete profile",
+        "target": "google-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Sign out",
+        "target": "sign-in",
+        "style": "secondary"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "rootId": "145:1524"
+  },
+  {
+    "key": "email-profile-errors",
+    "title": "Check your student details",
+    "body": "Step 2 of 2 · Complete your student profile.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true,
+        "error": "Enter your first name."
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Enter middle name",
+        "required": true,
+        "disabled": false,
+        "helper": "Select No middle name if you do not have one.",
+        "error": "Enter a middle name or select No middle name."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": false,
+        "target": "email-profile-no-middle"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true,
+        "error": "Enter your last name."
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true,
+        "error": "Enter your gender."
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true,
+        "error": "Enter your student id."
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true,
+        "error": "Enter your course / program."
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true,
+        "error": "Enter your year level."
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true,
+        "error": "Enter a valid mobile number."
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your sign-in email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the email entered in the previous step."
+      },
+      {
+        "type": "button",
+        "label": "Edit student details",
+        "target": "email-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "email-credentials",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/email-profile-errors"
+  },
+  {
+    "key": "email-profile-errors",
+    "title": "Check your student details",
+    "body": "Step 2 of 2 · Complete your student profile.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true,
+        "error": "Enter your first name."
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Enter middle name",
+        "required": true,
+        "disabled": false,
+        "helper": "Select No middle name if you do not have one.",
+        "error": "Enter a middle name or select No middle name."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": false,
+        "target": "email-profile-no-middle"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true,
+        "error": "Enter your last name."
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true,
+        "error": "Enter your gender."
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true,
+        "error": "Enter your student id."
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true,
+        "error": "Enter your course / program."
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true,
+        "error": "Enter your year level."
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true,
+        "error": "Enter a valid mobile number."
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your sign-in email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the email entered in the previous step."
+      },
+      {
+        "type": "button",
+        "label": "Edit student details",
+        "target": "email-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "email-credentials",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/email-profile-errors"
+  },
+  {
+    "key": "email-credentials-errors",
+    "title": "Check your sign-in setup",
+    "body": "Check your email and password before continuing.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "student1@demo.com",
+        "required": true,
+        "error": "Enter a valid email address."
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Create a password",
+        "required": true,
+        "isPassword": true,
+        "helper": "Use at least 6 characters, including a letter, a number and a symbol.",
+        "error": "Enter a password that meets these rules."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "hint": "Re-enter password",
+        "required": true,
+        "isPassword": true,
+        "error": "Confirm the same password."
+      },
+      {
+        "type": "button",
+        "label": "Edit sign-in details",
+        "target": "email-credentials",
+        "style": "primary"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/email-credentials-errors"
+  },
+  {
+    "key": "email-credentials-errors",
+    "title": "Check your sign-in setup",
+    "body": "Check your email and password before continuing.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "student1@demo.com",
+        "required": true,
+        "error": "Enter a valid email address."
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Create a password",
+        "required": true,
+        "isPassword": true,
+        "helper": "Use at least 6 characters, including a letter, a number and a symbol.",
+        "error": "Enter a password that meets these rules."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "hint": "Re-enter password",
+        "required": true,
+        "isPassword": true,
+        "error": "Confirm the same password."
+      },
+      {
+        "type": "button",
+        "label": "Edit sign-in details",
+        "target": "email-credentials",
+        "style": "primary"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/email-credentials-errors"
+  },
+  {
+    "key": "email-profile-no-middle",
+    "title": "Your student details",
+    "body": "Step 2 of 2 · Complete your student profile.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Not applicable",
+        "required": false,
+        "disabled": true,
+        "value": "Not applicable",
+        "helper": "No middle name selected."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": true,
+        "target": "email-profile"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your sign-in email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the email entered in the previous step."
+      },
+      {
+        "type": "button",
+        "label": "Create account",
+        "target": "create-busy",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "email-credentials",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/email-profile-no-middle"
+  },
+  {
+    "key": "email-profile-no-middle",
+    "title": "Your student details",
+    "body": "Step 2 of 2 · Complete your student profile.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Not applicable",
+        "required": false,
+        "disabled": true,
+        "value": "Not applicable",
+        "helper": "No middle name selected."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": true,
+        "target": "email-profile"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your sign-in email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the email entered in the previous step."
+      },
+      {
+        "type": "button",
+        "label": "Create account",
+        "target": "create-busy",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "email-credentials",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/email-profile-no-middle"
+  },
+  {
+    "key": "google-profile-no-middle",
+    "title": "Your student details",
+    "body": "Complete your profile before entering GoServe.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Not applicable",
+        "required": false,
+        "disabled": true,
+        "value": "Not applicable",
+        "helper": "No middle name selected."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": true,
+        "target": "google-profile"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your Google account email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the Google account you selected."
+      },
+      {
+        "type": "button",
+        "label": "Finish setup",
+        "target": "profile-busy",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/google-profile-no-middle"
+  },
+  {
+    "key": "google-profile-no-middle",
+    "title": "Your student details",
+    "body": "Complete your profile before entering GoServe.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Not applicable",
+        "required": false,
+        "disabled": true,
+        "value": "Not applicable",
+        "helper": "No middle name selected."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": true,
+        "target": "google-profile"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your Google account email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the Google account you selected."
+      },
+      {
+        "type": "button",
+        "label": "Finish setup",
+        "target": "profile-busy",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/google-profile-no-middle"
+  },
+  {
+    "key": "password-weak",
+    "title": "Check your password",
+    "body": "Your password must meet all three requirements.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Create a password",
+        "required": true,
+        "isPassword": true,
+        "helper": "Use at least 6 characters, including a letter, a number and a symbol.",
+        "error": "Use 6 or more characters with a letter, number and symbol."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "hint": "Re-enter password",
+        "required": true,
+        "isPassword": true
+      },
+      {
+        "type": "button",
+        "label": "Edit password",
+        "target": "email-credentials",
+        "style": "primary"
+      }
+    ],
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/password-weak",
+    "annotation": "Validation state. No account or profile operation occurs in this Figma design. Preserve entered data and block invalid progression."
+  },
+  {
+    "key": "password-weak",
+    "title": "Check your password",
+    "body": "Your password must meet all three requirements.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Create a password",
+        "required": true,
+        "isPassword": true,
+        "helper": "Use at least 6 characters, including a letter, a number and a symbol.",
+        "error": "Use 6 or more characters with a letter, number and symbol."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "hint": "Re-enter password",
+        "required": true,
+        "isPassword": true
+      },
+      {
+        "type": "button",
+        "label": "Edit password",
+        "target": "email-credentials",
+        "style": "primary"
+      }
+    ],
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/password-weak",
+    "annotation": "Validation state. No account or profile operation occurs in this Figma design. Preserve entered data and block invalid progression."
+  },
+  {
+    "key": "password-mismatch",
+    "title": "Passwords don’t match",
+    "body": "Re-enter the same password in both fields.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Your password",
+        "required": true,
+        "isPassword": true,
+        "value": "••••••••",
+        "helper": "Use at least 6 characters, including a letter, a number and a symbol."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "hint": "Confirm your password",
+        "required": true,
+        "isPassword": true,
+        "value": "••••••••",
+        "error": "Passwords don’t match."
+      },
+      {
+        "type": "button",
+        "label": "Edit passwords",
+        "target": "email-credentials",
+        "style": "primary"
+      }
+    ],
+    "annotation": "Masked mismatch fixture. The represented passwords differ; no real password is shown or stored. Block the next personal-information step until both values match and all password rules pass.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/password-mismatch"
+  },
+  {
+    "key": "password-mismatch",
+    "title": "Passwords don’t match",
+    "body": "Re-enter the same password in both fields.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Your password",
+        "required": true,
+        "isPassword": true,
+        "value": "••••••••",
+        "helper": "Use at least 6 characters, including a letter, a number and a symbol."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "hint": "Confirm your password",
+        "required": true,
+        "isPassword": true,
+        "value": "••••••••",
+        "error": "Passwords don’t match."
+      },
+      {
+        "type": "button",
+        "label": "Edit passwords",
+        "target": "email-credentials",
+        "style": "primary"
+      }
+    ],
+    "annotation": "Masked mismatch fixture. The represented passwords differ; no real password is shown or stored. Block the next personal-information step until both values match and all password rules pass.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/password-mismatch"
+  },
+  {
+    "key": "create-failed",
+    "title": "Account wasn’t created",
+    "body": "Your details are still here. Check them and try again.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Check your email and student ID. If you already have an account, sign in.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "Review student details",
+        "target": "email-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Review email and password",
+        "target": "email-credentials",
+        "style": "secondary"
+      },
+      {
+        "type": "button",
+        "label": "Sign in",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Use a safe server response for duplicate or unavailable registration. Preserve non-secret form values; never invent a successful account. Reconcile uncertain outcomes before retry to avoid duplicate profiles.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/create-failed"
+  },
+  {
+    "key": "create-failed",
+    "title": "Account wasn’t created",
+    "body": "Your details are still here. Check them and try again.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Check your email and student ID. If you already have an account, sign in.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "Review student details",
+        "target": "email-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Review email and password",
+        "target": "email-credentials",
+        "style": "secondary"
+      },
+      {
+        "type": "button",
+        "label": "Sign in",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "annotation": "Use a safe server response for duplicate or unavailable registration. Preserve non-secret form values; never invent a successful account. Reconcile uncertain outcomes before retry to avoid duplicate profiles.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/create-failed"
+  },
+  {
+    "key": "sign-in-failed",
+    "title": "Couldn’t sign in",
+    "body": "The email or password wasn’t accepted. Check your details and try again.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Try again",
+        "target": "sign-in",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Create an account",
+        "target": "sign-up",
+        "style": "secondary"
+      }
+    ],
+    "annotation": "Do not disclose whether an account exists. Preserve entered email, mask password, handle provider cancellation/network failure without dashboard access, and allow retry.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/sign-in-failed"
+  },
+  {
+    "key": "sign-in-failed",
+    "title": "Couldn’t sign in",
+    "body": "The email or password wasn’t accepted. Check your details and try again.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Try again",
+        "target": "sign-in",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Create an account",
+        "target": "sign-up",
+        "style": "secondary"
+      }
+    ],
+    "annotation": "Do not disclose whether an account exists. Preserve entered email, mask password, handle provider cancellation/network failure without dashboard access, and allow retry.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/sign-in-failed"
+  },
+  {
+    "key": "profile-save-failed",
+    "title": "Profile wasn’t saved",
+    "body": "Your student details are still here. Please try again.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Review profile",
+        "target": "google-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Sign out",
+        "target": "sign-in",
+        "style": "secondary"
+      }
+    ],
+    "annotation": "No dashboard access on profile/consent save failure. Preserve non-secret entered profile values and show an established field error when the server identifies one. Do not grant roles from profile input.",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/profile-save-failed"
+  },
+  {
+    "key": "profile-save-failed",
+    "title": "Profile wasn’t saved",
+    "body": "Your student details are still here. Please try again.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Review profile",
+        "target": "google-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Sign out",
+        "target": "sign-in",
+        "style": "secondary"
+      }
+    ],
+    "annotation": "No dashboard access on profile/consent save failure. Preserve non-secret entered profile values and show an established field error when the server identifies one. Do not grant roles from profile input.",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/profile-save-failed"
+  },
+  {
+    "key": "launch",
+    "rootIds": {
+      "Light": "106:642",
+      "Dark": "106:652"
+    },
+    "title": "",
+    "body": "Opening GoServe…",
+    "items": [],
+    "annotation": "App launch/session-restoration state. A valid restored or refreshed session with completed profile and consent goes directly to the role dashboard, without showing Welcome/sign-in. Signed-out or unrecoverable expired sessions open Welcome. Incomplete authenticated accounts resume missing onboarding. No timer or fake authentication.",
+    "theme": "Light",
+    "rootId": "106:642"
+  },
+  {
+    "key": "launch",
+    "rootIds": {
+      "Light": "106:642",
+      "Dark": "106:652"
+    },
+    "title": "",
+    "body": "Opening GoServe…",
+    "items": [],
+    "annotation": "App launch/session-restoration state. A valid restored or refreshed session with completed profile and consent goes directly to the role dashboard, without showing Welcome/sign-in. Signed-out or unrecoverable expired sessions open Welcome. Incomplete authenticated accounts resume missing onboarding. No timer or fake authentication.",
+    "theme": "Dark",
+    "rootId": "106:652"
+  },
+  {
+    "key": "google-profile-errors",
+    "title": "Check your student details",
+    "body": "Complete or correct your student information.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true,
+        "error": "Enter your first name."
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Enter middle name",
+        "required": true,
+        "disabled": false,
+        "helper": "Select No middle name if you do not have one.",
+        "error": "Enter a middle name or select No middle name."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": false,
+        "target": "google-profile-no-middle"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true,
+        "error": "Enter your last name."
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true,
+        "error": "Enter your gender."
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true,
+        "error": "Enter your student id."
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true,
+        "error": "Enter your course / program."
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true,
+        "error": "Enter your year level."
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true,
+        "error": "Enter a valid mobile number."
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your Google account email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the Google account you selected."
+      },
+      {
+        "type": "button",
+        "label": "Edit student details",
+        "target": "google-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/google-profile-errors",
+    "annotation": "Validation state. No account or profile operation occurs in this Figma design. Preserve entered data and block invalid progression."
+  },
+  {
+    "key": "google-profile-errors",
+    "title": "Check your student details",
+    "body": "Complete or correct your student information.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Personal information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "First name",
+        "hint": "Enter first name",
+        "required": true,
+        "error": "Enter your first name."
+      },
+      {
+        "type": "field",
+        "label": "Middle name",
+        "hint": "Enter middle name",
+        "required": true,
+        "disabled": false,
+        "helper": "Select No middle name if you do not have one.",
+        "error": "Enter a middle name or select No middle name."
+      },
+      {
+        "type": "checkbox",
+        "label": "No middle name",
+        "checked": false,
+        "target": "google-profile-no-middle"
+      },
+      {
+        "type": "field",
+        "label": "Last name",
+        "hint": "Enter last name",
+        "required": true,
+        "error": "Enter your last name."
+      },
+      {
+        "type": "field",
+        "label": "Gender",
+        "hint": "Enter gender",
+        "required": true,
+        "error": "Enter your gender."
+      },
+      {
+        "type": "text",
+        "text": "Academic information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Student ID",
+        "hint": "Enter student ID",
+        "required": true,
+        "error": "Enter your student id."
+      },
+      {
+        "type": "field",
+        "label": "Course / program",
+        "hint": "Enter course or program",
+        "required": true,
+        "error": "Enter your course / program."
+      },
+      {
+        "type": "field",
+        "label": "Year level",
+        "hint": "Enter year level",
+        "required": true,
+        "error": "Enter your year level."
+      },
+      {
+        "type": "text",
+        "text": "Contact information",
+        "role": "Office"
+      },
+      {
+        "type": "field",
+        "label": "Mobile number",
+        "hint": "Enter mobile number",
+        "required": true,
+        "error": "Enter a valid mobile number."
+      },
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Your Google account email",
+        "required": false,
+        "disabled": true,
+        "helper": "Uses the Google account you selected."
+      },
+      {
+        "type": "button",
+        "label": "Edit student details",
+        "target": "google-profile",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "sign-in",
+        "style": "link"
+      }
+    ],
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/google-profile-errors",
+    "annotation": "Validation state. No account or profile operation occurs in this Figma design. Preserve entered data and block invalid progression."
+  },
+  {
+    "key": "terms-view",
+    "theme": "Light",
+    "title": "Terms and Conditions",
+    "body": "Review how GoServe uses your information.",
+    "annotation": "DRAFT TERMS — Read-only viewer for all Settings roles and sign-in. Back returns to the originating screen. No consent checkbox, registration, reacceptance or account-state change. Match the approved notice and version used at registration when implemented; current content needs institutional approval.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Information you provide",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Your name, student ID, course or program, year level, mobile number, gender and email address.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Why it is collected",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "To create your student profile, identify you on service requests and contact you about those requests.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Account security",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Keep your password private. Passwords are handled by the sign-in service and are not displayed in your profile.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Access to your information",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "You can view your own records. Authorized office staff can access records needed for their assigned work.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Separate choices",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Google and email registration use the same student profile. Profile photos and AI document sharing are separate, optional actions.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "@back",
+        "style": "secondary"
+      }
+    ],
+    "eyebrow": "Draft terms · UI preview"
+  },
+  {
+    "key": "terms-view",
+    "theme": "Dark",
+    "title": "Terms and Conditions",
+    "body": "Review how GoServe uses your information.",
+    "annotation": "DRAFT TERMS — Read-only viewer for all Settings roles and sign-in. Back returns to the originating screen. No consent checkbox, registration, reacceptance or account-state change. Match the approved notice and version used at registration when implemented; current content needs institutional approval.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Information you provide",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Your name, student ID, course or program, year level, mobile number, gender and email address.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Why it is collected",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "To create your student profile, identify you on service requests and contact you about those requests.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Account security",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Keep your password private. Passwords are handled by the sign-in service and are not displayed in your profile.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Access to your information",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "You can view your own records. Authorized office staff can access records needed for their assigned work.",
+        "role": "Support"
+      },
+      {
+        "type": "text",
+        "text": "Separate choices",
+        "role": "Office"
+      },
+      {
+        "type": "text",
+        "text": "Google and email registration use the same student profile. Profile photos and AI document sharing are separate, optional actions.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "Back",
+        "target": "@back",
+        "style": "secondary"
+      }
+    ],
+    "eyebrow": "Draft terms · UI preview"
+  },
+  {
+    "key": "session-retry",
+    "theme": "Light",
+    "title": "Connection interrupted",
+    "body": "We couldn’t check your session. Connect to the internet and try again.",
+    "annotation": "Session restoration connection failure: keep the existing session securely and preserve the launch gate. Retry restores/refreshed credentials, then verifies profile completion before routing. Do not discard a session or flash sign-in due only to a temporary connection failure. No session or dashboard transition is simulated by this prototype.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Try again",
+        "target": "launch",
+        "style": "primary"
+      }
+    ]
+  },
+  {
+    "key": "session-retry",
+    "theme": "Dark",
+    "title": "Connection interrupted",
+    "body": "We couldn’t check your session. Connect to the internet and try again.",
+    "annotation": "Session restoration connection failure: keep the existing session securely and preserve the launch gate. Retry restores/refreshed credentials, then verifies profile completion before routing. Do not discard a session or flash sign-in due only to a temporary connection failure. No session or dashboard transition is simulated by this prototype.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Try again",
+        "target": "launch",
+        "style": "primary"
+      }
+    ]
+  },
+  {
+    "key": "reset-email",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/reset-email",
+    "title": "Reset your password",
+    "body": "Enter the email address you use for your account.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Enter email",
+        "required": true
+      },
+      {
+        "type": "button",
+        "label": "Send reset link",
+        "target": "reset-sending",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "UI preview only; no email is sent. Native: require a nonblank, valid email before a recovery request; preserve the entered address and avoid account-enumerating responses. Google-only users can return to Google sign-in. A demonstration address such as demo.com is not assumed to have a working inbox; email-link recovery needs an approved delivery-capable test setup. Sending advances only to the busy preview, never a fabricated delivery or success."
+  },
+  {
+    "key": "reset-email",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/reset-email",
+    "title": "Reset your password",
+    "body": "Enter the email address you use for your account.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "hint": "Enter email",
+        "required": true
+      },
+      {
+        "type": "button",
+        "label": "Send reset link",
+        "target": "reset-sending",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "UI preview only; no email is sent. Native: require a nonblank, valid email before a recovery request; preserve the entered address and avoid account-enumerating responses. Google-only users can return to Google sign-in. A demonstration address such as demo.com is not assumed to have a working inbox; email-link recovery needs an approved delivery-capable test setup. Sending advances only to the busy preview, never a fabricated delivery or success."
+  },
+  {
+    "key": "reset-sending",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/reset-sending",
+    "title": "Requesting reset link…",
+    "body": "Please wait while your reset request is checked.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Requesting reset link…",
+        "style": "disabled",
+        "disabled": true
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Busy-state preview only. No timed reaction, email operation or automatic success route. Native: disable duplicate requests while the operation is pending; retain the entered address for correction and wait for the actual result. Back does not claim to cancel a request already accepted by the service. Review-index links expose the separate result/error fixtures."
+  },
+  {
+    "key": "reset-sending",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/reset-sending",
+    "title": "Requesting reset link…",
+    "body": "Please wait while your reset request is checked.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Requesting reset link…",
+        "style": "disabled",
+        "disabled": true
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Busy-state preview only. No timed reaction, email operation or automatic success route. Native: disable duplicate requests while the operation is pending; retain the entered address for correction and wait for the actual result. Back does not claim to cancel a request already accepted by the service. Review-index links expose the separate result/error fixtures."
+  },
+  {
+    "key": "reset-sent",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/reset-sent",
+    "eyebrow": "Result example",
+    "title": "Check your email",
+    "body": "If the address is eligible for password recovery, you'll receive instructions to reset your password.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Check your inbox and spam folder.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Use a different email",
+        "target": "reset-email",
+        "style": "link"
+      }
+    ],
+    "annotation": "Non-enumerating result fixture only; no email or account lookup occurs in Figma. Native: show only after the recovery-request service accepts the operation, using the same public response for eligible and ineligible addresses. Acceptance does not establish inbox delivery or account existence. No direct link to the new-password form is provided here; that form requires a real verified recovery context. Do not assume demo.com receives mail."
+  },
+  {
+    "key": "reset-sent",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/reset-sent",
+    "eyebrow": "Result example",
+    "title": "Check your email",
+    "body": "If the address is eligible for password recovery, you'll receive instructions to reset your password.",
+    "items": [
+      {
+        "type": "text",
+        "text": "Check your inbox and spam folder.",
+        "role": "Support"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Use a different email",
+        "target": "reset-email",
+        "style": "link"
+      }
+    ],
+    "annotation": "Non-enumerating result fixture only; no email or account lookup occurs in Figma. Native: show only after the recovery-request service accepts the operation, using the same public response for eligible and ineligible addresses. Acceptance does not establish inbox delivery or account existence. No direct link to the new-password form is provided here; that form requires a real verified recovery context. Do not assume demo.com receives mail."
+  },
+  {
+    "key": "reset-email-error",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/reset-email-error",
+    "title": "Check your email",
+    "body": "Enter a valid email address before requesting a reset link.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "value": "student1demo.com",
+        "required": true,
+        "error": "Enter a valid email address."
+      },
+      {
+        "type": "button",
+        "label": "Edit email",
+        "target": "reset-email",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Malformed-email validation fixture. Native: focus the email field, preserve the entered value and make no recovery request until valid. An empty field instead shows Enter your email address. This state does not reveal whether any account exists and must not advance to a sent result. No actual validation or provider request occurs in Figma."
+  },
+  {
+    "key": "reset-email-error",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/reset-email-error",
+    "title": "Check your email",
+    "body": "Enter a valid email address before requesting a reset link.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "value": "student1demo.com",
+        "required": true,
+        "error": "Enter a valid email address."
+      },
+      {
+        "type": "button",
+        "label": "Edit email",
+        "target": "reset-email",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Malformed-email validation fixture. Native: focus the email field, preserve the entered value and make no recovery request until valid. An empty field instead shows Enter your email address. This state does not reveal whether any account exists and must not advance to a sent result. No actual validation or provider request occurs in Figma."
+  },
+  {
+    "key": "reset-failed",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/reset-failed",
+    "title": "Couldn't confirm the request",
+    "body": "Check your connection and try again.",
+    "items": [
+      {
+        "type": "notice",
+        "text": "We couldn't confirm whether your reset request was accepted."
+      },
+      {
+        "type": "button",
+        "label": "Try again",
+        "target": "reset-sending",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Edit email",
+        "target": "reset-email",
+        "style": "secondary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Generic connection/service-failure fixture. Native: preserve the entered email, do not claim that an account is missing or that no email was sent, and follow the configured service's safe retry behavior when the outcome is uncertain. Prevent overlapping requests. No invented retry interval, rate limit or delivery promise. Prototype Try again opens the busy preview only."
+  },
+  {
+    "key": "reset-failed",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/reset-failed",
+    "title": "Couldn't confirm the request",
+    "body": "Check your connection and try again.",
+    "items": [
+      {
+        "type": "notice",
+        "text": "We couldn't confirm whether your reset request was accepted."
+      },
+      {
+        "type": "button",
+        "label": "Try again",
+        "target": "reset-sending",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Edit email",
+        "target": "reset-email",
+        "style": "secondary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Generic connection/service-failure fixture. Native: preserve the entered email, do not claim that an account is missing or that no email was sent, and follow the configured service's safe retry behavior when the outcome is uncertain. Prevent overlapping requests. No invented retry interval, rate limit or delivery promise. Prototype Try again opens the busy preview only."
+  },
+  {
+    "key": "reset-password",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/reset-password",
+    "title": "Choose a new password",
+    "body": "Enter the same new password in both fields.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Create a password",
+        "required": true,
+        "isPassword": true,
+        "helper": "At least 6 characters, including a letter, a number, and a symbol."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "hint": "Re-enter password",
+        "required": true,
+        "isPassword": true
+      },
+      {
+        "type": "button",
+        "label": "Save new password",
+        "target": "reset-saving",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Valid-recovery-context form preview. Native: require a provider-verified, current recovery context before opening or saving; a public app route alone is insufficient. Validate at least 6 total characters, at least one letter, one number and one symbol, plus matching nonblank confirmation. Keep passwords masked and transient; never log or persist plaintext. Save may enter busy only after validation, not success. Figma performs no token verification or password operation."
+  },
+  {
+    "key": "reset-password",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/reset-password",
+    "title": "Choose a new password",
+    "body": "Enter the same new password in both fields.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Password",
+        "hint": "Create a password",
+        "required": true,
+        "isPassword": true,
+        "helper": "At least 6 characters, including a letter, a number, and a symbol."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "hint": "Re-enter password",
+        "required": true,
+        "isPassword": true
+      },
+      {
+        "type": "button",
+        "label": "Save new password",
+        "target": "reset-saving",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Valid-recovery-context form preview. Native: require a provider-verified, current recovery context before opening or saving; a public app route alone is insufficient. Validate at least 6 total characters, at least one letter, one number and one symbol, plus matching nonblank confirmation. Keep passwords masked and transient; never log or persist plaintext. Save may enter busy only after validation, not success. Figma performs no token verification or password operation."
+  },
+  {
+    "key": "reset-password-error",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/reset-password-error",
+    "title": "Check your passwords",
+    "body": "Correct the highlighted fields before saving.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Password",
+        "value": "••••",
+        "required": true,
+        "isPassword": true,
+        "helper": "At least 6 characters, including a letter, a number, and a symbol.",
+        "error": "Use at least 6 characters with a letter, a number, and a symbol."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "value": "••••••",
+        "required": true,
+        "isPassword": true,
+        "error": "Passwords don't match."
+      },
+      {
+        "type": "button",
+        "label": "Edit passwords",
+        "target": "reset-password",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Combined weak-password/mismatch fixture with masked example values only. Native: show the applicable adjacent error for each field, focus the first failure and prevent the save operation. Check the confirmed 6-character/letter/number/symbol rule and recheck confirmation after edits; do not treat the displayed bullets as an actual password. Blank fields receive their own required error. Preserve valid recovery context while permitted, and clear secrets on completion/exit. No validation or update occurs in Figma."
+  },
+  {
+    "key": "reset-password-error",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/reset-password-error",
+    "title": "Check your passwords",
+    "body": "Correct the highlighted fields before saving.",
+    "items": [
+      {
+        "type": "field",
+        "label": "Password",
+        "value": "••••",
+        "required": true,
+        "isPassword": true,
+        "helper": "At least 6 characters, including a letter, a number, and a symbol.",
+        "error": "Use at least 6 characters with a letter, a number, and a symbol."
+      },
+      {
+        "type": "field",
+        "label": "Confirm password",
+        "value": "••••••",
+        "required": true,
+        "isPassword": true,
+        "error": "Passwords don't match."
+      },
+      {
+        "type": "button",
+        "label": "Edit passwords",
+        "target": "reset-password",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Combined weak-password/mismatch fixture with masked example values only. Native: show the applicable adjacent error for each field, focus the first failure and prevent the save operation. Check the confirmed 6-character/letter/number/symbol rule and recheck confirmation after edits; do not treat the displayed bullets as an actual password. Blank fields receive their own required error. Preserve valid recovery context while permitted, and clear secrets on completion/exit. No validation or update occurs in Figma."
+  },
+  {
+    "key": "reset-saving",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/reset-saving",
+    "title": "Updating password…",
+    "body": "Wait while your password update is checked.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Updating password…",
+        "style": "disabled",
+        "disabled": true
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Busy-state preview only. No timed success, provider operation or automatic reset-complete route. Native: submit once only after a valid recovery context, matching confirmation and the confirmed password rule; prevent duplicate saves. Do not clear the busy state into success until the server confirms the update. Back must not claim that an in-flight update was cancelled; reconcile uncertain results, clear transient secrets and retain no plaintext password. Review-index links expose independent outcome fixtures."
+  },
+  {
+    "key": "reset-saving",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/reset-saving",
+    "title": "Updating password…",
+    "body": "Wait while your password update is checked.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Updating password…",
+        "style": "disabled",
+        "disabled": true
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Busy-state preview only. No timed success, provider operation or automatic reset-complete route. Native: submit once only after a valid recovery context, matching confirmation and the confirmed password rule; prevent duplicate saves. Do not clear the busy state into success until the server confirms the update. Back must not claim that an in-flight update was cancelled; reconcile uncertain results, clear transient secrets and retain no plaintext password. Review-index links expose independent outcome fixtures."
+  },
+  {
+    "key": "reset-complete",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/reset-complete",
+    "eyebrow": "Confirmed result example",
+    "title": "Password updated",
+    "body": "Sign in with your new password.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Go to sign in",
+        "target": "sign-in-return",
+        "style": "primary"
+      }
+    ],
+    "annotation": "Server-confirmed completion fixture only; no password is changed in Figma. Native: show this state only after authoritative update confirmation. Return to sign-in-return with the actual account email when safely known and an empty password field; do not seed the registration demo address. Never open Home directly from recovery. Subsequent authentication uses the existing consent/profile/role guards and does not restart completed registration or alter account records/authority."
+  },
+  {
+    "key": "reset-complete",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/reset-complete",
+    "eyebrow": "Confirmed result example",
+    "title": "Password updated",
+    "body": "Sign in with your new password.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Go to sign in",
+        "target": "sign-in-return",
+        "style": "primary"
+      }
+    ],
+    "annotation": "Server-confirmed completion fixture only; no password is changed in Figma. Native: show this state only after authoritative update confirmation. Return to sign-in-return with the actual account email when safely known and an empty password field; do not seed the registration demo address. Never open Home directly from recovery. Subsequent authentication uses the existing consent/profile/role guards and does not restart completed registration or alter account records/authority."
+  },
+  {
+    "key": "reset-link-expired",
+    "theme": "Light",
+    "name": "GoServe 2.3 • auth/reset-link-expired",
+    "title": "Reset link unavailable",
+    "body": "This link is no longer valid. Request a new reset link to continue.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Request a new link",
+        "target": "reset-email",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Expired/invalid/already-used recovery-context fixture. Native: reject an unusable provider-verified recovery context without exposing account details; remove update authority and route to a fresh email request. Do not invent a link lifetime, regenerate a token locally or allow the new-password form without verification. No actual token is supplied or validated in Figma."
+  },
+  {
+    "key": "reset-link-expired",
+    "theme": "Dark",
+    "name": "GoServe 2.3 • dark/auth/reset-link-expired",
+    "title": "Reset link unavailable",
+    "body": "This link is no longer valid. Request a new reset link to continue.",
+    "items": [
+      {
+        "type": "button",
+        "label": "Request a new link",
+        "target": "reset-email",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Back to sign in",
+        "target": "sign-in-return",
+        "style": "link"
+      }
+    ],
+    "annotation": "Expired/invalid/already-used recovery-context fixture. Native: reject an unusable provider-verified recovery context without exposing account details; remove update authority and route to a fresh email request. Do not invent a link lifetime, regenerate a token locally or allow the new-password form without verification. No actual token is supplied or validated in Figma."
+  },
+  {
+    "key": "reset-save-failed",
+    "theme": "Light",
+    "title": "Couldn’t confirm the update",
+    "body": "Check your connection and try again.",
+    "items": [
+      {
+        "type": "notice",
+        "text": "We couldn’t confirm whether your password was updated."
+      },
+      {
+        "type": "button",
+        "label": "Try again",
+        "target": "reset-password",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Request a new link",
+        "target": "reset-email",
+        "style": "secondary"
+      }
+    ],
+    "annotation": "Password-update service/network failure. Return to the recovery-scoped password form and preserve the authenticated recovery context while valid. Revalidate password and confirmation; no false success. An expired context requests a fresh link. Never persist/log plaintext passwords."
+  },
+  {
+    "key": "reset-save-failed",
+    "theme": "Dark",
+    "title": "Couldn’t confirm the update",
+    "body": "Check your connection and try again.",
+    "items": [
+      {
+        "type": "notice",
+        "text": "We couldn’t confirm whether your password was updated."
+      },
+      {
+        "type": "button",
+        "label": "Try again",
+        "target": "reset-password",
+        "style": "primary"
+      },
+      {
+        "type": "button",
+        "label": "Request a new link",
+        "target": "reset-email",
+        "style": "secondary"
+      }
+    ],
+    "annotation": "Password-update service/network failure. Return to the recovery-scoped password form and preserve the authenticated recovery context while valid. Revalidate password and confirmation; no false success. An expired context requests a fresh link. Never persist/log plaintext passwords."
+  }
+]

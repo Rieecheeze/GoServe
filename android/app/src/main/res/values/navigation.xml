@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="capsule_navigation_surface">#222626</color>
+    <color name="capsule_navigation_text">#F4F4F4</color>
+    <color name="capsule_navigation_ink">#171717</color>
+    <declare-styleable name="CapsuleNavigationView"><attr name="capsuleMenu" format="reference" /></declare-styleable>
+</resources>

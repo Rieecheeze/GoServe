@@ -1,0 +1,1175 @@
+{
+  "fileKey": "SvT9gBUFjdLgbrJ80LPDno",
+  "pageId": "14:2",
+  "reviewIndex": "175:7272",
+  "date": "2026-10-15",
+  "status": "ready_for_user_ui_review",
+  "uiApproved": false,
+  "frames": [
+    {
+      "key": "sign-in",
+      "theme": "Light",
+      "id": "19:2",
+      "name": "GoServe 2.1 • shared/sign-in"
+    },
+    {
+      "key": "sign-in",
+      "theme": "Dark",
+      "id": "36:2",
+      "name": "GoServe 2.1 • dark/shared/sign-in"
+    },
+    {
+      "key": "sign-up",
+      "theme": "Light",
+      "id": "56:38",
+      "name": "GoServe 2.1 • shared/sign-up"
+    },
+    {
+      "key": "sign-up",
+      "theme": "Dark",
+      "id": "56:66",
+      "name": "GoServe 2.1 • dark/shared/sign-up"
+    },
+    {
+      "key": "sign-up-ready",
+      "theme": "Light",
+      "id": "197:7484",
+      "name": "GoServe 2.3 • auth/sign-up-ready"
+    },
+    {
+      "key": "sign-up-ready",
+      "theme": "Dark",
+      "id": "197:7485",
+      "name": "GoServe 2.3 • dark/auth/sign-up-ready"
+    },
+    {
+      "key": "terms",
+      "theme": "Light",
+      "id": "197:7486",
+      "name": "GoServe 2.3 • auth/terms"
+    },
+    {
+      "key": "terms",
+      "theme": "Dark",
+      "id": "197:7487",
+      "name": "GoServe 2.3 • dark/auth/terms"
+    },
+    {
+      "key": "email-profile",
+      "theme": "Light",
+      "id": "197:7488",
+      "name": "GoServe 2.3 • auth/email-profile"
+    },
+    {
+      "key": "email-profile",
+      "theme": "Dark",
+      "id": "197:7489",
+      "name": "GoServe 2.3 • dark/auth/email-profile"
+    },
+    {
+      "key": "email-credentials",
+      "theme": "Light",
+      "id": "197:7492",
+      "name": "GoServe 2.3 • auth/email-credentials"
+    },
+    {
+      "key": "email-credentials",
+      "theme": "Dark",
+      "id": "197:7493",
+      "name": "GoServe 2.3 • dark/auth/email-credentials"
+    },
+    {
+      "key": "account-created",
+      "theme": "Light",
+      "id": "197:7494",
+      "name": "GoServe 2.3 • auth/account-created"
+    },
+    {
+      "key": "account-created",
+      "theme": "Dark",
+      "id": "197:7495",
+      "name": "GoServe 2.3 • dark/auth/account-created"
+    },
+    {
+      "key": "sign-in-return",
+      "theme": "Light",
+      "id": "197:7496",
+      "name": "GoServe 2.3 • auth/sign-in-return"
+    },
+    {
+      "key": "sign-in-return",
+      "theme": "Dark",
+      "id": "197:7497",
+      "name": "GoServe 2.3 • dark/auth/sign-in-return"
+    },
+    {
+      "key": "google-profile",
+      "theme": "Light",
+      "id": "19:61",
+      "name": "GoServe 2.1 • student/consent"
+    },
+    {
+      "key": "google-profile",
+      "theme": "Dark",
+      "id": "36:61",
+      "name": "GoServe 2.1 • dark/student/consent"
+    },
+    {
+      "key": "auth-busy",
+      "theme": "Light",
+      "id": "197:7500",
+      "name": "GoServe 2.3 • auth/auth-busy"
+    },
+    {
+      "key": "auth-busy",
+      "theme": "Dark",
+      "id": "197:7501",
+      "name": "GoServe 2.3 • dark/auth/auth-busy"
+    },
+    {
+      "key": "create-busy",
+      "theme": "Light",
+      "id": "197:7502",
+      "name": "GoServe 2.3 • auth/create-busy"
+    },
+    {
+      "key": "create-busy",
+      "theme": "Dark",
+      "id": "197:7503",
+      "name": "GoServe 2.3 • dark/auth/create-busy"
+    },
+    {
+      "key": "google-busy",
+      "theme": "Light",
+      "id": "197:7504",
+      "name": "GoServe 2.3 • auth/google-busy"
+    },
+    {
+      "key": "google-busy",
+      "theme": "Dark",
+      "id": "197:7505",
+      "name": "GoServe 2.3 • dark/auth/google-busy"
+    },
+    {
+      "key": "profile-busy",
+      "theme": "Light",
+      "id": "197:7506",
+      "name": "GoServe 2.3 • auth/profile-busy"
+    },
+    {
+      "key": "profile-busy",
+      "theme": "Dark",
+      "id": "197:7507",
+      "name": "GoServe 2.3 • dark/auth/profile-busy"
+    },
+    {
+      "key": "sign-in-error",
+      "theme": "Light",
+      "id": "145:1518",
+      "name": "GoServe 2.1 • states/G02.2"
+    },
+    {
+      "key": "sign-in-error",
+      "theme": "Dark",
+      "id": "145:1520",
+      "name": "GoServe 2.1 • dark/states/G02.2"
+    },
+    {
+      "key": "profile-required",
+      "theme": "Light",
+      "id": "145:1522",
+      "name": "GoServe 2.1 • states/G02.3"
+    },
+    {
+      "key": "profile-required",
+      "theme": "Dark",
+      "id": "145:1524",
+      "name": "GoServe 2.1 • dark/states/G02.3"
+    },
+    {
+      "key": "email-profile-errors",
+      "theme": "Light",
+      "id": "197:7508",
+      "name": "GoServe 2.3 • auth/email-profile-errors"
+    },
+    {
+      "key": "email-profile-errors",
+      "theme": "Dark",
+      "id": "197:7509",
+      "name": "GoServe 2.3 • dark/auth/email-profile-errors"
+    },
+    {
+      "key": "email-credentials-errors",
+      "theme": "Light",
+      "id": "197:7512",
+      "name": "GoServe 2.3 • auth/email-credentials-errors"
+    },
+    {
+      "key": "email-credentials-errors",
+      "theme": "Dark",
+      "id": "197:7513",
+      "name": "GoServe 2.3 • dark/auth/email-credentials-errors"
+    },
+    {
+      "key": "email-profile-no-middle",
+      "theme": "Light",
+      "id": "200:7476",
+      "name": "GoServe 2.3 • auth/email-profile-no-middle"
+    },
+    {
+      "key": "email-profile-no-middle",
+      "theme": "Dark",
+      "id": "200:7477",
+      "name": "GoServe 2.3 • dark/auth/email-profile-no-middle"
+    },
+    {
+      "key": "google-profile-no-middle",
+      "theme": "Light",
+      "id": "200:7478",
+      "name": "GoServe 2.3 • auth/google-profile-no-middle"
+    },
+    {
+      "key": "google-profile-no-middle",
+      "theme": "Dark",
+      "id": "200:7479",
+      "name": "GoServe 2.3 • dark/auth/google-profile-no-middle"
+    },
+    {
+      "key": "password-weak",
+      "theme": "Light",
+      "id": "206:7476",
+      "name": "GoServe 2.3 • auth/password-weak"
+    },
+    {
+      "key": "password-weak",
+      "theme": "Dark",
+      "id": "206:7477",
+      "name": "GoServe 2.3 • dark/auth/password-weak"
+    },
+    {
+      "key": "password-mismatch",
+      "theme": "Light",
+      "id": "206:7478",
+      "name": "GoServe 2.3 • auth/password-mismatch"
+    },
+    {
+      "key": "password-mismatch",
+      "theme": "Dark",
+      "id": "206:7479",
+      "name": "GoServe 2.3 • dark/auth/password-mismatch"
+    },
+    {
+      "key": "create-failed",
+      "theme": "Light",
+      "id": "206:7480",
+      "name": "GoServe 2.3 • auth/create-failed"
+    },
+    {
+      "key": "create-failed",
+      "theme": "Dark",
+      "id": "206:7481",
+      "name": "GoServe 2.3 • dark/auth/create-failed"
+    },
+    {
+      "key": "sign-in-failed",
+      "theme": "Light",
+      "id": "206:7482",
+      "name": "GoServe 2.3 • auth/sign-in-failed"
+    },
+    {
+      "key": "sign-in-failed",
+      "theme": "Dark",
+      "id": "206:7483",
+      "name": "GoServe 2.3 • dark/auth/sign-in-failed"
+    },
+    {
+      "key": "profile-save-failed",
+      "theme": "Light",
+      "id": "206:7484",
+      "name": "GoServe 2.3 • auth/profile-save-failed"
+    },
+    {
+      "key": "profile-save-failed",
+      "theme": "Dark",
+      "id": "206:7485",
+      "name": "GoServe 2.3 • dark/auth/profile-save-failed"
+    },
+    {
+      "key": "launch",
+      "theme": "Light",
+      "id": "106:642",
+      "name": "GoServe 2.2 • light/authentication-loading"
+    },
+    {
+      "key": "launch",
+      "theme": "Dark",
+      "id": "106:652",
+      "name": "GoServe 2.2 • dark/authentication-loading"
+    },
+    {
+      "key": "google-profile-errors",
+      "theme": "Light",
+      "id": "206:7486",
+      "name": "GoServe 2.3 • auth/google-profile-errors"
+    },
+    {
+      "key": "google-profile-errors",
+      "theme": "Dark",
+      "id": "206:7487",
+      "name": "GoServe 2.3 • dark/auth/google-profile-errors"
+    },
+    {
+      "key": "terms-view",
+      "theme": "Light",
+      "id": "213:7486",
+      "name": "GoServe 2.3 • auth/terms-view"
+    },
+    {
+      "key": "terms-view",
+      "theme": "Dark",
+      "id": "213:7515",
+      "name": "GoServe 2.3 • dark/auth/terms-view"
+    },
+    {
+      "key": "session-retry",
+      "theme": "Light",
+      "id": "213:7544",
+      "name": "GoServe 2.3 • auth/session-retry"
+    },
+    {
+      "key": "session-retry",
+      "theme": "Dark",
+      "id": "213:7563",
+      "name": "GoServe 2.3 • dark/auth/session-retry"
+    },
+    {
+      "key": "reset-email",
+      "theme": "Light",
+      "id": "219:7722",
+      "name": "GoServe 2.3 • auth/reset-email"
+    },
+    {
+      "key": "reset-email",
+      "theme": "Dark",
+      "id": "219:7723",
+      "name": "GoServe 2.3 • dark/auth/reset-email"
+    },
+    {
+      "key": "reset-sending",
+      "theme": "Light",
+      "id": "219:7724",
+      "name": "GoServe 2.3 • auth/reset-sending"
+    },
+    {
+      "key": "reset-sending",
+      "theme": "Dark",
+      "id": "219:7725",
+      "name": "GoServe 2.3 • dark/auth/reset-sending"
+    },
+    {
+      "key": "reset-sent",
+      "theme": "Light",
+      "id": "219:7726",
+      "name": "GoServe 2.3 • auth/reset-sent"
+    },
+    {
+      "key": "reset-sent",
+      "theme": "Dark",
+      "id": "219:7727",
+      "name": "GoServe 2.3 • dark/auth/reset-sent"
+    },
+    {
+      "key": "reset-email-error",
+      "theme": "Light",
+      "id": "219:7728",
+      "name": "GoServe 2.3 • auth/reset-email-error"
+    },
+    {
+      "key": "reset-email-error",
+      "theme": "Dark",
+      "id": "219:7729",
+      "name": "GoServe 2.3 • dark/auth/reset-email-error"
+    },
+    {
+      "key": "reset-failed",
+      "theme": "Light",
+      "id": "219:7730",
+      "name": "GoServe 2.3 • auth/reset-failed"
+    },
+    {
+      "key": "reset-failed",
+      "theme": "Dark",
+      "id": "219:7731",
+      "name": "GoServe 2.3 • dark/auth/reset-failed"
+    },
+    {
+      "key": "reset-password",
+      "theme": "Light",
+      "id": "219:7732",
+      "name": "GoServe 2.3 • auth/reset-password"
+    },
+    {
+      "key": "reset-password",
+      "theme": "Dark",
+      "id": "219:7733",
+      "name": "GoServe 2.3 • dark/auth/reset-password"
+    },
+    {
+      "key": "reset-password-error",
+      "theme": "Light",
+      "id": "219:7734",
+      "name": "GoServe 2.3 • auth/reset-password-error"
+    },
+    {
+      "key": "reset-password-error",
+      "theme": "Dark",
+      "id": "219:7735",
+      "name": "GoServe 2.3 • dark/auth/reset-password-error"
+    },
+    {
+      "key": "reset-saving",
+      "theme": "Light",
+      "id": "219:7736",
+      "name": "GoServe 2.3 • auth/reset-saving"
+    },
+    {
+      "key": "reset-saving",
+      "theme": "Dark",
+      "id": "219:7737",
+      "name": "GoServe 2.3 • dark/auth/reset-saving"
+    },
+    {
+      "key": "reset-complete",
+      "theme": "Light",
+      "id": "219:7738",
+      "name": "GoServe 2.3 • auth/reset-complete"
+    },
+    {
+      "key": "reset-complete",
+      "theme": "Dark",
+      "id": "219:7739",
+      "name": "GoServe 2.3 • dark/auth/reset-complete"
+    },
+    {
+      "key": "reset-link-expired",
+      "theme": "Light",
+      "id": "219:7740",
+      "name": "GoServe 2.3 • auth/reset-link-expired"
+    },
+    {
+      "key": "reset-link-expired",
+      "theme": "Dark",
+      "id": "219:7741",
+      "name": "GoServe 2.3 • dark/auth/reset-link-expired"
+    },
+    {
+      "key": "reset-save-failed",
+      "theme": "Light",
+      "id": "219:7742",
+      "name": "GoServe 2.3 • auth/reset-save-failed"
+    },
+    {
+      "key": "reset-save-failed",
+      "theme": "Dark",
+      "id": "219:7743",
+      "name": "GoServe 2.3 • dark/auth/reset-save-failed"
+    }
+  ],
+  "routes": {
+    "sign-in|Light": "19:2",
+    "sign-in|Dark": "36:2",
+    "sign-up|Light": "56:38",
+    "sign-up|Dark": "56:66",
+    "sign-up-ready|Light": "197:7484",
+    "sign-up-ready|Dark": "197:7485",
+    "terms|Light": "197:7486",
+    "terms|Dark": "197:7487",
+    "email-profile|Light": "197:7488",
+    "email-profile|Dark": "197:7489",
+    "email-credentials|Light": "197:7492",
+    "email-credentials|Dark": "197:7493",
+    "account-created|Light": "197:7494",
+    "account-created|Dark": "197:7495",
+    "sign-in-return|Light": "197:7496",
+    "sign-in-return|Dark": "197:7497",
+    "google-profile|Light": "19:61",
+    "google-profile|Dark": "36:61",
+    "auth-busy|Light": "197:7500",
+    "auth-busy|Dark": "197:7501",
+    "create-busy|Light": "197:7502",
+    "create-busy|Dark": "197:7503",
+    "google-busy|Light": "197:7504",
+    "google-busy|Dark": "197:7505",
+    "profile-busy|Light": "197:7506",
+    "profile-busy|Dark": "197:7507",
+    "sign-in-error|Light": "145:1518",
+    "sign-in-error|Dark": "145:1520",
+    "profile-required|Light": "145:1522",
+    "profile-required|Dark": "145:1524",
+    "email-profile-errors|Light": "197:7508",
+    "email-profile-errors|Dark": "197:7509",
+    "email-credentials-errors|Light": "197:7512",
+    "email-credentials-errors|Dark": "197:7513",
+    "email-profile-no-middle|Light": "200:7476",
+    "email-profile-no-middle|Dark": "200:7477",
+    "google-profile-no-middle|Light": "200:7478",
+    "google-profile-no-middle|Dark": "200:7479",
+    "password-weak|Light": "206:7476",
+    "password-weak|Dark": "206:7477",
+    "password-mismatch|Light": "206:7478",
+    "password-mismatch|Dark": "206:7479",
+    "create-failed|Light": "206:7480",
+    "create-failed|Dark": "206:7481",
+    "sign-in-failed|Light": "206:7482",
+    "sign-in-failed|Dark": "206:7483",
+    "profile-save-failed|Light": "206:7484",
+    "profile-save-failed|Dark": "206:7485",
+    "launch|Light": "106:642",
+    "launch|Dark": "106:652",
+    "google-profile-errors|Light": "206:7486",
+    "google-profile-errors|Dark": "206:7487",
+    "terms-view|Light": "213:7486",
+    "terms-view|Dark": "213:7515",
+    "session-retry|Light": "213:7544",
+    "session-retry|Dark": "213:7563",
+    "reset-email|Light": "219:7722",
+    "reset-email|Dark": "219:7723",
+    "reset-sending|Light": "219:7724",
+    "reset-sending|Dark": "219:7725",
+    "reset-sent|Light": "219:7726",
+    "reset-sent|Dark": "219:7727",
+    "reset-email-error|Light": "219:7728",
+    "reset-email-error|Dark": "219:7729",
+    "reset-failed|Light": "219:7730",
+    "reset-failed|Dark": "219:7731",
+    "reset-password|Light": "219:7732",
+    "reset-password|Dark": "219:7733",
+    "reset-password-error|Light": "219:7734",
+    "reset-password-error|Dark": "219:7735",
+    "reset-saving|Light": "219:7736",
+    "reset-saving|Dark": "219:7737",
+    "reset-complete|Light": "219:7738",
+    "reset-complete|Dark": "219:7739",
+    "reset-link-expired|Light": "219:7740",
+    "reset-link-expired|Dark": "219:7741",
+    "reset-save-failed|Light": "219:7742",
+    "reset-save-failed|Dark": "219:7743"
+  },
+  "annotations": [
+    {
+      "key": "sign-in",
+      "theme": "Light",
+      "rootId": "19:2",
+      "id": "203:7476"
+    },
+    {
+      "key": "sign-in",
+      "theme": "Dark",
+      "rootId": "36:2",
+      "id": "203:7477"
+    },
+    {
+      "key": "sign-up",
+      "theme": "Light",
+      "rootId": "56:38",
+      "id": "203:7478"
+    },
+    {
+      "key": "sign-up",
+      "theme": "Dark",
+      "rootId": "56:66",
+      "id": "203:7479"
+    },
+    {
+      "key": "sign-up-ready",
+      "theme": "Light",
+      "rootId": "197:7484",
+      "id": "203:7480"
+    },
+    {
+      "key": "sign-up-ready",
+      "theme": "Dark",
+      "rootId": "197:7485",
+      "id": "203:7481"
+    },
+    {
+      "key": "terms",
+      "theme": "Light",
+      "rootId": "197:7486",
+      "id": "203:7482"
+    },
+    {
+      "key": "terms",
+      "theme": "Dark",
+      "rootId": "197:7487",
+      "id": "203:7483"
+    },
+    {
+      "key": "email-profile",
+      "theme": "Light",
+      "rootId": "197:7488",
+      "id": "203:7484"
+    },
+    {
+      "key": "email-profile",
+      "theme": "Dark",
+      "rootId": "197:7489",
+      "id": "203:7485"
+    },
+    {
+      "key": "email-credentials",
+      "theme": "Light",
+      "rootId": "197:7492",
+      "id": "203:7488"
+    },
+    {
+      "key": "email-credentials",
+      "theme": "Dark",
+      "rootId": "197:7493",
+      "id": "203:7489"
+    },
+    {
+      "key": "account-created",
+      "theme": "Light",
+      "rootId": "197:7494",
+      "id": "203:7490"
+    },
+    {
+      "key": "account-created",
+      "theme": "Dark",
+      "rootId": "197:7495",
+      "id": "203:7491"
+    },
+    {
+      "key": "sign-in-return",
+      "theme": "Light",
+      "rootId": "197:7496",
+      "id": "203:7492"
+    },
+    {
+      "key": "sign-in-return",
+      "theme": "Dark",
+      "rootId": "197:7497",
+      "id": "203:7493"
+    },
+    {
+      "key": "google-profile",
+      "theme": "Light",
+      "rootId": "19:61",
+      "id": "203:7494"
+    },
+    {
+      "key": "google-profile",
+      "theme": "Dark",
+      "rootId": "36:61",
+      "id": "203:7495"
+    },
+    {
+      "key": "auth-busy",
+      "theme": "Light",
+      "rootId": "197:7500",
+      "id": "203:7498"
+    },
+    {
+      "key": "auth-busy",
+      "theme": "Dark",
+      "rootId": "197:7501",
+      "id": "203:7499"
+    },
+    {
+      "key": "create-busy",
+      "theme": "Light",
+      "rootId": "197:7502",
+      "id": "203:7500"
+    },
+    {
+      "key": "create-busy",
+      "theme": "Dark",
+      "rootId": "197:7503",
+      "id": "203:7501"
+    },
+    {
+      "key": "google-busy",
+      "theme": "Light",
+      "rootId": "197:7504",
+      "id": "203:7502"
+    },
+    {
+      "key": "google-busy",
+      "theme": "Dark",
+      "rootId": "197:7505",
+      "id": "203:7503"
+    },
+    {
+      "key": "profile-busy",
+      "theme": "Light",
+      "rootId": "197:7506",
+      "id": "203:7504"
+    },
+    {
+      "key": "profile-busy",
+      "theme": "Dark",
+      "rootId": "197:7507",
+      "id": "203:7505"
+    },
+    {
+      "key": "sign-in-error",
+      "theme": "Light",
+      "rootId": "145:1518",
+      "id": "145:1519"
+    },
+    {
+      "key": "sign-in-error",
+      "theme": "Dark",
+      "rootId": "145:1520",
+      "id": "145:1521"
+    },
+    {
+      "key": "profile-required",
+      "theme": "Light",
+      "rootId": "145:1522",
+      "id": "145:1523"
+    },
+    {
+      "key": "profile-required",
+      "theme": "Dark",
+      "rootId": "145:1524",
+      "id": "145:1525"
+    },
+    {
+      "key": "email-profile-errors",
+      "theme": "Light",
+      "rootId": "197:7508",
+      "id": "203:7506"
+    },
+    {
+      "key": "email-profile-errors",
+      "theme": "Dark",
+      "rootId": "197:7509",
+      "id": "203:7507"
+    },
+    {
+      "key": "email-credentials-errors",
+      "theme": "Light",
+      "rootId": "197:7512",
+      "id": "203:7510"
+    },
+    {
+      "key": "email-credentials-errors",
+      "theme": "Dark",
+      "rootId": "197:7513",
+      "id": "203:7511"
+    },
+    {
+      "key": "email-profile-no-middle",
+      "theme": "Light",
+      "rootId": "200:7476",
+      "id": "203:7512"
+    },
+    {
+      "key": "email-profile-no-middle",
+      "theme": "Dark",
+      "rootId": "200:7477",
+      "id": "203:7513"
+    },
+    {
+      "key": "google-profile-no-middle",
+      "theme": "Light",
+      "rootId": "200:7478",
+      "id": "203:7514"
+    },
+    {
+      "key": "google-profile-no-middle",
+      "theme": "Dark",
+      "rootId": "200:7479",
+      "id": "203:7515"
+    },
+    {
+      "key": "password-weak",
+      "theme": "Light",
+      "rootId": "206:7476",
+      "id": "223:7722"
+    },
+    {
+      "key": "password-weak",
+      "theme": "Dark",
+      "rootId": "206:7477",
+      "id": "223:7723"
+    },
+    {
+      "key": "password-mismatch",
+      "theme": "Light",
+      "rootId": "206:7478",
+      "id": "223:7724"
+    },
+    {
+      "key": "password-mismatch",
+      "theme": "Dark",
+      "rootId": "206:7479",
+      "id": "223:7725"
+    },
+    {
+      "key": "create-failed",
+      "theme": "Light",
+      "rootId": "206:7480",
+      "id": "223:7726"
+    },
+    {
+      "key": "create-failed",
+      "theme": "Dark",
+      "rootId": "206:7481",
+      "id": "223:7727"
+    },
+    {
+      "key": "sign-in-failed",
+      "theme": "Light",
+      "rootId": "206:7482",
+      "id": "223:7728"
+    },
+    {
+      "key": "sign-in-failed",
+      "theme": "Dark",
+      "rootId": "206:7483",
+      "id": "223:7729"
+    },
+    {
+      "key": "profile-save-failed",
+      "theme": "Light",
+      "rootId": "206:7484",
+      "id": "223:7730"
+    },
+    {
+      "key": "profile-save-failed",
+      "theme": "Dark",
+      "rootId": "206:7485",
+      "id": "223:7731"
+    },
+    {
+      "key": "launch",
+      "theme": "Light",
+      "rootId": "106:642",
+      "id": "223:7732"
+    },
+    {
+      "key": "launch",
+      "theme": "Dark",
+      "rootId": "106:652",
+      "id": "223:7733"
+    },
+    {
+      "key": "google-profile-errors",
+      "theme": "Light",
+      "rootId": "206:7486",
+      "id": "223:7734"
+    },
+    {
+      "key": "google-profile-errors",
+      "theme": "Dark",
+      "rootId": "206:7487",
+      "id": "223:7735"
+    },
+    {
+      "key": "terms-view",
+      "theme": "Light",
+      "rootId": "213:7486",
+      "id": "223:7736"
+    },
+    {
+      "key": "terms-view",
+      "theme": "Dark",
+      "rootId": "213:7515",
+      "id": "223:7737"
+    },
+    {
+      "key": "session-retry",
+      "theme": "Light",
+      "rootId": "213:7544",
+      "id": "223:7738"
+    },
+    {
+      "key": "session-retry",
+      "theme": "Dark",
+      "rootId": "213:7563",
+      "id": "223:7739"
+    },
+    {
+      "key": "reset-email",
+      "theme": "Light",
+      "rootId": "219:7722",
+      "id": "223:7740"
+    },
+    {
+      "key": "reset-email",
+      "theme": "Dark",
+      "rootId": "219:7723",
+      "id": "223:7741"
+    },
+    {
+      "key": "reset-sending",
+      "theme": "Light",
+      "rootId": "219:7724",
+      "id": "223:7742"
+    },
+    {
+      "key": "reset-sending",
+      "theme": "Dark",
+      "rootId": "219:7725",
+      "id": "223:7743"
+    },
+    {
+      "key": "reset-sent",
+      "theme": "Light",
+      "rootId": "219:7726",
+      "id": "223:7744"
+    },
+    {
+      "key": "reset-sent",
+      "theme": "Dark",
+      "rootId": "219:7727",
+      "id": "223:7745"
+    },
+    {
+      "key": "reset-email-error",
+      "theme": "Light",
+      "rootId": "219:7728",
+      "id": "223:7746"
+    },
+    {
+      "key": "reset-email-error",
+      "theme": "Dark",
+      "rootId": "219:7729",
+      "id": "223:7747"
+    },
+    {
+      "key": "reset-failed",
+      "theme": "Light",
+      "rootId": "219:7730",
+      "id": "223:7748"
+    },
+    {
+      "key": "reset-failed",
+      "theme": "Dark",
+      "rootId": "219:7731",
+      "id": "223:7749"
+    },
+    {
+      "key": "reset-password",
+      "theme": "Light",
+      "rootId": "219:7732",
+      "id": "223:7750"
+    },
+    {
+      "key": "reset-password",
+      "theme": "Dark",
+      "rootId": "219:7733",
+      "id": "223:7751"
+    },
+    {
+      "key": "reset-password-error",
+      "theme": "Light",
+      "rootId": "219:7734",
+      "id": "223:7752"
+    },
+    {
+      "key": "reset-password-error",
+      "theme": "Dark",
+      "rootId": "219:7735",
+      "id": "223:7753"
+    },
+    {
+      "key": "reset-saving",
+      "theme": "Light",
+      "rootId": "219:7736",
+      "id": "223:7754"
+    },
+    {
+      "key": "reset-saving",
+      "theme": "Dark",
+      "rootId": "219:7737",
+      "id": "223:7755"
+    },
+    {
+      "key": "reset-complete",
+      "theme": "Light",
+      "rootId": "219:7738",
+      "id": "223:7756"
+    },
+    {
+      "key": "reset-complete",
+      "theme": "Dark",
+      "rootId": "219:7739",
+      "id": "223:7757"
+    },
+    {
+      "key": "reset-link-expired",
+      "theme": "Light",
+      "rootId": "219:7740",
+      "id": "223:7758"
+    },
+    {
+      "key": "reset-link-expired",
+      "theme": "Dark",
+      "rootId": "219:7741",
+      "id": "223:7759"
+    },
+    {
+      "key": "reset-save-failed",
+      "theme": "Light",
+      "rootId": "219:7742",
+      "id": "223:7760"
+    },
+    {
+      "key": "reset-save-failed",
+      "theme": "Dark",
+      "rootId": "219:7743",
+      "id": "223:7761"
+    }
+  ],
+  "proofs": [
+    {
+      "id": "229:7846",
+      "source": "19:2",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 19:2 / 320x720 / 1x"
+    },
+    {
+      "id": "229:7889",
+      "source": "36:2",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 36:2 / 320x720 / 1x"
+    },
+    {
+      "id": "210:7558",
+      "source": "56:38",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 56:38 / 320x720 / 1x"
+    },
+    {
+      "id": "210:7591",
+      "source": "56:66",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 56:66 / 320x720 / 1x"
+    },
+    {
+      "id": "210:7624",
+      "source": "197:7492",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 197:7492 / 320x844 / 2x"
+    },
+    {
+      "id": "210:7670",
+      "source": "197:7493",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 197:7493 / 320x844 / 2x"
+    },
+    {
+      "id": "210:7716",
+      "source": "197:7488",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 197:7488 / 320x844 / 2x"
+    },
+    {
+      "id": "210:7782",
+      "source": "197:7489",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 197:7489 / 320x844 / 2x"
+    },
+    {
+      "id": "229:7932",
+      "source": "213:7486",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 213:7486 / 320x844 / 2x"
+    },
+    {
+      "id": "229:7961",
+      "source": "213:7515",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 213:7515 / 320x844 / 2x"
+    },
+    {
+      "id": "229:7990",
+      "source": "219:7732",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 219:7732 / 320x720 / 1x"
+    },
+    {
+      "id": "229:8028",
+      "source": "219:7733",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 219:7733 / 320x720 / 1x"
+    }
+  ],
+  "retained": [
+    {
+      "key": "email-academic",
+      "theme": "Light",
+      "id": "197:7490"
+    },
+    {
+      "key": "email-academic",
+      "theme": "Dark",
+      "id": "197:7491"
+    },
+    {
+      "key": "google-academic",
+      "theme": "Light",
+      "id": "197:7498"
+    },
+    {
+      "key": "google-academic",
+      "theme": "Dark",
+      "id": "197:7499"
+    },
+    {
+      "key": "email-academic-errors",
+      "theme": "Light",
+      "id": "197:7510"
+    },
+    {
+      "key": "email-academic-errors",
+      "theme": "Dark",
+      "id": "197:7511"
+    }
+  ],
+  "verification": {
+    "stats": {
+      "caseCount": 39,
+      "authRootsChecked": 78,
+      "authProofsChecked": 12,
+      "generalProofsSkipped": 0,
+      "settingsChecked": 6,
+      "ordinaryTextCount": 1000,
+      "passwordTargetsChecked": 40,
+      "forgotLinksChecked": 8,
+      "termsReadersChecked": 4
+    },
+    "issueCount": 0,
+    "counts": {},
+    "issues": [],
+    "findingsTruncated": false
+  }
+}

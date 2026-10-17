@@ -1,0 +1,4412 @@
+[
+  {
+    "key": "G01.1",
+    "group": "G01",
+    "family": "empty",
+    "kind": "empty",
+    "title": "Inbox",
+    "body": "No messages yet. Ask an office when you need help with a service or request.",
+    "nav": "Inbox",
+    "back": "@student/home",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Ask an office",
+        "target": "@student/new-thread",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Default new-account Inbox. Replace populated default; retain original example separately. No fabricated personal messages."
+  },
+  {
+    "key": "G01.2",
+    "group": "G01",
+    "family": "empty",
+    "kind": "empty",
+    "title": "Notifications",
+    "body": "You're up to date. Updates about your requests, payments, and appointments will appear here.",
+    "nav": "Home",
+    "back": "@student/home",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Browse offices",
+        "target": "@student/offices",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Default new-account Notifications. No sample notification rows or unread counts."
+  },
+  {
+    "key": "G01.3",
+    "group": "G01",
+    "family": "empty",
+    "kind": "empty",
+    "title": "My appointments",
+    "body": "No appointments yet. Find an available consultation to book your first appointment.",
+    "nav": "Consult",
+    "back": "@student/consult",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Find a consultation",
+        "target": "@student/consult",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Owned appointment list, distinct from public office availability."
+  },
+  {
+    "key": "G01.4",
+    "group": "G01",
+    "family": "zero-dashboard",
+    "kind": "empty",
+    "title": "Office dashboard",
+    "body": "No activity yet. New requests and appointment updates for your office will appear here.",
+    "nav": "Staff",
+    "back": "@staff/more",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Office activity",
+        "body": "No records in this example.",
+        "rows": [
+          {
+            "label": "Pending requests",
+            "value": "0"
+          },
+          {
+            "label": "Appointments today",
+            "value": "0"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "View queue",
+        "target": "G01.5",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Edit availability",
+        "target": "@staff/availability",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Explicit zero-data office example. New staff accounts may still see valid office-wide records; do not clear those records because the account is new. Actual profile fields only."
+  },
+  {
+    "key": "G01.5",
+    "group": "G01",
+    "family": "empty",
+    "kind": "empty",
+    "title": "Office queue",
+    "body": "No requests in this view. Requests assigned to your office will appear here.",
+    "nav": "Staff",
+    "back": "G01.4",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Back to dashboard",
+        "target": "G01.4",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "No active filters in this variant. A filtered empty variant may offer Clear filters only when a filter is actually applied."
+  },
+  {
+    "key": "G01.6",
+    "group": "G01",
+    "family": "empty",
+    "kind": "empty",
+    "title": "Office inbox",
+    "body": "No inquiries yet. Inquiries sent to your office will appear here.",
+    "nav": "Staff",
+    "back": "G01.4",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Back to dashboard",
+        "target": "G01.4",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "No fabricated inquiry thread or outgoing message."
+  },
+  {
+    "key": "G01.7",
+    "group": "G01",
+    "family": "empty",
+    "kind": "empty",
+    "title": "Office schedule",
+    "body": "No appointments for this date. Select another date or manage your available times.",
+    "nav": "Staff",
+    "back": "G01.4",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Date",
+        "value": "",
+        "hint": "Choose a date",
+        "error": "",
+        "multiline": false
+      }
+    ],
+    "actions": [
+      {
+        "label": "Change date",
+        "target": "@staff/guidance",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Manage availability",
+        "target": "@staff/guidance-slot",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Reuse for guidance/faculty with capability-correct schedule and slot destinations. Do not expose another capability's editor."
+  },
+  {
+    "key": "G01.8",
+    "group": "G01",
+    "family": "empty",
+    "kind": "empty",
+    "title": "Pending payments",
+    "body": "No pending payments. Payments awaiting Cashiering confirmation will appear here.",
+    "nav": "Teller",
+    "back": "@teller/cash",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Search reference",
+        "target": "@teller/cash",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Cashiering role only. No payment rows in zero-data example."
+  },
+  {
+    "key": "G01.9",
+    "group": "G01",
+    "family": "empty",
+    "kind": "empty",
+    "title": "Payment history",
+    "body": "No confirmed payments yet. Payments you are authorized to view will appear here after confirmation.",
+    "nav": "Teller",
+    "back": "@teller/cash",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Search reference",
+        "target": "@teller/cash",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Cashiering role only. Keep original populated history as a separate example."
+  },
+  {
+    "key": "G02.1",
+    "group": "G02",
+    "family": "recovery",
+    "kind": "result",
+    "title": "Sign-in cancelled",
+    "body": "You can try again when you're ready.",
+    "nav": "none",
+    "back": "@shared/sign-in",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Try again",
+        "target": "@shared/sign-in",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to sign in",
+        "target": "@shared/sign-in",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Return to the originating sign-in method. A deliberate user cancellation need not be presented as an error."
+  },
+  {
+    "key": "G02.2",
+    "group": "G02",
+    "family": "recovery",
+    "kind": "form",
+    "title": "Check your sign-in details",
+    "body": "Enter your email and password to sign in.",
+    "nav": "none",
+    "back": "@shared/sign-in",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "value": "",
+        "hint": "student1@demo.com",
+        "error": "Enter your email.",
+        "multiline": false
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "value": "",
+        "hint": "Enter password",
+        "error": "Enter your password.",
+        "multiline": false
+      }
+    ],
+    "actions": [
+      {
+        "label": "Forgot password?",
+        "target": "@auth/reset-email",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Back to sign in",
+        "target": "@shared/sign-in",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Create an account",
+        "target": "@shared/sign-up",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard. Canonical metadata mirrors auth/sign-in-error; email/password self-registration is permitted. Forgot password resolves to the existing GoServe 2.3 auth/reset-email screen, not an older assigned-account flow. On actual sign-in failure preserve the email, keep the password masked, and do not disclose whether the account exists."
+  },
+  {
+    "key": "G02.3",
+    "group": "G02",
+    "family": "recovery",
+    "kind": "result",
+    "title": "Complete your profile",
+    "body": "Your student profile is required before you enter GoServe.",
+    "nav": "none",
+    "back": "@shared/sign-in",
+    "sections": [
+      {
+        "type": "text",
+        "text": "Add your name, student ID, academic details, mobile number and gender.",
+        "role": "Support"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Complete profile",
+        "target": "@student/consent",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Sign out",
+        "target": "@shared/sign-in",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard. Canonical metadata mirrors auth/profile-required. Complete profile resumes the existing student/consent frame, now the combined student-details form. This state is a missing-profile guard, not an email-domain restriction; completed returning accounts bypass onboarding."
+  },
+  {
+    "key": "G02.4",
+    "group": "G02",
+    "family": "recovery",
+    "kind": "result",
+    "title": "Sign in again",
+    "body": "Your session has ended. Sign in to continue.",
+    "nav": "none",
+    "back": "@shared/sign-in",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Sign in",
+        "target": "@shared/sign-in",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "After successful authentication restore only an authorized originating destination. Clear private content from the expired screen."
+  },
+  {
+    "key": "G02.5",
+    "group": "G02",
+    "family": "recovery",
+    "kind": "result",
+    "title": "Access unavailable",
+    "body": "You don't have permission to open this record.",
+    "nav": "Requests",
+    "back": "@student/requests",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Back to my requests",
+        "target": "@student/requests",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Role-context variant returns staff/teller to their own queue/search. Do not show hidden reference, owner, amount, filename or preview."
+  },
+  {
+    "key": "G03.1",
+    "group": "G03",
+    "family": "directory-state",
+    "kind": "loading",
+    "title": "Campus offices",
+    "body": "Loading offices…",
+    "nav": "Home",
+    "back": "@student/home",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Search",
+        "value": "",
+        "hint": "Search offices or services",
+        "error": "",
+        "multiline": false
+      },
+      {
+        "type": "choice",
+        "label": "Services",
+        "options": [
+          {
+            "label": "All services",
+            "detail": "",
+            "selected": true,
+            "target": "G03.1"
+          },
+          {
+            "label": "Documents",
+            "detail": "",
+            "selected": false,
+            "target": "@student/offices-documents"
+          },
+          {
+            "label": "Payments",
+            "detail": "",
+            "selected": false,
+            "target": "@student/offices-payments"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Back to Home",
+        "target": "@student/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Restrained indeterminate progress; preserve actual query/filter while loading. Do not fabricate office skeleton rows or progress percent."
+  },
+  {
+    "key": "G03.2",
+    "group": "G03",
+    "family": "directory-state",
+    "kind": "result",
+    "title": "Couldn't load offices",
+    "body": "Check your connection and try again.",
+    "nav": "Home",
+    "back": "@student/home",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Search",
+        "value": "",
+        "hint": "Search offices or services",
+        "error": "",
+        "multiline": false
+      },
+      {
+        "type": "choice",
+        "label": "Services",
+        "options": [
+          {
+            "label": "All services",
+            "detail": "",
+            "selected": true,
+            "target": "G03.2"
+          },
+          {
+            "label": "Documents",
+            "detail": "",
+            "selected": false,
+            "target": "@student/offices-documents"
+          },
+          {
+            "label": "Payments",
+            "detail": "",
+            "selected": false,
+            "target": "@student/offices-payments"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Retry",
+        "target": "G03.1",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to Home",
+        "target": "@student/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Retry preserves query/filter. State cause only if established; use neutral network guidance rather than claiming a server outage."
+  },
+  {
+    "key": "G03.3",
+    "group": "G03",
+    "family": "directory-state",
+    "kind": "empty",
+    "title": "No matching offices or services",
+    "body": "Try a different name or clear your search.",
+    "nav": "Home",
+    "back": "@student/offices",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Search",
+        "value": "",
+        "hint": "Your search",
+        "error": "",
+        "multiline": false
+      },
+      {
+        "type": "choice",
+        "label": "Services",
+        "options": [
+          {
+            "label": "All services",
+            "detail": "",
+            "selected": true,
+            "target": "G03.3"
+          },
+          {
+            "label": "Documents",
+            "detail": "",
+            "selected": false,
+            "target": "@student/offices-documents"
+          },
+          {
+            "label": "Payments",
+            "detail": "",
+            "selected": false,
+            "target": "@student/offices-payments"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Clear search",
+        "target": "@student/offices",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Actual user query appears in the field in a live state. Clear keeps selected category; do not confuse search-empty with load failure."
+  },
+  {
+    "key": "G03.4",
+    "group": "G03",
+    "family": "empty-office-services",
+    "kind": "empty",
+    "title": "No services listed yet",
+    "body": "This office hasn't published request services here.",
+    "nav": "Home",
+    "back": "@student/offices",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Ask this office",
+        "target": "@student/new-thread",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to offices",
+        "target": "@student/offices",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Contextual office name/header retained from origin. Pass the authorized office destination into inquiry. Hide New request until a configured service exists."
+  },
+  {
+    "key": "G04.1",
+    "group": "G04",
+    "family": "service-selection",
+    "kind": "form",
+    "title": "Choose a service",
+    "body": "Select a published service from this office.",
+    "nav": "Requests",
+    "back": "@student/office-registrar",
+    "sections": [
+      {
+        "type": "choice",
+        "label": "Available services",
+        "options": [
+          {
+            "label": "Enrollment certificate",
+            "detail": "Design example · No payment required",
+            "selected": false,
+            "target": "@student/new-request"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "The office declares whether each service requires payment.",
+        "role": "Support"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Continue",
+        "target": "@student/new-request",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Back to office",
+        "target": "@student/office-registrar",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Enrollment certificate is the existing design example, not a seeded new-account request. Populate only configured services; enable Continue after selecting one. Empty types route G03.4. Service fee choices are not student-editable."
+  },
+  {
+    "key": "G04.2",
+    "group": "G04",
+    "family": "request-review",
+    "kind": "form",
+    "title": "Review request",
+    "body": "Check your details before submitting. This service does not require payment.",
+    "nav": "Requests",
+    "back": "@student/new-request",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Request details",
+        "body": "",
+        "rows": [
+          {
+            "label": "Office",
+            "value": "Registrar"
+          },
+          {
+            "label": "Service",
+            "value": "Enrollment certificate"
+          },
+          {
+            "label": "Fee",
+            "value": "No payment required"
+          }
+        ]
+      },
+      {
+        "type": "summary",
+        "title": "Your information",
+        "body": "",
+        "rows": [
+          {
+            "label": "Purpose",
+            "value": "Selected purpose"
+          },
+          {
+            "label": "Notes",
+            "value": "No notes added"
+          },
+          {
+            "label": "Supporting evidence",
+            "value": "No attachment selected"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Submit request",
+        "target": "G04.5",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Edit details",
+        "target": "@student/new-request",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Free branch skips payment choice entirely. Actual review must render entered fields/evidence, not this design explanation. On confirmed submission proceed to G04.7."
+  },
+  {
+    "key": "G04.3",
+    "group": "G04",
+    "family": "request-review",
+    "kind": "form",
+    "title": "Review request",
+    "body": "This service requires a fee. Cashiering handles the payment.",
+    "nav": "Requests",
+    "back": "@student/new-request",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Request details",
+        "body": "",
+        "rows": [
+          {
+            "label": "Office",
+            "value": "Registrar"
+          },
+          {
+            "label": "Service",
+            "value": "Selected service"
+          },
+          {
+            "label": "Fee",
+            "value": "Payment required"
+          },
+          {
+            "label": "Amount",
+            "value": "Not configured"
+          },
+          {
+            "label": "Payment office",
+            "value": "Cashiering"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Amount unavailable",
+        "body": "The office must configure the fee before you continue.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Submit request",
+        "target": "G04.5",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Ask office",
+        "target": "@student/new-thread",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Edit details",
+        "target": "@student/new-request",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "No official amount invented. Replace Not configured with server-declared amount and enable Submit only when valid configuration loads. Receipt then routes to @student/payment; student cannot supply amount."
+  },
+  {
+    "key": "G04.4",
+    "group": "G04",
+    "family": "request-review",
+    "kind": "form",
+    "title": "Fee review pending",
+    "body": "This office hasn't confirmed whether payment is required. No payment is due yet.",
+    "nav": "Requests",
+    "back": "@student/new-request",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Fee declaration",
+        "body": "Awaiting the office's decision.",
+        "rows": [
+          {
+            "label": "Fee",
+            "value": "Pending office review"
+          },
+          {
+            "label": "Payment",
+            "value": "Not requested"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Submit request",
+        "target": "G04.5",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Ask office",
+        "target": "@student/new-thread",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to form",
+        "target": "@student/new-request",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Conservative default: new submission disabled until pending-fee submission policy is confirmed. Existing submitted pending records remain viewable; no paid/processing claim and no unsupported Save draft."
+  },
+  {
+    "key": "G04.5",
+    "group": "G04",
+    "family": "submission-state",
+    "kind": "loading",
+    "title": "Submitting request…",
+    "body": "Your request is being submitted.",
+    "nav": "Requests",
+    "back": "G04.2",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Submission in progress",
+        "body": "Wait for confirmation before submitting again.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Submitting…",
+        "target": "G04.7",
+        "style": "Disabled",
+        "disabled": true
+      }
+    ],
+    "planned": false,
+    "annotation": "Async state. Root may provide design-preview success/failure navigation off canvas; no artificial live delay. Resolve to G04.7 or G04.6. Keep reviewed data and block duplicate create. No reference exists yet."
+  },
+  {
+    "key": "G04.6",
+    "group": "G04",
+    "family": "submission-state",
+    "kind": "result",
+    "title": "Request not submitted",
+    "body": "Your details are still here. Try again.",
+    "nav": "Requests",
+    "back": "G04.2",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Submission failed",
+        "body": "No successful submission has been confirmed.",
+        "tone": "error"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Retry",
+        "target": "G04.5",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Edit details",
+        "target": "@student/new-request",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "For an uncertain network result reconcile before another create attempt. Preserve originating free/required branch and validated form data."
+  },
+  {
+    "key": "G04.7",
+    "group": "G04",
+    "family": "submission-state",
+    "kind": "result",
+    "title": "Request submitted",
+    "body": "The office has received your request.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Submitted",
+        "body": "Submission receipt · Design example",
+        "tone": "success"
+      },
+      {
+        "type": "summary",
+        "title": "Request receipt",
+        "body": "",
+        "rows": [
+          {
+            "label": "Reference",
+            "value": "—"
+          },
+          {
+            "label": "Submitted",
+            "value": "—"
+          },
+          {
+            "label": "Office",
+            "value": "Registrar"
+          },
+          {
+            "label": "Service",
+            "value": "Enrollment certificate"
+          },
+          {
+            "label": "Fee",
+            "value": "No payment required"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "View request",
+        "target": "G04.detail-free",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to requests",
+        "target": "@student/requests-existing-data",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Free receipt design example, isolated from zero-data default. Actual UI shows server-confirmed reference and time immediately; replace explanatory placeholders. Required-fee variant changes primary action to Choose payment method → @student/payment; preserve same confirmed receipt structure."
+  },
+  {
+    "key": "G05.1",
+    "group": "G05",
+    "family": "office-fee-editor",
+    "kind": "form",
+    "title": "Payment declaration",
+    "body": "Set the payment declaration for this office's service.",
+    "nav": "Staff",
+    "back": "@staff/home",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Registrar",
+        "body": "",
+        "rows": [
+          {
+            "label": "Service",
+            "value": "Enrollment certificate"
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "label": "Fee declaration",
+        "options": [
+          {
+            "label": "No payment required",
+            "detail": "The request skips payment.",
+            "selected": true,
+            "target": "G05.1"
+          },
+          {
+            "label": "Payment required",
+            "detail": "Enter an authorized amount; Cashiering collects payment.",
+            "selected": false,
+            "target": "G05.required"
+          },
+          {
+            "label": "Pending office review",
+            "detail": "Payment has not been declared.",
+            "selected": false,
+            "target": "G05.pending"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Save declaration",
+        "target": "G05.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel",
+        "target": "@staff/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Prototype editor only; actual amount field appears only when Payment required is selected. No official amount invented. Require numeric validation and review before save. Staff authority must be server-verified; effect of fee changes on existing requests unresolved. No student/teller route. Registrar and enrollment certificate are illustrative service context; actual office/service must come from the authorized configuration."
+  },
+  {
+    "key": "G05.2",
+    "group": "G05",
+    "family": "office-fee-editor",
+    "kind": "loading",
+    "title": "Saving fee declaration…",
+    "body": "Your reviewed declaration is being saved.",
+    "nav": "Staff",
+    "back": "G05.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Reviewed change",
+        "body": "Keep the selected declaration and authorized amount visible while saving.",
+        "rows": []
+      }
+    ],
+    "actions": [
+      {
+        "label": "Saving…",
+        "target": "@staff/home",
+        "style": "Disabled",
+        "disabled": true
+      }
+    ],
+    "planned": false,
+    "annotation": "Block duplicate save and mode changes. Confirmed result uses G13.3-style read-only declaration with server actor/time; failure G05.3. No success on a local navigation alone."
+  },
+  {
+    "key": "G05.3",
+    "group": "G05",
+    "family": "office-fee-editor",
+    "kind": "form",
+    "title": "Fee declaration wasn't saved",
+    "body": "Your changes are still here.",
+    "nav": "Staff",
+    "back": "G05.1",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Save failed",
+        "body": "The previous declaration is still in effect.",
+        "tone": "error"
+      },
+      {
+        "type": "choice",
+        "label": "Unsaved declaration",
+        "options": [
+          {
+            "label": "No payment required",
+            "detail": "Selected change retained",
+            "selected": true,
+            "target": "G05.1"
+          },
+          {
+            "label": "Payment required",
+            "detail": "Authorized amount required",
+            "selected": false,
+            "target": "G05.required"
+          },
+          {
+            "label": "Pending office review",
+            "detail": "No fee declared",
+            "selected": false,
+            "target": "G05.pending"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Retry",
+        "target": "G05.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Continue editing",
+        "target": "G05.1",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel changes",
+        "target": "@staff/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Actual view preserves selected mode and entered amount. Cancel restores prior server value; validation errors attach to the field."
+  },
+  {
+    "key": "G06.1",
+    "group": "G06",
+    "family": "reason-sheet",
+    "kind": "sheet",
+    "title": "Cancel request",
+    "body": "Tell the office why you want to cancel this request.",
+    "nav": "Requests",
+    "back": "@student/request-detail",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Reason",
+        "value": "",
+        "hint": "Enter a reason",
+        "error": "",
+        "multiline": true
+      }
+    ],
+    "actions": [
+      {
+        "label": "Review cancellation",
+        "target": "G06.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@student/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Prototype origin must pass affected record. Empty submit routes G06.2; nonempty submit G06.3. Staff variant title Reject request or Cancel request, back @staff/request-detail, nav Staff. Show only server-authorized transitions."
+  },
+  {
+    "key": "G06.2",
+    "group": "G06",
+    "family": "reason-sheet",
+    "kind": "sheet",
+    "title": "Cancel request",
+    "body": "A reason is required before this request can be cancelled.",
+    "nav": "Requests",
+    "back": "G06.1",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Reason",
+        "value": "",
+        "hint": "Enter a reason",
+        "error": "Reason is required.",
+        "multiline": true
+      }
+    ],
+    "actions": [
+      {
+        "label": "Review cancellation",
+        "target": "G06.3",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.1",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@student/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Focus reason field. Staff rejection/cancellation reuses validation with correct title and return target. No request transition occurs."
+  },
+  {
+    "key": "G06.3",
+    "group": "G06",
+    "family": "stop-confirmation",
+    "kind": "sheet",
+    "title": "Cancel this request?",
+    "body": "Review your reason before confirming.",
+    "nav": "Requests",
+    "back": "G06.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Cancellation review",
+        "body": "",
+        "rows": []
+      },
+      {
+        "type": "status",
+        "title": "If this request is paid",
+        "body": "Payment remains recorded. Contact Cashiering for payment follow-up.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirm cancellation",
+        "target": "G06.5",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.1",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@student/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Actual confirmation shows affected reference/service and entered reason, with paid notice only on paid records. Paid confirm → G06.5. Staff Reject variant uses Reject this request? and Confirm rejection, preserving staff return. No cancellation deadline invented."
+  },
+  {
+    "key": "G06.4",
+    "group": "G06",
+    "family": "stopped-request-result",
+    "kind": "result",
+    "title": "Request cancelled",
+    "body": "This request has stopped. The cancellation reason is included in its status history.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Cancelled",
+        "body": "Confirmed transition · Design example",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "View request",
+        "target": "G06.detail-cancelled-free",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to requests",
+        "target": "@student/requests-existing-data",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Render terminal detail with real reason/actor/time only after confirmation; existing request-detail alias must be overridden to contextual terminal variant. Staff rejection title Request rejected; return to staff queue. Do not show Processing on destination."
+  },
+  {
+    "key": "G06.5",
+    "group": "G06",
+    "family": "stopped-request-result",
+    "kind": "result",
+    "title": "Request cancelled",
+    "body": "Payment remains recorded. Contact Cashiering about the payment.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Payment follow-up",
+        "body": "Cancellation does not automatically refund or void a payment.",
+        "rows": [
+          {
+            "label": "Request",
+            "value": "Cancelled"
+          },
+          {
+            "label": "Payment",
+            "value": "Paid"
+          },
+          {
+            "label": "Contact",
+            "value": "Cashiering"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Contact Cashiering",
+        "target": "@student/new-thread",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "View request",
+        "target": "G06.detail-cancelled-paid",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Contextual terminal paid-request example. Inquiry recipient preselected Cashiering. Actual detail retains paid record and cancellation reason/actor/time. Staff rejection reuses outcome with correct label. No automatic refund promise."
+  },
+  {
+    "key": "G07.1",
+    "group": "G07",
+    "family": "payment-result",
+    "kind": "result",
+    "title": "Payment confirmed",
+    "body": "A confirmed payment record is available for this request.",
+    "nav": "Requests",
+    "back": "@student/request-detail",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Paid",
+        "body": "Verified server result required",
+        "tone": "success"
+      },
+      {
+        "type": "text",
+        "text": "Request progress is tracked separately from payment.",
+        "role": "Support"
+      }
+    ],
+    "actions": [
+      {
+        "label": "View request",
+        "target": "@student/request-detail",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "annotation": "Planned authoritative result; isolated from disabled integration. Actual result includes reference, server amount and verified source/actor/time. Receipt action appears only if a real receipt exists. Never mark Paid from browser return."
+  },
+  {
+    "key": "G07.2",
+    "group": "G07",
+    "family": "payment-result",
+    "kind": "result",
+    "title": "Payment failed",
+    "body": "This payment wasn't confirmed.",
+    "nav": "Requests",
+    "back": "@student/request-detail",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Failed payment attempt",
+        "body": "Your service request has a separate status.",
+        "tone": "error"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Try payment again",
+        "target": "@student/payment",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Contact Cashiering",
+        "target": "@student/new-thread",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "View request",
+        "target": "@student/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "annotation": "Provider disabled; retry enabled only after server permits another attempt and payment contracts are verified. Preselect Cashiering inquiry."
+  },
+  {
+    "key": "G07.3",
+    "group": "G07",
+    "family": "payment-result",
+    "kind": "result",
+    "title": "Payment session expired",
+    "body": "No payment was confirmed for this session.",
+    "nav": "Requests",
+    "back": "@student/request-detail",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Expired",
+        "body": "A new payment session may be needed.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Start a new session",
+        "target": "@student/payment",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "View request",
+        "target": "@student/request-detail",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "annotation": "Provider disabled; start new session only after server-authorized eligibility. Do not cancel the request when a payment session expires."
+  },
+  {
+    "key": "G07.4",
+    "group": "G07",
+    "family": "payment-result",
+    "kind": "result",
+    "title": "Payment cancelled",
+    "body": "No payment was confirmed for this attempt. Your request is separate from this payment attempt.",
+    "nav": "Requests",
+    "back": "@student/request-detail",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Cancelled payment attempt",
+        "body": "This does not cancel your service request.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Choose payment method",
+        "target": "@student/payment",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "View request",
+        "target": "@student/request-detail",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "annotation": "Provider disabled; payment choice enabled only when authoritative state permits another attempt."
+  },
+  {
+    "key": "G07.5",
+    "group": "G07",
+    "family": "payment-result",
+    "kind": "loading",
+    "title": "Checking payment status…",
+    "body": "Returning from the payment page does not confirm payment.",
+    "nav": "Requests",
+    "back": "@student/payment-pending",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Pending verification",
+        "body": "Wait for the latest confirmed status.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Checking…",
+        "target": "G07.1",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "View request",
+        "target": "@student/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "annotation": "Planned async verification state. No active provider call. Real result routes to authoritative state; error G07.6; app return alone stays pending."
+  },
+  {
+    "key": "G07.6",
+    "group": "G07",
+    "family": "payment-result",
+    "kind": "result",
+    "title": "Couldn't check payment status",
+    "body": "The last confirmed status hasn't changed.",
+    "nav": "Requests",
+    "back": "@student/payment-pending",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Pending verification",
+        "body": "No confirmed payment has been received.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Check again",
+        "target": "G07.5",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "View request",
+        "target": "@student/request-detail",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Contact Cashiering",
+        "target": "@student/new-thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "annotation": "Current provider-disabled variant keeps Check again inactive. Enabled future error permits safe status retry. Preserve last verified state and route inquiry to Cashiering."
+  },
+  {
+    "key": "G08.1",
+    "group": "G08",
+    "family": "teller-lookup",
+    "kind": "empty",
+    "title": "No payment found",
+    "body": "Check the reference and try again.",
+    "nav": "Teller",
+    "back": "@teller/cash",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Payment reference",
+        "value": "",
+        "hint": "Enter the reference provided for the payment."
+      }
+    ],
+    "actions": [
+      {
+        "label": "Edit reference",
+        "target": "@teller/cash",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Teller-only lookup result. Preserve the entered reference on return; do not disclose student or request details when no authorized match exists."
+  },
+  {
+    "key": "G08.2",
+    "group": "G08",
+    "family": "teller-lookup",
+    "kind": "result",
+    "title": "Payment already confirmed",
+    "body": "A second confirmation wasn't recorded.",
+    "nav": "Teller",
+    "back": "@teller/cash",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Already paid",
+        "body": "Check the existing payment record before taking any further action.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "View existing receipt",
+        "target": "G08.5",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Search another reference",
+        "target": "@teller/cash",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Receipt action appears only when the teller is authorized and an issued receipt exists. No Confirm action. This is a duplicate-denied design example, not an executed transaction."
+  },
+  {
+    "key": "G08.3",
+    "group": "G08",
+    "family": "teller-confirmation",
+    "kind": "loading",
+    "title": "Confirming payment…",
+    "body": "Keep this review open while the payment status is checked.",
+    "nav": "Teller",
+    "back": "@teller/confirm",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Payment review",
+        "body": "The reviewed details remain visible during confirmation.",
+        "rows": [
+          {
+            "label": "Reference",
+            "value": "Reviewed payment reference"
+          },
+          {
+            "label": "Amount",
+            "value": "Reviewed amount"
+          },
+          {
+            "label": "Method",
+            "value": "Cash through Cashiering"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirming payment…",
+        "target": "G08.3",
+        "style": "Disabled",
+        "disabled": true
+      }
+    ],
+    "planned": false,
+    "annotation": "Design state only. Runtime uses the real reviewed record, blocks duplicate confirmation and waits for an authoritative result. Do not enable a second confirmation from Back."
+  },
+  {
+    "key": "G08.4",
+    "group": "G08",
+    "family": "teller-confirmation",
+    "kind": "result",
+    "title": "Payment wasn't confirmed",
+    "body": "Check the latest status before trying again.",
+    "nav": "Teller",
+    "back": "@teller/pending",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Confirmation incomplete",
+        "body": "Your reviewed details are still available. No new confirmed payment is shown.",
+        "tone": "error"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Check status",
+        "target": "G08.3",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to payment",
+        "target": "@teller/pending",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Checking status is reconciliation, not a repeated cash-confirm operation. Return to eligible review only after the server confirms that another attempt is allowed."
+  },
+  {
+    "key": "G08.5",
+    "group": "G08",
+    "family": "receipt",
+    "kind": "result",
+    "title": "Payment confirmed",
+    "body": "The payment is recorded by Cashiering. Request progress is tracked separately.",
+    "nav": "Teller",
+    "back": "@teller/history",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Confirmed",
+        "body": "This receipt view opens only for an authorized confirmed payment.",
+        "tone": "success"
+      },
+      {
+        "type": "summary",
+        "title": "Receipt details",
+        "body": "",
+        "rows": [
+          {
+            "label": "Payment reference",
+            "value": "—"
+          },
+          {
+            "label": "Amount",
+            "value": "—"
+          },
+          {
+            "label": "Confirmed by",
+            "value": "Authorized Cashiering teller"
+          },
+          {
+            "label": "Confirmation time",
+            "value": "—"
+          },
+          {
+            "label": "Receipt identifier",
+            "value": "—"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Done",
+        "target": "@teller/history",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Search another reference",
+        "target": "@teller/cash",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Design example. Replace placeholders only with server-confirmed values. Hide an absent receipt identifier. Payment confirmation must not mark the service request Complete."
+  },
+  {
+    "key": "G09.1",
+    "group": "G09",
+    "family": "booked-detail",
+    "kind": "result",
+    "title": "Appointment booked",
+    "body": "Review your confirmed appointment and contact the office if you need help.",
+    "nav": "Consult",
+    "back": "@student/consult",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Booked",
+        "body": "Appointment details appear after booking is confirmed.",
+        "tone": "success"
+      },
+      {
+        "type": "summary",
+        "title": "Appointment details",
+        "body": "",
+        "rows": [
+          {
+            "label": "Reference",
+            "value": "—"
+          },
+          {
+            "label": "Office or person",
+            "value": "—"
+          },
+          {
+            "label": "Date and time",
+            "value": "—"
+          },
+          {
+            "label": "Location",
+            "value": "—"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Reschedule",
+        "target": "G09.3",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel appointment",
+        "target": "G09.2",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Ask office",
+        "target": "@student/new-thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Existing-booking example only. Cancel/Reschedule appear only when server-authorized. Remove them from the pre-booking review; never populate a new account with this example."
+  },
+  {
+    "key": "G09.2",
+    "group": "G09",
+    "family": "booking-confirmation",
+    "kind": "sheet",
+    "title": "Cancel this appointment?",
+    "body": "Review the appointment before confirming cancellation.",
+    "nav": "Consult",
+    "back": "G09.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Appointment to cancel",
+        "body": "Your current confirmed booking remains unchanged until cancellation is confirmed.",
+        "rows": [
+          {
+            "label": "Reference",
+            "value": "Current booking reference"
+          },
+          {
+            "label": "Office or person",
+            "value": "Current consultation destination"
+          },
+          {
+            "label": "Date and time",
+            "value": "Current confirmed time"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Keep appointment",
+        "target": "G09.1",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Confirm cancellation",
+        "target": "G09.2.cancelled",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Reuse G06 confirmation structure. Prototype result is illustrative; runtime waits for server confirmation. Do not invent deadlines, eligibility or automatic fees."
+  },
+  {
+    "key": "G09.2.cancelled",
+    "group": "G09",
+    "family": "booked-detail",
+    "kind": "result",
+    "title": "Appointment cancelled",
+    "body": "This appointment has been cancelled.",
+    "nav": "Consult",
+    "back": "@student/consult",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Cancelled",
+        "body": "The cancelled booking remains part of your appointment record.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Find a consultation",
+        "target": "@student/consult",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Ask office",
+        "target": "@student/new-thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Contextual result variant within G09.2, not a new composition family. Runtime shows this only after confirmed cancellation. No Reschedule/Cancel action remains on a cancelled booking."
+  },
+  {
+    "key": "G09.3",
+    "group": "G09",
+    "family": "reschedule-selection",
+    "kind": "form",
+    "title": "Choose a new time",
+    "body": "Your current appointment stays booked until a change is confirmed.",
+    "nav": "Consult",
+    "back": "G09.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Current appointment",
+        "body": "Keep the confirmed booking visible while choosing a replacement.",
+        "rows": [
+          {
+            "label": "Current time",
+            "value": "Current confirmed date and time"
+          }
+        ]
+      },
+      {
+        "type": "field",
+        "label": "Preferred date",
+        "value": "",
+        "hint": "Choose a date to load available times."
+      },
+      {
+        "type": "choice",
+        "label": "Available times",
+        "options": [
+          {
+            "label": "Available time",
+            "detail": "Use a real slot from the office schedule.",
+            "selected": false,
+            "target": "G09.4"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Review new time",
+        "target": "G09.4",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Keep current appointment",
+        "target": "G09.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Slot row is a structural placeholder, not configured availability. Enable Review only after a real slot is selected. Preserve actual current booking and selected date across conflicts."
+  },
+  {
+    "key": "G09.4",
+    "group": "G09",
+    "family": "booking-confirmation",
+    "kind": "sheet",
+    "title": "Review new time",
+    "body": "Confirm the replacement time for this appointment.",
+    "nav": "Consult",
+    "back": "G09.3",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Current booking",
+        "body": "This time remains reserved until the change is confirmed.",
+        "rows": [
+          {
+            "label": "Date and time",
+            "value": "Current confirmed time"
+          }
+        ]
+      },
+      {
+        "type": "summary",
+        "title": "Proposed replacement",
+        "body": "Selected from the office's available times.",
+        "rows": [
+          {
+            "label": "Date and time",
+            "value": "New selected time"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirm change",
+        "target": "G09.1",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to available times",
+        "target": "G09.3",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "On success G09.1 must display the newly confirmed time. This navigation is a design example, not a booking mutation. A conflict routes to G09.5 while keeping the original booking."
+  },
+  {
+    "key": "G09.5",
+    "group": "G09",
+    "family": "booking-availability",
+    "kind": "result",
+    "title": "This time is no longer available",
+    "body": "Your current appointment hasn't changed.",
+    "nav": "Consult",
+    "back": "G09.3",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Choose another time",
+        "body": "The selected replacement could not be booked.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Choose another time",
+        "target": "G09.3",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "View current appointment",
+        "target": "G09.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "This is the reschedule-conflict variant. First-booking conflict omits the current-appointment claim and returns to original slot selection. Do not imply atomic replacement before confirmation."
+  },
+  {
+    "key": "G09.6",
+    "group": "G09",
+    "family": "booking-availability",
+    "kind": "empty",
+    "title": "No available times",
+    "body": "Try another date or ask the office about availability.",
+    "nav": "Consult",
+    "back": "G09.3",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Preferred date",
+        "value": "",
+        "hint": "Choose another date to check available times."
+      }
+    ],
+    "actions": [
+      {
+        "label": "Change date",
+        "target": "G09.3",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Ask office",
+        "target": "@student/new-thread",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep current appointment",
+        "target": "G09.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Existing-booking variant preserves current booking. First-booking variant removes Keep current appointment and returns to Consult. Do not invent capacity or unavailable time rows."
+  },
+  {
+    "key": "G10.1",
+    "group": "G10",
+    "family": "evidence-review",
+    "kind": "form",
+    "title": "Review attachment",
+    "body": "Check the selected file before continuing. It hasn't been uploaded yet.",
+    "nav": "Requests",
+    "back": "@student/new-request",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Selected file",
+        "body": "",
+        "rows": [
+          {
+            "label": "Filename",
+            "value": "—"
+          },
+          {
+            "label": "File type",
+            "value": "—"
+          },
+          {
+            "label": "File size",
+            "value": "—"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Continue to review",
+        "target": "G04.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Replace file",
+        "target": "@student/new-request",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Remove file",
+        "target": "@student/new-request",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Only a structural selected-file example. Runtime must use actual selection metadata and the correct G04 free/required/pending branch; no uploaded or submitted marker before confirmation."
+  },
+  {
+    "key": "G10.2",
+    "group": "G10",
+    "family": "evidence-upload",
+    "kind": "loading",
+    "title": "Uploading attachment…",
+    "body": "Your request details and selected file stay visible during upload.",
+    "nav": "Requests",
+    "back": "G10.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Selected attachment",
+        "body": "Upload hasn't been confirmed.",
+        "rows": [
+          {
+            "label": "File",
+            "value": "—"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Uploading attachment…",
+        "target": "G10.2",
+        "style": "Disabled",
+        "disabled": true
+      }
+    ],
+    "planned": false,
+    "annotation": "Indeterminate progress unless real byte progress exists. Prevent duplicate upload. Back must not imply cancellation; provide Cancel only if upload cancellation is supported."
+  },
+  {
+    "key": "G10.3",
+    "group": "G10",
+    "family": "evidence-upload",
+    "kind": "result",
+    "title": "Attachment wasn't uploaded",
+    "body": "Your request details are still here.",
+    "nav": "Requests",
+    "back": "G10.1",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Upload incomplete",
+        "body": "Retry the upload or choose another file before submitting the request.",
+        "tone": "error"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Retry upload",
+        "target": "G10.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Replace file",
+        "target": "@student/new-request",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Back to attachment",
+        "target": "G10.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Preserve form data and actual selected file when supported. An upload failure must not produce a submission success or fabricate an uploaded attachment."
+  },
+  {
+    "key": "G10.4",
+    "group": "G10",
+    "family": "private-file-feedback",
+    "kind": "result",
+    "title": "File access unavailable",
+    "body": "You don't have permission to open this file.",
+    "nav": "Requests",
+    "back": "@student/requests",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Access unavailable",
+        "body": "Return to the records you are authorized to view.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Back to my requests",
+        "target": "@student/requests",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Unauthorized variant: no filename, request reference, owner, fee, preview or other private details. Verified-owner/payment-gated variant is separate: Payment is required before this file can be opened; Go to Cashiering. Do not apply that explanation to an unauthorized viewer."
+  },
+  {
+    "key": "G10.5",
+    "group": "G10",
+    "family": "private-file-feedback",
+    "kind": "empty",
+    "title": "No verified file yet",
+    "body": "The office hasn't released a verified document for this request.",
+    "nav": "Requests",
+    "back": "@student/request-detail",
+    "sections": [],
+    "actions": [
+      {
+        "label": "View request",
+        "target": "@student/request-detail",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Ask office",
+        "target": "@student/new-thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Authorized owner context only. Download action absent. Office evidence review and payment eligibility remain separate from document issuance."
+  },
+  {
+    "key": "G10.6",
+    "group": "G10",
+    "family": "private-file-feedback",
+    "kind": "result",
+    "title": "File no longer available",
+    "body": "This document is no longer available to download here.",
+    "nav": "Requests",
+    "back": "@student/request-detail",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Ask office",
+        "target": "@student/new-thread",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "View request",
+        "target": "@student/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Use a specific expiry/removal explanation only when supplied. Do not invent expiry dates, regenerate a document, or show stale private URLs."
+  },
+  {
+    "key": "G11.1",
+    "group": "G11",
+    "family": "pickup-result",
+    "kind": "result",
+    "title": "Ready for pickup",
+    "body": "Bring the real pickup code provided for your request to the issuing office.",
+    "nav": "Requests",
+    "back": "@student/request-detail",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Demo — not valid for pickup",
+        "body": "This prototype does not contain a usable pickup token.",
+        "tone": "neutral"
+      },
+      {
+        "type": "summary",
+        "title": "Manual code example",
+        "body": "DEMO — NOT VALID FOR PICKUP",
+        "rows": [
+          {
+            "label": "Example code",
+            "value": "NOT-A-PICKUP-CODE"
+          },
+          {
+            "label": "Pickup instructions",
+            "value": "Shown when supplied by the issuing office"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Back to request",
+        "target": "@student/request-detail",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Revise existing student/pickup-token. No fabricated scannable QR, real token or copy-to-clipboard action. Actual runtime shows readable real code with QR only when a server token exists."
+  },
+  {
+    "key": "G11.2",
+    "group": "G11",
+    "family": "pickup-result",
+    "kind": "result",
+    "title": "Pickup confirmed",
+    "body": "This request is complete.",
+    "nav": "Staff",
+    "back": "@staff/queue",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Complete",
+        "body": "The pickup confirmation has been recorded.",
+        "tone": "success"
+      },
+      {
+        "type": "summary",
+        "title": "Confirmation details",
+        "body": "",
+        "rows": [
+          {
+            "label": "Confirmed by",
+            "value": "Authorized staff member"
+          },
+          {
+            "label": "Confirmed at",
+            "value": "—"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Back to queue",
+        "target": "@staff/queue",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Scan another code",
+        "target": "@staff/scanner",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Green check plus Complete. Runtime appears only after atomic server-confirmed token consumption and request completion, never on scan alone."
+  },
+  {
+    "key": "G11.3",
+    "group": "G11",
+    "family": "pickup-result",
+    "kind": "result",
+    "title": "Code not found",
+    "body": "Check the code and try again.",
+    "nav": "Staff",
+    "back": "@staff/manual-token",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Enter code",
+        "target": "@staff/manual-token",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Scan again",
+        "target": "@staff/scanner",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "No hidden student or request details. Preserve manual entry for correction only where permitted. This state must remain distinct from already-used and expired token outcomes."
+  },
+  {
+    "key": "G11.4",
+    "group": "G11",
+    "family": "pickup-result",
+    "kind": "result",
+    "title": "Pickup code expired",
+    "body": "Ask the issuing office to check this request.",
+    "nav": "Staff",
+    "back": "@staff/queue",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Back to queue",
+        "target": "@staff/queue",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Enter another code",
+        "target": "@staff/manual-token",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "No invented expiry duration or self-service regeneration promise. Show request details only if independently authorized."
+  },
+  {
+    "key": "G11.5",
+    "group": "G11",
+    "family": "pickup-result",
+    "kind": "result",
+    "title": "Pickup unavailable",
+    "body": "Your account isn't authorized to confirm this pickup.",
+    "nav": "Staff",
+    "back": "@staff/queue",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Back to my queue",
+        "target": "@staff/queue",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "No student identity, file, token ownership or protected record details. No confirmation or forced override action."
+  },
+  {
+    "key": "G13.1",
+    "group": "G13",
+    "family": "office-publication",
+    "kind": "loading",
+    "title": "Publishing update…",
+    "body": "Your edited office status and announcement stay visible while the update is saved.",
+    "nav": "Staff",
+    "back": "@staff/availability",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Reviewed office update",
+        "body": "The published office page hasn't changed yet.",
+        "rows": [
+          {
+            "label": "Office status",
+            "value": "Reviewed availability"
+          },
+          {
+            "label": "Announcement",
+            "value": "Reviewed announcement text"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Publishing…",
+        "target": "G13.1",
+        "style": "Disabled",
+        "disabled": true
+      }
+    ],
+    "planned": false,
+    "annotation": "Inline operation block in existing availability editor. Preserve actual edited values and disable duplicate publish/edits while saving. Back must not silently claim cancellation."
+  },
+  {
+    "key": "G13.2",
+    "group": "G13",
+    "family": "office-publication",
+    "kind": "form",
+    "title": "Update wasn't published",
+    "body": "Your changes are still here.",
+    "nav": "Staff",
+    "back": "@staff/availability",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Office status",
+        "value": "Reviewed availability",
+        "hint": "The previously published status remains active."
+      },
+      {
+        "type": "field",
+        "label": "Announcement",
+        "value": "",
+        "hint": "Keep the actual unsaved announcement text here.",
+        "multiline": true
+      },
+      {
+        "type": "status",
+        "title": "Not published",
+        "body": "Review your changes or try publishing again.",
+        "tone": "error"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Retry publishing",
+        "target": "G13.1",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Continue editing",
+        "target": "@staff/availability",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel changes",
+        "target": "@staff/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Preserve real edited field values on recoverable failure. Cancel returns to the unchanged confirmed published value, not an invented local success. Staff office authority is required."
+  },
+  {
+    "key": "G13.3",
+    "group": "G13",
+    "family": "office-publication",
+    "kind": "result",
+    "title": "Update published",
+    "body": "The office update is now published.",
+    "nav": "Staff",
+    "back": "@staff/home",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Published",
+        "body": "Only confirmed office content appears on the student office page.",
+        "tone": "success"
+      },
+      {
+        "type": "summary",
+        "title": "Published update",
+        "body": "",
+        "rows": [
+          {
+            "label": "Office status",
+            "value": "Confirmed availability"
+          },
+          {
+            "label": "Announcement",
+            "value": "Confirmed announcement text"
+          },
+          {
+            "label": "Published by",
+            "value": "Authorized office staff member"
+          },
+          {
+            "label": "Published at",
+            "value": "—"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Review office update",
+        "target": "@staff/availability",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to dashboard",
+        "target": "@staff/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Preview must resolve the corresponding office, not a generic different office. Runtime reaches success only after authorized server confirmation. Prototype navigation is not publication."
+  },
+  {
+    "key": "G14.1",
+    "group": "G14",
+    "family": "inquiry-assignment",
+    "kind": "sheet",
+    "title": "Assign inquiry",
+    "body": "Choose a recipient you are authorized to assign this inquiry to.",
+    "nav": "Staff",
+    "back": "@staff/thread",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Current assignment",
+        "body": "Keep the current owner until a new assignment is confirmed.",
+        "rows": [
+          {
+            "label": "Assigned to",
+            "value": "Current authorized assignment"
+          }
+        ]
+      },
+      {
+        "type": "field",
+        "label": "New recipient",
+        "value": "",
+        "hint": "Choose from the recipients permitted for this office and your role."
+      }
+    ],
+    "actions": [
+      {
+        "label": "Review assignment",
+        "target": "@staff/thread",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Cancel",
+        "target": "@staff/thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Staff-only assignment structure. Populate actual permitted recipients; none are invented here. Review remains disabled until selection, then shows selected recipient for confirmation; after confirmed save the thread displays the new assignment. Students can select an office recipient but cannot assign staff."
+  },
+  {
+    "key": "G14.2",
+    "group": "G14",
+    "family": "inquiry-send",
+    "kind": "loading",
+    "title": "Sending message…",
+    "body": "Your message stays visible while it is being sent.",
+    "nav": "Inbox",
+    "back": "@student/thread",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Message",
+        "value": "",
+        "hint": "Keep the actual pending message visible here.",
+        "multiline": true
+      }
+    ],
+    "actions": [
+      {
+        "label": "Sending…",
+        "target": "G14.2",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Back to conversation",
+        "target": "@student/thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Composer locked against duplicate send; no sent/delivered check before confirmation. Reuse for staff thread with Staff navigation and correct return route. Back does not cancel or discard an in-flight message."
+  },
+  {
+    "key": "G14.3",
+    "group": "G14",
+    "family": "inquiry-send",
+    "kind": "form",
+    "title": "Message wasn't sent",
+    "body": "Your message is still here.",
+    "nav": "Inbox",
+    "back": "@student/thread",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Message",
+        "value": "",
+        "hint": "Preserve the actual unsent message for correction or retry.",
+        "multiline": true
+      },
+      {
+        "type": "status",
+        "title": "Not sent",
+        "body": "Check your message and try again.",
+        "tone": "error"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Retry sending",
+        "target": "G14.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Edit message",
+        "target": "@student/thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Preserve recoverable unsent text. Staff variant returns to staff/thread. Do not add persistent drafts, typing, presence or read receipts. If outcome is uncertain reconcile before retry to avoid duplicate messages."
+  },
+  {
+    "key": "G04.detail-free",
+    "group": "G04",
+    "family": "request-detail",
+    "kind": "result",
+    "title": "Request detail",
+    "body": "Submitted. No payment is required for this request.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Enrollment certificate",
+        "body": "",
+        "rows": [
+          {
+            "label": "Office",
+            "value": "Registrar"
+          },
+          {
+            "label": "Request status",
+            "value": "Submitted"
+          },
+          {
+            "label": "Fee",
+            "value": "No payment required"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Submitted · Complete",
+        "body": "The request was received. The confirmed reference and time belong here when available.",
+        "tone": "success"
+      },
+      {
+        "type": "status",
+        "title": "Office review · Current",
+        "body": "Awaiting the office's next update.",
+        "tone": "neutral"
+      },
+      {
+        "type": "status",
+        "title": "Processing · Upcoming",
+        "body": "This phase has not started.",
+        "tone": "neutral"
+      },
+      {
+        "type": "status",
+        "title": "Ready for pickup or download · Upcoming",
+        "body": "No document or pickup code has been issued.",
+        "tone": "neutral"
+      },
+      {
+        "type": "status",
+        "title": "Completed · Upcoming",
+        "body": "The request is not complete.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Ask the office",
+        "target": "@student/new-thread",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to requests",
+        "target": "@student/requests-existing-data",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Remap G04.7 View request to this key, not the existing Ready free-request example. This is an isolated design receipt/detail fixture with no invented live personal reference. Actual header/history use server-confirmed reference, actor and time. Inquiry recipient is the originating office. No payment, file or pickup action. Office review is explanatory display state, not a new persisted request-status enum."
+  },
+  {
+    "key": "G05.required",
+    "group": "G05",
+    "family": "office-fee-editor",
+    "kind": "form",
+    "title": "Payment declaration",
+    "body": "Enter the authorized amount for this service. Cashiering handles payment.",
+    "nav": "Staff",
+    "back": "G05.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Registrar",
+        "body": "",
+        "rows": [
+          {
+            "label": "Service",
+            "value": "Enrollment certificate"
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "label": "Fee declaration",
+        "options": [
+          {
+            "label": "No payment required",
+            "detail": "The request skips payment.",
+            "selected": false,
+            "target": "G05.1"
+          },
+          {
+            "label": "Payment required",
+            "detail": "An authorized amount is required.",
+            "selected": true,
+            "target": "G05.required"
+          },
+          {
+            "label": "Pending office review",
+            "detail": "Payment has not been declared.",
+            "selected": false,
+            "target": "G05.pending"
+          }
+        ]
+      },
+      {
+        "type": "field",
+        "label": "Amount",
+        "value": "",
+        "hint": "Enter the authorized fee",
+        "error": "",
+        "multiline": false
+      }
+    ],
+    "actions": [
+      {
+        "label": "Save declaration",
+        "target": "G05.2",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Cancel",
+        "target": "@staff/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Required-fee variant. Amount is genuinely blank and Save remains disabled. No official amount or successful edit is invented. Enable only with a valid authorized amount and server permissions. Root remaps G05.1 choice routes to this key and G05.pending, and removes the amount field from G05.1 Free. Registrar and enrollment certificate are illustrative service context; actual office/service must come from the authorized configuration."
+  },
+  {
+    "key": "G05.pending",
+    "group": "G05",
+    "family": "office-fee-editor",
+    "kind": "form",
+    "title": "Payment declaration",
+    "body": "The office has not declared whether payment is required.",
+    "nav": "Staff",
+    "back": "G05.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Registrar",
+        "body": "",
+        "rows": [
+          {
+            "label": "Service",
+            "value": "Enrollment certificate"
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "label": "Fee declaration",
+        "options": [
+          {
+            "label": "No payment required",
+            "detail": "The request skips payment.",
+            "selected": false,
+            "target": "G05.1"
+          },
+          {
+            "label": "Payment required",
+            "detail": "An authorized amount is required.",
+            "selected": false,
+            "target": "G05.required"
+          },
+          {
+            "label": "Pending office review",
+            "detail": "No payment is due yet.",
+            "selected": true,
+            "target": "G05.pending"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Save declaration",
+        "target": "G05.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel",
+        "target": "@staff/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Pending-declaration variant has no amount field. Selection and save are design routes only, not a live configuration write. No fee is charged and no existing request is moved to Processing by this declaration. Registrar and enrollment certificate are illustrative service context; actual office/service must come from the authorized configuration."
+  },
+  {
+    "key": "G06.staff-reject",
+    "group": "G06",
+    "family": "reason-sheet",
+    "kind": "sheet",
+    "title": "Reject request",
+    "body": "Enter the reason for rejecting this request.",
+    "nav": "Staff",
+    "back": "@staff/request-detail",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Reason",
+        "value": "",
+        "hint": "Enter a rejection reason",
+        "error": "",
+        "multiline": true
+      }
+    ],
+    "actions": [
+      {
+        "label": "Review rejection",
+        "target": "G06.staff-reject-error",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@staff/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Empty-field submit deliberately routes to validation, not confirmation. Actual nonempty input would reach G06.staff-reject-confirm only after validation. Static prototype does not claim to accept or save typed input. Show only an authorized staff transition."
+  },
+  {
+    "key": "G06.staff-reject-error",
+    "group": "G06",
+    "family": "reason-sheet",
+    "kind": "sheet",
+    "title": "Reject request",
+    "body": "A reason is required before this request can be rejected.",
+    "nav": "Staff",
+    "back": "G06.staff-reject",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Reason",
+        "value": "",
+        "hint": "Enter a rejection reason",
+        "error": "Reason is required.",
+        "multiline": true
+      }
+    ],
+    "actions": [
+      {
+        "label": "Review rejection",
+        "target": "G06.staff-reject-error",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.staff-reject",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@staff/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Focus the reason field in implementation; no request state changes. Confirmation fixture is separately reachable in the review catalog and does not imply an edit occurred."
+  },
+  {
+    "key": "G06.staff-reject-confirm",
+    "group": "G06",
+    "family": "stop-confirmation",
+    "kind": "sheet",
+    "title": "Reject this request?",
+    "body": "Review the reason before confirming rejection.",
+    "nav": "Staff",
+    "back": "G06.staff-reject",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Rejection review",
+        "body": "",
+        "rows": [
+          {
+            "label": "Affected request",
+            "value": "Demonstration record"
+          },
+          {
+            "label": "Reason",
+            "value": "Demonstration reason"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Payment remains recorded",
+        "body": "For this paid-request example, rejection does not automatically refund or void the payment. Refer payment follow-up to Cashiering.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirm rejection",
+        "target": "G06.staff-rejected",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.staff-reject",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@staff/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Explicit paid-request confirmation fixture. Actual UI must show the real affected reference/service and validated reason. Paid notice is conditional, not shown for free/unpaid requests. Prototype navigation performs no server transition."
+  },
+  {
+    "key": "G06.staff-rejected",
+    "group": "G06",
+    "family": "stopped-request-result",
+    "kind": "result",
+    "title": "Request rejected",
+    "body": "This request has stopped. Its payment remains recorded.",
+    "nav": "Staff",
+    "back": "@staff/queue",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Rejected",
+        "body": "Terminal-state design example",
+        "tone": "neutral"
+      },
+      {
+        "type": "summary",
+        "title": "Payment follow-up",
+        "body": "Rejection does not automatically refund or void a payment.",
+        "rows": [
+          {
+            "label": "Request",
+            "value": "Rejected"
+          },
+          {
+            "label": "Payment",
+            "value": "Paid"
+          },
+          {
+            "label": "Payment office",
+            "value": "Cashiering"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "The confirmed reason, staff actor and time appear in status history.",
+        "role": "Support"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Back to queue",
+        "target": "@staff/queue",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Contact Cashiering",
+        "target": "@staff/inbox",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Distinct rejected result; do not route View request to an old Processing detail. Actual result waits for server confirmation, preserves paid record and logs real reason/actor/time. Cashiering contact is through authorized office inquiry destinations only."
+  },
+  {
+    "key": "G06.staff-cancel",
+    "group": "G06",
+    "family": "reason-sheet",
+    "kind": "sheet",
+    "title": "Cancel request",
+    "body": "Enter the reason for cancelling this request.",
+    "nav": "Staff",
+    "back": "@staff/request-detail",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Reason",
+        "value": "",
+        "hint": "Enter a cancellation reason",
+        "error": "",
+        "multiline": true
+      }
+    ],
+    "actions": [
+      {
+        "label": "Review cancellation",
+        "target": "G06.staff-cancel-error",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@staff/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Empty-field submit deliberately routes to validation. Valid nonempty input would reach G06.staff-cancel-confirm only after validation. Static prototype does not claim successful editing. No cancellation deadline or additional authority is invented."
+  },
+  {
+    "key": "G06.staff-cancel-error",
+    "group": "G06",
+    "family": "reason-sheet",
+    "kind": "sheet",
+    "title": "Cancel request",
+    "body": "A reason is required before this request can be cancelled.",
+    "nav": "Staff",
+    "back": "G06.staff-cancel",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Reason",
+        "value": "",
+        "hint": "Enter a cancellation reason",
+        "error": "Reason is required.",
+        "multiline": true
+      }
+    ],
+    "actions": [
+      {
+        "label": "Review cancellation",
+        "target": "G06.staff-cancel-error",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.staff-cancel",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@staff/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "No transition occurs. Keep empty reason visible with adjacent validation; actual field gets focus. Confirmation fixture is a separate review example."
+  },
+  {
+    "key": "G06.staff-cancel-confirm",
+    "group": "G06",
+    "family": "stop-confirmation",
+    "kind": "sheet",
+    "title": "Cancel this request?",
+    "body": "Review the reason before confirming cancellation.",
+    "nav": "Staff",
+    "back": "G06.staff-cancel",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Cancellation review",
+        "body": "",
+        "rows": [
+          {
+            "label": "Affected request",
+            "value": "Demonstration record"
+          },
+          {
+            "label": "Reason",
+            "value": "Demonstration reason"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Payment remains recorded",
+        "body": "For this paid-request example, cancellation does not automatically refund or void the payment. Refer payment follow-up to Cashiering.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirm cancellation",
+        "target": "G06.staff-cancelled",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.staff-cancel",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@staff/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Paid-request confirmation fixture, distinct from rejection. Show actual validated reason and reference in implementation. Paid notice is conditional; prototype does not execute a cancellation."
+  },
+  {
+    "key": "G06.staff-cancelled",
+    "group": "G06",
+    "family": "stopped-request-result",
+    "kind": "result",
+    "title": "Request cancelled",
+    "body": "This request has stopped. Its payment remains recorded.",
+    "nav": "Staff",
+    "back": "@staff/queue",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Cancelled",
+        "body": "Terminal-state design example",
+        "tone": "neutral"
+      },
+      {
+        "type": "summary",
+        "title": "Payment follow-up",
+        "body": "Cancellation does not automatically refund or void a payment.",
+        "rows": [
+          {
+            "label": "Request",
+            "value": "Cancelled"
+          },
+          {
+            "label": "Payment",
+            "value": "Paid"
+          },
+          {
+            "label": "Payment office",
+            "value": "Cashiering"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "The confirmed reason, staff actor and time appear in status history.",
+        "role": "Support"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Back to queue",
+        "target": "@staff/queue",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Contact Cashiering",
+        "target": "@staff/inbox",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Distinct cancelled result; do not confuse with rejection or an old Processing preview. Actual success requires confirmation and preserves the paid payment record. Cashiering contact requires an authorized office-inquiry destination."
+  },
+  {
+    "key": "G06.free-confirm",
+    "group": "G06",
+    "family": "stop-confirmation",
+    "kind": "sheet",
+    "title": "Cancel this request?",
+    "body": "Review your reason before confirming cancellation.",
+    "nav": "Requests",
+    "back": "G06.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Cancellation review",
+        "body": "",
+        "rows": [
+          {
+            "label": "Affected request",
+            "value": "Demonstration record"
+          },
+          {
+            "label": "Reason",
+            "value": "Demonstration reason"
+          },
+          {
+            "label": "Fee",
+            "value": "No payment required"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirm cancellation",
+        "target": "G06.4",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.1",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "G04.detail-free",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "No paid-payment notice. Actual nonempty reason and real affected record are required. Remap free student reason/cancellation context to G04.detail-free rather than the old paid Processing example. G06.4 must show terminal Cancelled detail/result."
+  },
+  {
+    "key": "G10.payment-gate",
+    "group": "G10",
+    "family": "private-file-feedback",
+    "kind": "result",
+    "title": "Payment required before download",
+    "body": "An applicable fee must be confirmed before this file can be opened.",
+    "nav": "Requests",
+    "back": "@student/request-detail",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Download unavailable",
+        "body": "The payment is not confirmed. Cashiering handles payment for this request.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Go to Cashiering",
+        "target": "@student/office-cashiering",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "View request",
+        "target": "@student/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Verified owner of an unpaid fee-required request only. No filename, preview or private file content shown. Unauthorized viewer uses G10.4 instead, with no payment explanation. This design does not create a charge, confirm payment or download a file."
+  },
+  {
+    "key": "G09.5.new-booking",
+    "group": "G09",
+    "family": "booking-availability",
+    "kind": "result",
+    "title": "This time is no longer available",
+    "body": "Choose another available time to continue booking.",
+    "nav": "Consult",
+    "back": "@student/consult",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Time unavailable",
+        "body": "The selected time could not be booked.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Choose another time",
+        "target": "@student/consult",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Ask office",
+        "target": "@student/new-thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "First-booking conflict. No current appointment exists and no original-booking-unchanged claim or reschedule action appears. Preserve actual destination/date selection on return. Do not invent capacity or deadlines."
+  },
+  {
+    "key": "G09.6.new-booking",
+    "group": "G09",
+    "family": "booking-availability",
+    "kind": "empty",
+    "title": "No available times",
+    "body": "Try another date or ask the office about availability.",
+    "nav": "Consult",
+    "back": "@student/consult",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Preferred date",
+        "value": "",
+        "hint": "Choose another date",
+        "error": "",
+        "multiline": false
+      }
+    ],
+    "actions": [
+      {
+        "label": "Change date",
+        "target": "@student/consult",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Ask office",
+        "target": "@student/new-thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "First-booking empty availability. No existing booking or Keep current appointment action. Date field is a static design representation until implementation; return preserves actual consultation destination."
+  },
+  {
+    "key": "G14.staff-sending",
+    "group": "G14",
+    "family": "inquiry-send",
+    "kind": "loading",
+    "title": "Sending office reply…",
+    "body": "Your reply stays visible while it is being sent.",
+    "nav": "Staff",
+    "back": "@staff/thread",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Reply",
+        "value": "",
+        "hint": "The pending reply appears here",
+        "error": "",
+        "multiline": true
+      }
+    ],
+    "actions": [
+      {
+        "label": "Sending…",
+        "target": "G14.staff-sending",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Back to conversation",
+        "target": "@staff/thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Staff-scoped pending-send state. Preserve actual pending reply, disable duplicate Send and wait for authoritative result. Static Figma field does not capture edits. Back does not cancel or discard an in-flight operation; on failure use G14.staff-failed. No student navigation."
+  },
+  {
+    "key": "G14.staff-failed",
+    "group": "G14",
+    "family": "inquiry-send",
+    "kind": "form",
+    "title": "Reply wasn't sent",
+    "body": "Your reply is still here.",
+    "nav": "Staff",
+    "back": "@staff/thread",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Reply",
+        "value": "",
+        "hint": "Preserve the unsent reply",
+        "error": "",
+        "multiline": true
+      },
+      {
+        "type": "status",
+        "title": "Not sent",
+        "body": "Check the reply and try again.",
+        "tone": "error"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Retry sending",
+        "target": "G14.staff-sending",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Edit reply",
+        "target": "@staff/thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Staff role and authorized thread remain unchanged. Preserve actual recoverable unsent text. If the send result is uncertain, reconcile before retry to avoid duplicates. No persistent draft, typing, presence or read-receipt feature is implied."
+  },
+  {
+    "key": "G14.assignment-review",
+    "group": "G14",
+    "family": "inquiry-assignment",
+    "kind": "sheet",
+    "title": "Review assignment",
+    "body": "Check the recipient before changing this inquiry's assignment.",
+    "nav": "Staff",
+    "back": "G14.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Assignment review",
+        "body": "No actual recipient is selected in this design.",
+        "rows": [
+          {
+            "label": "Current owner",
+            "value": "—"
+          },
+          {
+            "label": "New recipient",
+            "value": "—"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Recipient required",
+        "body": "Choose a recipient you are authorized to assign this inquiry to.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirm assignment",
+        "target": "@staff/thread",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Choose recipient",
+        "target": "G14.1",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel",
+        "target": "@staff/thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Design-only review structure. Unknown values remain em dashes, with no invented name. Confirm stays disabled until a real authorized recipient is selected and reviewed. Current owner remains until server confirmation; actual success returns to the staff thread with confirmed assignment."
+  },
+  {
+    "key": "G14.assignment-failed",
+    "group": "G14",
+    "family": "inquiry-assignment",
+    "kind": "sheet",
+    "title": "Assignment wasn't changed",
+    "body": "The current owner is unchanged. Review the recipient and try again.",
+    "nav": "Staff",
+    "back": "G14.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Assignment",
+        "body": "No actual assignment is loaded in this design.",
+        "rows": [
+          {
+            "label": "Current owner",
+            "value": "—"
+          },
+          {
+            "label": "Requested recipient",
+            "value": "—"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Change not confirmed",
+        "body": "Keep the current assignment until the change is confirmed.",
+        "tone": "error"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Retry assignment",
+        "target": "G14.assignment-review",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Edit recipient",
+        "target": "G14.1",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to conversation",
+        "target": "@staff/thread",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Preserve actual current owner and requested recipient on recoverable failure. This example has no actual recipient, so Retry is disabled. Enable a safe retry only after a valid authorized recipient exists; reconcile an uncertain result first. No ownership change is claimed."
+  },
+  {
+    "key": "G06.detail-cancelled-free",
+    "group": "G06",
+    "family": "cancelled-request-detail",
+    "kind": "result",
+    "title": "Request detail",
+    "body": "This request is cancelled. No payment was required.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Cancelled request",
+        "body": "Design example · No live request loaded",
+        "rows": [
+          {
+            "label": "Reference",
+            "value": "—"
+          },
+          {
+            "label": "Office and service",
+            "value": "—"
+          },
+          {
+            "label": "Request status",
+            "value": "Cancelled"
+          },
+          {
+            "label": "Fee",
+            "value": "No payment required"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Submitted · Complete",
+        "body": "The request was submitted before it was cancelled.",
+        "tone": "success"
+      },
+      {
+        "type": "status",
+        "title": "Cancelled · Final status",
+        "body": "This request will not proceed to processing, pickup or download.",
+        "tone": "neutral"
+      },
+      {
+        "type": "summary",
+        "title": "Cancellation record",
+        "body": "The confirmed record supplies the reason, actor and time.",
+        "rows": [
+          {
+            "label": "Reason",
+            "value": "—"
+          },
+          {
+            "label": "Cancelled by",
+            "value": "—"
+          },
+          {
+            "label": "Time",
+            "value": "—"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Ask the office",
+        "target": "@student/new-thread",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to requests",
+        "target": "@student/requests-existing-data",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Contextual terminal detail for G06.4; remap its View request action here instead of the old Processing example. Preserve the owning student's affected request and originating office. This is a design fixture, not an executed cancellation. Populate real reference/history/reason/actor/time only from a server-confirmed authorized record; em dashes represent unloaded values. No payment, processing, file or pickup action. Do not automatically transition a live request by navigating here."
+  },
+  {
+    "key": "G06.detail-cancelled-paid",
+    "group": "G06",
+    "family": "cancelled-request-detail",
+    "kind": "result",
+    "title": "Request detail",
+    "body": "This request is cancelled. Its confirmed payment remains recorded.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Cancelled request",
+        "body": "Paid-request design example · No live record loaded",
+        "rows": [
+          {
+            "label": "Reference",
+            "value": "—"
+          },
+          {
+            "label": "Office and service",
+            "value": "—"
+          },
+          {
+            "label": "Request status",
+            "value": "Cancelled"
+          },
+          {
+            "label": "Payment",
+            "value": "Paid"
+          },
+          {
+            "label": "Amount",
+            "value": "—"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Submitted · Complete",
+        "body": "The request was submitted before it was cancelled.",
+        "tone": "success"
+      },
+      {
+        "type": "status",
+        "title": "Cancelled · Final status",
+        "body": "This request will not proceed to processing, pickup or download.",
+        "tone": "neutral"
+      },
+      {
+        "type": "summary",
+        "title": "Cancellation record",
+        "body": "The confirmed record supplies the reason, actor and time.",
+        "rows": [
+          {
+            "label": "Reason",
+            "value": "—"
+          },
+          {
+            "label": "Cancelled by",
+            "value": "—"
+          },
+          {
+            "label": "Time",
+            "value": "—"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Payment follow-up",
+        "body": "Cancellation does not automatically refund or void the payment. Contact Cashiering about the payment.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Contact Cashiering",
+        "target": "@student/office-cashiering",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to requests",
+        "target": "@student/requests-existing-data",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Contextual terminal detail for G06.5; remap its View request action here. Retain the server-confirmed paid record and amount separately from the cancelled request state. No refund, void, new payment, receipt issuance or request-completion event is performed by this prototype. Cashiering contact uses the existing authorized office entry; any subsequent inquiry preserves Cashiering as destination. Real private values appear only after ownership checks."
+  },
+  {
+    "key": "G05.saved",
+    "group": "G05",
+    "family": "saved-fee-declaration",
+    "kind": "result",
+    "title": "Payment declaration saved",
+    "body": "Review the saved declaration for this service.",
+    "nav": "Staff",
+    "back": "@staff/home",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Declaration saved",
+        "body": "Confirmed-outcome design example",
+        "tone": "success"
+      },
+      {
+        "type": "summary",
+        "title": "Saved declaration",
+        "body": "Read-only example · No configuration was changed",
+        "rows": [
+          {
+            "label": "Office and service",
+            "value": "—"
+          },
+          {
+            "label": "Payment declaration",
+            "value": "No payment required"
+          },
+          {
+            "label": "Updated by",
+            "value": "—"
+          },
+          {
+            "label": "Updated at",
+            "value": "—"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Cashiering handles any applicable payment declared by the issuing office.",
+        "role": "Support"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Done",
+        "target": "@staff/home",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Edit declaration",
+        "target": "G05.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Read-only success counterpart to G05.2, distinct from G13.3 office-announcement publication. Show at runtime only after an authorized declaration save is confirmed. This fixture represents the existing Free selection without inventing an official fee or policy. Reuse this composition with the actual confirmed Free/Required/Pending value, service identity and server actor/time. Edit returns to the same authorized service and selected mode; the default G05.1 alias is the Free design example. Do not create an automatic busy-to-success transition, retroactively change existing request fees or grant students/tellers editing authority."
+  },
+  {
+    "key": "G04.receipt-required",
+    "group": "G04",
+    "family": "submission-state",
+    "kind": "result",
+    "title": "Request submitted",
+    "body": "The request has been received. An office-declared payment is required; Cashiering handles the payment.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Submitted",
+        "body": "Confirmed-submission design example",
+        "tone": "success"
+      },
+      {
+        "type": "summary",
+        "title": "Request receipt",
+        "body": "No live request or payment record is loaded",
+        "rows": [
+          {
+            "label": "Reference",
+            "value": "—"
+          },
+          {
+            "label": "Office and service",
+            "value": "—"
+          },
+          {
+            "label": "Request status",
+            "value": "Submitted"
+          },
+          {
+            "label": "Fee",
+            "value": "Payment required"
+          },
+          {
+            "label": "Office-declared amount",
+            "value": "—"
+          },
+          {
+            "label": "Payment office",
+            "value": "Cashiering"
+          },
+          {
+            "label": "Submitted at",
+            "value": "—"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choosing a payment method does not confirm payment or complete this request.",
+        "role": "Support"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Choose payment method",
+        "target": "@student/payment",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to requests",
+        "target": "@student/requests-existing-data",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Required-fee contextual receipt, separate from the Free G04.7 receipt. The primary action opens only an existing payment-choice design preview; it creates no payment or charge and leaves provider actions disabled. Runtime may show this receipt/handoff only after submission, authoritative fee configuration, amount and ownership are verified; if an amount is unavailable, retain the blocked configuration state instead. Replace unloaded em dashes with actual server data, never a client-supplied amount. Keep request progress separate from payment. Connect from a required-fee confirmed-submission review fixture only; no automatic busy-to-success transition, invented fee or fabricated reference."
+  },
+  {
+    "key": "G12.1",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "allowed chat",
+    "body": "Choose a file to explain or extract text.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Attach a file",
+        "target": "G12.picker",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Review AI privacy",
+        "target": "@shared/ai-consent",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.2",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "AI off",
+    "body": "AI assistance is off. You can still use campus services.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Review AI privacy",
+        "target": "@shared/ai-consent",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.3",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "PDF inline preview",
+    "body": "Current PDF remains inside the chat and composer. It has not been sent.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Explain this file",
+        "target": "G12.explain-draft",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Extract text",
+        "target": "G12.extract-draft",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Choose another file",
+        "target": "G12.picker",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Remove current attachment",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "document",
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.4",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Attachment not accepted",
+    "body": "Choose one PDF, JPG or PNG up to 10 MB. Show the actual validation reason.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Choose another file",
+        "target": "G12.picker",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Remove attachment",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Back to chat",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.5",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Seryo is working…",
+    "body": "Your current question and attachment remain visible while a response is pending.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Waiting for Seryo…",
+        "target": null,
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Back to chat",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "image",
+    "draft": null,
+    "processingBlocked": true,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.6",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Seryo can't answer this request",
+    "body": "Ask the responsible office for an authoritative answer.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Return to chat",
+        "target": "G12.1",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.7",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Try again later",
+    "body": "Seryo is temporarily unavailable for another request.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Return to chat",
+        "target": "G12.1",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.8",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "File cleanup not confirmed",
+    "body": "The app has not received confirmation that the temporary file was removed. Further processing remains blocked.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Back to chat",
+        "target": "G12.1",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "image",
+    "draft": null,
+    "processingBlocked": true,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.9",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Temporary file removed",
+    "body": "Removal of the temporary file has been verified. The original file is not available from chat history.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Return to chat",
+        "target": "G12.1",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.picker",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Choose a photo or file",
+    "body": "System picker preview. One PDF, JPG or PNG up to 10 MB. Example choices demonstrate a return to chat without reading a file.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Select example image",
+        "target": "@shared/assistant-image-ready",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Select example PDF",
+        "target": "G12.3",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel",
+        "target": "G12.picker-cancelled",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.picker-cancelled",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "no file selected",
+    "body": "No file selected. Preserve the actual unsent question and any existing valid file on a cancelled replacement.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Attach a file",
+        "target": "G12.picker",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": "Explain this file.",
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.explain-draft",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Explain this file",
+    "body": "Explain this file.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Explain this file",
+        "target": null,
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Extract text",
+        "target": "G12.extract-draft",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Choose another file",
+        "target": "G12.picker",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Remove current attachment",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "image",
+    "draft": "Explain this file.",
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.extract-draft",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Extract text",
+    "body": "Extract text from this file.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Explain this file",
+        "target": "G12.explain-draft",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Extract text",
+        "target": null,
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Choose another file",
+        "target": "G12.picker",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Remove current attachment",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "image",
+    "draft": "Extract text from this file.",
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.explain-result",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Explanation",
+    "body": "The image shows a Settings heading and a Light and dark appearance option.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": true,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.extract-result",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Extracted text",
+    "body": "Settings\nLight and dark appearance",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": true,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.no-readable-text",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "No readable text found",
+    "body": "Try a clearer image or another supported file.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Choose another file",
+        "target": "G12.picker",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to chat",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "image",
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  }
+]

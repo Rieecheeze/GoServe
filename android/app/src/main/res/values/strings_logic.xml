@@ -1,0 +1,34 @@
+<resources>
+    <string name="preview_notice_logic">Design preview. Non-official demo data. No account is signed in.</string>
+    <string name="foundation_notice_logic">GoServe foundation. More service flows are in the next feature package.</string>
+    <string name="login_title_logic">Welcome back</string>
+    <string name="login_subtitle_logic">Log in to GoServe with your TIP Google account.</string>
+    <string name="signup_title_logic">Join GoServe</string>
+    <string name="signup_subtitle_logic">Create your student profile with your TIP Google account.</string>
+    <string name="enter_email_logic">Enter your assigned email address.</string>
+    <string name="enter_password_logic">Enter your password.</string>
+    <string name="continue_logic">Continue</string>
+    <string name="sign_in_logic">Sign in</string>
+    <string name="sign_out_logic">Sign out</string>
+    <string name="exit_preview_logic">Exit preview</string>
+    <string name="back_logic">Back</string>
+    <string name="demo_office_logic">Non-official demo data. Verify availability with the office.</string>
+    <string name="staff_dashboard_logic">Office dashboard</string>
+    <string name="staff_pending_logic">Coming in the staff feature package: availability, announcements, requests and authorized schedules.</string>
+    <string name="requests_title_logic">Requests</string>
+    <string name="requests_pending_logic">Coming in the requests feature package: submit evidence, track progress and receive verified documents.</string>
+    <string name="preview_request_logic">This request illustrates the Figma design. It is not an actual submission. Request actions will be added in the requests feature package.</string>
+    <string name="preview_request_title_logic">Certificate of enrollment</string>
+    <string name="preview_request_meta_logic">Registrar · REQ-2026-0148</string>
+    <string name="preview_request_status_logic">Processing</string>
+    <string name="consult_title_logic">Consultations</string>
+    <string name="consult_pending_logic">Coming in the consultations feature package: guidance and faculty schedules, booking, cancellation and rescheduling.</string>
+    <string name="inbox_title_logic">Inbox</string>
+    <string name="inbox_pending_logic">Coming in the inquiry feature package: messages grouped by office and recipient.</string>
+    <string name="cash_title_logic">Cash payments</string>
+    <string name="cash_pending_logic">Coming in the payment feature package: authorized teller confirmation and auditable history. Payment cannot be confirmed in this foundation.</string>
+    <string name="history_title_logic">Payment history</string>
+    <string name="notifications_title_logic">Notifications</string>
+    <string name="notifications_pending_logic">Coming in the notifications feature package: in-app changes to requests, announcements, messages and appointments.</string>
+    <string name="office_services_pending_logic">Office services and requirements will be loaded from approved configuration in the requests feature package.</string>
+</resources>

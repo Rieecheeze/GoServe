@@ -1,0 +1,51 @@
+plugins { id 'com.android.application' }
+
+def localConfig = new Properties()
+def configFile = rootProject.file('goserve.properties')
+if (configFile.exists()) { configFile.withInputStream { localConfig.load(it) } }
+def configString = { key, fallback ->
+    '"' + localConfig.getProperty(key, fallback).replace('\\', '\\\\').replace('"', '\\"') + '"'
+}
+
+android {
+    namespace 'ph.edu.tip.goserve'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'ph.edu.tip.goserve'
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName '0.1.0-foundation'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        buildConfigField 'String', 'SUPABASE_URL', configString('SUPABASE_URL', 'https://uuvexkewiuxdbuelwogy.supabase.co')
+        buildConfigField 'String', 'SUPABASE_PUBLISHABLE_KEY', configString('SUPABASE_PUBLISHABLE_KEY', 'sb_publishable_cqQjD1gzbw7Jh9Sp99OJsw_CNe1MFEF')
+        buildConfigField 'boolean', 'EGOVPAY_CONFIGURED', 'false'
+    }
+    buildFeatures { viewBinding true; buildConfig true }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    testOptions { unitTests.includeAndroidResources = true }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.core:core:1.15.0'
+    implementation 'androidx.activity:activity:1.10.1'
+    implementation 'androidx.fragment:fragment:1.8.6'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.8.7'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.8.7'
+    implementation 'androidx.browser:browser:1.8.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.14.1'
+}

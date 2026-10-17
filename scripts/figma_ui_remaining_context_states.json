@@ -1,0 +1,89 @@
+[
+  {
+    "key":"G06.detail-cancelled-free",
+    "group":"G06",
+    "family":"cancelled-request-detail",
+    "kind":"result",
+    "title":"Request detail",
+    "body":"This request is cancelled. No payment was required.",
+    "nav":"Requests",
+    "back":"@student/requests-existing-data",
+    "sections":[
+      {"type":"summary","title":"Cancelled request","body":"Design example · No live request loaded","rows":[{"label":"Reference","value":"—"},{"label":"Office and service","value":"—"},{"label":"Request status","value":"Cancelled"},{"label":"Fee","value":"No payment required"}]},
+      {"type":"status","title":"Submitted · Complete","body":"The request was submitted before it was cancelled.","tone":"success"},
+      {"type":"status","title":"Cancelled · Final status","body":"This request will not proceed to processing, pickup or download.","tone":"neutral"},
+      {"type":"summary","title":"Cancellation record","body":"The confirmed record supplies the reason, actor and time.","rows":[{"label":"Reason","value":"—"},{"label":"Cancelled by","value":"—"},{"label":"Time","value":"—"}]}
+    ],
+    "actions":[
+      {"label":"Ask the office","target":"@student/new-thread","style":"Primary","disabled":false},
+      {"label":"Back to requests","target":"@student/requests-existing-data","style":"Secondary","disabled":false}
+    ],
+    "planned":false,
+    "annotation":"Contextual terminal detail for G06.4; remap its View request action here instead of the old Processing example. Preserve the owning student's affected request and originating office. This is a design fixture, not an executed cancellation. Populate real reference/history/reason/actor/time only from a server-confirmed authorized record; em dashes represent unloaded values. No payment, processing, file or pickup action. Do not automatically transition a live request by navigating here."
+  },
+  {
+    "key":"G06.detail-cancelled-paid",
+    "group":"G06",
+    "family":"cancelled-request-detail",
+    "kind":"result",
+    "title":"Request detail",
+    "body":"This request is cancelled. Its confirmed payment remains recorded.",
+    "nav":"Requests",
+    "back":"@student/requests-existing-data",
+    "sections":[
+      {"type":"summary","title":"Cancelled request","body":"Paid-request design example · No live record loaded","rows":[{"label":"Reference","value":"—"},{"label":"Office and service","value":"—"},{"label":"Request status","value":"Cancelled"},{"label":"Payment","value":"Paid"},{"label":"Amount","value":"—"}]},
+      {"type":"status","title":"Submitted · Complete","body":"The request was submitted before it was cancelled.","tone":"success"},
+      {"type":"status","title":"Cancelled · Final status","body":"This request will not proceed to processing, pickup or download.","tone":"neutral"},
+      {"type":"summary","title":"Cancellation record","body":"The confirmed record supplies the reason, actor and time.","rows":[{"label":"Reason","value":"—"},{"label":"Cancelled by","value":"—"},{"label":"Time","value":"—"}]},
+      {"type":"status","title":"Payment follow-up","body":"Cancellation does not automatically refund or void the payment. Contact Cashiering about the payment.","tone":"neutral"}
+    ],
+    "actions":[
+      {"label":"Contact Cashiering","target":"@student/office-cashiering","style":"Primary","disabled":false},
+      {"label":"Back to requests","target":"@student/requests-existing-data","style":"Secondary","disabled":false}
+    ],
+    "planned":false,
+    "annotation":"Contextual terminal detail for G06.5; remap its View request action here. Retain the server-confirmed paid record and amount separately from the cancelled request state. No refund, void, new payment, receipt issuance or request-completion event is performed by this prototype. Cashiering contact uses the existing authorized office entry; any subsequent inquiry preserves Cashiering as destination. Real private values appear only after ownership checks."
+  },
+  {
+    "key":"G05.saved",
+    "group":"G05",
+    "family":"saved-fee-declaration",
+    "kind":"result",
+    "title":"Payment declaration saved",
+    "body":"Review the saved declaration for this service.",
+    "nav":"Staff",
+    "back":"@staff/home",
+    "sections":[
+      {"type":"status","title":"Declaration saved","body":"Confirmed-outcome design example","tone":"success"},
+      {"type":"summary","title":"Saved declaration","body":"Read-only example · No configuration was changed","rows":[{"label":"Office and service","value":"—"},{"label":"Payment declaration","value":"No payment required"},{"label":"Updated by","value":"—"},{"label":"Updated at","value":"—"}]},
+      {"type":"text","text":"Cashiering handles any applicable payment declared by the issuing office.","role":"Support"}
+    ],
+    "actions":[
+      {"label":"Done","target":"@staff/home","style":"Primary","disabled":false},
+      {"label":"Edit declaration","target":"G05.1","style":"Secondary","disabled":false}
+    ],
+    "planned":false,
+    "annotation":"Read-only success counterpart to G05.2, distinct from G13.3 office-announcement publication. Show at runtime only after an authorized declaration save is confirmed. This fixture represents the existing Free selection without inventing an official fee or policy. Reuse this composition with the actual confirmed Free/Required/Pending value, service identity and server actor/time. Edit returns to the same authorized service and selected mode; the default G05.1 alias is the Free design example. Do not create an automatic busy-to-success transition, retroactively change existing request fees or grant students/tellers editing authority."
+  },
+  {
+    "key":"G04.receipt-required",
+    "group":"G04",
+    "family":"submission-state",
+    "kind":"result",
+    "title":"Request submitted",
+    "body":"The request has been received. An office-declared payment is required; Cashiering handles the payment.",
+    "nav":"Requests",
+    "back":"@student/requests-existing-data",
+    "sections":[
+      {"type":"status","title":"Submitted","body":"Confirmed-submission design example","tone":"success"},
+      {"type":"summary","title":"Request receipt","body":"No live request or payment record is loaded","rows":[{"label":"Reference","value":"—"},{"label":"Office and service","value":"—"},{"label":"Request status","value":"Submitted"},{"label":"Fee","value":"Payment required"},{"label":"Office-declared amount","value":"—"},{"label":"Payment office","value":"Cashiering"},{"label":"Submitted at","value":"—"}]},
+      {"type":"text","text":"Choosing a payment method does not confirm payment or complete this request.","role":"Support"}
+    ],
+    "actions":[
+      {"label":"Choose payment method","target":"@student/payment","style":"Primary","disabled":false},
+      {"label":"Back to requests","target":"@student/requests-existing-data","style":"Secondary","disabled":false}
+    ],
+    "planned":false,
+    "annotation":"Required-fee contextual receipt, separate from the Free G04.7 receipt. The primary action opens only an existing payment-choice design preview; it creates no payment or charge and leaves provider actions disabled. Runtime may show this receipt/handoff only after submission, authoritative fee configuration, amount and ownership are verified; if an amount is unavailable, retain the blocked configuration state instead. Replace unloaded em dashes with actual server data, never a client-supplied amount. Keep request progress separate from payment. Connect from a required-fee confirmed-submission review fixture only; no automatic busy-to-success transition, invented fee or fabricated reference."
+  }
+]

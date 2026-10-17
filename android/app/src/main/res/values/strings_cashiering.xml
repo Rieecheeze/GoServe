@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cashiering_section_title">Payments</string>
+    <string name="cashiering_services_pending">Payments are handled here. Payment instructions for requests are not available yet.</string>
+    <string name="cashiering_office_services_pending">Service details and request requirements are not available yet.</string>
+    <string name="cashiering_fee_caption">If this service requires a fee, Cashiering handles the payment. Payment instructions for requests are not available yet.</string>
+    <string name="cashiering_route_action">Pay at Cashiering</string>
+    <string name="cashiering_loading">Loading Cashiering…</string>
+    <string name="cashiering_route_unavailable">Cashiering could not be loaded. Reload the office directory and try again.</string>
+    <string name="cashiering_reload_action">Reload offices</string>
+</resources>

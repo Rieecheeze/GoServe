@@ -1,0 +1,232 @@
+{
+  "date": "2026-10-17",
+  "timezone": "Asia/Manila",
+  "scope": "Professor-facing wireframe and documentation handoff only",
+  "fileKey": "SvT9gBUFjdLgbrJ80LPDno",
+  "originalPageId": "14:2",
+  "wireframePageId": "305:2",
+  "uiApproved": false,
+  "wireframeAcceptance": {
+    "pageId": "305:2",
+    "pageName": "GoServe • Wireframes v2.3",
+    "panelCount": 16,
+    "reports": [
+      {
+        "key": "sign-in",
+        "id": "308:5",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 14
+      },
+      {
+        "key": "terms",
+        "id": "308:254",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 17
+      },
+      {
+        "key": "email-credentials",
+        "id": "308:9445",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 16
+      },
+      {
+        "key": "email-profile",
+        "id": "308:9807",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 30
+      },
+      {
+        "key": "student/home",
+        "id": "308:12008",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 31
+      },
+      {
+        "key": "short_request",
+        "id": "312:114",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 14
+      },
+      {
+        "key": "pickup_ready",
+        "id": "312:184",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 12
+      },
+      {
+        "key": "pickup_issued",
+        "id": "312:251",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 12
+      },
+      {
+        "key": "digital_downloaded",
+        "id": "312:317",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 13
+      },
+      {
+        "key": "student/consult",
+        "id": "308:14582",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 21
+      },
+      {
+        "key": "student/thread",
+        "id": "308:15143",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 13
+      },
+      {
+        "key": "short_seryo",
+        "id": "311:114",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 10
+      },
+      {
+        "key": "short_office",
+        "id": "312:386",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 15
+      },
+      {
+        "key": "pickup_review",
+        "id": "312:786",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 13
+      },
+      {
+        "key": "short_cashier",
+        "id": "312:837",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 12
+      },
+      {
+        "key": "student/settings",
+        "id": "308:15541",
+        "width": 390,
+        "height": 844,
+        "scrolls": 1,
+        "editableTexts": 16
+      }
+    ],
+    "issues": [],
+    "copyHeightStable": true,
+    "mutatedNodeIds": [
+      "315:363"
+    ],
+    "createdNodeIds": []
+  },
+  "sourceFingerprintCheck": {
+    "pageId": "14:2",
+    "expected": 137,
+    "matched": 136,
+    "changed": [
+      {
+        "id": "274:8365",
+        "expected": "725a0b3a",
+        "actual": "8999a837",
+        "name": "GoServe 2.1 • states/G12.extract-result"
+      }
+    ],
+    "missing": [],
+    "createdNodeIds": [],
+    "mutatedNodeIds": [],
+    "evidence": "Original source-page context; dimensions, names, text, node IDs, local geometry, parent and reaction serialization compared."
+  },
+  "remainingSourceVisualComparison": {
+    "sourceId": "274:8365",
+    "wireframeId": "311:114",
+    "sourceNodes": 64,
+    "wireframeNodes": 64,
+    "visualDifferenceCount": 0,
+    "differences": [],
+    "ignored": "Intentional root naming/placement, new IDs and removed prototype reactions",
+    "createdNodeIds": [],
+    "mutatedNodeIds": []
+  },
+  "originalCanonicalAudit": {
+    "pageId": "14:2",
+    "frameCount": 470,
+    "preservedFrameDimensions": 470,
+    "missing": [],
+    "mismatches": [],
+    "prototypeLinks": 2990,
+    "uniqueDestinations": 264,
+    "brokenDestinations": [],
+    "sectionCount": 28,
+    "topLevelSections": 10,
+    "createdNodeIds": [],
+    "mutatedNodeIds": []
+  },
+  "visualReview": {
+    "date": "2026-10-16",
+    "reviewed": [
+      "315:364 overview after chronology fix",
+      "310:1068 account setup",
+      "310:1069 request and pickup",
+      "310:1070 student services",
+      "310:1071 office and cashier",
+      "308:14582 consultation after compact heading fix"
+    ],
+    "result": "Composition passed. Subsequent local-cache wording edit preserved annotation height.",
+    "repeatedScreenshots": false
+  },
+  "interpretation": [
+    "Exactly16 main editable phone panels in4rows; no expansion into the detailed state inventory.",
+    "All16 phones are390x844 and have a vertical scroll viewport. Previously verified custom action targets are350x48.",
+    "136 original source frames match their pre-copy raw fingerprints in original-page context. The remaining Seryo source has64 nodes visually identical to the wireframe clone, excluding deliberate naming/placement/IDs and stripped reactions. Strict byte identity for that one source is not claimed.",
+    "The recorded470 original frame dimensions and2990 prototype links to264 valid destinations match the saved canonical baseline.",
+    "No Android/backend implementation, provider activation or fresh passing Android test result is claimed."
+  ],
+  "nativeBaseline": {
+    "freshRun": "blocked",
+    "reason": "Gradle java.io.IOException: Unable to establish loopback connection, including escalated installed JBR25 and Corretto21 attempts.",
+    "historical": {
+      "date": "2026-10-15",
+      "tests": 41,
+      "passed": 39,
+      "failed": 2
+    },
+    "failures": [
+      "CapsuleNavigationTest.java:52 navigation label visibility",
+      "SeryoInteractionTest.java:100 request-name consistency"
+    ],
+    "rule": "Do not label historical results fresh or passing. No repeated rerun until environment changes."
+  },
+  "pending": [
+    "Explicit UI approval under M1",
+    "Resolve Gradle environment block before M2 baseline can be accepted",
+    "Implement M3-M12 in dependency order after the applicable gates"
+  ]
+}

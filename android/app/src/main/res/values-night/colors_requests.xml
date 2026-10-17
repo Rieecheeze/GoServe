@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gs_request_complete">#85D6A6</color>
+    <color name="gs_request_complete_on">#062B18</color>
+</resources>

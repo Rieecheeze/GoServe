@@ -1,0 +1,394 @@
+[
+  {
+    "key": "G04.detail-free",
+    "group": "G04",
+    "family": "request-detail",
+    "kind": "result",
+    "title": "Request detail",
+    "body": "Submitted. No payment is required for this request.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Enrollment certificate",
+        "body": "",
+        "rows": [
+          {
+            "label": "Office",
+            "value": "Registrar"
+          },
+          {
+            "label": "Request status",
+            "value": "Submitted"
+          },
+          {
+            "label": "Fee",
+            "value": "No payment required"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Submitted · Complete",
+        "body": "The request was received. The confirmed reference and time belong here when available.",
+        "tone": "success"
+      },
+      {
+        "type": "status",
+        "title": "Office review · Current",
+        "body": "Awaiting the office's next update.",
+        "tone": "neutral"
+      },
+      {
+        "type": "status",
+        "title": "Processing · Upcoming",
+        "body": "This phase has not started.",
+        "tone": "neutral"
+      },
+      {
+        "type": "status",
+        "title": "Ready for pickup or download · Upcoming",
+        "body": "No document or pickup code has been issued.",
+        "tone": "neutral"
+      },
+      {
+        "type": "status",
+        "title": "Completed · Upcoming",
+        "body": "The request is not complete.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Ask the office",
+        "target": "@student/new-thread",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to requests",
+        "target": "@student/requests-existing-data",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Remap G04.7 View request to this key, not the existing Ready free-request example. This is an isolated design receipt/detail fixture with no invented live personal reference. Actual header/history use server-confirmed reference, actor and time. Inquiry recipient is the originating office. No payment, file or pickup action. Office review is explanatory display state, not a new persisted request-status enum."
+  },
+  {
+    "key": "G05.required",
+    "group": "G05",
+    "family": "office-fee-editor",
+    "kind": "form",
+    "title": "Payment declaration",
+    "body": "Enter the authorized amount for this service. Cashiering handles payment.",
+    "nav": "Staff",
+    "back": "G05.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Registrar",
+        "body": "",
+        "rows": [
+          {
+            "label": "Service",
+            "value": "Enrollment certificate"
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "label": "Fee declaration",
+        "options": [
+          {
+            "label": "No payment required",
+            "detail": "The request skips payment.",
+            "selected": false,
+            "target": "G05.1"
+          },
+          {
+            "label": "Payment required",
+            "detail": "An authorized amount is required.",
+            "selected": true,
+            "target": "G05.required"
+          },
+          {
+            "label": "Pending office review",
+            "detail": "Payment has not been declared.",
+            "selected": false,
+            "target": "G05.pending"
+          }
+        ]
+      },
+      {
+        "type": "field",
+        "label": "Amount",
+        "value": "",
+        "hint": "Enter the authorized fee",
+        "error": "",
+        "multiline": false
+      }
+    ],
+    "actions": [
+      {
+        "label": "Save declaration",
+        "target": "G05.2",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Cancel",
+        "target": "@staff/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Required-fee variant. Amount is genuinely blank and Save remains disabled. No official amount or successful edit is invented. Enable only with a valid authorized amount and server permissions. Root remaps G05.1 choice routes to this key and G05.pending, and removes the amount field from G05.1 Free. Registrar and enrollment certificate are illustrative service context; actual office/service must come from the authorized configuration."
+  },
+  {
+    "key": "G05.pending",
+    "group": "G05",
+    "family": "office-fee-editor",
+    "kind": "form",
+    "title": "Payment declaration",
+    "body": "The office has not declared whether payment is required.",
+    "nav": "Staff",
+    "back": "G05.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Registrar",
+        "body": "",
+        "rows": [
+          {
+            "label": "Service",
+            "value": "Enrollment certificate"
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "label": "Fee declaration",
+        "options": [
+          {
+            "label": "No payment required",
+            "detail": "The request skips payment.",
+            "selected": false,
+            "target": "G05.1"
+          },
+          {
+            "label": "Payment required",
+            "detail": "An authorized amount is required.",
+            "selected": false,
+            "target": "G05.required"
+          },
+          {
+            "label": "Pending office review",
+            "detail": "No payment is due yet.",
+            "selected": true,
+            "target": "G05.pending"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Save declaration",
+        "target": "G05.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel",
+        "target": "@staff/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Pending-declaration variant has no amount field. Selection and save are design routes only, not a live configuration write. No fee is charged and no existing request is moved to Processing by this declaration. Registrar and enrollment certificate are illustrative service context; actual office/service must come from the authorized configuration."
+  },
+  {
+    "key":"G06.staff-reject","group":"G06","family":"reason-sheet","kind":"sheet","title":"Reject request","body":"Enter the reason for rejecting this request.","nav":"Staff","back":"@staff/request-detail","sections":[{"type":"field","label":"Reason","value":"","hint":"Enter a rejection reason","error":"","multiline":true}],"actions":[{"label":"Review rejection","target":"G06.staff-reject-error","style":"Primary","disabled":false},{"label":"Keep request","target":"@staff/request-detail","style":"Secondary","disabled":false}],"planned":false,"annotation":"Empty-field submit deliberately routes to validation, not confirmation. Actual nonempty input would reach G06.staff-reject-confirm only after validation. Static prototype does not claim to accept or save typed input. Show only an authorized staff transition."
+  },
+  {
+    "key":"G06.staff-reject-error","group":"G06","family":"reason-sheet","kind":"sheet","title":"Reject request","body":"A reason is required before this request can be rejected.","nav":"Staff","back":"G06.staff-reject","sections":[{"type":"field","label":"Reason","value":"","hint":"Enter a rejection reason","error":"Reason is required.","multiline":true}],"actions":[{"label":"Review rejection","target":"G06.staff-reject-error","style":"Disabled","disabled":true},{"label":"Back to reason","target":"G06.staff-reject","style":"Secondary","disabled":false},{"label":"Keep request","target":"@staff/request-detail","style":"Secondary","disabled":false}],"planned":false,"annotation":"Focus the reason field in implementation; no request state changes. Confirmation fixture is separately reachable in the review catalog and does not imply an edit occurred."
+  },
+  {
+    "key": "G06.staff-reject-confirm",
+    "group": "G06",
+    "family": "stop-confirmation",
+    "kind": "sheet",
+    "title": "Reject this request?",
+    "body": "Review the reason before confirming rejection.",
+    "nav": "Staff",
+    "back": "G06.staff-reject",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Rejection review",
+        "body": "",
+        "rows": [
+          {
+            "label": "Affected request",
+            "value": "Demonstration record"
+          },
+          {
+            "label": "Reason",
+            "value": "Demonstration reason"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Payment remains recorded",
+        "body": "For this paid-request example, rejection does not automatically refund or void the payment. Refer payment follow-up to Cashiering.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirm rejection",
+        "target": "G06.staff-rejected",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.staff-reject",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@staff/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Explicit paid-request confirmation fixture. Actual UI must show the real affected reference/service and validated reason. Paid notice is conditional, not shown for free/unpaid requests. Prototype navigation performs no server transition."
+  },
+  {
+    "key":"G06.staff-rejected","group":"G06","family":"stopped-request-result","kind":"result","title":"Request rejected","body":"This request has stopped. Its payment remains recorded.","nav":"Staff","back":"@staff/queue","sections":[{"type":"status","title":"Rejected","body":"Terminal-state design example","tone":"neutral"},{"type":"summary","title":"Payment follow-up","body":"Rejection does not automatically refund or void a payment.","rows":[{"label":"Request","value":"Rejected"},{"label":"Payment","value":"Paid"},{"label":"Payment office","value":"Cashiering"}]},{"type":"text","text":"The confirmed reason, staff actor and time appear in status history.","role":"Support"}],"actions":[{"label":"Back to queue","target":"@staff/queue","style":"Primary","disabled":false},{"label":"Contact Cashiering","target":"@staff/inbox","style":"Secondary","disabled":false}],"planned":false,"annotation":"Distinct rejected result; do not route View request to an old Processing detail. Actual result waits for server confirmation, preserves paid record and logs real reason/actor/time. Cashiering contact is through authorized office inquiry destinations only."
+  },
+  {
+    "key":"G06.staff-cancel","group":"G06","family":"reason-sheet","kind":"sheet","title":"Cancel request","body":"Enter the reason for cancelling this request.","nav":"Staff","back":"@staff/request-detail","sections":[{"type":"field","label":"Reason","value":"","hint":"Enter a cancellation reason","error":"","multiline":true}],"actions":[{"label":"Review cancellation","target":"G06.staff-cancel-error","style":"Primary","disabled":false},{"label":"Keep request","target":"@staff/request-detail","style":"Secondary","disabled":false}],"planned":false,"annotation":"Empty-field submit deliberately routes to validation. Valid nonempty input would reach G06.staff-cancel-confirm only after validation. Static prototype does not claim successful editing. No cancellation deadline or additional authority is invented."
+  },
+  {
+    "key":"G06.staff-cancel-error","group":"G06","family":"reason-sheet","kind":"sheet","title":"Cancel request","body":"A reason is required before this request can be cancelled.","nav":"Staff","back":"G06.staff-cancel","sections":[{"type":"field","label":"Reason","value":"","hint":"Enter a cancellation reason","error":"Reason is required.","multiline":true}],"actions":[{"label":"Review cancellation","target":"G06.staff-cancel-error","style":"Disabled","disabled":true},{"label":"Back to reason","target":"G06.staff-cancel","style":"Secondary","disabled":false},{"label":"Keep request","target":"@staff/request-detail","style":"Secondary","disabled":false}],"planned":false,"annotation":"No transition occurs. Keep empty reason visible with adjacent validation; actual field gets focus. Confirmation fixture is a separate review example."
+  },
+  {
+    "key": "G06.staff-cancel-confirm",
+    "group": "G06",
+    "family": "stop-confirmation",
+    "kind": "sheet",
+    "title": "Cancel this request?",
+    "body": "Review the reason before confirming cancellation.",
+    "nav": "Staff",
+    "back": "G06.staff-cancel",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Cancellation review",
+        "body": "",
+        "rows": [
+          {
+            "label": "Affected request",
+            "value": "Demonstration record"
+          },
+          {
+            "label": "Reason",
+            "value": "Demonstration reason"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Payment remains recorded",
+        "body": "For this paid-request example, cancellation does not automatically refund or void the payment. Refer payment follow-up to Cashiering.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirm cancellation",
+        "target": "G06.staff-cancelled",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.staff-cancel",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@staff/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Paid-request confirmation fixture, distinct from rejection. Show actual validated reason and reference in implementation. Paid notice is conditional; prototype does not execute a cancellation."
+  },
+  {
+    "key":"G06.staff-cancelled","group":"G06","family":"stopped-request-result","kind":"result","title":"Request cancelled","body":"This request has stopped. Its payment remains recorded.","nav":"Staff","back":"@staff/queue","sections":[{"type":"status","title":"Cancelled","body":"Terminal-state design example","tone":"neutral"},{"type":"summary","title":"Payment follow-up","body":"Cancellation does not automatically refund or void a payment.","rows":[{"label":"Request","value":"Cancelled"},{"label":"Payment","value":"Paid"},{"label":"Payment office","value":"Cashiering"}]},{"type":"text","text":"The confirmed reason, staff actor and time appear in status history.","role":"Support"}],"actions":[{"label":"Back to queue","target":"@staff/queue","style":"Primary","disabled":false},{"label":"Contact Cashiering","target":"@staff/inbox","style":"Secondary","disabled":false}],"planned":false,"annotation":"Distinct cancelled result; do not confuse with rejection or an old Processing preview. Actual success requires confirmation and preserves the paid payment record. Cashiering contact requires an authorized office-inquiry destination."
+  },
+  {
+    "key": "G06.free-confirm",
+    "group": "G06",
+    "family": "stop-confirmation",
+    "kind": "sheet",
+    "title": "Cancel this request?",
+    "body": "Review your reason before confirming cancellation.",
+    "nav": "Requests",
+    "back": "G06.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Cancellation review",
+        "body": "",
+        "rows": [
+          {
+            "label": "Affected request",
+            "value": "Demonstration record"
+          },
+          {
+            "label": "Reason",
+            "value": "Demonstration reason"
+          },
+          {
+            "label": "Fee",
+            "value": "No payment required"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirm cancellation",
+        "target": "G06.4",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.1",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "G04.detail-free",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "No paid-payment notice. Actual nonempty reason and real affected record are required. Remap free student reason/cancellation context to G04.detail-free rather than the old paid Processing example. G06.4 must show terminal Cancelled detail/result."
+  }
+]

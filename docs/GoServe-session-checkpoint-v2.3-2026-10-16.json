@@ -1,0 +1,3989 @@
+{
+  "version": "2.3",
+  "date": "2026-10-16",
+  "timezone": "Asia/Manila",
+  "status": "paused_at_user_request",
+  "resumeRequiresExplicitUserResume": true,
+  "userRequest": "save state",
+  "workspace": "C:/Users/Rieecheeze/Documents/ChatGPT/GoServe",
+  "scope": {
+    "implementationPlanApproved": true,
+    "uiApproved": false,
+    "currentMilestone": "M1 wireframe review",
+    "nativeFeatureImplementationStartedThisTurn": false,
+    "latestWireframeDirection": "Fewer panels, professor-facing general program overview. Exactly16 main Light phone panels; brief edge-case notes and Light/Dark navigation samples. Do not expand into hundreds of states."
+  },
+  "figma": {
+    "fileKey": "SvT9gBUFjdLgbrJ80LPDno",
+    "originalPageId": "14:2",
+    "newPageId": "305:2",
+    "newPageName": "GoServe • Wireframes v2.3",
+    "overviewId": "315:364",
+    "url": "https://www.figma.com/design/SvT9gBUFjdLgbrJ80LPDno?node-id=305-2",
+    "sections": {
+      "account_overview": "310:1068",
+      "request_overview": "310:1069",
+      "services_overview": "310:1070",
+      "office_overview": "310:1071"
+    },
+    "mainPanels": 16,
+    "phoneSize": [
+      390,
+      844
+    ],
+    "prototypeMode": "Static editable overview. Phone reactions cleared; no routes into original UI. Scroll viewports preserved."
+  },
+  "artifacts": {
+    "plan": "docs/GoServe-project-plan-v2.3.md",
+    "pdf": "output/pdf/GoServe_Project_Plan_v2.3.pdf",
+    "pdfPages": 13,
+    "pdfBuilder": "scripts/build_goserve_project_plan_v2_3.py",
+    "pdfVerification": "tmp/pdfs/v2_3/verification.json",
+    "baselineMd": "docs/GoServe-native-baseline-2026-10-16.md",
+    "baselineJson": "docs/GoServe-native-baseline-2026-10-16.json",
+    "shortSpecs": "scripts/figma_wireframe_short_specs.json",
+    "layout": "scripts/figma_wireframe_short_layout.json",
+    "organizer": "scripts/figma_wireframe_short_organize.js",
+    "renderer": "scripts/figma_wireframe_case_renderer.js",
+    "cloneHelper": "scripts/figma_wireframe_clone.js",
+    "detailedDeliveryInventory": "scripts/figma_wireframe_delivery_specs.json",
+    "additionalStateInventory": "scripts/figma_wireframe_additional_specs.json",
+    "priorResumeCheckpoint": "docs/GoServe-resume-checkpoint-2026-10-16.json"
+  },
+  "completed": [
+    "Detailed v2.3 editable Markdown and matching13-page PDF authored, rendered and visually verified by document agent.",
+    "Separate new Figma page created. User narrowed from detailed state library to concise professor overview; interim extra clones were removed.",
+    "Exactly16 editable390x844 phone panels in4rows of4, plus shared-database workflow header and Light/Dark navigation contrast references.",
+    "New core panels include student-triggered claim/QR, private PDF download and explicit receipt confirmation, office work, explicit handover and teller cash confirmation.",
+    "All16 phones have a vertical scroll viewport; custom actions are350x48; no phone prototype reactions remain.",
+    "Visual composition reviewed: overview, request/pickup, student services, office/cashier/settings, authentication. Consultation heading shortened on new page so Review booking is fully visible.",
+    "Existing UI invariant audit: all470 recorded dimensions preserved,2990 prototype links,264 valid destinations, zero missing frames or broken destinations.",
+    "No Android/backend source edits, provider calls, installs or commits. All child agents completed."
+  ],
+  "baseline": {
+    "freshRun": "blocked",
+    "reason": "Gradle java.io.IOException: Unable to establish loopback connection, including escalated installed JBR25 and Corretto21 attempts.",
+    "historical": {
+      "date": "2026-10-15",
+      "tests": 41,
+      "passed": 39,
+      "failed": 2
+    },
+    "failures": [
+      "CapsuleNavigationTest.java:52 navigation label visibility",
+      "SeryoInteractionTest.java:100 request-name consistency"
+    ],
+    "rule": "Do not label historical results fresh or passing. No repeated rerun until environment changes."
+  },
+  "verificationNotes": {
+    "strictRawHash": "Audit conducted from the new-page context initially reported32 of137 original-frame raw fingerprint differences. Subsequent read on ORIGINAL page14:2 reproduced original Home19:93 hash34ce174e exactly, with no intervening source mutation. This indicates context/serialization sensitivity. Final original-page-context comparison of all137 fingerprints remains pending; do not call initial mismatch actual UI damage or claim byte-identical preservation without final comparison.",
+    "invariantAudit": {
+      "pageId": "14:2",
+      "frameCount": 470,
+      "preservedFrameDimensions": 470,
+      "missing": [],
+      "mismatches": [],
+      "prototypeLinks": 2990,
+      "uniqueDestinations": 264,
+      "brokenDestinations": [],
+      "sectionCount": 28,
+      "topLevelSections": 10,
+      "createdNodeIds": [],
+      "mutatedNodeIds": []
+    },
+    "topLevelSectionCount": "Old baseline counted11 total top-level sections including a hidden retained-reference section. Latest audit counted10 visible top-level sections; this is a filter difference, not evidence of deletion.",
+    "screenshotsReviewed": [
+      "315:364 overview after chronology fix",
+      "310:1068 account setup",
+      "310:1069 request and pickup",
+      "310:1070 student services",
+      "310:1071 office and cashier",
+      "308:14582 consultation after compact heading fix"
+    ]
+  },
+  "pendingAfterResume": [
+    "Restore runtime from this JSON and prior resume checkpoint as needed; read the current Figma skill before tool use.",
+    "Finish one original-page-context fingerprint comparison for137 saved sources. Canonical geometry/routes already match. Do not modify original UI while investigating getter differences.",
+    "Persist final wireframe verification/handoff and implementation-progress note, then deliver the plan/PDF and concise Figma link.",
+    "Explicit user UI approval remains required by M1 before native feature coding. Do not treat plan approval as UI approval.",
+    "Continue M2 only after environment issue is addressed; then M3–M12 under the approved plan and provider/policy gates."
+  ],
+  "constraints": [
+    "Pause all development until explicit resume.",
+    "Supabase sole backend; server authority for roles, fees, payment, pickup and completion.",
+    "No invented official fees, schedules, formats, policies, TTL or provider responses.",
+    "Physical Ready alone creates noQR; Claim generates/retrieves; office scan/review alone does not complete.",
+    "Digital completion requires successful download then student receipt confirmation.",
+    "eGovPay/eGovAI flags remain disabled until contracts/procedures verified; never expose credentials.",
+    "Latest user asked fewer panels for professor; keep16 primary overview screens and detailed edge cases in plan/existing UI.",
+    "No active agents or tool cells remain after this save."
+  ],
+  "runtime": {
+    "goserve-wf-page": "305:2",
+    "goserve-wf-short-sections": {
+      "account_overview": "310:1068",
+      "request_overview": "310:1069",
+      "services_overview": "310:1070",
+      "office_overview": "310:1071"
+    },
+    "goserve-wf-short-kept": [
+      {
+        "key": "sign-in",
+        "group": "auth",
+        "theme": "Light",
+        "id": "308:5",
+        "sourceId": "19:2",
+        "pairId": "308:2"
+      },
+      {
+        "key": "terms",
+        "group": "auth",
+        "theme": "Light",
+        "id": "308:254",
+        "sourceId": "197:7486",
+        "pairId": "308:251"
+      },
+      {
+        "key": "email-credentials",
+        "group": "auth",
+        "theme": "Light",
+        "id": "308:9445",
+        "sourceId": "197:7492",
+        "pairId": "308:9442"
+      },
+      {
+        "key": "email-profile",
+        "group": "auth",
+        "theme": "Light",
+        "id": "308:9807",
+        "sourceId": "197:7488",
+        "pairId": "308:9804"
+      },
+      {
+        "key": "student/home",
+        "group": "home",
+        "theme": "Light",
+        "id": "308:12008",
+        "sourceId": "19:93",
+        "pairId": "308:12005"
+      },
+      {
+        "key": "student/consult",
+        "group": "consult",
+        "theme": "Light",
+        "id": "308:14582",
+        "sourceId": "23:191",
+        "pairId": "308:14579"
+      },
+      {
+        "key": "student/thread",
+        "group": "account",
+        "theme": "Light",
+        "id": "308:15143",
+        "sourceId": "23:362",
+        "pairId": "308:15140"
+      },
+      {
+        "key": "student/settings",
+        "group": "account",
+        "theme": "Light",
+        "id": "308:15541",
+        "sourceId": "33:106",
+        "pairId": "308:15538"
+      },
+      {
+        "key": "short_seryo",
+        "group": "services_overview",
+        "theme": "Light",
+        "id": "311:114",
+        "sourceId": "274:8365",
+        "pairId": "311:111"
+      }
+    ],
+    "goserve-wf-short-custom": [
+      {
+        "key": "short_request",
+        "theme": "Light",
+        "id": "312:114",
+        "body": 520,
+        "viewport": 654,
+        "role": "Student"
+      },
+      {
+        "key": "pickup_ready",
+        "theme": "Light",
+        "id": "312:184",
+        "body": 408,
+        "viewport": 654,
+        "role": "Student"
+      },
+      {
+        "key": "pickup_issued",
+        "theme": "Light",
+        "id": "312:251",
+        "body": 476,
+        "viewport": 654,
+        "role": "Student"
+      },
+      {
+        "key": "digital_downloaded",
+        "theme": "Light",
+        "id": "312:317",
+        "body": 492,
+        "viewport": 654,
+        "role": "Student"
+      },
+      {
+        "key": "short_office",
+        "theme": "Light",
+        "id": "312:386",
+        "body": 580,
+        "viewport": 654,
+        "role": "Office staff"
+      },
+      {
+        "key": "pickup_review",
+        "theme": "Light",
+        "id": "312:786",
+        "body": 492,
+        "viewport": 654,
+        "role": "Office staff"
+      },
+      {
+        "key": "short_cashier",
+        "theme": "Light",
+        "id": "312:837",
+        "body": 432,
+        "viewport": 654,
+        "role": "Teller"
+      }
+    ],
+    "goserve-wf-short-specs": [
+      {
+        "key": "short_request",
+        "title": "06 · Review a service request",
+        "role": "Student",
+        "toolbar": "Request review",
+        "heading": "Review your request",
+        "body": "Check the selected service, requirements and fee before submitting.",
+        "fields": [
+          {
+            "label": "Office and service",
+            "value": "Select an approved request type"
+          },
+          {
+            "label": "Delivery",
+            "value": "Physical pickup or private PDF"
+          },
+          {
+            "label": "Fee",
+            "value": "Free or the selected type’s configured amount"
+          },
+          {
+            "label": "Details and evidence",
+            "value": "Your entered details and required files"
+          }
+        ],
+        "actions": [
+          {
+            "label": "Submit request",
+            "target": "request_submitted",
+            "style": "primary"
+          }
+        ],
+        "notes": [
+          "The server validates the current fee and requirements. Pending declaration blocks submission. Repeated taps create one reference.",
+          "Paid requests use eGovPay or teller-confirmed cash; processing starts after authoritative payment. Office receives a committed submission live."
+        ]
+      },
+      {
+        "key": "pickup_ready",
+        "title": "07 · Ready for physical pickup",
+        "role": "Student",
+        "toolbar": "Request details",
+        "heading": "Ready for pickup",
+        "body": "Claim this request to get your pickup code.",
+        "fields": [
+          {
+            "label": "Status",
+            "value": "Ready for pickup"
+          },
+          {
+            "label": "Responsible office",
+            "value": "The office handling your request"
+          },
+          {
+            "label": "Pickup code",
+            "value": "Not issued yet"
+          }
+        ],
+        "actions": [
+          {
+            "label": "Claim request",
+            "target": "pickup_issued",
+            "style": "primary"
+          }
+        ],
+        "notes": [
+          "Office marks Ready → this student screen updates live. Ready alone generates no QR.",
+          "Claim checks ownership, status and payment. An unconfigured expiry or failed check leaves the request Ready with retry."
+        ]
+      },
+      {
+        "key": "pickup_issued",
+        "title": "08 · Student pickup QR",
+        "role": "Student",
+        "toolbar": "Pickup code",
+        "heading": "Show this at pickup",
+        "body": "Staff reviews your code and confirms the handover.",
+        "fields": [
+          {
+            "label": "QR placeholder",
+            "value": "Design placeholder only"
+          },
+          {
+            "label": "Manual code",
+            "value": "NOT A VALID PICKUP CODE"
+          },
+          {
+            "label": "Valid until",
+            "value": "Server-provided expiry"
+          }
+        ],
+        "actions": [],
+        "notes": [
+          "Claim generates or retrieves one valid server code. Reopening reuses it until expiry or invalidation.",
+          "Scan or manual entry → authorized office review → explicit handover confirmation → Completed on both sides live."
+        ]
+      },
+      {
+        "key": "digital_downloaded",
+        "title": "09 · Digital document receipt",
+        "role": "Student",
+        "toolbar": "Digital result",
+        "heading": "Your PDF result",
+        "body": "Download the released PDF, then confirm receipt.",
+        "fields": [
+          {
+            "label": "Document",
+            "value": "Private office-issued PDF"
+          },
+          {
+            "label": "Download",
+            "value": "Successful download · illustrated state"
+          },
+          {
+            "label": "Request status",
+            "value": "Ready for Download"
+          }
+        ],
+        "actions": [
+          {
+            "label": "Download PDF",
+            "target": "digital_downloaded",
+            "style": "secondary"
+          },
+          {
+            "label": "Confirm receipt",
+            "target": "digital_completed",
+            "style": "primary"
+          }
+        ],
+        "notes": [
+          "Office verifies/releases the PDF → student receives Ready for Download live.",
+          "Confirm receipt enables only after successful download of the released version. Confirmation completes both sides; failed download does not."
+        ]
+      },
+      {
+        "key": "short_office",
+        "title": "13 · Authorized office workspace",
+        "role": "Office staff",
+        "toolbar": "Office workspace",
+        "heading": "Manage your office",
+        "body": "Review assigned work and update students in real time.",
+        "fields": [
+          {
+            "label": "Requests",
+            "value": "Review evidence · update request status"
+          },
+          {
+            "label": "Service catalogue",
+            "value": "Per-type Free / Fee required / Pending"
+          },
+          {
+            "label": "Office updates",
+            "value": "Availability and announcements"
+          },
+          {
+            "label": "Inbox and consultations",
+            "value": "Reply to inquiries · manage permitted schedules"
+          }
+        ],
+        "actions": [
+          {
+            "label": "Review pickup",
+            "target": "pickup_review",
+            "style": "primary"
+          },
+          {
+            "label": "Open inquiries",
+            "target": "staff/thread",
+            "style": "secondary"
+          }
+        ],
+        "notes": [
+          "Committed submissions and inquiries arrive in the assigned office’s queue/inbox live.",
+          "Staff processes eligible requests and marks physical results Ready or releases verified PDFs. Faculty/Guidance manage their schedules; CCS secretary has assigned coordination access."
+        ]
+      },
+      {
+        "key": "pickup_review",
+        "title": "14 · Office confirms handover",
+        "role": "Office staff",
+        "toolbar": "Pickup review",
+        "heading": "Review before handover",
+        "body": "Check the matching request before handing over the result.",
+        "fields": [
+          {
+            "label": "Pickup validation",
+            "value": "Eligible code · scan or manual entry"
+          },
+          {
+            "label": "Matching request",
+            "value": "Student, office and request match"
+          },
+          {
+            "label": "Current status",
+            "value": "Ready for pickup"
+          }
+        ],
+        "actions": [
+          {
+            "label": "Confirm handover",
+            "target": "pickup_completed",
+            "style": "primary"
+          },
+          {
+            "label": "Enter another code",
+            "target": "pickup_scan",
+            "style": "secondary"
+          }
+        ],
+        "notes": [
+          "Scanning only validates. The authorized office confirms the actual handover.",
+          "Server consumes the code and completes once. Wrong-office, expired, used or invalid codes are rejected. Completion updates student and office live."
+        ]
+      },
+      {
+        "key": "short_cashier",
+        "title": "15 · Cashiering payment confirmation",
+        "role": "Teller",
+        "toolbar": "Cashiering",
+        "heading": "Review cash payment",
+        "body": "Check the request and received amount before confirming.",
+        "fields": [
+          {
+            "label": "Request reference",
+            "value": "Server-confirmed request reference"
+          },
+          {
+            "label": "Amount due",
+            "value": "Frozen submitted fee · server value"
+          },
+          {
+            "label": "Payment status",
+            "value": "Pending"
+          }
+        ],
+        "actions": [
+          {
+            "label": "Confirm cash received",
+            "target": "cash_paid",
+            "style": "primary"
+          }
+        ],
+        "notes": [
+          "Only an authorized teller confirms the exact amount once. Student and responsible office update live.",
+          "Free requests skip payment. eGovPay uses trusted callback/reconciliation after contract approval; browser return never proves payment."
+        ]
+      }
+    ],
+    "goserve-wf-short-layout": [
+      {
+        "key": "account_overview",
+        "title": "01 · Create an account, then sign in",
+        "summary": "First-time email: Terms → credentials → complete profile → account created → explicit Sign in. First-time Google: Terms → TIP Google → same profile → Home.",
+        "panels": [
+          {
+            "key": "sign-in",
+            "title": "01 · Sign in",
+            "notes": "Email/password or TIP Google. Forgot password opens recovery. A valid, complete restored session goes directly to Home.",
+            "id": "308:5",
+            "sourceId": "19:2"
+          },
+          {
+            "key": "terms",
+            "title": "02 · Accept Terms",
+            "notes": "First-time users agree before continuing. Store the accepted version and server timestamp; returning completed users do not repeat unchanged Terms.",
+            "id": "308:254",
+            "sourceId": "197:7486"
+          },
+          {
+            "key": "email-credentials",
+            "title": "03 · Choose credentials",
+            "notes": "Email supports student1@demo.com. Password: at least six characters with a letter, number and symbol. Confirmation must match before the profile step.",
+            "id": "308:9445",
+            "sourceId": "197:7492"
+          },
+          {
+            "key": "email-profile",
+            "title": "04 · Complete student profile",
+            "notes": "All personal, academic and contact fields. No middle name is an explicit exception. Email creation ends with confirmation → Sign in; Google profile save ends at Home.",
+            "id": "308:9807",
+            "sourceId": "197:7488"
+          }
+        ]
+      },
+      {
+        "key": "request_overview",
+        "title": "02 · Submit a request and claim a physical result",
+        "summary": "Submit → server records one reference → optional authoritative payment → office processing → office marks Ready → student Claim request → pickup QR.",
+        "panels": [
+          {
+            "key": "student/home",
+            "title": "05 · Student Home",
+            "notes": "New accounts have no invented activity. Browse Registrar, Student Accounting, Cashiering, Guidance and CCS across Casal and Arlegui.",
+            "id": "308:12008",
+            "sourceId": "19:93"
+          },
+          {
+            "key": "short_request",
+            "title": "06 · Review and submit",
+            "notes": "The server validates the current fee and requirements. Pending declaration blocks submission. Repeated taps create one reference.\nPaid requests use eGovPay or teller-confirmed cash; processing starts after authoritative payment. Office receives a committed submission live.",
+            "id": "312:114",
+            "sourceId": null
+          },
+          {
+            "key": "pickup_ready",
+            "title": "07 · Ready: choose Claim request",
+            "notes": "Office marks Ready → this student screen updates live. Ready alone generates no QR.\nClaim checks ownership, status and payment. An unconfigured expiry or failed check leaves the request Ready with retry.",
+            "id": "312:184",
+            "sourceId": null
+          },
+          {
+            "key": "pickup_issued",
+            "title": "08 · Present the pickup QR",
+            "notes": "Claim generates or retrieves one valid server code. Reopening reuses it until expiry or invalidation.\nScan or manual entry → authorized office review → explicit handover confirmation → Completed on both sides live.",
+            "id": "312:251",
+            "sourceId": null
+          }
+        ]
+      },
+      {
+        "key": "services_overview",
+        "title": "03 · Digital results, consultations, inquiries and Seryo",
+        "summary": "Digital delivery uses receipt confirmation. Consultations and office messages share live database records. Seryo remains a separate guidance conversation.",
+        "panels": [
+          {
+            "key": "digital_downloaded",
+            "title": "09 · Download and confirm receipt",
+            "notes": "Office verifies/releases the PDF → student receives Ready for Download live.\nConfirm receipt enables only after successful download of the released version. Confirmation completes both sides; failed download does not.",
+            "id": "312:317",
+            "sourceId": null
+          },
+          {
+            "key": "student/consult",
+            "title": "10 · Book a consultation",
+            "notes": "Choose Guidance or CCS faculty and an available slot. Atomic capacity prevents overbooking. Safe rescheduling preserves the original appointment if replacement fails.",
+            "id": "308:14582",
+            "sourceId": "23:191"
+          },
+          {
+            "key": "student/thread",
+            "title": "11 · Student–office inquiry",
+            "notes": "Send → database commit → assigned office inbox updates live. Office replies appear here live. Read/unread state persists; retries preserve drafts and avoid duplicate messages.",
+            "id": "308:15143",
+            "sourceId": "23:362"
+          },
+          {
+            "key": "short_seryo",
+            "title": "12 · Seryo and inline attachments",
+            "notes": "Separate Allow/Decline consent. Plus: Attach a file / AI privacy. One PDF, JPG or PNG up to 10 MB. Explain/Extract prepares an unsent draft. Context buttons navigate to Cashiering or an office. Provider gates and verified cleanup apply.",
+            "id": "311:114",
+            "sourceId": "274:8365"
+          }
+        ]
+      },
+      {
+        "key": "office_overview",
+        "title": "04 · Office work, handover, Cashiering and settings",
+        "summary": "Student, assigned office and authorized teller share Supabase records. Every relevant committed change appears on both authorized sides without manual refresh.",
+        "panels": [
+          {
+            "key": "short_office",
+            "title": "13 · Assigned office workspace",
+            "notes": "Committed submissions and inquiries arrive in the assigned office’s queue/inbox live.\nStaff processes eligible requests and marks physical results Ready or releases verified PDFs. Faculty/Guidance manage their schedules; CCS secretary has assigned coordination access.",
+            "id": "312:386",
+            "sourceId": null
+          },
+          {
+            "key": "pickup_review",
+            "title": "14 · Confirm actual handover",
+            "notes": "Scanning only validates. The authorized office confirms the actual handover.\nServer consumes the code and completes once. Wrong-office, expired, used or invalid codes are rejected. Completion updates student and office live.",
+            "id": "312:786",
+            "sourceId": null
+          },
+          {
+            "key": "short_cashier",
+            "title": "15 · Confirm cash payment",
+            "notes": "Only an authorized teller confirms the exact amount once. Student and responsible office update live.\nFree requests skip payment. eGovPay uses trusted callback/reconciliation after contract approval; browser return never proves payment.",
+            "id": "312:837",
+            "sourceId": null
+          },
+          {
+            "key": "student/settings",
+            "title": "16 · Settings and Terms",
+            "notes": "Every role has Settings, appearance controls and a Terms and Conditions button. Reading Terms does not record new consent. Sign-out clears account-scoped records and subscriptions.",
+            "id": "308:15541",
+            "sourceId": "33:106"
+          }
+        ]
+      }
+    ],
+    "goserve-wf-short-final-layout": {
+      "pageId": "305:2",
+      "indexId": "315:364",
+      "createdNodeIds": "315:288 315:289 315:290 315:291 315:292 315:293 315:294 315:295 315:296 315:297 315:298 315:299 315:300 315:301 315:302 315:303 315:304 315:305 315:306 315:307 315:308 315:309 315:310 315:311 315:312 315:313 315:314 315:315 315:316 315:317 315:318 315:319 315:320 315:321 315:322 315:323 315:324 315:325 315:326 315:327 315:328 315:329 315:330 315:331 315:332 315:333 315:334 315:335 315:336 315:337 315:338 315:339 315:340 315:341 315:342 315:343 315:344 315:345 315:346 315:347 315:348 315:349 315:350 315:351 315:352 315:353 315:354 315:355 315:356 315:357 315:358 315:359 315:360 315:361 315:362 315:363 315:364 315:365 315:366 315:367 315:368 315:369 315:370 315:371 315:372 315:373 315:374 315:375 315:376 315:377 315:411 315:412 315:413 315:414",
+      "mutatedNodeIds": [
+        "I308:12089;98:330",
+        "I308:12089;98:335",
+        "I308:12089;98:340",
+        "I308:12089;98:345",
+        "I308:12089;98:350",
+        "I308:14630;98:467",
+        "I308:14630;98:472",
+        "I308:14630;98:482",
+        "I308:14630;98:487",
+        "I308:14630;98:492",
+        "I311:148;95:15",
+        "I311:148;95:20",
+        "I311:148;95:25",
+        "I311:148;95:30",
+        "I311:148;95:40",
+        "310:1068",
+        "308:5",
+        "308:254",
+        "308:9445",
+        "308:9807",
+        "310:1069",
+        "308:12008",
+        "312:114",
+        "312:184",
+        "312:251",
+        "310:1070",
+        "312:317",
+        "308:14582",
+        "308:15143",
+        "311:114",
+        "310:1071",
+        "312:386",
+        "312:786",
+        "312:837",
+        "308:15541",
+        "305:2"
+      ],
+      "deletedNodeIds": [
+        "312:111",
+        "312:181",
+        "312:248",
+        "311:111",
+        "312:314",
+        "312:383",
+        "312:783",
+        "312:834"
+      ],
+      "sections": [
+        {
+          "key": "account_overview",
+          "id": "310:1068",
+          "bounds": [
+            48,
+            850,
+            1800,
+            1164
+          ],
+          "panels": [
+            {
+              "key": "sign-in",
+              "id": "308:5"
+            },
+            {
+              "key": "terms",
+              "id": "308:254"
+            },
+            {
+              "key": "email-credentials",
+              "id": "308:9445"
+            },
+            {
+              "key": "email-profile",
+              "id": "308:9807"
+            }
+          ]
+        },
+        {
+          "key": "request_overview",
+          "id": "310:1069",
+          "bounds": [
+            48,
+            2134,
+            1800,
+            1224
+          ],
+          "panels": [
+            {
+              "key": "student/home",
+              "id": "308:12008"
+            },
+            {
+              "key": "short_request",
+              "id": "312:114"
+            },
+            {
+              "key": "pickup_ready",
+              "id": "312:184"
+            },
+            {
+              "key": "pickup_issued",
+              "id": "312:251"
+            }
+          ]
+        },
+        {
+          "key": "services_overview",
+          "id": "310:1070",
+          "bounds": [
+            48,
+            3478,
+            1800,
+            1204
+          ],
+          "panels": [
+            {
+              "key": "digital_downloaded",
+              "id": "312:317"
+            },
+            {
+              "key": "student/consult",
+              "id": "308:14582"
+            },
+            {
+              "key": "student/thread",
+              "id": "308:15143"
+            },
+            {
+              "key": "short_seryo",
+              "id": "311:114"
+            }
+          ]
+        },
+        {
+          "key": "office_overview",
+          "id": "310:1071",
+          "bounds": [
+            48,
+            4802,
+            1800,
+            1224
+          ],
+          "panels": [
+            {
+              "key": "short_office",
+              "id": "312:386"
+            },
+            {
+              "key": "pickup_review",
+              "id": "312:786"
+            },
+            {
+              "key": "short_cashier",
+              "id": "312:837"
+            },
+            {
+              "key": "student/settings",
+              "id": "308:15541"
+            }
+          ]
+        }
+      ],
+      "panelCount": 16,
+      "pageChildCount": 5,
+      "indexBounds": [
+        48,
+        48,
+        1800,
+        610
+      ]
+    },
+    "goserve-wf-short-verification": {
+      "pageId": "305:2",
+      "panelCount": 16,
+      "phoneReports": [
+        {
+          "key": "sign-in",
+          "id": "308:5",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 14,
+          "actions": []
+        },
+        {
+          "key": "terms",
+          "id": "308:254",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 17,
+          "actions": []
+        },
+        {
+          "key": "email-credentials",
+          "id": "308:9445",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 16,
+          "actions": []
+        },
+        {
+          "key": "email-profile",
+          "id": "308:9807",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 30,
+          "actions": []
+        },
+        {
+          "key": "student/home",
+          "id": "308:12008",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 31,
+          "actions": []
+        },
+        {
+          "key": "short_request",
+          "id": "312:114",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 14,
+          "actions": [
+            {
+              "name": "wf-action:request_submitted|Submit request",
+              "w": 350,
+              "h": 48
+            }
+          ]
+        },
+        {
+          "key": "pickup_ready",
+          "id": "312:184",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 12,
+          "actions": [
+            {
+              "name": "wf-action:pickup_issued|Claim request",
+              "w": 350,
+              "h": 48
+            }
+          ]
+        },
+        {
+          "key": "pickup_issued",
+          "id": "312:251",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 12,
+          "actions": []
+        },
+        {
+          "key": "digital_downloaded",
+          "id": "312:317",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 13,
+          "actions": [
+            {
+              "name": "wf-action:digital_downloaded|Download PDF",
+              "w": 350,
+              "h": 48
+            },
+            {
+              "name": "wf-action:digital_completed|Confirm receipt",
+              "w": 350,
+              "h": 48
+            }
+          ]
+        },
+        {
+          "key": "student/consult",
+          "id": "308:14582",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 21,
+          "actions": []
+        },
+        {
+          "key": "student/thread",
+          "id": "308:15143",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 13,
+          "actions": []
+        },
+        {
+          "key": "short_seryo",
+          "id": "311:114",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 10,
+          "actions": []
+        },
+        {
+          "key": "short_office",
+          "id": "312:386",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 15,
+          "actions": [
+            {
+              "name": "wf-action:pickup_review|Review pickup",
+              "w": 350,
+              "h": 48
+            },
+            {
+              "name": "wf-action:staff/thread|Open inquiries",
+              "w": 350,
+              "h": 48
+            }
+          ]
+        },
+        {
+          "key": "pickup_review",
+          "id": "312:786",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 13,
+          "actions": [
+            {
+              "name": "wf-action:pickup_completed|Confirm handover",
+              "w": 350,
+              "h": 48
+            },
+            {
+              "name": "wf-action:pickup_scan|Enter another code",
+              "w": 350,
+              "h": 48
+            }
+          ]
+        },
+        {
+          "key": "short_cashier",
+          "id": "312:837",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 12,
+          "actions": [
+            {
+              "name": "wf-action:cash_paid|Confirm cash received",
+              "w": 350,
+              "h": 48
+            }
+          ]
+        },
+        {
+          "key": "student/settings",
+          "id": "308:15541",
+          "width": 390,
+          "height": 844,
+          "scrolls": 1,
+          "editableTexts": 16,
+          "actions": []
+        }
+      ],
+      "originalUiChecked": 137,
+      "originalUiChanged": [
+        "19:93",
+        "36:93",
+        "127:1124",
+        "127:1329",
+        "33:54",
+        "36:1766",
+        "45:2",
+        "46:2",
+        "45:54",
+        "46:30",
+        "23:32",
+        "36:377",
+        "127:1254",
+        "127:1459",
+        "23:95",
+        "36:440",
+        "106:662",
+        "107:1063",
+        "106:663",
+        "107:1064",
+        "23:191",
+        "36:536",
+        "23:285",
+        "36:630",
+        "145:1296",
+        "145:1357",
+        "23:388",
+        "36:733",
+        "24:2",
+        "36:766",
+        "24:131",
+        "36:899"
+      ],
+      "prototypeReactions": 0,
+      "issues": [],
+      "mutatedNodeIds": [
+        "315:367",
+        "315:347",
+        "308:14596"
+      ],
+      "createdNodeIds": []
+    },
+    "goserve-wf-original-invariant-audit": {
+      "pageId": "14:2",
+      "frameCount": 470,
+      "preservedFrameDimensions": 470,
+      "missing": [],
+      "mismatches": [],
+      "prototypeLinks": 2990,
+      "uniqueDestinations": 264,
+      "brokenDestinations": [],
+      "sectionCount": 28,
+      "topLevelSections": 10,
+      "createdNodeIds": [],
+      "mutatedNodeIds": []
+    },
+    "goserve-wf-signatures": [
+      {
+        "id": "19:2",
+        "hash": "5904e3d"
+      },
+      {
+        "id": "36:2",
+        "hash": "1a670453"
+      },
+      {
+        "id": "56:38",
+        "hash": "1361a4c1"
+      },
+      {
+        "id": "56:66",
+        "hash": "6a9fb6db"
+      },
+      {
+        "id": "197:7484",
+        "hash": "80f9e15a"
+      },
+      {
+        "id": "197:7485",
+        "hash": "46f9f1fe"
+      },
+      {
+        "id": "197:7486",
+        "hash": "744cad7"
+      },
+      {
+        "id": "197:7487",
+        "hash": "a524b35c"
+      },
+      {
+        "id": "197:7492",
+        "hash": "ac1b54e7"
+      },
+      {
+        "id": "197:7493",
+        "hash": "95bb3fc"
+      },
+      {
+        "id": "197:7512",
+        "hash": "912b57"
+      },
+      {
+        "id": "197:7513",
+        "hash": "84e6aadc"
+      },
+      {
+        "id": "206:7476",
+        "hash": "a495eca0"
+      },
+      {
+        "id": "206:7477",
+        "hash": "b5b331ef"
+      },
+      {
+        "id": "206:7478",
+        "hash": "38885a34"
+      },
+      {
+        "id": "206:7479",
+        "hash": "48a9e4de"
+      },
+      {
+        "id": "197:7488",
+        "hash": "b4ffd87b"
+      },
+      {
+        "id": "197:7489",
+        "hash": "29b2b98e"
+      },
+      {
+        "id": "200:7476",
+        "hash": "df6c1615"
+      },
+      {
+        "id": "200:7477",
+        "hash": "543c9a72"
+      },
+      {
+        "id": "197:7508",
+        "hash": "3ead7aeb"
+      },
+      {
+        "id": "197:7509",
+        "hash": "91243cae"
+      },
+      {
+        "id": "197:7502",
+        "hash": "54520257"
+      },
+      {
+        "id": "197:7503",
+        "hash": "864fcc22"
+      },
+      {
+        "id": "206:7480",
+        "hash": "f64304e1"
+      },
+      {
+        "id": "206:7481",
+        "hash": "8b2e6c0f"
+      },
+      {
+        "id": "197:7494",
+        "hash": "208e0efb"
+      },
+      {
+        "id": "197:7495",
+        "hash": "2276a183"
+      },
+      {
+        "id": "197:7496",
+        "hash": "cafa31e5"
+      },
+      {
+        "id": "197:7497",
+        "hash": "11812cd4"
+      },
+      {
+        "id": "197:7500",
+        "hash": "f8acd319"
+      },
+      {
+        "id": "197:7501",
+        "hash": "69d4bf75"
+      },
+      {
+        "id": "206:7482",
+        "hash": "84ed3360"
+      },
+      {
+        "id": "206:7483",
+        "hash": "b380df18"
+      },
+      {
+        "id": "197:7504",
+        "hash": "7b2f1ac4"
+      },
+      {
+        "id": "197:7505",
+        "hash": "3aa243e6"
+      },
+      {
+        "id": "19:61",
+        "hash": "2fdde17"
+      },
+      {
+        "id": "36:61",
+        "hash": "9aa802cd"
+      },
+      {
+        "id": "200:7478",
+        "hash": "85eb70a0"
+      },
+      {
+        "id": "200:7479",
+        "hash": "6c84aaae"
+      },
+      {
+        "id": "206:7486",
+        "hash": "989607da"
+      },
+      {
+        "id": "206:7487",
+        "hash": "35ef74da"
+      },
+      {
+        "id": "197:7506",
+        "hash": "b1a58cf7"
+      },
+      {
+        "id": "197:7507",
+        "hash": "fb4d6b58"
+      },
+      {
+        "id": "206:7484",
+        "hash": "61e28542"
+      },
+      {
+        "id": "206:7485",
+        "hash": "71fecee9"
+      },
+      {
+        "id": "106:642",
+        "hash": "12fb50c"
+      },
+      {
+        "id": "106:652",
+        "hash": "3cb277ab"
+      },
+      {
+        "id": "213:7544",
+        "hash": "d55c21e"
+      },
+      {
+        "id": "213:7563",
+        "hash": "28bb06d5"
+      },
+      {
+        "id": "213:7486",
+        "hash": "1e17eec7"
+      },
+      {
+        "id": "213:7515",
+        "hash": "3b09a68a"
+      },
+      {
+        "id": "219:7722",
+        "hash": "1c1f4977"
+      },
+      {
+        "id": "219:7723",
+        "hash": "9fd44993"
+      },
+      {
+        "id": "219:7728",
+        "hash": "2e9e2e61"
+      },
+      {
+        "id": "219:7729",
+        "hash": "7b14dd6f"
+      },
+      {
+        "id": "219:7724",
+        "hash": "88eb0944"
+      },
+      {
+        "id": "219:7725",
+        "hash": "e7f47202"
+      },
+      {
+        "id": "219:7730",
+        "hash": "cfcb0e3b"
+      },
+      {
+        "id": "219:7731",
+        "hash": "4f9d6b2c"
+      },
+      {
+        "id": "219:7726",
+        "hash": "1c18d27e"
+      },
+      {
+        "id": "219:7727",
+        "hash": "259e07d6"
+      },
+      {
+        "id": "219:7732",
+        "hash": "910a0eec"
+      },
+      {
+        "id": "219:7733",
+        "hash": "bd3be80a"
+      },
+      {
+        "id": "219:7734",
+        "hash": "3a1be7da"
+      },
+      {
+        "id": "219:7735",
+        "hash": "24bf8f99"
+      },
+      {
+        "id": "219:7736",
+        "hash": "d93bbae"
+      },
+      {
+        "id": "219:7737",
+        "hash": "2bf9d68b"
+      },
+      {
+        "id": "219:7742",
+        "hash": "1ebac7c9"
+      },
+      {
+        "id": "219:7743",
+        "hash": "80089bc0"
+      },
+      {
+        "id": "219:7740",
+        "hash": "ad610c30"
+      },
+      {
+        "id": "219:7741",
+        "hash": "c16defe1"
+      },
+      {
+        "id": "219:7738",
+        "hash": "92a1a6f7"
+      },
+      {
+        "id": "219:7739",
+        "hash": "394207ee"
+      },
+      {
+        "id": "19:93",
+        "hash": "34ce174e"
+      },
+      {
+        "id": "36:93",
+        "hash": "ca583558"
+      },
+      {
+        "id": "127:1124",
+        "hash": "16210203"
+      },
+      {
+        "id": "127:1329",
+        "hash": "2e5d6d7f"
+      },
+      {
+        "id": "33:54",
+        "hash": "1a988935"
+      },
+      {
+        "id": "36:1766",
+        "hash": "159a8f40"
+      },
+      {
+        "id": "45:2",
+        "hash": "d532d9e1"
+      },
+      {
+        "id": "46:2",
+        "hash": "825bfd0b"
+      },
+      {
+        "id": "45:54",
+        "hash": "b04f6b88"
+      },
+      {
+        "id": "46:30",
+        "hash": "afd81913"
+      },
+      {
+        "id": "19:175",
+        "hash": "8a9c40e5"
+      },
+      {
+        "id": "36:173",
+        "hash": "dc7d1514"
+      },
+      {
+        "id": "60:70",
+        "hash": "fb536014"
+      },
+      {
+        "id": "60:314",
+        "hash": "a6f70e4b"
+      },
+      {
+        "id": "60:2",
+        "hash": "3f4f4963"
+      },
+      {
+        "id": "60:246",
+        "hash": "18cdf09f"
+      },
+      {
+        "id": "60:104",
+        "hash": "44748c08"
+      },
+      {
+        "id": "60:348",
+        "hash": "a5d71f85"
+      },
+      {
+        "id": "60:138",
+        "hash": "ef8cdce4"
+      },
+      {
+        "id": "60:382",
+        "hash": "a571304e"
+      },
+      {
+        "id": "19:209",
+        "hash": "7229185b"
+      },
+      {
+        "id": "36:207",
+        "hash": "95fe983a"
+      },
+      {
+        "id": "19:252",
+        "hash": "2426ba20"
+      },
+      {
+        "id": "36:250",
+        "hash": "c7a990a3"
+      },
+      {
+        "id": "23:32",
+        "hash": "8c86535"
+      },
+      {
+        "id": "36:377",
+        "hash": "710ba0d7"
+      },
+      {
+        "id": "127:1254",
+        "hash": "a43a6f43"
+      },
+      {
+        "id": "127:1459",
+        "hash": "d1a6d071"
+      },
+      {
+        "id": "23:95",
+        "hash": "633177f1"
+      },
+      {
+        "id": "36:440",
+        "hash": "8bf7d802"
+      },
+      {
+        "id": "106:662",
+        "hash": "6363d3ae"
+      },
+      {
+        "id": "107:1063",
+        "hash": "faa87dd"
+      },
+      {
+        "id": "106:663",
+        "hash": "1055b5c5"
+      },
+      {
+        "id": "107:1064",
+        "hash": "611d0e29"
+      },
+      {
+        "id": "19:281",
+        "hash": "25d9f9ac"
+      },
+      {
+        "id": "36:279",
+        "hash": "19fca89d"
+      },
+      {
+        "id": "19:312",
+        "hash": "952d7d70"
+      },
+      {
+        "id": "36:310",
+        "hash": "ff1e30d5"
+      },
+      {
+        "id": "23:2",
+        "hash": "bee09930"
+      },
+      {
+        "id": "36:347",
+        "hash": "af3c37bc"
+      },
+      {
+        "id": "23:191",
+        "hash": "5c2c26a2"
+      },
+      {
+        "id": "36:536",
+        "hash": "f9c663b6"
+      },
+      {
+        "id": "23:254",
+        "hash": "e0a6b20f"
+      },
+      {
+        "id": "36:599",
+        "hash": "910020bb"
+      },
+      {
+        "id": "23:285",
+        "hash": "583d5e3c"
+      },
+      {
+        "id": "36:630",
+        "hash": "c3932bc9"
+      },
+      {
+        "id": "145:1296",
+        "hash": "efea7348"
+      },
+      {
+        "id": "145:1357",
+        "hash": "7a2c7247"
+      },
+      {
+        "id": "23:333",
+        "hash": "e34ea4ac"
+      },
+      {
+        "id": "36:678",
+        "hash": "e74cc174"
+      },
+      {
+        "id": "23:362",
+        "hash": "4e57dec5"
+      },
+      {
+        "id": "36:707",
+        "hash": "8e2413a3"
+      },
+      {
+        "id": "23:388",
+        "hash": "1e819c70"
+      },
+      {
+        "id": "36:733",
+        "hash": "f5cb09a0"
+      },
+      {
+        "id": "145:1418",
+        "hash": "cf330ff7"
+      },
+      {
+        "id": "145:1452",
+        "hash": "80b0a728"
+      },
+      {
+        "id": "24:2",
+        "hash": "e1666f9c"
+      },
+      {
+        "id": "36:766",
+        "hash": "8eef7e31"
+      },
+      {
+        "id": "33:106",
+        "hash": "8766f34a"
+      },
+      {
+        "id": "36:1818",
+        "hash": "f26aba89"
+      },
+      {
+        "id": "24:131",
+        "hash": "d6abed19"
+      },
+      {
+        "id": "36:899",
+        "hash": "dcaa61f0"
+      },
+      {
+        "id": "274:8365",
+        "hash": "725a0b3a"
+      }
+    ],
+    "goserve-final-frame-sizes": [
+      [
+        "19:2",
+        390,
+        844
+      ],
+      [
+        "36:2",
+        390,
+        844
+      ],
+      [
+        "56:38",
+        390,
+        844
+      ],
+      [
+        "56:66",
+        390,
+        844
+      ],
+      [
+        "197:7484",
+        390,
+        844
+      ],
+      [
+        "197:7485",
+        390,
+        844
+      ],
+      [
+        "197:7486",
+        390,
+        844
+      ],
+      [
+        "197:7487",
+        390,
+        844
+      ],
+      [
+        "197:7492",
+        390,
+        844
+      ],
+      [
+        "197:7493",
+        390,
+        844
+      ],
+      [
+        "197:7512",
+        390,
+        844
+      ],
+      [
+        "197:7513",
+        390,
+        844
+      ],
+      [
+        "206:7476",
+        390,
+        844
+      ],
+      [
+        "206:7477",
+        390,
+        844
+      ],
+      [
+        "206:7478",
+        390,
+        844
+      ],
+      [
+        "206:7479",
+        390,
+        844
+      ],
+      [
+        "197:7488",
+        390,
+        844
+      ],
+      [
+        "197:7489",
+        390,
+        844
+      ],
+      [
+        "200:7476",
+        390,
+        844
+      ],
+      [
+        "200:7477",
+        390,
+        844
+      ],
+      [
+        "197:7508",
+        390,
+        844
+      ],
+      [
+        "197:7509",
+        390,
+        844
+      ],
+      [
+        "197:7502",
+        390,
+        844
+      ],
+      [
+        "197:7503",
+        390,
+        844
+      ],
+      [
+        "206:7480",
+        390,
+        844
+      ],
+      [
+        "206:7481",
+        390,
+        844
+      ],
+      [
+        "197:7494",
+        390,
+        844
+      ],
+      [
+        "197:7495",
+        390,
+        844
+      ],
+      [
+        "197:7496",
+        390,
+        844
+      ],
+      [
+        "197:7497",
+        390,
+        844
+      ],
+      [
+        "197:7500",
+        390,
+        844
+      ],
+      [
+        "197:7501",
+        390,
+        844
+      ],
+      [
+        "206:7482",
+        390,
+        844
+      ],
+      [
+        "206:7483",
+        390,
+        844
+      ],
+      [
+        "197:7504",
+        390,
+        844
+      ],
+      [
+        "197:7505",
+        390,
+        844
+      ],
+      [
+        "19:61",
+        390,
+        844
+      ],
+      [
+        "36:61",
+        390,
+        844
+      ],
+      [
+        "200:7478",
+        390,
+        844
+      ],
+      [
+        "200:7479",
+        390,
+        844
+      ],
+      [
+        "206:7486",
+        390,
+        844
+      ],
+      [
+        "206:7487",
+        390,
+        844
+      ],
+      [
+        "197:7506",
+        390,
+        844
+      ],
+      [
+        "197:7507",
+        390,
+        844
+      ],
+      [
+        "206:7484",
+        390,
+        844
+      ],
+      [
+        "206:7485",
+        390,
+        844
+      ],
+      [
+        "106:642",
+        390,
+        844
+      ],
+      [
+        "106:652",
+        390,
+        844
+      ],
+      [
+        "213:7544",
+        390,
+        844
+      ],
+      [
+        "213:7563",
+        390,
+        844
+      ],
+      [
+        "213:7486",
+        390,
+        844
+      ],
+      [
+        "213:7515",
+        390,
+        844
+      ],
+      [
+        "219:7722",
+        390,
+        844
+      ],
+      [
+        "219:7723",
+        390,
+        844
+      ],
+      [
+        "219:7728",
+        390,
+        844
+      ],
+      [
+        "219:7729",
+        390,
+        844
+      ],
+      [
+        "219:7724",
+        390,
+        844
+      ],
+      [
+        "219:7725",
+        390,
+        844
+      ],
+      [
+        "219:7730",
+        390,
+        844
+      ],
+      [
+        "219:7731",
+        390,
+        844
+      ],
+      [
+        "219:7726",
+        390,
+        844
+      ],
+      [
+        "219:7727",
+        390,
+        844
+      ],
+      [
+        "219:7732",
+        390,
+        844
+      ],
+      [
+        "219:7733",
+        390,
+        844
+      ],
+      [
+        "219:7734",
+        390,
+        844
+      ],
+      [
+        "219:7735",
+        390,
+        844
+      ],
+      [
+        "219:7736",
+        390,
+        844
+      ],
+      [
+        "219:7737",
+        390,
+        844
+      ],
+      [
+        "219:7742",
+        390,
+        844
+      ],
+      [
+        "219:7743",
+        390,
+        844
+      ],
+      [
+        "219:7740",
+        390,
+        844
+      ],
+      [
+        "219:7741",
+        390,
+        844
+      ],
+      [
+        "219:7738",
+        390,
+        844
+      ],
+      [
+        "219:7739",
+        390,
+        844
+      ],
+      [
+        "19:93",
+        390,
+        844
+      ],
+      [
+        "36:93",
+        390,
+        844
+      ],
+      [
+        "127:1124",
+        390,
+        844
+      ],
+      [
+        "127:1329",
+        390,
+        844
+      ],
+      [
+        "33:54",
+        390,
+        844
+      ],
+      [
+        "36:1766",
+        390,
+        844
+      ],
+      [
+        "45:2",
+        390,
+        844
+      ],
+      [
+        "46:2",
+        390,
+        844
+      ],
+      [
+        "45:54",
+        390,
+        844
+      ],
+      [
+        "46:30",
+        390,
+        844
+      ],
+      [
+        "19:175",
+        390,
+        844
+      ],
+      [
+        "36:173",
+        390,
+        844
+      ],
+      [
+        "60:70",
+        390,
+        844
+      ],
+      [
+        "60:314",
+        390,
+        844
+      ],
+      [
+        "60:2",
+        390,
+        844
+      ],
+      [
+        "60:246",
+        390,
+        844
+      ],
+      [
+        "60:104",
+        390,
+        844
+      ],
+      [
+        "60:348",
+        390,
+        844
+      ],
+      [
+        "60:138",
+        390,
+        844
+      ],
+      [
+        "60:382",
+        390,
+        844
+      ],
+      [
+        "19:209",
+        390,
+        844
+      ],
+      [
+        "36:207",
+        390,
+        844
+      ],
+      [
+        "19:252",
+        390,
+        844
+      ],
+      [
+        "36:250",
+        390,
+        844
+      ],
+      [
+        "23:32",
+        390,
+        844
+      ],
+      [
+        "36:377",
+        390,
+        844
+      ],
+      [
+        "127:1254",
+        390,
+        844
+      ],
+      [
+        "127:1459",
+        390,
+        844
+      ],
+      [
+        "23:95",
+        390,
+        844
+      ],
+      [
+        "36:440",
+        390,
+        844
+      ],
+      [
+        "106:662",
+        390,
+        844
+      ],
+      [
+        "107:1063",
+        390,
+        844
+      ],
+      [
+        "106:663",
+        390,
+        844
+      ],
+      [
+        "107:1064",
+        390,
+        844
+      ],
+      [
+        "23:144",
+        390,
+        844
+      ],
+      [
+        "36:489",
+        390,
+        844
+      ],
+      [
+        "23:171",
+        390,
+        844
+      ],
+      [
+        "36:516",
+        390,
+        844
+      ],
+      [
+        "19:281",
+        390,
+        844
+      ],
+      [
+        "36:279",
+        390,
+        844
+      ],
+      [
+        "19:312",
+        390,
+        844
+      ],
+      [
+        "36:310",
+        390,
+        844
+      ],
+      [
+        "23:2",
+        390,
+        844
+      ],
+      [
+        "36:347",
+        390,
+        844
+      ],
+      [
+        "23:191",
+        390,
+        844
+      ],
+      [
+        "36:536",
+        390,
+        844
+      ],
+      [
+        "23:254",
+        390,
+        844
+      ],
+      [
+        "36:599",
+        390,
+        844
+      ],
+      [
+        "23:285",
+        390,
+        844
+      ],
+      [
+        "36:630",
+        390,
+        844
+      ],
+      [
+        "145:1296",
+        390,
+        844
+      ],
+      [
+        "145:1357",
+        390,
+        844
+      ],
+      [
+        "23:333",
+        390,
+        844
+      ],
+      [
+        "36:678",
+        390,
+        844
+      ],
+      [
+        "23:362",
+        390,
+        844
+      ],
+      [
+        "36:707",
+        390,
+        844
+      ],
+      [
+        "23:388",
+        390,
+        844
+      ],
+      [
+        "36:733",
+        390,
+        844
+      ],
+      [
+        "145:1418",
+        390,
+        844
+      ],
+      [
+        "145:1452",
+        390,
+        844
+      ],
+      [
+        "24:2",
+        390,
+        844
+      ],
+      [
+        "36:766",
+        390,
+        844
+      ],
+      [
+        "33:106",
+        390,
+        844
+      ],
+      [
+        "36:1818",
+        390,
+        844
+      ],
+      [
+        "24:131",
+        390,
+        844
+      ],
+      [
+        "36:899",
+        390,
+        844
+      ],
+      [
+        "24:186",
+        390,
+        844
+      ],
+      [
+        "36:954",
+        390,
+        844
+      ],
+      [
+        "24:227",
+        390,
+        844
+      ],
+      [
+        "36:995",
+        390,
+        844
+      ],
+      [
+        "24:286",
+        390,
+        844
+      ],
+      [
+        "36:1054",
+        390,
+        844
+      ],
+      [
+        "24:318",
+        390,
+        844
+      ],
+      [
+        "36:1086",
+        390,
+        844
+      ],
+      [
+        "24:345",
+        390,
+        844
+      ],
+      [
+        "36:1113",
+        390,
+        844
+      ],
+      [
+        "26:2",
+        390,
+        844
+      ],
+      [
+        "36:1141",
+        390,
+        844
+      ],
+      [
+        "26:42",
+        390,
+        844
+      ],
+      [
+        "36:1181",
+        390,
+        844
+      ],
+      [
+        "26:68",
+        390,
+        844
+      ],
+      [
+        "36:1207",
+        390,
+        844
+      ],
+      [
+        "26:92",
+        390,
+        844
+      ],
+      [
+        "36:1231",
+        390,
+        844
+      ],
+      [
+        "26:112",
+        390,
+        844
+      ],
+      [
+        "36:1251",
+        390,
+        844
+      ],
+      [
+        "26:166",
+        390,
+        844
+      ],
+      [
+        "36:1305",
+        390,
+        844
+      ],
+      [
+        "26:201",
+        390,
+        844
+      ],
+      [
+        "36:1340",
+        390,
+        844
+      ],
+      [
+        "26:234",
+        390,
+        844
+      ],
+      [
+        "36:1373",
+        390,
+        844
+      ],
+      [
+        "26:264",
+        390,
+        844
+      ],
+      [
+        "36:1403",
+        390,
+        844
+      ],
+      [
+        "26:293",
+        390,
+        844
+      ],
+      [
+        "36:1432",
+        390,
+        844
+      ],
+      [
+        "26:339",
+        390,
+        844
+      ],
+      [
+        "36:1478",
+        390,
+        844
+      ],
+      [
+        "26:362",
+        390,
+        844
+      ],
+      [
+        "36:1501",
+        390,
+        844
+      ],
+      [
+        "33:132",
+        390,
+        844
+      ],
+      [
+        "36:1844",
+        390,
+        844
+      ],
+      [
+        "26:415",
+        390,
+        844
+      ],
+      [
+        "36:1558",
+        390,
+        844
+      ],
+      [
+        "26:455",
+        390,
+        844
+      ],
+      [
+        "36:1598",
+        390,
+        844
+      ],
+      [
+        "26:500",
+        390,
+        844
+      ],
+      [
+        "36:1643",
+        390,
+        844
+      ],
+      [
+        "26:525",
+        390,
+        844
+      ],
+      [
+        "36:1668",
+        390,
+        844
+      ],
+      [
+        "33:158",
+        390,
+        844
+      ],
+      [
+        "36:1870",
+        390,
+        844
+      ],
+      [
+        "33:184",
+        390,
+        844
+      ],
+      [
+        "36:1896",
+        390,
+        844
+      ],
+      [
+        "24:51",
+        390,
+        844
+      ],
+      [
+        "36:819",
+        390,
+        844
+      ],
+      [
+        "24:82",
+        390,
+        844
+      ],
+      [
+        "36:850",
+        390,
+        844
+      ],
+      [
+        "24:111",
+        390,
+        844
+      ],
+      [
+        "36:879",
+        390,
+        844
+      ],
+      [
+        "40:2",
+        390,
+        844
+      ],
+      [
+        "40:33",
+        390,
+        844
+      ],
+      [
+        "95:2",
+        390,
+        844
+      ],
+      [
+        "97:162",
+        390,
+        844
+      ],
+      [
+        "254:8044",
+        390,
+        844
+      ],
+      [
+        "254:8262",
+        390,
+        844
+      ],
+      [
+        "254:8149",
+        390,
+        844
+      ],
+      [
+        "254:8367",
+        390,
+        844
+      ],
+      [
+        "274:8374",
+        390,
+        844
+      ],
+      [
+        "274:8375",
+        390,
+        844
+      ],
+      [
+        "19:26",
+        390,
+        844
+      ],
+      [
+        "36:26",
+        390,
+        844
+      ],
+      [
+        "26:563",
+        390,
+        844
+      ],
+      [
+        "36:1706",
+        390,
+        844
+      ],
+      [
+        "26:596",
+        390,
+        844
+      ],
+      [
+        "36:1739",
+        390,
+        844
+      ],
+      [
+        "58:2",
+        390,
+        844
+      ],
+      [
+        "58:22",
+        390,
+        844
+      ],
+      [
+        "58:42",
+        390,
+        844
+      ],
+      [
+        "58:62",
+        390,
+        844
+      ],
+      [
+        "58:82",
+        390,
+        844
+      ],
+      [
+        "58:102",
+        390,
+        844
+      ],
+      [
+        "58:122",
+        390,
+        844
+      ],
+      [
+        "58:142",
+        390,
+        844
+      ],
+      [
+        "145:1486",
+        390,
+        844
+      ],
+      [
+        "145:1488",
+        390,
+        844
+      ],
+      [
+        "145:1490",
+        390,
+        844
+      ],
+      [
+        "145:1492",
+        390,
+        844
+      ],
+      [
+        "145:1494",
+        390,
+        844
+      ],
+      [
+        "145:1496",
+        390,
+        844
+      ],
+      [
+        "145:1498",
+        390,
+        844
+      ],
+      [
+        "145:1500",
+        390,
+        844
+      ],
+      [
+        "145:1502",
+        390,
+        844
+      ],
+      [
+        "145:1504",
+        390,
+        844
+      ],
+      [
+        "145:1506",
+        390,
+        844
+      ],
+      [
+        "145:1508",
+        390,
+        844
+      ],
+      [
+        "145:1510",
+        390,
+        844
+      ],
+      [
+        "145:1512",
+        390,
+        844
+      ],
+      [
+        "145:1514",
+        390,
+        844
+      ],
+      [
+        "145:1516",
+        390,
+        844
+      ],
+      [
+        "145:1518",
+        390,
+        844
+      ],
+      [
+        "145:1520",
+        390,
+        844
+      ],
+      [
+        "145:1522",
+        390,
+        844
+      ],
+      [
+        "145:1524",
+        390,
+        844
+      ],
+      [
+        "145:1526",
+        390,
+        844
+      ],
+      [
+        "145:1528",
+        390,
+        844
+      ],
+      [
+        "145:1530",
+        390,
+        844
+      ],
+      [
+        "145:1532",
+        390,
+        844
+      ],
+      [
+        "145:1534",
+        390,
+        844
+      ],
+      [
+        "145:1536",
+        390,
+        844
+      ],
+      [
+        "145:1538",
+        390,
+        844
+      ],
+      [
+        "145:1540",
+        390,
+        844
+      ],
+      [
+        "145:1542",
+        390,
+        844
+      ],
+      [
+        "145:1544",
+        390,
+        844
+      ],
+      [
+        "145:1546",
+        390,
+        844
+      ],
+      [
+        "145:1548",
+        390,
+        844
+      ],
+      [
+        "145:1550",
+        390,
+        844
+      ],
+      [
+        "145:1552",
+        390,
+        844
+      ],
+      [
+        "145:1554",
+        390,
+        844
+      ],
+      [
+        "145:1556",
+        390,
+        844
+      ],
+      [
+        "145:1558",
+        390,
+        844
+      ],
+      [
+        "145:1560",
+        390,
+        844
+      ],
+      [
+        "145:1562",
+        390,
+        844
+      ],
+      [
+        "145:1564",
+        390,
+        844
+      ],
+      [
+        "145:1566",
+        390,
+        844
+      ],
+      [
+        "145:1568",
+        390,
+        844
+      ],
+      [
+        "145:1570",
+        390,
+        844
+      ],
+      [
+        "145:1572",
+        390,
+        844
+      ],
+      [
+        "145:1574",
+        390,
+        844
+      ],
+      [
+        "145:1576",
+        390,
+        844
+      ],
+      [
+        "148:1536",
+        390,
+        844
+      ],
+      [
+        "148:1538",
+        390,
+        844
+      ],
+      [
+        "217:7488",
+        390,
+        844
+      ],
+      [
+        "217:7490",
+        390,
+        844
+      ],
+      [
+        "145:1578",
+        390,
+        844
+      ],
+      [
+        "145:1580",
+        390,
+        844
+      ],
+      [
+        "145:1582",
+        390,
+        844
+      ],
+      [
+        "145:1584",
+        390,
+        844
+      ],
+      [
+        "145:1586",
+        390,
+        844
+      ],
+      [
+        "145:1588",
+        390,
+        844
+      ],
+      [
+        "148:1540",
+        390,
+        844
+      ],
+      [
+        "148:1542",
+        390,
+        844
+      ],
+      [
+        "148:1544",
+        390,
+        844
+      ],
+      [
+        "148:1546",
+        390,
+        844
+      ],
+      [
+        "217:7484",
+        390,
+        844
+      ],
+      [
+        "217:7486",
+        390,
+        844
+      ],
+      [
+        "145:1590",
+        390,
+        844
+      ],
+      [
+        "145:1592",
+        390,
+        844
+      ],
+      [
+        "145:1594",
+        390,
+        844
+      ],
+      [
+        "145:1596",
+        390,
+        844
+      ],
+      [
+        "145:1598",
+        390,
+        844
+      ],
+      [
+        "145:1600",
+        390,
+        844
+      ],
+      [
+        "145:1602",
+        390,
+        844
+      ],
+      [
+        "145:1604",
+        390,
+        844
+      ],
+      [
+        "145:1606",
+        390,
+        844
+      ],
+      [
+        "145:1608",
+        390,
+        844
+      ],
+      [
+        "148:1548",
+        390,
+        844
+      ],
+      [
+        "148:1550",
+        390,
+        844
+      ],
+      [
+        "148:1552",
+        390,
+        844
+      ],
+      [
+        "148:1554",
+        390,
+        844
+      ],
+      [
+        "148:1556",
+        390,
+        844
+      ],
+      [
+        "148:1558",
+        390,
+        844
+      ],
+      [
+        "148:1560",
+        390,
+        844
+      ],
+      [
+        "148:1562",
+        390,
+        844
+      ],
+      [
+        "148:1564",
+        390,
+        844
+      ],
+      [
+        "148:1566",
+        390,
+        844
+      ],
+      [
+        "148:1568",
+        390,
+        844
+      ],
+      [
+        "148:1570",
+        390,
+        844
+      ],
+      [
+        "148:1572",
+        390,
+        844
+      ],
+      [
+        "148:1574",
+        390,
+        844
+      ],
+      [
+        "148:1576",
+        390,
+        844
+      ],
+      [
+        "148:1578",
+        390,
+        844
+      ],
+      [
+        "148:1580",
+        390,
+        844
+      ],
+      [
+        "148:1582",
+        390,
+        844
+      ],
+      [
+        "217:7476",
+        390,
+        844
+      ],
+      [
+        "217:7478",
+        390,
+        844
+      ],
+      [
+        "217:7480",
+        390,
+        844
+      ],
+      [
+        "217:7482",
+        390,
+        844
+      ],
+      [
+        "145:1610",
+        390,
+        844
+      ],
+      [
+        "145:1612",
+        390,
+        844
+      ],
+      [
+        "145:1614",
+        390,
+        844
+      ],
+      [
+        "145:1616",
+        390,
+        844
+      ],
+      [
+        "145:1618",
+        390,
+        844
+      ],
+      [
+        "145:1620",
+        390,
+        844
+      ],
+      [
+        "145:1622",
+        390,
+        844
+      ],
+      [
+        "145:1624",
+        390,
+        844
+      ],
+      [
+        "145:1626",
+        390,
+        844
+      ],
+      [
+        "145:1628",
+        390,
+        844
+      ],
+      [
+        "145:1630",
+        390,
+        844
+      ],
+      [
+        "145:1632",
+        390,
+        844
+      ],
+      [
+        "145:1634",
+        390,
+        844
+      ],
+      [
+        "145:1636",
+        390,
+        844
+      ],
+      [
+        "145:1638",
+        390,
+        844
+      ],
+      [
+        "145:1640",
+        390,
+        844
+      ],
+      [
+        "145:1642",
+        390,
+        844
+      ],
+      [
+        "145:1644",
+        390,
+        844
+      ],
+      [
+        "145:1646",
+        390,
+        844
+      ],
+      [
+        "145:1648",
+        390,
+        844
+      ],
+      [
+        "145:1650",
+        390,
+        844
+      ],
+      [
+        "145:1652",
+        390,
+        844
+      ],
+      [
+        "145:1654",
+        390,
+        844
+      ],
+      [
+        "145:1656",
+        390,
+        844
+      ],
+      [
+        "145:1658",
+        390,
+        844
+      ],
+      [
+        "145:1660",
+        390,
+        844
+      ],
+      [
+        "145:1662",
+        390,
+        844
+      ],
+      [
+        "145:1664",
+        390,
+        844
+      ],
+      [
+        "145:1666",
+        390,
+        844
+      ],
+      [
+        "145:1668",
+        390,
+        844
+      ],
+      [
+        "145:1670",
+        390,
+        844
+      ],
+      [
+        "145:1672",
+        390,
+        844
+      ],
+      [
+        "145:1674",
+        390,
+        844
+      ],
+      [
+        "145:1676",
+        390,
+        844
+      ],
+      [
+        "145:1678",
+        390,
+        844
+      ],
+      [
+        "145:1680",
+        390,
+        844
+      ],
+      [
+        "161:6172",
+        390,
+        844
+      ],
+      [
+        "161:6174",
+        390,
+        844
+      ],
+      [
+        "161:6176",
+        390,
+        844
+      ],
+      [
+        "161:6178",
+        390,
+        844
+      ],
+      [
+        "145:1682",
+        390,
+        844
+      ],
+      [
+        "145:1684",
+        390,
+        844
+      ],
+      [
+        "145:1686",
+        390,
+        844
+      ],
+      [
+        "145:1688",
+        390,
+        844
+      ],
+      [
+        "145:1690",
+        390,
+        844
+      ],
+      [
+        "145:1692",
+        390,
+        844
+      ],
+      [
+        "145:1694",
+        390,
+        844
+      ],
+      [
+        "145:1696",
+        390,
+        844
+      ],
+      [
+        "145:1698",
+        390,
+        844
+      ],
+      [
+        "145:1700",
+        390,
+        844
+      ],
+      [
+        "145:1702",
+        390,
+        844
+      ],
+      [
+        "145:1704",
+        390,
+        844
+      ],
+      [
+        "161:6168",
+        390,
+        844
+      ],
+      [
+        "161:6170",
+        390,
+        844
+      ],
+      [
+        "145:1706",
+        390,
+        844
+      ],
+      [
+        "145:1708",
+        390,
+        844
+      ],
+      [
+        "145:1710",
+        390,
+        844
+      ],
+      [
+        "145:1712",
+        390,
+        844
+      ],
+      [
+        "145:1714",
+        390,
+        844
+      ],
+      [
+        "145:1716",
+        390,
+        844
+      ],
+      [
+        "145:1718",
+        390,
+        844
+      ],
+      [
+        "145:1720",
+        390,
+        844
+      ],
+      [
+        "145:1722",
+        390,
+        844
+      ],
+      [
+        "145:1724",
+        390,
+        844
+      ],
+      [
+        "145:1726",
+        390,
+        844
+      ],
+      [
+        "145:1728",
+        390,
+        844
+      ],
+      [
+        "145:1730",
+        390,
+        844
+      ],
+      [
+        "145:1732",
+        390,
+        844
+      ],
+      [
+        "145:1734",
+        390,
+        844
+      ],
+      [
+        "145:1736",
+        390,
+        844
+      ],
+      [
+        "145:1738",
+        390,
+        844
+      ],
+      [
+        "145:1740",
+        390,
+        844
+      ],
+      [
+        "145:1742",
+        390,
+        844
+      ],
+      [
+        "145:1744",
+        390,
+        844
+      ],
+      [
+        "145:1746",
+        390,
+        844
+      ],
+      [
+        "145:1748",
+        390,
+        844
+      ],
+      [
+        "145:1750",
+        390,
+        844
+      ],
+      [
+        "145:1752",
+        390,
+        844
+      ],
+      [
+        "145:1754",
+        390,
+        844
+      ],
+      [
+        "145:1756",
+        390,
+        844
+      ],
+      [
+        "145:1758",
+        390,
+        844
+      ],
+      [
+        "145:1760",
+        390,
+        844
+      ],
+      [
+        "274:8362",
+        390,
+        844
+      ],
+      [
+        "274:8369",
+        390,
+        844
+      ],
+      [
+        "274:8363",
+        390,
+        844
+      ],
+      [
+        "274:8370",
+        390,
+        844
+      ],
+      [
+        "274:8360",
+        390,
+        844
+      ],
+      [
+        "274:8367",
+        390,
+        844
+      ],
+      [
+        "274:8361",
+        390,
+        844
+      ],
+      [
+        "274:8368",
+        390,
+        844
+      ],
+      [
+        "274:8364",
+        390,
+        844
+      ],
+      [
+        "274:8371",
+        390,
+        844
+      ],
+      [
+        "274:8365",
+        390,
+        844
+      ],
+      [
+        "274:8372",
+        390,
+        844
+      ],
+      [
+        "274:8366",
+        390,
+        844
+      ],
+      [
+        "274:8373",
+        390,
+        844
+      ],
+      [
+        "145:1762",
+        390,
+        844
+      ],
+      [
+        "145:1764",
+        390,
+        844
+      ],
+      [
+        "145:1766",
+        390,
+        844
+      ],
+      [
+        "145:1768",
+        390,
+        844
+      ],
+      [
+        "145:1770",
+        390,
+        844
+      ],
+      [
+        "145:1772",
+        390,
+        844
+      ],
+      [
+        "145:1774",
+        390,
+        844
+      ],
+      [
+        "145:1776",
+        390,
+        844
+      ],
+      [
+        "145:1778",
+        390,
+        844
+      ],
+      [
+        "145:1780",
+        390,
+        844
+      ],
+      [
+        "145:1782",
+        390,
+        844
+      ],
+      [
+        "145:1784",
+        390,
+        844
+      ],
+      [
+        "161:6180",
+        390,
+        844
+      ],
+      [
+        "161:6182",
+        390,
+        844
+      ],
+      [
+        "161:6184",
+        390,
+        844
+      ],
+      [
+        "161:6186",
+        390,
+        844
+      ],
+      [
+        "161:6188",
+        390,
+        844
+      ],
+      [
+        "161:6190",
+        390,
+        844
+      ],
+      [
+        "161:6192",
+        390,
+        844
+      ],
+      [
+        "161:6194",
+        390,
+        844
+      ],
+      [
+        "170:6790",
+        320,
+        720
+      ],
+      [
+        "170:6919",
+        320,
+        720
+      ],
+      [
+        "170:7188",
+        320,
+        844
+      ],
+      [
+        "170:7317",
+        320,
+        844
+      ],
+      [
+        "170:7586",
+        320,
+        844
+      ],
+      [
+        "170:7666",
+        320,
+        844
+      ],
+      [
+        "170:7746",
+        320,
+        844
+      ],
+      [
+        "170:7810",
+        320,
+        844
+      ],
+      [
+        "170:7874",
+        320,
+        844
+      ],
+      [
+        "170:7935",
+        320,
+        844
+      ],
+      [
+        "229:7846",
+        320,
+        720
+      ],
+      [
+        "229:7889",
+        320,
+        720
+      ],
+      [
+        "210:7558",
+        320,
+        720
+      ],
+      [
+        "210:7591",
+        320,
+        720
+      ],
+      [
+        "210:7624",
+        320,
+        844
+      ],
+      [
+        "210:7670",
+        320,
+        844
+      ],
+      [
+        "210:7716",
+        320,
+        844
+      ],
+      [
+        "210:7782",
+        320,
+        844
+      ],
+      [
+        "229:7932",
+        320,
+        844
+      ],
+      [
+        "229:7961",
+        320,
+        844
+      ],
+      [
+        "229:7990",
+        320,
+        720
+      ],
+      [
+        "229:8028",
+        320,
+        720
+      ],
+      [
+        "257:7924",
+        320,
+        720
+      ],
+      [
+        "257:8224",
+        320,
+        720
+      ],
+      [
+        "257:7995",
+        320,
+        844
+      ],
+      [
+        "257:8295",
+        320,
+        844
+      ],
+      [
+        "257:8066",
+        320,
+        720
+      ],
+      [
+        "257:8366",
+        320,
+        720
+      ],
+      [
+        "257:8145",
+        320,
+        844
+      ],
+      [
+        "257:8445",
+        320,
+        844
+      ],
+      [
+        "257:8524",
+        320,
+        720
+      ],
+      [
+        "257:8742",
+        320,
+        720
+      ],
+      [
+        "257:8633",
+        320,
+        844
+      ],
+      [
+        "257:8851",
+        320,
+        844
+      ],
+      [
+        "287:8816",
+        320,
+        720
+      ],
+      [
+        "287:8891",
+        320,
+        844
+      ],
+      [
+        "287:8966",
+        320,
+        720
+      ],
+      [
+        "287:9033",
+        320,
+        844
+      ],
+      [
+        "287:9100",
+        320,
+        720
+      ],
+      [
+        "287:9185",
+        320,
+        844
+      ],
+      [
+        "287:9270",
+        320,
+        720
+      ],
+      [
+        "287:9340",
+        320,
+        844
+      ]
+    ]
+  }
+}

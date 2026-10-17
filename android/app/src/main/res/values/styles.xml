@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.GoServe" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/gs_primary</item>
+        <item name="colorOnPrimary">@color/gs_on_primary</item>
+        <item name="colorPrimaryContainer">@color/gs_muted</item>
+        <item name="colorOnPrimaryContainer">@color/gs_text</item>
+        <item name="colorSecondary">@color/gs_secondary</item>
+        <item name="colorOnSecondary">@color/gs_surface</item>
+        <item name="colorSecondaryContainer">@color/gs_muted</item>
+        <item name="colorOnSecondaryContainer">@color/gs_text</item>
+        <item name="colorSurface">@color/gs_surface</item>
+        <item name="colorOnSurface">@color/gs_text</item>
+        <item name="colorSurfaceVariant">@color/gs_muted</item>
+        <item name="colorOnSurfaceVariant">@color/gs_secondary</item>
+        <item name="colorOutline">@color/gs_border</item>
+        <item name="colorError">@color/gs_error</item>
+        <item name="android:colorBackground">@color/gs_background</item>
+        <item name="android:windowBackground">@color/gs_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/gs_background</item>
+        <item name="android:windowLightStatusBar">@bool/gs_light_system_bars</item>
+        <item name="android:textColorPrimary">@color/gs_text</item>
+        <item name="android:textColorSecondary">@color/gs_secondary</item>
+        <item name="android:colorAccent">@color/gs_primary</item>
+        <item name="materialButtonStyle">@style/Widget.GoServe.Button</item>
+    </style>
+    <style name="Theme.GoServe" parent="Base.Theme.GoServe" />
+    <style name="Base.TextAppearance.GoServe.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/karla_regular</item>
+        <item name="fontFamily">@font/karla_regular</item>
+        <item name="android:textColor">@color/gs_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="TextAppearance.GoServe.Body" parent="Base.TextAppearance.GoServe.Body" />
+    <style name="Base.TextAppearance.GoServe.Body.Secondary" parent="TextAppearance.GoServe.Body">
+        <item name="android:textColor">@color/gs_secondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20sp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Body.Secondary" parent="Base.TextAppearance.GoServe.Body.Secondary" />
+    <style name="Base.TextAppearance.GoServe.Label" parent="TextAppearance.GoServe.Body">
+        <item name="android:fontFamily">@font/karla_semibold</item>
+        <item name="fontFamily">@font/karla_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Label" parent="Base.TextAppearance.GoServe.Label" />
+    <style name="Base.TextAppearance.GoServe.Caption" parent="TextAppearance.GoServe.Body.Secondary">
+        <item name="android:fontFamily">@font/karla_semibold</item>
+        <item name="fontFamily">@font/karla_semibold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">16sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Caption" parent="Base.TextAppearance.GoServe.Caption" />
+    <style name="Base.TextAppearance.GoServe.Heading" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/montserrat_extra_bold</item>
+        <item name="fontFamily">@font/montserrat_extra_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gs_text</item>
+        <item name="android:textSize">30sp</item>
+        <item name="lineHeight">38sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="TextAppearance.GoServe.Heading" parent="Base.TextAppearance.GoServe.Heading" />
+    <style name="Base.TextAppearance.GoServe.Heading.Section" parent="TextAppearance.GoServe.Heading">
+        <item name="android:textSize">20sp</item>
+        <item name="lineHeight">28sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Heading.Section" parent="Base.TextAppearance.GoServe.Heading.Section" />
+    <style name="Base.TextAppearance.GoServe.Heading.Toolbar" parent="TextAppearance.GoServe.Heading">
+        <item name="android:textSize">20sp</item>
+        <item name="lineHeight">28sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Heading.Toolbar" parent="Base.TextAppearance.GoServe.Heading.Toolbar" />
+    <style name="Base.TextAppearance.GoServe.Heading.Office" parent="TextAppearance.GoServe.Heading">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Heading.Office" parent="Base.TextAppearance.GoServe.Heading.Office" />
+    <style name="TextAppearance.GoServe.Error" parent="TextAppearance.GoServe.Body">
+        <item name="android:textColor">@color/gs_error</item>
+    </style>
+    <style name="Widget.GoServe.Button" parent="Widget.Material3.Button">
+        <item name="android:textAppearance">@style/TextAppearance.GoServe.Label</item>
+        <item name="android:textColor">@color/gs_on_primary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="backgroundTint">@color/gs_primary</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="Widget.GoServe.Button.Outlined" parent="Widget.GoServe.Button">
+        <item name="android:textColor">@color/gs_text</item>
+        <item name="backgroundTint">@color/gs_surface</item>
+        <item name="strokeColor">@color/gs_border</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="Widget.GoServe.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textAppearance">@style/TextAppearance.GoServe.Label</item>
+        <item name="android:textColor">@color/gs_text</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+    <style name="Widget.GoServe.Button.Filter" parent="Widget.GoServe.Button.Outlined">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="cornerRadius">18dp</item>
+        <item name="android:insetTop">6dp</item>
+        <item name="android:insetBottom">6dp</item>
+    </style>
+    <style name="Widget.GoServe.Button.Filter.Selected" parent="Widget.GoServe.Button.Filter">
+        <item name="android:textColor">@color/gs_on_primary</item>
+        <item name="backgroundTint">@color/gs_primary</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+    <style name="Widget.GoServe.Button.Filter.Stateful" parent="Widget.GoServe.Button.Filter">
+        <item name="android:textColor">@color/filter_text</item>
+        <item name="backgroundTint">@color/filter_background</item>
+        <item name="strokeColor">@color/filter_stroke</item>
+    </style>
+    <style name="Widget.GoServe.Input" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_input</item>
+        <item name="android:textAppearance">@style/TextAppearance.GoServe.Body</item>
+        <item name="android:textColorHint">@color/gs_secondary</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:backgroundTint">@null</item>
+    </style>
+    <style name="Widget.GoServe.IconButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:tint">@color/gs_text</item>
+    </style>
+    <style name="Base.TextAppearance.GoServe.Navigation" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/karla_semibold</item>
+        <item name="fontFamily">@font/karla_semibold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">16sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Navigation" parent="Base.TextAppearance.GoServe.Navigation" />
+    <style name="Widget.GoServe.NavigationIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/gs_muted</item>
+        <item name="android:width">58dp</item>
+        <item name="android:height">30dp</item>
+    </style>
+</resources>

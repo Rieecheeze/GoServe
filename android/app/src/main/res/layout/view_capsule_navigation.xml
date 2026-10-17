@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@+id/navigationItems" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" />
+    <TextView android:id="@+id/navigationSelectedLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.GoServe.Navigation" android:textColor="@color/capsule_navigation_text" android:gravity="center" android:importantForAccessibility="no" android:visibility="gone" />
+</merge>

@@ -1,0 +1,6022 @@
+{
+  "capturedAt": "2026-10-15",
+  "fileKey": "SvT9gBUFjdLgbrJ80LPDno",
+  "pageId": "14:2",
+  "roots": [
+    {
+      "id": "19:2",
+      "name": "GoServe 2.1 • shared/sign-in",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "19:26",
+      "name": "GoServe 2.1 • shared/demo-accounts",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "19:61",
+      "name": "GoServe 2.1 • student/consent",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 1015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "19:93",
+      "name": "GoServe 2.1 • student/home",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "19:175",
+      "name": "GoServe 2.1 • student/office-registrar",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "19:209",
+      "name": "GoServe 2.1 • student/new-request",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "19:252",
+      "name": "GoServe 2.1 • student/upload-state",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "19:281",
+      "name": "GoServe 2.1 • student/payment",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "19:312",
+      "name": "GoServe 2.1 • student/payment-pending",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2290,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:2",
+      "name": "GoServe 2.1 • student/cash-instructions",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:32",
+      "name": "GoServe 2.1 • student/requests",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:95",
+      "name": "GoServe 2.1 • student/request-detail",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:144",
+      "name": "GoServe 2.1 • student/verified-file",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:171",
+      "name": "GoServe 2.1 • student/pickup-token",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:191",
+      "name": "GoServe 2.1 • student/consult",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:254",
+      "name": "GoServe 2.1 • student/appointment",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:285",
+      "name": "GoServe 2.1 • student/inbox",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:333",
+      "name": "GoServe 2.1 • student/new-thread",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:362",
+      "name": "GoServe 2.1 • student/thread",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "23:388",
+      "name": "GoServe 2.1 • student/notifications",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2290,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "24:2",
+      "name": "GoServe 2.1 • student/more",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 7015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "24:51",
+      "name": "GoServe 2.1 • shared/assistant",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "24:82",
+      "name": "GoServe 2.1 • shared/ai-upload",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "24:111",
+      "name": "GoServe 2.1 • shared/ai-error",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "24:131",
+      "name": "GoServe 2.1 • staff/home",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "24:186",
+      "name": "GoServe 2.1 • staff/availability",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "24:227",
+      "name": "GoServe 2.1 • staff/queue",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "24:286",
+      "name": "GoServe 2.1 • staff/request-detail",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "24:318",
+      "name": "GoServe 2.1 • staff/evidence",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "24:345",
+      "name": "GoServe 2.1 • staff/verified-upload",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2290,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:2",
+      "name": "GoServe 2.1 • staff/rejection",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:42",
+      "name": "GoServe 2.1 • staff/scanner",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:68",
+      "name": "GoServe 2.1 • staff/manual-token",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:92",
+      "name": "GoServe 2.1 • staff/token-result",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:112",
+      "name": "GoServe 2.1 • staff/guidance",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 12090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:166",
+      "name": "GoServe 2.1 • staff/guidance-slot",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 12090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:201",
+      "name": "GoServe 2.1 • staff/faculty",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 12090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:234",
+      "name": "GoServe 2.1 • staff/faculty-slot",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 12090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:264",
+      "name": "GoServe 2.1 • staff/ccs",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 12090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:293",
+      "name": "GoServe 2.1 • staff/inbox",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:339",
+      "name": "GoServe 2.1 • staff/thread",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2290,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:362",
+      "name": "GoServe 2.1 • staff/more",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 11015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:415",
+      "name": "GoServe 2.1 • teller/cash",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 13165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:455",
+      "name": "GoServe 2.1 • teller/pending",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 13165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:500",
+      "name": "GoServe 2.1 • teller/confirm",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 13165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:525",
+      "name": "GoServe 2.1 • teller/history",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 13165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:563",
+      "name": "GoServe 2.1 • demo/simulator",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2290,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "26:596",
+      "name": "GoServe 2.1 • shared/states",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "33:54",
+      "name": "GoServe 2.1 • student/offices",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "33:106",
+      "name": "GoServe 2.1 • student/settings",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 1015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "33:132",
+      "name": "GoServe 2.1 • staff/settings",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 1015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "33:158",
+      "name": "GoServe 2.1 • teller/settings",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 1015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "33:184",
+      "name": "GoServe 2.1 • teller/more",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 13165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:2",
+      "name": "GoServe 2.1 • dark/shared/sign-in",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:26",
+      "name": "GoServe 2.1 • dark/shared/demo-accounts",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:61",
+      "name": "GoServe 2.1 • dark/student/consent",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3340,
+      "y": 1015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:93",
+      "name": "GoServe 2.1 • dark/student/home",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:173",
+      "name": "GoServe 2.1 • dark/student/office-registrar",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4690,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:207",
+      "name": "GoServe 2.1 • dark/student/new-request",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:250",
+      "name": "GoServe 2.1 • dark/student/upload-state",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:279",
+      "name": "GoServe 2.1 • dark/student/payment",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:310",
+      "name": "GoServe 2.1 • dark/student/payment-pending",
+      "type": "FRAME",
+      "visible": true,
+      "x": 5140,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:347",
+      "name": "GoServe 2.1 • dark/student/cash-instructions",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:377",
+      "name": "GoServe 2.1 • dark/student/requests",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3340,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:440",
+      "name": "GoServe 2.1 • dark/student/request-detail",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:489",
+      "name": "GoServe 2.1 • dark/student/verified-file",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:516",
+      "name": "GoServe 2.1 • dark/student/pickup-token",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4690,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:536",
+      "name": "GoServe 2.1 • dark/student/consult",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:599",
+      "name": "GoServe 2.1 • dark/student/appointment",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3340,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:630",
+      "name": "GoServe 2.1 • dark/student/inbox",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:678",
+      "name": "GoServe 2.1 • dark/student/new-thread",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:707",
+      "name": "GoServe 2.1 • dark/student/thread",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4690,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:733",
+      "name": "GoServe 2.1 • dark/student/notifications",
+      "type": "FRAME",
+      "visible": true,
+      "x": 5140,
+      "y": 6090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:766",
+      "name": "GoServe 2.1 • dark/student/more",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 7015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:819",
+      "name": "GoServe 2.1 • dark/shared/assistant",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:850",
+      "name": "GoServe 2.1 • dark/shared/ai-upload",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3340,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:879",
+      "name": "GoServe 2.1 • dark/shared/ai-error",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:899",
+      "name": "GoServe 2.1 • dark/staff/home",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:954",
+      "name": "GoServe 2.1 • dark/staff/availability",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3340,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:995",
+      "name": "GoServe 2.1 • dark/staff/queue",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1054",
+      "name": "GoServe 2.1 • dark/staff/request-detail",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1086",
+      "name": "GoServe 2.1 • dark/staff/evidence",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4690,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1113",
+      "name": "GoServe 2.1 • dark/staff/verified-upload",
+      "type": "FRAME",
+      "visible": true,
+      "x": 5140,
+      "y": 9165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1141",
+      "name": "GoServe 2.1 • dark/staff/rejection",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1181",
+      "name": "GoServe 2.1 • dark/staff/scanner",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3340,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1207",
+      "name": "GoServe 2.1 • dark/staff/manual-token",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1231",
+      "name": "GoServe 2.1 • dark/staff/token-result",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1251",
+      "name": "GoServe 2.1 • dark/staff/guidance",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 12090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1305",
+      "name": "GoServe 2.1 • dark/staff/guidance-slot",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3340,
+      "y": 12090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1340",
+      "name": "GoServe 2.1 • dark/staff/faculty",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 12090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1373",
+      "name": "GoServe 2.1 • dark/staff/faculty-slot",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 12090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1403",
+      "name": "GoServe 2.1 • dark/staff/ccs",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4690,
+      "y": 12090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1432",
+      "name": "GoServe 2.1 • dark/staff/inbox",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4690,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1478",
+      "name": "GoServe 2.1 • dark/staff/thread",
+      "type": "FRAME",
+      "visible": true,
+      "x": 5140,
+      "y": 10090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1501",
+      "name": "GoServe 2.1 • dark/staff/more",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 11015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1558",
+      "name": "GoServe 2.1 • dark/teller/cash",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 13165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1598",
+      "name": "GoServe 2.1 • dark/teller/pending",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3340,
+      "y": 13165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1643",
+      "name": "GoServe 2.1 • dark/teller/confirm",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 13165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1668",
+      "name": "GoServe 2.1 • dark/teller/history",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 13165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1706",
+      "name": "GoServe 2.1 • dark/demo/simulator",
+      "type": "FRAME",
+      "visible": true,
+      "x": 5140,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1739",
+      "name": "GoServe 2.1 • dark/shared/states",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4690,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1766",
+      "name": "GoServe 2.1 • dark/student/offices",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3340,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1818",
+      "name": "GoServe 2.1 • dark/student/settings",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 1015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1844",
+      "name": "GoServe 2.1 • dark/staff/settings",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 1015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1870",
+      "name": "GoServe 2.1 • dark/teller/settings",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4690,
+      "y": 1015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "36:1896",
+      "name": "GoServe 2.1 • dark/teller/more",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4690,
+      "y": 13165,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "40:2",
+      "name": "GoServe 2.1 • shared/ai-response",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "40:33",
+      "name": "GoServe 2.1 • dark/shared/ai-response",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "45:2",
+      "name": "GoServe 2.1 • student/offices-documents",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "45:54",
+      "name": "GoServe 2.1 • student/offices-payments",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "46:2",
+      "name": "GoServe 2.1 • dark/student/offices-documents",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "46:30",
+      "name": "GoServe 2.1 • dark/student/offices-payments",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "51:2",
+      "name": "section / LIGHT",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": -85,
+      "width": 600,
+      "height": 35
+    },
+    {
+      "id": "51:3",
+      "name": "section / DARK",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": -85,
+      "width": 600,
+      "height": 35
+    },
+    {
+      "id": "56:38",
+      "name": "GoServe 2.1 • shared/sign-up",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "56:66",
+      "name": "GoServe 2.1 • dark/shared/sign-up",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3340,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "58:2",
+      "name": "GoServe 2.1 • shared/demo-login",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "58:22",
+      "name": "GoServe 2.1 • dark/shared/demo-login",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "58:42",
+      "name": "GoServe 2.1 • shared/demo-password-student",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "58:62",
+      "name": "GoServe 2.1 • dark/shared/demo-password-student",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4690,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "58:82",
+      "name": "GoServe 2.1 • shared/demo-password-staff",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2290,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "58:102",
+      "name": "GoServe 2.1 • dark/shared/demo-password-staff",
+      "type": "FRAME",
+      "visible": true,
+      "x": 5140,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "58:122",
+      "name": "GoServe 2.1 • shared/demo-password-teller",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 1015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "58:142",
+      "name": "GoServe 2.1 • dark/shared/demo-password-teller",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 1015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:2",
+      "name": "GoServe 2.1 • student/office-cashiering",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 3015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:36",
+      "name": "GoServe 2.1 • student/office-osa",
+      "type": "FRAME",
+      "visible": false,
+      "x": 490,
+      "y": 3015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:70",
+      "name": "GoServe 2.1 • student/office-accounting",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2290,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:104",
+      "name": "GoServe 2.1 • student/office-guidance",
+      "type": "FRAME",
+      "visible": true,
+      "x": 940,
+      "y": 3015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:138",
+      "name": "GoServe 2.1 • student/office-ccs",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1390,
+      "y": 3015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:172",
+      "name": "GoServe 2.1 • student/new-request-osa",
+      "type": "FRAME",
+      "visible": false,
+      "x": 490,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:215",
+      "name": "GoServe 2.1 • student/payment-osa",
+      "type": "FRAME",
+      "visible": false,
+      "x": 1840,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:246",
+      "name": "GoServe 2.1 • dark/student/office-cashiering",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2890,
+      "y": 3015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:280",
+      "name": "GoServe 2.1 • dark/student/office-osa",
+      "type": "FRAME",
+      "visible": false,
+      "x": 3340,
+      "y": 3015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:314",
+      "name": "GoServe 2.1 • dark/student/office-accounting",
+      "type": "FRAME",
+      "visible": true,
+      "x": 5140,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:348",
+      "name": "GoServe 2.1 • dark/student/office-guidance",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3790,
+      "y": 3015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:382",
+      "name": "GoServe 2.1 • dark/student/office-ccs",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4240,
+      "y": 3015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:416",
+      "name": "GoServe 2.1 • dark/student/new-request-osa",
+      "type": "FRAME",
+      "visible": false,
+      "x": 3340,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:459",
+      "name": "GoServe 2.1 • dark/student/payment-osa",
+      "type": "FRAME",
+      "visible": false,
+      "x": 4690,
+      "y": 4090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "64:2",
+      "name": "group / 1 / light",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 0,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:3",
+      "name": "group / 1 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": 0,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:4",
+      "name": "group / 2 / light",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 2000,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:5",
+      "name": "group / 2 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": 2000,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:6",
+      "name": "group / 3 / light",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 4000,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:7",
+      "name": "group / 3 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": 4000,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:8",
+      "name": "group / 4 / light",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 6000,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:9",
+      "name": "group / 4 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": 6000,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:10",
+      "name": "group / 5 / light",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 8000,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:11",
+      "name": "group / 5 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": 8000,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:12",
+      "name": "group / 6 / light",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 9075,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:13",
+      "name": "group / 6 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": 9075,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:14",
+      "name": "group / 7 / light",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 12000,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:15",
+      "name": "group / 7 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": 12000,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:16",
+      "name": "group / 8 / light",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 13075,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:17",
+      "name": "group / 8 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": 13075,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "95:2",
+      "name": "GoServe 2.1 • shared/ai-consent",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2290,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "95:12",
+      "name": "GoServe / Capsule navigation / AI Chat",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 5900,
+      "y": 480,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "97:162",
+      "name": "GoServe 2.1 • dark/shared/ai-consent",
+      "type": "FRAME",
+      "visible": true,
+      "x": 5140,
+      "y": 8090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "98:322",
+      "name": "GoServe / Capsule navigation / Home",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 5900,
+      "y": 0,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "98:393",
+      "name": "GoServe / Capsule navigation / Requests",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 5900,
+      "y": 120,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "98:464",
+      "name": "GoServe / Capsule navigation / Consult",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 5900,
+      "y": 240,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "98:535",
+      "name": "GoServe / Capsule navigation / Inbox",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 5900,
+      "y": 360,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "98:606",
+      "name": "GoServe / Capsule navigation / More",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 5900,
+      "y": 600,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "106:642",
+      "name": "GoServe 2.2 • light/authentication-loading",
+      "type": "FRAME",
+      "visible": true,
+      "x": 6470,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "106:652",
+      "name": "GoServe 2.2 • dark/authentication-loading",
+      "type": "FRAME",
+      "visible": true,
+      "x": 6920,
+      "y": 90,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "106:662",
+      "name": "GoServe 2.1 • student/request-detail-free",
+      "type": "FRAME",
+      "visible": true,
+      "x": 7430,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "106:663",
+      "name": "GoServe 2.1 • student/request-detail-pending",
+      "type": "FRAME",
+      "visible": true,
+      "x": 7940,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "107:1063",
+      "name": "GoServe 2.1 • dark/student/request-detail-free",
+      "type": "FRAME",
+      "visible": true,
+      "x": 8450,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "107:1064",
+      "name": "GoServe 2.1 • dark/student/request-detail-pending",
+      "type": "FRAME",
+      "visible": true,
+      "x": 8960,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "112:1275",
+      "name": "GoServe / Capsule navigation / AI Chat / Dark",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 6350,
+      "y": 480,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "112:1309",
+      "name": "GoServe / Capsule navigation / Home / Dark",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 6350,
+      "y": 0,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "112:1343",
+      "name": "GoServe / Capsule navigation / Requests / Dark",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 6350,
+      "y": 120,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "112:1377",
+      "name": "GoServe / Capsule navigation / Consult / Dark",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 6350,
+      "y": 240,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "112:1411",
+      "name": "GoServe / Capsule navigation / Inbox / Dark",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 6350,
+      "y": 360,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "112:1445",
+      "name": "GoServe / Capsule navigation / More / Dark",
+      "type": "COMPONENT",
+      "visible": true,
+      "x": 6350,
+      "y": 600,
+      "width": 390,
+      "height": 56
+    },
+    {
+      "id": "127:1124",
+      "name": "GoServe 2.1 • student/home-active-request",
+      "type": "FRAME",
+      "visible": true,
+      "x": 9510,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "127:1254",
+      "name": "GoServe 2.1 • student/requests-existing-data",
+      "type": "FRAME",
+      "visible": true,
+      "x": 9970,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "127:1329",
+      "name": "GoServe 2.1 • dark/student/home-active-request",
+      "type": "FRAME",
+      "visible": true,
+      "x": 10430,
+      "y": 2090,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "127:1459",
+      "name": "GoServe 2.1 • dark/student/requests-existing-data",
+      "type": "FRAME",
+      "visible": true,
+      "x": 10890,
+      "y": 5015,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "132:1260",
+      "name": "GoServe / Search control",
+      "type": "COMPONENT_SET",
+      "visible": true,
+      "x": 11440,
+      "y": 0,
+      "width": 382,
+      "height": 140
+    },
+    {
+      "id": "132:1273",
+      "name": "GoServe / Filter control",
+      "type": "COMPONENT_SET",
+      "visible": true,
+      "x": 11880,
+      "y": 220,
+      "width": 142,
+      "height": 260
+    },
+    {
+      "id": "132:1278",
+      "name": "GoServe / Inline action control",
+      "type": "COMPONENT_SET",
+      "visible": true,
+      "x": 12320,
+      "y": 520,
+      "width": 96,
+      "height": 140
+    },
+    {
+      "id": "144:1590",
+      "name": "GoServe / State action",
+      "type": "COMPONENT_SET",
+      "visible": true,
+      "x": 12800,
+      "y": 100,
+      "width": 2080,
+      "height": 300
+    },
+    {
+      "id": "144:1591",
+      "name": "GoServe / Staff navigation",
+      "type": "COMPONENT_SET",
+      "visible": true,
+      "x": 12800,
+      "y": 420,
+      "width": 2080,
+      "height": 400
+    },
+    {
+      "id": "144:1592",
+      "name": "GoServe / Teller navigation",
+      "type": "COMPONENT_SET",
+      "visible": true,
+      "x": 12800,
+      "y": 1250,
+      "width": 2080,
+      "height": 300
+    },
+    {
+      "id": "145:1296",
+      "name": "GoServe 2.1 • student/inbox-existing-data",
+      "type": "FRAME",
+      "visible": true,
+      "x": 9500,
+      "y": 14500,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1356",
+      "name": "Design annotation / Light / G01.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 14490,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1357",
+      "name": "GoServe 2.1 • dark/student/inbox-existing-data",
+      "type": "FRAME",
+      "visible": true,
+      "x": 9950,
+      "y": 14500,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1417",
+      "name": "Design annotation / Dark / G01.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 14490,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1418",
+      "name": "GoServe 2.1 • student/notifications-existing-data",
+      "type": "FRAME",
+      "visible": true,
+      "x": 9500,
+      "y": 15480,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1451",
+      "name": "Design annotation / Light / G01.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 14490,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1452",
+      "name": "GoServe 2.1 • dark/student/notifications-existing-data",
+      "type": "FRAME",
+      "visible": true,
+      "x": 9950,
+      "y": 15480,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1485",
+      "name": "Design annotation / Dark / G01.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 14490,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1486",
+      "name": "GoServe 2.1 • states/G01.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 14600,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1487",
+      "name": "Design annotation / Light / G01.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 14490,
+      "width": 390,
+      "height": 32
+    },
+    {
+      "id": "145:1488",
+      "name": "GoServe 2.1 • dark/states/G01.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 14600,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1489",
+      "name": "Design annotation / Dark / G01.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 14490,
+      "width": 390,
+      "height": 32
+    },
+    {
+      "id": "145:1490",
+      "name": "GoServe 2.1 • states/G01.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 14600,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1491",
+      "name": "Design annotation / Light / G01.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 14490,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1492",
+      "name": "GoServe 2.1 • dark/states/G01.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 14600,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1493",
+      "name": "Design annotation / Dark / G01.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 14490,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1494",
+      "name": "GoServe 2.1 • states/G01.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 15640,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1495",
+      "name": "Design annotation / Light / G01.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 15530,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1496",
+      "name": "GoServe 2.1 • dark/states/G01.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 15640,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1497",
+      "name": "Design annotation / Dark / G01.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 15530,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1498",
+      "name": "GoServe 2.1 • states/G01.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 15640,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1499",
+      "name": "Design annotation / Light / G01.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 15530,
+      "width": 390,
+      "height": 32
+    },
+    {
+      "id": "145:1500",
+      "name": "GoServe 2.1 • dark/states/G01.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 15640,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1501",
+      "name": "Design annotation / Dark / G01.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 15530,
+      "width": 390,
+      "height": 32
+    },
+    {
+      "id": "145:1502",
+      "name": "GoServe 2.1 • states/G01.7",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 15640,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1503",
+      "name": "Design annotation / Light / G01.7",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 15530,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1504",
+      "name": "GoServe 2.1 • dark/states/G01.7",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 15640,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1505",
+      "name": "Design annotation / Dark / G01.7",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 15530,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1506",
+      "name": "GoServe 2.1 • states/G01.8",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 15640,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1507",
+      "name": "Design annotation / Light / G01.8",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 15530,
+      "width": 390,
+      "height": 32
+    },
+    {
+      "id": "145:1508",
+      "name": "GoServe 2.1 • dark/states/G01.8",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 15640,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1509",
+      "name": "Design annotation / Dark / G01.8",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 15530,
+      "width": 390,
+      "height": 32
+    },
+    {
+      "id": "145:1510",
+      "name": "GoServe 2.1 • states/G01.9",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 16680,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1511",
+      "name": "Design annotation / Light / G01.9",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 16570,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1512",
+      "name": "GoServe 2.1 • dark/states/G01.9",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 16680,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1513",
+      "name": "Design annotation / Dark / G01.9",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 16570,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1514",
+      "name": "GoServe 2.1 • states/G02.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 16680,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1515",
+      "name": "Design annotation / Light / G02.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 16570,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1516",
+      "name": "GoServe 2.1 • dark/states/G02.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 16680,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1517",
+      "name": "Design annotation / Dark / G02.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 16570,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1518",
+      "name": "GoServe 2.1 • states/G02.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 16680,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1519",
+      "name": "Design annotation / Light / G02.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 16570,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1520",
+      "name": "GoServe 2.1 • dark/states/G02.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 16680,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1521",
+      "name": "Design annotation / Dark / G02.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 16570,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1522",
+      "name": "GoServe 2.1 • states/G02.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 16680,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1523",
+      "name": "Design annotation / Light / G02.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 16570,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1524",
+      "name": "GoServe 2.1 • dark/states/G02.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 16680,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1525",
+      "name": "Design annotation / Dark / G02.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 16570,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1526",
+      "name": "GoServe 2.1 • states/G02.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 17720,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1527",
+      "name": "Design annotation / Light / G02.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 17610,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1528",
+      "name": "GoServe 2.1 • dark/states/G02.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 17720,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1529",
+      "name": "Design annotation / Dark / G02.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 17610,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1530",
+      "name": "GoServe 2.1 • states/G02.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 17720,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1531",
+      "name": "Design annotation / Light / G02.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 17610,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1532",
+      "name": "GoServe 2.1 • dark/states/G02.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 17720,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1533",
+      "name": "Design annotation / Dark / G02.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 17610,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1534",
+      "name": "GoServe 2.1 • states/G03.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 17720,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1535",
+      "name": "Design annotation / Light / G03.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 17610,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1536",
+      "name": "GoServe 2.1 • dark/states/G03.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 17720,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1537",
+      "name": "Design annotation / Dark / G03.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 17610,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1538",
+      "name": "GoServe 2.1 • states/G03.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 17720,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1539",
+      "name": "Design annotation / Light / G03.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 17610,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1540",
+      "name": "GoServe 2.1 • dark/states/G03.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 17720,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1541",
+      "name": "Design annotation / Dark / G03.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 17610,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1542",
+      "name": "GoServe 2.1 • states/G03.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 18760,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1543",
+      "name": "Design annotation / Light / G03.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 18650,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1544",
+      "name": "GoServe 2.1 • dark/states/G03.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 18760,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1545",
+      "name": "Design annotation / Dark / G03.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 18650,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1546",
+      "name": "GoServe 2.1 • states/G03.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 18760,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1547",
+      "name": "Design annotation / Light / G03.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 18650,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1548",
+      "name": "GoServe 2.1 • dark/states/G03.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 18760,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1549",
+      "name": "Design annotation / Dark / G03.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 18650,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1550",
+      "name": "GoServe 2.1 • states/G04.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 18760,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1551",
+      "name": "Design annotation / Light / G04.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 18650,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1552",
+      "name": "GoServe 2.1 • dark/states/G04.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 18760,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1553",
+      "name": "Design annotation / Dark / G04.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 18650,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1554",
+      "name": "GoServe 2.1 • states/G04.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 18760,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1555",
+      "name": "Design annotation / Light / G04.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 18650,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1556",
+      "name": "GoServe 2.1 • dark/states/G04.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 18760,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1557",
+      "name": "Design annotation / Dark / G04.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 18650,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1558",
+      "name": "GoServe 2.1 • states/G04.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 19800,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1559",
+      "name": "Design annotation / Light / G04.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 19690,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1560",
+      "name": "GoServe 2.1 • dark/states/G04.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 19800,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1561",
+      "name": "Design annotation / Dark / G04.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 19690,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1562",
+      "name": "GoServe 2.1 • states/G04.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 19800,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1563",
+      "name": "Design annotation / Light / G04.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 19690,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1564",
+      "name": "GoServe 2.1 • dark/states/G04.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 19800,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1565",
+      "name": "Design annotation / Dark / G04.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 19690,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1566",
+      "name": "GoServe 2.1 • states/G04.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 19800,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1567",
+      "name": "Design annotation / Light / G04.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 19690,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1568",
+      "name": "GoServe 2.1 • dark/states/G04.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 19800,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1569",
+      "name": "Design annotation / Dark / G04.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 19690,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1570",
+      "name": "GoServe 2.1 • states/G04.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 19800,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1571",
+      "name": "Design annotation / Light / G04.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 19690,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1572",
+      "name": "GoServe 2.1 • dark/states/G04.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 19800,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1573",
+      "name": "Design annotation / Dark / G04.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 19690,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1574",
+      "name": "GoServe 2.1 • states/G04.7",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 20840,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1575",
+      "name": "Design annotation / Light / G04.7",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 20730,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "145:1576",
+      "name": "GoServe 2.1 • dark/states/G04.7",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 20840,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1577",
+      "name": "Design annotation / Dark / G04.7",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 20730,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "145:1578",
+      "name": "GoServe 2.1 • states/G05.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 20840,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1579",
+      "name": "Design annotation / Light / G05.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 20730,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "145:1580",
+      "name": "GoServe 2.1 • dark/states/G05.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 20840,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1581",
+      "name": "Design annotation / Dark / G05.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 20730,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "145:1582",
+      "name": "GoServe 2.1 • states/G05.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 20840,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1583",
+      "name": "Design annotation / Light / G05.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 20730,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1584",
+      "name": "GoServe 2.1 • dark/states/G05.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 20840,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1585",
+      "name": "Design annotation / Dark / G05.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 20730,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1586",
+      "name": "GoServe 2.1 • states/G05.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 20840,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1587",
+      "name": "Design annotation / Light / G05.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 20730,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1588",
+      "name": "GoServe 2.1 • dark/states/G05.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 20840,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1589",
+      "name": "Design annotation / Dark / G05.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 20730,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1590",
+      "name": "GoServe 2.1 • states/G06.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 21880,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1591",
+      "name": "Design annotation / Light / G06.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 21770,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1592",
+      "name": "GoServe 2.1 • dark/states/G06.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 21880,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1593",
+      "name": "Design annotation / Dark / G06.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 21770,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1594",
+      "name": "GoServe 2.1 • states/G06.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 21880,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1595",
+      "name": "Design annotation / Light / G06.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 21770,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1596",
+      "name": "GoServe 2.1 • dark/states/G06.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 21880,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1597",
+      "name": "Design annotation / Dark / G06.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 21770,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1598",
+      "name": "GoServe 2.1 • states/G06.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 21880,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1599",
+      "name": "Design annotation / Light / G06.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 21770,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1600",
+      "name": "GoServe 2.1 • dark/states/G06.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 21880,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1601",
+      "name": "Design annotation / Dark / G06.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 21770,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1602",
+      "name": "GoServe 2.1 • states/G06.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 21880,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1603",
+      "name": "Design annotation / Light / G06.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 21770,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1604",
+      "name": "GoServe 2.1 • dark/states/G06.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 21880,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1605",
+      "name": "Design annotation / Dark / G06.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 21770,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1606",
+      "name": "GoServe 2.1 • states/G06.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 22920,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1607",
+      "name": "Design annotation / Light / G06.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 22810,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1608",
+      "name": "GoServe 2.1 • dark/states/G06.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 22920,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1609",
+      "name": "Design annotation / Dark / G06.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 22810,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1610",
+      "name": "GoServe 2.1 • states/G07.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 22920,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1611",
+      "name": "Design annotation / Light / G07.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 22810,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1612",
+      "name": "GoServe 2.1 • dark/states/G07.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 22920,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1613",
+      "name": "Design annotation / Dark / G07.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 22810,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1614",
+      "name": "GoServe 2.1 • states/G07.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 22920,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1615",
+      "name": "Design annotation / Light / G07.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 22810,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1616",
+      "name": "GoServe 2.1 • dark/states/G07.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 22920,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1617",
+      "name": "Design annotation / Dark / G07.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 22810,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1618",
+      "name": "GoServe 2.1 • states/G07.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 22920,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1619",
+      "name": "Design annotation / Light / G07.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 22810,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1620",
+      "name": "GoServe 2.1 • dark/states/G07.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 22920,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1621",
+      "name": "Design annotation / Dark / G07.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 22810,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1622",
+      "name": "GoServe 2.1 • states/G07.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 23960,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1623",
+      "name": "Design annotation / Light / G07.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 23850,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1624",
+      "name": "GoServe 2.1 • dark/states/G07.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 23960,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1625",
+      "name": "Design annotation / Dark / G07.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 23850,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1626",
+      "name": "GoServe 2.1 • states/G07.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 23960,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1627",
+      "name": "Design annotation / Light / G07.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 23850,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1628",
+      "name": "GoServe 2.1 • dark/states/G07.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 23960,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1629",
+      "name": "Design annotation / Dark / G07.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 23850,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1630",
+      "name": "GoServe 2.1 • states/G07.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 23960,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1631",
+      "name": "Design annotation / Light / G07.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 23850,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1632",
+      "name": "GoServe 2.1 • dark/states/G07.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 23960,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1633",
+      "name": "Design annotation / Dark / G07.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 23850,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1634",
+      "name": "GoServe 2.1 • states/G08.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 23960,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1635",
+      "name": "Design annotation / Light / G08.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 23850,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1636",
+      "name": "GoServe 2.1 • dark/states/G08.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 23960,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1637",
+      "name": "Design annotation / Dark / G08.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 23850,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1638",
+      "name": "GoServe 2.1 • states/G08.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 25000,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1639",
+      "name": "Design annotation / Light / G08.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 24890,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1640",
+      "name": "GoServe 2.1 • dark/states/G08.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 25000,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1641",
+      "name": "Design annotation / Dark / G08.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 24890,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1642",
+      "name": "GoServe 2.1 • states/G08.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 25000,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1643",
+      "name": "Design annotation / Light / G08.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 24890,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1644",
+      "name": "GoServe 2.1 • dark/states/G08.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 25000,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1645",
+      "name": "Design annotation / Dark / G08.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 24890,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1646",
+      "name": "GoServe 2.1 • states/G08.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 25000,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1647",
+      "name": "Design annotation / Light / G08.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 24890,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1648",
+      "name": "GoServe 2.1 • dark/states/G08.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 25000,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1649",
+      "name": "Design annotation / Dark / G08.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 24890,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1650",
+      "name": "GoServe 2.1 • states/G08.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 25000,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1651",
+      "name": "Design annotation / Light / G08.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 24890,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1652",
+      "name": "GoServe 2.1 • dark/states/G08.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 25000,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1653",
+      "name": "Design annotation / Dark / G08.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 24890,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1654",
+      "name": "GoServe 2.1 • states/G09.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 26040,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1655",
+      "name": "Design annotation / Light / G09.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 25930,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1656",
+      "name": "GoServe 2.1 • dark/states/G09.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 26040,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1657",
+      "name": "Design annotation / Dark / G09.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 25930,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1658",
+      "name": "GoServe 2.1 • states/G09.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 26040,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1659",
+      "name": "Design annotation / Light / G09.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 25930,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1660",
+      "name": "GoServe 2.1 • dark/states/G09.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 26040,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1661",
+      "name": "Design annotation / Dark / G09.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 25930,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1662",
+      "name": "GoServe 2.1 • states/G09.2.cancelled",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 26040,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1663",
+      "name": "Design annotation / Light / G09.2.cancelled",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 25930,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1664",
+      "name": "GoServe 2.1 • dark/states/G09.2.cancelled",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 26040,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1665",
+      "name": "Design annotation / Dark / G09.2.cancelled",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 25930,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1666",
+      "name": "GoServe 2.1 • states/G09.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 26040,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1667",
+      "name": "Design annotation / Light / G09.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 25930,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1668",
+      "name": "GoServe 2.1 • dark/states/G09.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 26040,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1669",
+      "name": "Design annotation / Dark / G09.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 25930,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1670",
+      "name": "GoServe 2.1 • states/G09.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 27080,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1671",
+      "name": "Design annotation / Light / G09.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 26970,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1672",
+      "name": "GoServe 2.1 • dark/states/G09.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 27080,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1673",
+      "name": "Design annotation / Dark / G09.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 26970,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1674",
+      "name": "GoServe 2.1 • states/G09.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 27080,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1675",
+      "name": "Design annotation / Light / G09.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 26970,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1676",
+      "name": "GoServe 2.1 • dark/states/G09.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 27080,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1677",
+      "name": "Design annotation / Dark / G09.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 26970,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1678",
+      "name": "GoServe 2.1 • states/G09.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 27080,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1679",
+      "name": "Design annotation / Light / G09.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 26970,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1680",
+      "name": "GoServe 2.1 • dark/states/G09.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 27080,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1681",
+      "name": "Design annotation / Dark / G09.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 26970,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1682",
+      "name": "GoServe 2.1 • states/G10.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 27080,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1683",
+      "name": "Design annotation / Light / G10.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 26970,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1684",
+      "name": "GoServe 2.1 • dark/states/G10.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 27080,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1685",
+      "name": "Design annotation / Dark / G10.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 26970,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1686",
+      "name": "GoServe 2.1 • states/G10.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 28120,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1687",
+      "name": "Design annotation / Light / G10.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 28010,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1688",
+      "name": "GoServe 2.1 • dark/states/G10.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 28120,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1689",
+      "name": "Design annotation / Dark / G10.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 28010,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1690",
+      "name": "GoServe 2.1 • states/G10.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 28120,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1691",
+      "name": "Design annotation / Light / G10.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 28010,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1692",
+      "name": "GoServe 2.1 • dark/states/G10.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 28120,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1693",
+      "name": "Design annotation / Dark / G10.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 28010,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1694",
+      "name": "GoServe 2.1 • states/G10.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 28120,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1695",
+      "name": "Design annotation / Light / G10.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 28010,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "145:1696",
+      "name": "GoServe 2.1 • dark/states/G10.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 28120,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1697",
+      "name": "Design annotation / Dark / G10.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 28010,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "145:1698",
+      "name": "GoServe 2.1 • states/G10.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 28120,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1699",
+      "name": "Design annotation / Light / G10.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 28010,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1700",
+      "name": "GoServe 2.1 • dark/states/G10.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 28120,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1701",
+      "name": "Design annotation / Dark / G10.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 28010,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1702",
+      "name": "GoServe 2.1 • states/G10.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 29160,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1703",
+      "name": "Design annotation / Light / G10.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 29050,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1704",
+      "name": "GoServe 2.1 • dark/states/G10.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 29160,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1705",
+      "name": "Design annotation / Dark / G10.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 29050,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1706",
+      "name": "GoServe 2.1 • states/G11.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 29160,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1707",
+      "name": "Design annotation / Light / G11.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 29050,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1708",
+      "name": "GoServe 2.1 • dark/states/G11.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 29160,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1709",
+      "name": "Design annotation / Dark / G11.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 29050,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1710",
+      "name": "GoServe 2.1 • states/G11.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 29160,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1711",
+      "name": "Design annotation / Light / G11.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 29050,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1712",
+      "name": "GoServe 2.1 • dark/states/G11.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 29160,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1713",
+      "name": "Design annotation / Dark / G11.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 29050,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1714",
+      "name": "GoServe 2.1 • states/G11.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 29160,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1715",
+      "name": "Design annotation / Light / G11.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 29050,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1716",
+      "name": "GoServe 2.1 • dark/states/G11.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 29160,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1717",
+      "name": "Design annotation / Dark / G11.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 29050,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1718",
+      "name": "GoServe 2.1 • states/G11.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 30200,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1719",
+      "name": "Design annotation / Light / G11.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 30090,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1720",
+      "name": "GoServe 2.1 • dark/states/G11.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 30200,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1721",
+      "name": "Design annotation / Dark / G11.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 30090,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1722",
+      "name": "GoServe 2.1 • states/G11.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 30200,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1723",
+      "name": "Design annotation / Light / G11.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 30090,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1724",
+      "name": "GoServe 2.1 • dark/states/G11.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 30200,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1725",
+      "name": "Design annotation / Dark / G11.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 30090,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1726",
+      "name": "GoServe 2.1 • states/G12.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 30200,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1727",
+      "name": "Design annotation / Light / G12.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 30090,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1728",
+      "name": "GoServe 2.1 • dark/states/G12.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 30200,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1729",
+      "name": "Design annotation / Dark / G12.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 30090,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1730",
+      "name": "GoServe 2.1 • states/G12.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 30200,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1731",
+      "name": "Design annotation / Light / G12.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 30090,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1732",
+      "name": "GoServe 2.1 • dark/states/G12.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 30200,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1733",
+      "name": "Design annotation / Dark / G12.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 30090,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1734",
+      "name": "GoServe 2.1 • states/G12.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 31240,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1735",
+      "name": "Design annotation / Light / G12.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 31130,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1736",
+      "name": "GoServe 2.1 • dark/states/G12.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 31240,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1737",
+      "name": "Design annotation / Dark / G12.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 31130,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1738",
+      "name": "GoServe 2.1 • states/G12.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 31240,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1739",
+      "name": "Design annotation / Light / G12.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 31130,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1740",
+      "name": "GoServe 2.1 • dark/states/G12.4",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 31240,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1741",
+      "name": "Design annotation / Dark / G12.4",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 31130,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1742",
+      "name": "GoServe 2.1 • states/G12.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 31240,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1743",
+      "name": "Design annotation / Light / G12.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 31130,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1744",
+      "name": "GoServe 2.1 • dark/states/G12.5",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 31240,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1745",
+      "name": "Design annotation / Dark / G12.5",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 31130,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1746",
+      "name": "GoServe 2.1 • states/G12.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 31240,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1747",
+      "name": "Design annotation / Light / G12.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 31130,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1748",
+      "name": "GoServe 2.1 • dark/states/G12.6",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 31240,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1749",
+      "name": "Design annotation / Dark / G12.6",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 31130,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1750",
+      "name": "GoServe 2.1 • states/G12.7",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 32280,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1751",
+      "name": "Design annotation / Light / G12.7",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 32170,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1752",
+      "name": "GoServe 2.1 • dark/states/G12.7",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 32280,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1753",
+      "name": "Design annotation / Dark / G12.7",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 32170,
+      "width": 390,
+      "height": 48
+    },
+    {
+      "id": "145:1754",
+      "name": "GoServe 2.1 • states/G12.8",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 32280,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1755",
+      "name": "Design annotation / Light / G12.8",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 32170,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1756",
+      "name": "GoServe 2.1 • dark/states/G12.8",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 32280,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1757",
+      "name": "Design annotation / Dark / G12.8",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 32170,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1758",
+      "name": "GoServe 2.1 • states/G12.9",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 32280,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1759",
+      "name": "Design annotation / Light / G12.9",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 32170,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1760",
+      "name": "GoServe 2.1 • dark/states/G12.9",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 32280,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1761",
+      "name": "Design annotation / Dark / G12.9",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 32170,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1762",
+      "name": "GoServe 2.1 • states/G13.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 32280,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1763",
+      "name": "Design annotation / Light / G13.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 32170,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1764",
+      "name": "GoServe 2.1 • dark/states/G13.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 32280,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1765",
+      "name": "Design annotation / Dark / G13.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 32170,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1766",
+      "name": "GoServe 2.1 • states/G13.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 33320,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1767",
+      "name": "Design annotation / Light / G13.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 33210,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1768",
+      "name": "GoServe 2.1 • dark/states/G13.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 33320,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1769",
+      "name": "Design annotation / Dark / G13.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 33210,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1770",
+      "name": "GoServe 2.1 • states/G13.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 33320,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1771",
+      "name": "Design annotation / Light / G13.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 33210,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1772",
+      "name": "GoServe 2.1 • dark/states/G13.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 33320,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1773",
+      "name": "Design annotation / Dark / G13.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 33210,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "145:1774",
+      "name": "GoServe 2.1 • states/G14.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 33320,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1775",
+      "name": "Design annotation / Light / G14.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 33210,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "145:1776",
+      "name": "GoServe 2.1 • dark/states/G14.1",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 33320,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1777",
+      "name": "Design annotation / Dark / G14.1",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 33210,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "145:1778",
+      "name": "GoServe 2.1 • states/G14.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 33320,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1779",
+      "name": "Design annotation / Light / G14.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 33210,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1780",
+      "name": "GoServe 2.1 • dark/states/G14.2",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 33320,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1781",
+      "name": "Design annotation / Dark / G14.2",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 33210,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1782",
+      "name": "GoServe 2.1 • states/G14.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 34360,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1783",
+      "name": "Design annotation / Light / G14.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 34250,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "145:1784",
+      "name": "GoServe 2.1 • dark/states/G14.3",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 34360,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "145:1785",
+      "name": "Design annotation / Dark / G14.3",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 34250,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1536",
+      "name": "GoServe 2.1 • states/G04.detail-free",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 34360,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1537",
+      "name": "Design annotation / Light / G04.detail-free",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 34250,
+      "width": 390,
+      "height": 112
+    },
+    {
+      "id": "148:1538",
+      "name": "GoServe 2.1 • dark/states/G04.detail-free",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 34360,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1539",
+      "name": "Design annotation / Dark / G04.detail-free",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 34250,
+      "width": 390,
+      "height": 112
+    },
+    {
+      "id": "148:1540",
+      "name": "GoServe 2.1 • states/G05.required",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 34360,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1541",
+      "name": "Design annotation / Light / G05.required",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 34250,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "148:1542",
+      "name": "GoServe 2.1 • dark/states/G05.required",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 34360,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1543",
+      "name": "Design annotation / Dark / G05.required",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 34250,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "148:1544",
+      "name": "GoServe 2.1 • states/G05.pending",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 34360,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1545",
+      "name": "Design annotation / Light / G05.pending",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 34250,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1546",
+      "name": "GoServe 2.1 • dark/states/G05.pending",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 34360,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1547",
+      "name": "Design annotation / Dark / G05.pending",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 34250,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1548",
+      "name": "GoServe 2.1 • states/G06.staff-reject",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 35400,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1549",
+      "name": "Design annotation / Light / G06.staff-reject",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 35290,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1550",
+      "name": "GoServe 2.1 • dark/states/G06.staff-reject",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 35400,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1551",
+      "name": "Design annotation / Dark / G06.staff-reject",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 35290,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1552",
+      "name": "GoServe 2.1 • states/G06.staff-reject-error",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 35400,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1553",
+      "name": "Design annotation / Light / G06.staff-reject-error",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 35290,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "148:1554",
+      "name": "GoServe 2.1 • dark/states/G06.staff-reject-error",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 35400,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1555",
+      "name": "Design annotation / Dark / G06.staff-reject-error",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 35290,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "148:1556",
+      "name": "GoServe 2.1 • states/G06.staff-reject-confirm",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 35400,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1557",
+      "name": "Design annotation / Light / G06.staff-reject-confirm",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 35290,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1558",
+      "name": "GoServe 2.1 • dark/states/G06.staff-reject-confirm",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 35400,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1559",
+      "name": "Design annotation / Dark / G06.staff-reject-confirm",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 35290,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1560",
+      "name": "GoServe 2.1 • states/G06.staff-rejected",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 35400,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1561",
+      "name": "Design annotation / Light / G06.staff-rejected",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 35290,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1562",
+      "name": "GoServe 2.1 • dark/states/G06.staff-rejected",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 35400,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1563",
+      "name": "Design annotation / Dark / G06.staff-rejected",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 35290,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1564",
+      "name": "GoServe 2.1 • states/G06.staff-cancel",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 36440,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1565",
+      "name": "Design annotation / Light / G06.staff-cancel",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 36330,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1566",
+      "name": "GoServe 2.1 • dark/states/G06.staff-cancel",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 36440,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1567",
+      "name": "Design annotation / Dark / G06.staff-cancel",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 36330,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1568",
+      "name": "GoServe 2.1 • states/G06.staff-cancel-error",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 36440,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1569",
+      "name": "Design annotation / Light / G06.staff-cancel-error",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 36330,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "148:1570",
+      "name": "GoServe 2.1 • dark/states/G06.staff-cancel-error",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 36440,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1571",
+      "name": "Design annotation / Dark / G06.staff-cancel-error",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 36330,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "148:1572",
+      "name": "GoServe 2.1 • states/G06.staff-cancel-confirm",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 36440,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1573",
+      "name": "Design annotation / Light / G06.staff-cancel-confirm",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 36330,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "148:1574",
+      "name": "GoServe 2.1 • dark/states/G06.staff-cancel-confirm",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 36440,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1575",
+      "name": "Design annotation / Dark / G06.staff-cancel-confirm",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 36330,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "148:1576",
+      "name": "GoServe 2.1 • states/G06.staff-cancelled",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 36440,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1577",
+      "name": "Design annotation / Light / G06.staff-cancelled",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 36330,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1578",
+      "name": "GoServe 2.1 • dark/states/G06.staff-cancelled",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 36440,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1579",
+      "name": "Design annotation / Dark / G06.staff-cancelled",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 36330,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1580",
+      "name": "GoServe 2.1 • states/G06.free-confirm",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 37480,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1581",
+      "name": "Design annotation / Light / G06.free-confirm",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 37370,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "148:1582",
+      "name": "GoServe 2.1 • dark/states/G06.free-confirm",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 37480,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "148:1583",
+      "name": "Design annotation / Dark / G06.free-confirm",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 37370,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "154:6132",
+      "name": "Design route annotation / Light / new-request",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 3935,
+      "width": 390,
+      "height": 100
+    },
+    {
+      "id": "154:6134",
+      "name": "Design route annotation / Light / booking-review",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 5935,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "154:6141",
+      "name": "Design route annotation / Light / staff-status",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 9935,
+      "width": 390,
+      "height": 100
+    },
+    {
+      "id": "154:6143",
+      "name": "Design route annotation / Light / office-publication",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 9010,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "154:6145",
+      "name": "Design route annotation / Light / cash-confirmation",
+      "type": "TEXT",
+      "visible": true,
+      "x": 940,
+      "y": 13010,
+      "width": 390,
+      "height": 100
+    },
+    {
+      "id": "154:6147",
+      "name": "Design route annotation / Light / inquiry-send",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1390,
+      "y": 5935,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "154:6150",
+      "name": "Design route annotation / Light / file-availability",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1390,
+      "y": 4860,
+      "width": 390,
+      "height": 100
+    },
+    {
+      "id": "154:6169",
+      "name": "Design route annotation / Dark / new-request",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": 3935,
+      "width": 390,
+      "height": 100
+    },
+    {
+      "id": "154:6171",
+      "name": "Design route annotation / Dark / booking-review",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3340,
+      "y": 5935,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "154:6178",
+      "name": "Design route annotation / Dark / staff-status",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2890,
+      "y": 9935,
+      "width": 390,
+      "height": 100
+    },
+    {
+      "id": "154:6180",
+      "name": "Design route annotation / Dark / office-publication",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3340,
+      "y": 9010,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "154:6182",
+      "name": "Design route annotation / Dark / cash-confirmation",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3790,
+      "y": 13010,
+      "width": 390,
+      "height": 100
+    },
+    {
+      "id": "154:6184",
+      "name": "Design route annotation / Dark / inquiry-send",
+      "type": "TEXT",
+      "visible": true,
+      "x": 4240,
+      "y": 5935,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "154:6187",
+      "name": "Design route annotation / Dark / file-availability",
+      "type": "TEXT",
+      "visible": true,
+      "x": 4240,
+      "y": 4860,
+      "width": 390,
+      "height": 100
+    },
+    {
+      "id": "161:6168",
+      "name": "GoServe 2.1 • states/G10.payment-gate",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 37480,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6169",
+      "name": "Design annotation / Light / G10.payment-gate",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 37370,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "161:6170",
+      "name": "GoServe 2.1 • dark/states/G10.payment-gate",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 37480,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6171",
+      "name": "Design annotation / Dark / G10.payment-gate",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 37370,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "161:6172",
+      "name": "GoServe 2.1 • states/G09.5.new-booking",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 37480,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6173",
+      "name": "Design annotation / Light / G09.5.new-booking",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 37370,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "161:6174",
+      "name": "GoServe 2.1 • dark/states/G09.5.new-booking",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 37480,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6175",
+      "name": "Design annotation / Dark / G09.5.new-booking",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 37370,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "161:6176",
+      "name": "GoServe 2.1 • states/G09.6.new-booking",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 37480,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6177",
+      "name": "Design annotation / Light / G09.6.new-booking",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 37370,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "161:6178",
+      "name": "GoServe 2.1 • dark/states/G09.6.new-booking",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 37480,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6179",
+      "name": "Design annotation / Dark / G09.6.new-booking",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 37370,
+      "width": 390,
+      "height": 64
+    },
+    {
+      "id": "161:6180",
+      "name": "GoServe 2.1 • states/G14.staff-sending",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 38520,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6181",
+      "name": "Design annotation / Light / G14.staff-sending",
+      "type": "TEXT",
+      "visible": true,
+      "x": 40,
+      "y": 38410,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "161:6182",
+      "name": "GoServe 2.1 • dark/states/G14.staff-sending",
+      "type": "FRAME",
+      "visible": true,
+      "x": 490,
+      "y": 38520,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6183",
+      "name": "Design annotation / Dark / G14.staff-sending",
+      "type": "TEXT",
+      "visible": true,
+      "x": 490,
+      "y": 38410,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "161:6184",
+      "name": "GoServe 2.1 • states/G14.staff-failed",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1000,
+      "y": 38520,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6185",
+      "name": "Design annotation / Light / G14.staff-failed",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1000,
+      "y": 38410,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "161:6186",
+      "name": "GoServe 2.1 • dark/states/G14.staff-failed",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1450,
+      "y": 38520,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6187",
+      "name": "Design annotation / Dark / G14.staff-failed",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1450,
+      "y": 38410,
+      "width": 390,
+      "height": 80
+    },
+    {
+      "id": "161:6188",
+      "name": "GoServe 2.1 • states/G14.assignment-review",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1960,
+      "y": 38520,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6189",
+      "name": "Design annotation / Light / G14.assignment-review",
+      "type": "TEXT",
+      "visible": true,
+      "x": 1960,
+      "y": 38410,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "161:6190",
+      "name": "GoServe 2.1 • dark/states/G14.assignment-review",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2410,
+      "y": 38520,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6191",
+      "name": "Design annotation / Dark / G14.assignment-review",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2410,
+      "y": 38410,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "161:6192",
+      "name": "GoServe 2.1 • states/G14.assignment-failed",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 38520,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6193",
+      "name": "Design annotation / Light / G14.assignment-failed",
+      "type": "TEXT",
+      "visible": true,
+      "x": 2920,
+      "y": 38410,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "161:6194",
+      "name": "GoServe 2.1 • dark/states/G14.assignment-failed",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3370,
+      "y": 38520,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "161:6195",
+      "name": "Design annotation / Dark / G14.assignment-failed",
+      "type": "TEXT",
+      "visible": true,
+      "x": 3370,
+      "y": 38410,
+      "width": 390,
+      "height": 96
+    },
+    {
+      "id": "170:6790",
+      "name": "GoServe / Responsive proof / 19:93 / 320x720 / 1x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 40,
+      "y": 42000,
+      "width": 320,
+      "height": 720
+    },
+    {
+      "id": "170:6919",
+      "name": "GoServe / Responsive proof / 36:93 / 320x720 / 1x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 400,
+      "y": 42000,
+      "width": 320,
+      "height": 720
+    },
+    {
+      "id": "170:7048",
+      "name": "GoServe / Responsive proof / 24:51 / 320x720 / 1x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 760,
+      "y": 42000,
+      "width": 320,
+      "height": 720
+    },
+    {
+      "id": "170:7118",
+      "name": "GoServe / Responsive proof / 36:819 / 320x720 / 1x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1120,
+      "y": 42000,
+      "width": 320,
+      "height": 720
+    },
+    {
+      "id": "170:7188",
+      "name": "GoServe / Responsive proof / 19:93 / 320x844 / 2x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1480,
+      "y": 42000,
+      "width": 320,
+      "height": 844
+    },
+    {
+      "id": "170:7317",
+      "name": "GoServe / Responsive proof / 36:93 / 320x844 / 2x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 1840,
+      "y": 42000,
+      "width": 320,
+      "height": 844
+    },
+    {
+      "id": "170:7446",
+      "name": "GoServe / Responsive proof / 24:51 / 320x844 / 2x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2200,
+      "y": 42000,
+      "width": 320,
+      "height": 844
+    },
+    {
+      "id": "170:7516",
+      "name": "GoServe / Responsive proof / 36:819 / 320x844 / 2x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2560,
+      "y": 42000,
+      "width": 320,
+      "height": 844
+    },
+    {
+      "id": "170:7586",
+      "name": "GoServe / Responsive proof / 145:1558 / 320x844 / 2x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 2920,
+      "y": 42000,
+      "width": 320,
+      "height": 844
+    },
+    {
+      "id": "170:7666",
+      "name": "GoServe / Responsive proof / 145:1560 / 320x844 / 2x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3280,
+      "y": 42000,
+      "width": 320,
+      "height": 844
+    },
+    {
+      "id": "170:7746",
+      "name": "GoServe / Responsive proof / 148:1540 / 320x844 / 2x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 3640,
+      "y": 42000,
+      "width": 320,
+      "height": 844
+    },
+    {
+      "id": "170:7810",
+      "name": "GoServe / Responsive proof / 148:1542 / 320x844 / 2x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4000,
+      "y": 42000,
+      "width": 320,
+      "height": 844
+    },
+    {
+      "id": "170:7874",
+      "name": "GoServe / Responsive proof / 161:6168 / 320x844 / 2x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4360,
+      "y": 42000,
+      "width": 320,
+      "height": 844
+    },
+    {
+      "id": "170:7935",
+      "name": "GoServe / Responsive proof / 161:6170 / 320x844 / 2x",
+      "type": "FRAME",
+      "visible": true,
+      "x": 4720,
+      "y": 42000,
+      "width": 320,
+      "height": 844
+    },
+    {
+      "id": "175:7272",
+      "name": "GoServe / UI review index / 2026-10-15",
+      "type": "FRAME",
+      "visible": true,
+      "x": 12800,
+      "y": 2100,
+      "width": 1800,
+      "height": 2546
+    }
+  ],
+  "count": 597,
+  "pages": [
+    [
+      "0:1",
+      "Archive • v2.0 concepts"
+    ],
+    [
+      "14:2",
+      "GoServe • Android v2.1"
+    ]
+  ],
+  "flowStarts": [
+    {
+      "nodeId": "19:2",
+      "name": "Student • Light"
+    },
+    {
+      "nodeId": "56:38",
+      "name": "Student • Light"
+    },
+    {
+      "nodeId": "36:2",
+      "name": "Student • Dark"
+    },
+    {
+      "nodeId": "56:66",
+      "name": "Student • Dark"
+    },
+    {
+      "nodeId": "24:131",
+      "name": "Staff • Light"
+    },
+    {
+      "nodeId": "36:899",
+      "name": "Staff • Dark"
+    },
+    {
+      "nodeId": "26:415",
+      "name": "Teller • Light"
+    },
+    {
+      "nodeId": "36:1558",
+      "name": "Teller • Dark"
+    }
+  ]
+}

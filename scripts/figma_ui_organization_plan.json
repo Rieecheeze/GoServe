@@ -1,0 +1,6015 @@
+{
+  "fileKey": "SvT9gBUFjdLgbrJ80LPDno",
+  "pageId": "14:2",
+  "reviewId": "175:7272",
+  "categories": {
+    "auth": {
+      "name": "02 · Authentication",
+      "lane": "student"
+    },
+    "home": {
+      "name": "03.1 · Home and campus offices",
+      "lane": "student"
+    },
+    "requests": {
+      "name": "03.2 · Requests, fees and files",
+      "lane": "student"
+    },
+    "consult": {
+      "name": "03.3 · Consultations",
+      "lane": "student"
+    },
+    "account": {
+      "name": "03.4 · Inbox and account",
+      "lane": "student"
+    },
+    "staff": {
+      "name": "04 · Office staff",
+      "lane": "office"
+    },
+    "teller": {
+      "name": "05 · Cashiering",
+      "lane": "office"
+    },
+    "seryo": {
+      "name": "06 · Seryo chatbot",
+      "lane": "office"
+    },
+    "demo": {
+      "name": "90 · Demo and reference",
+      "lane": "office"
+    },
+    "G01": {
+      "name": "G01 · Empty accounts and lists",
+      "lane": "stateA"
+    },
+    "G02": {
+      "name": "G02 · Sign-in and access recovery",
+      "lane": "stateA"
+    },
+    "G03": {
+      "name": "G03 · Directory states",
+      "lane": "stateA"
+    },
+    "G04": {
+      "name": "G04 · Request review and submission",
+      "lane": "stateA"
+    },
+    "G05": {
+      "name": "G05 · Office fee declarations",
+      "lane": "stateA"
+    },
+    "G06": {
+      "name": "G06 · Cancellation and rejection",
+      "lane": "stateA"
+    },
+    "G07": {
+      "name": "G07 · Payment outcomes",
+      "lane": "stateA"
+    },
+    "G08": {
+      "name": "G08 · Cashiering confirmation",
+      "lane": "stateB"
+    },
+    "G09": {
+      "name": "G09 · Consultation management",
+      "lane": "stateB"
+    },
+    "G10": {
+      "name": "G10 · Attachments and private files",
+      "lane": "stateB"
+    },
+    "G11": {
+      "name": "G11 · Pickup codes and results",
+      "lane": "stateB"
+    },
+    "G12": {
+      "name": "G12 · Seryo planned states",
+      "lane": "stateB"
+    },
+    "G13": {
+      "name": "G13 · Office publishing",
+      "lane": "stateB"
+    },
+    "G14": {
+      "name": "G14 · Inquiries and assignment",
+      "lane": "stateB"
+    },
+    "proofs": {
+      "name": "08 · Phone-size and enlarged-text checks",
+      "lane": "proof"
+    }
+  },
+  "groups": {
+    "auth": [
+      {
+        "key": "sign-in",
+        "title": "Welcome",
+        "screens": [
+          {
+            "id": "19:2",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7476"
+            ]
+          },
+          {
+            "id": "36:2",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7477"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sign-up",
+        "title": "Create your account",
+        "screens": [
+          {
+            "id": "56:38",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7478"
+            ]
+          },
+          {
+            "id": "56:66",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7479"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sign-up-ready",
+        "title": "Create your account",
+        "screens": [
+          {
+            "id": "197:7484",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7480"
+            ]
+          },
+          {
+            "id": "197:7485",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7481"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "terms",
+        "title": "Terms and Conditions",
+        "screens": [
+          {
+            "id": "197:7486",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7482"
+            ]
+          },
+          {
+            "id": "197:7487",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7483"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "email-credentials",
+        "title": "Email · Set up sign-in",
+        "screens": [
+          {
+            "id": "197:7492",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7488"
+            ]
+          },
+          {
+            "id": "197:7493",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7489"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "email-credentials-errors",
+        "title": "Email · Check your sign-in setup",
+        "screens": [
+          {
+            "id": "197:7512",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7510"
+            ]
+          },
+          {
+            "id": "197:7513",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7511"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "password-weak",
+        "title": "Check your password",
+        "screens": [
+          {
+            "id": "206:7476",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7722"
+            ]
+          },
+          {
+            "id": "206:7477",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7723"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "password-mismatch",
+        "title": "Passwords don’t match",
+        "screens": [
+          {
+            "id": "206:7478",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7724"
+            ]
+          },
+          {
+            "id": "206:7479",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7725"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "email-profile",
+        "title": "Email · Your student details",
+        "screens": [
+          {
+            "id": "197:7488",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7484"
+            ]
+          },
+          {
+            "id": "197:7489",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7485"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "email-profile-no-middle",
+        "title": "Email · Your student details",
+        "screens": [
+          {
+            "id": "200:7476",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7512"
+            ]
+          },
+          {
+            "id": "200:7477",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7513"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "email-profile-errors",
+        "title": "Email · Check your student details",
+        "screens": [
+          {
+            "id": "197:7508",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7506"
+            ]
+          },
+          {
+            "id": "197:7509",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7507"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "create-busy",
+        "title": "Creating account…",
+        "screens": [
+          {
+            "id": "197:7502",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7500"
+            ]
+          },
+          {
+            "id": "197:7503",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7501"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "create-failed",
+        "title": "Account wasn’t created",
+        "screens": [
+          {
+            "id": "206:7480",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7726"
+            ]
+          },
+          {
+            "id": "206:7481",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7727"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "account-created",
+        "title": "Account created",
+        "screens": [
+          {
+            "id": "197:7494",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7490"
+            ]
+          },
+          {
+            "id": "197:7495",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7491"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sign-in-return",
+        "title": "Sign in",
+        "screens": [
+          {
+            "id": "197:7496",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7492"
+            ]
+          },
+          {
+            "id": "197:7497",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7493"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "auth-busy",
+        "title": "Signing in…",
+        "screens": [
+          {
+            "id": "197:7500",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7498"
+            ]
+          },
+          {
+            "id": "197:7501",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7499"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sign-in-failed",
+        "title": "Couldn’t sign in",
+        "screens": [
+          {
+            "id": "206:7482",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7728"
+            ]
+          },
+          {
+            "id": "206:7483",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7729"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "google-busy",
+        "title": "Google · Connecting to Google…",
+        "screens": [
+          {
+            "id": "197:7504",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7502"
+            ]
+          },
+          {
+            "id": "197:7505",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7503"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "google-profile",
+        "title": "Google · Your student details",
+        "screens": [
+          {
+            "id": "19:61",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7494"
+            ]
+          },
+          {
+            "id": "36:61",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7495"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "google-profile-no-middle",
+        "title": "Google · Your student details",
+        "screens": [
+          {
+            "id": "200:7478",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7514"
+            ]
+          },
+          {
+            "id": "200:7479",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7515"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "google-profile-errors",
+        "title": "Google · Check your student details",
+        "screens": [
+          {
+            "id": "206:7486",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7734"
+            ]
+          },
+          {
+            "id": "206:7487",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7735"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "profile-busy",
+        "title": "Saving your profile…",
+        "screens": [
+          {
+            "id": "197:7506",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7504"
+            ]
+          },
+          {
+            "id": "197:7507",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "203:7505"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "profile-save-failed",
+        "title": "Profile wasn’t saved",
+        "screens": [
+          {
+            "id": "206:7484",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7730"
+            ]
+          },
+          {
+            "id": "206:7485",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7731"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "launch",
+        "title": "App launch",
+        "screens": [
+          {
+            "id": "106:642",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7732"
+            ]
+          },
+          {
+            "id": "106:652",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7733"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "session-retry",
+        "title": "Connection interrupted",
+        "screens": [
+          {
+            "id": "213:7544",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7738"
+            ]
+          },
+          {
+            "id": "213:7563",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7739"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "terms-view",
+        "title": "Terms and Conditions",
+        "screens": [
+          {
+            "id": "213:7486",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7736"
+            ]
+          },
+          {
+            "id": "213:7515",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7737"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-email",
+        "title": "Password recovery · Reset your password",
+        "screens": [
+          {
+            "id": "219:7722",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7740"
+            ]
+          },
+          {
+            "id": "219:7723",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7741"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-email-error",
+        "title": "Password recovery · Check your email",
+        "screens": [
+          {
+            "id": "219:7728",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7746"
+            ]
+          },
+          {
+            "id": "219:7729",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7747"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-sending",
+        "title": "Password recovery · Requesting reset link…",
+        "screens": [
+          {
+            "id": "219:7724",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7742"
+            ]
+          },
+          {
+            "id": "219:7725",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7743"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-failed",
+        "title": "Password recovery · Couldn't confirm the request",
+        "screens": [
+          {
+            "id": "219:7730",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7748"
+            ]
+          },
+          {
+            "id": "219:7731",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7749"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-sent",
+        "title": "Password recovery · Check your email",
+        "screens": [
+          {
+            "id": "219:7726",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7744"
+            ]
+          },
+          {
+            "id": "219:7727",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7745"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-password",
+        "title": "Password recovery · Choose a new password",
+        "screens": [
+          {
+            "id": "219:7732",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7750"
+            ]
+          },
+          {
+            "id": "219:7733",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7751"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-password-error",
+        "title": "Password recovery · Check your passwords",
+        "screens": [
+          {
+            "id": "219:7734",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7752"
+            ]
+          },
+          {
+            "id": "219:7735",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7753"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-saving",
+        "title": "Password recovery · Updating password…",
+        "screens": [
+          {
+            "id": "219:7736",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7754"
+            ]
+          },
+          {
+            "id": "219:7737",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7755"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-save-failed",
+        "title": "Password recovery · Couldn’t confirm the update",
+        "screens": [
+          {
+            "id": "219:7742",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7760"
+            ]
+          },
+          {
+            "id": "219:7743",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7761"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-link-expired",
+        "title": "Password recovery · Reset link unavailable",
+        "screens": [
+          {
+            "id": "219:7740",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7758"
+            ]
+          },
+          {
+            "id": "219:7741",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7759"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "reset-complete",
+        "title": "Password recovery · Password updated",
+        "screens": [
+          {
+            "id": "219:7738",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7756"
+            ]
+          },
+          {
+            "id": "219:7739",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "223:7757"
+            ]
+          }
+        ]
+      }
+    ],
+    "home": [
+      {
+        "key": "student/home",
+        "title": "Home",
+        "screens": [
+          {
+            "id": "19:93",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:93",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/home-active-request",
+        "title": "Home Active Request",
+        "screens": [
+          {
+            "id": "127:1124",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "127:1329",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/offices",
+        "title": "Offices",
+        "screens": [
+          {
+            "id": "33:54",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1766",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/offices-documents",
+        "title": "Offices Documents",
+        "screens": [
+          {
+            "id": "45:2",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "46:2",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/offices-payments",
+        "title": "Offices Payments",
+        "screens": [
+          {
+            "id": "45:54",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "46:30",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/office-registrar",
+        "title": "Office Registrar",
+        "screens": [
+          {
+            "id": "19:175",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:173",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/office-accounting",
+        "title": "Office Accounting",
+        "screens": [
+          {
+            "id": "60:70",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "60:314",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/office-cashiering",
+        "title": "Office Cashiering",
+        "screens": [
+          {
+            "id": "60:2",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "60:246",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/office-guidance",
+        "title": "Office Guidance",
+        "screens": [
+          {
+            "id": "60:104",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "60:348",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/office-ccs",
+        "title": "Office CCS",
+        "screens": [
+          {
+            "id": "60:138",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "60:382",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      }
+    ],
+    "requests": [
+      {
+        "key": "student/new-request",
+        "title": "New Request",
+        "screens": [
+          {
+            "id": "19:209",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6132"
+            ]
+          },
+          {
+            "id": "36:207",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6169"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "student/upload-state",
+        "title": "Upload State",
+        "screens": [
+          {
+            "id": "19:252",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:250",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/requests",
+        "title": "Requests",
+        "screens": [
+          {
+            "id": "23:32",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:377",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/requests-existing-data",
+        "title": "Requests Existing Data",
+        "screens": [
+          {
+            "id": "127:1254",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "127:1459",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/request-detail",
+        "title": "Request Detail",
+        "screens": [
+          {
+            "id": "23:95",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:440",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/request-detail-free",
+        "title": "Request Detail Free",
+        "screens": [
+          {
+            "id": "106:662",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "107:1063",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/request-detail-pending",
+        "title": "Request Detail Pending",
+        "screens": [
+          {
+            "id": "106:663",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "107:1064",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/verified-file",
+        "title": "Verified File",
+        "screens": [
+          {
+            "id": "23:144",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6150"
+            ]
+          },
+          {
+            "id": "36:489",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6187"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "student/pickup-token",
+        "title": "Pickup Token",
+        "screens": [
+          {
+            "id": "23:171",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:516",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/payment",
+        "title": "Payment",
+        "screens": [
+          {
+            "id": "19:281",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:279",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/payment-pending",
+        "title": "Payment Pending",
+        "screens": [
+          {
+            "id": "19:312",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:310",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/cash-instructions",
+        "title": "Cash Instructions",
+        "screens": [
+          {
+            "id": "23:2",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:347",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      }
+    ],
+    "consult": [
+      {
+        "key": "student/consult",
+        "title": "Consult",
+        "screens": [
+          {
+            "id": "23:191",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:536",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/appointment",
+        "title": "Appointment",
+        "screens": [
+          {
+            "id": "23:254",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6134"
+            ]
+          },
+          {
+            "id": "36:599",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6171"
+            ]
+          }
+        ]
+      }
+    ],
+    "account": [
+      {
+        "key": "student/inbox",
+        "title": "Inbox",
+        "screens": [
+          {
+            "id": "23:285",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1356"
+            ]
+          },
+          {
+            "id": "36:630",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1417"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "student/inbox-existing-data",
+        "title": "Inbox Existing Data",
+        "screens": [
+          {
+            "id": "145:1296",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "145:1357",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/new-thread",
+        "title": "New Thread",
+        "screens": [
+          {
+            "id": "23:333",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:678",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/thread",
+        "title": "Thread",
+        "screens": [
+          {
+            "id": "23:362",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6147"
+            ]
+          },
+          {
+            "id": "36:707",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6184"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "student/notifications",
+        "title": "Notifications",
+        "screens": [
+          {
+            "id": "23:388",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1451"
+            ]
+          },
+          {
+            "id": "36:733",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1485"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "student/notifications-existing-data",
+        "title": "Notifications Existing Data",
+        "screens": [
+          {
+            "id": "145:1418",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "145:1452",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/more",
+        "title": "More",
+        "screens": [
+          {
+            "id": "24:2",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:766",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/settings",
+        "title": "Settings",
+        "screens": [
+          {
+            "id": "33:106",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1818",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      }
+    ],
+    "staff": [
+      {
+        "key": "staff/home",
+        "title": "Home",
+        "screens": [
+          {
+            "id": "24:131",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:899",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/availability",
+        "title": "Availability",
+        "screens": [
+          {
+            "id": "24:186",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6143"
+            ]
+          },
+          {
+            "id": "36:954",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6180"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "staff/queue",
+        "title": "Queue",
+        "screens": [
+          {
+            "id": "24:227",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:995",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/request-detail",
+        "title": "Request Detail",
+        "screens": [
+          {
+            "id": "24:286",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6141"
+            ]
+          },
+          {
+            "id": "36:1054",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6178"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "staff/evidence",
+        "title": "Evidence",
+        "screens": [
+          {
+            "id": "24:318",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1086",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/verified-upload",
+        "title": "Verified Upload",
+        "screens": [
+          {
+            "id": "24:345",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1113",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/rejection",
+        "title": "Rejection",
+        "screens": [
+          {
+            "id": "26:2",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1141",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/scanner",
+        "title": "Scanner",
+        "screens": [
+          {
+            "id": "26:42",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1181",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/manual-token",
+        "title": "Manual Token",
+        "screens": [
+          {
+            "id": "26:68",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1207",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/token-result",
+        "title": "Token Result",
+        "screens": [
+          {
+            "id": "26:92",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1231",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/guidance",
+        "title": "Guidance",
+        "screens": [
+          {
+            "id": "26:112",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1251",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/guidance-slot",
+        "title": "Guidance Slot",
+        "screens": [
+          {
+            "id": "26:166",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1305",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/faculty",
+        "title": "Faculty",
+        "screens": [
+          {
+            "id": "26:201",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1340",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/faculty-slot",
+        "title": "Faculty Slot",
+        "screens": [
+          {
+            "id": "26:234",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1373",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/ccs",
+        "title": "CCS",
+        "screens": [
+          {
+            "id": "26:264",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1403",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/inbox",
+        "title": "Inbox",
+        "screens": [
+          {
+            "id": "26:293",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1432",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/thread",
+        "title": "Thread",
+        "screens": [
+          {
+            "id": "26:339",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1478",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/more",
+        "title": "More",
+        "screens": [
+          {
+            "id": "26:362",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1501",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "staff/settings",
+        "title": "Settings",
+        "screens": [
+          {
+            "id": "33:132",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1844",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      }
+    ],
+    "teller": [
+      {
+        "key": "teller/cash",
+        "title": "Cash",
+        "screens": [
+          {
+            "id": "26:415",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1558",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "teller/pending",
+        "title": "Pending",
+        "screens": [
+          {
+            "id": "26:455",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1598",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "teller/confirm",
+        "title": "Confirm",
+        "screens": [
+          {
+            "id": "26:500",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6145"
+            ]
+          },
+          {
+            "id": "36:1643",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "154:6182"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "teller/history",
+        "title": "History",
+        "screens": [
+          {
+            "id": "26:525",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1668",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "teller/settings",
+        "title": "Settings",
+        "screens": [
+          {
+            "id": "33:158",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1870",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "teller/more",
+        "title": "More",
+        "screens": [
+          {
+            "id": "33:184",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1896",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      }
+    ],
+    "seryo": [
+      {
+        "key": "shared/assistant",
+        "title": "Seryo",
+        "screens": [
+          {
+            "id": "24:51",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:819",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "shared/assistant-image-ready",
+        "title": "Seryo — image inline preview",
+        "screens": [
+          {
+            "id": "24:82",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9043"
+            ]
+          },
+          {
+            "id": "36:850",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9441"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "shared/ai-error",
+        "title": "Seryo · File processing error",
+        "screens": [
+          {
+            "id": "24:111",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9820"
+            ]
+          },
+          {
+            "id": "36:879",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10168"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "shared/ai-response",
+        "title": "AI Response",
+        "screens": [
+          {
+            "id": "40:2",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "254:8480"
+            ]
+          },
+          {
+            "id": "40:33",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "254:8481"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "shared/ai-consent",
+        "title": "Seryo · Allow or Decline",
+        "screens": [
+          {
+            "id": "95:2",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:8446"
+            ]
+          },
+          {
+            "id": "97:162",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:8688"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "shared/assistant-menu",
+        "title": "Seryo · Plus menu",
+        "screens": [
+          {
+            "id": "254:8044",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "254:8262",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "shared/ai-response-menu",
+        "title": "Seryo · Conversation plus menu",
+        "screens": [
+          {
+            "id": "254:8149",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "254:8367",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "shared/seryo-tools-overlay",
+        "title": "Seryo · Context-preserving tools overlay",
+        "screens": [
+          {
+            "id": "274:8374",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "274:8375",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      }
+    ],
+    "demo": [
+      {
+        "key": "shared/demo-accounts",
+        "title": "Demo Accounts",
+        "screens": [
+          {
+            "id": "19:26",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:26",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "demo/simulator",
+        "title": "Simulator",
+        "screens": [
+          {
+            "id": "26:563",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1706",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "shared/states",
+        "title": "States",
+        "screens": [
+          {
+            "id": "26:596",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "36:1739",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "shared/demo-login",
+        "title": "Demo Login",
+        "screens": [
+          {
+            "id": "58:2",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "58:22",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "shared/demo-password-student",
+        "title": "Demo Password Student",
+        "screens": [
+          {
+            "id": "58:42",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "58:62",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "shared/demo-password-staff",
+        "title": "Demo Password Staff",
+        "screens": [
+          {
+            "id": "58:82",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "58:102",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "shared/demo-password-teller",
+        "title": "Demo Password Teller",
+        "screens": [
+          {
+            "id": "58:122",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "58:142",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      }
+    ],
+    "G01": [
+      {
+        "key": "G01.3",
+        "title": "G01.3 · My appointments",
+        "screens": [
+          {
+            "id": "145:1486",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1487"
+            ]
+          },
+          {
+            "id": "145:1488",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1489"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G01.4",
+        "title": "G01.4 · Office dashboard",
+        "screens": [
+          {
+            "id": "145:1490",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1491"
+            ]
+          },
+          {
+            "id": "145:1492",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1493"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G01.5",
+        "title": "G01.5 · Office queue",
+        "screens": [
+          {
+            "id": "145:1494",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1495"
+            ]
+          },
+          {
+            "id": "145:1496",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1497"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G01.6",
+        "title": "G01.6 · Office inbox",
+        "screens": [
+          {
+            "id": "145:1498",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1499"
+            ]
+          },
+          {
+            "id": "145:1500",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1501"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G01.7",
+        "title": "G01.7 · Office schedule",
+        "screens": [
+          {
+            "id": "145:1502",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1503"
+            ]
+          },
+          {
+            "id": "145:1504",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1505"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G01.8",
+        "title": "G01.8 · Pending payments",
+        "screens": [
+          {
+            "id": "145:1506",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1507"
+            ]
+          },
+          {
+            "id": "145:1508",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1509"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G01.9",
+        "title": "G01.9 · Payment history",
+        "screens": [
+          {
+            "id": "145:1510",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1511"
+            ]
+          },
+          {
+            "id": "145:1512",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1513"
+            ]
+          }
+        ]
+      }
+    ],
+    "G02": [
+      {
+        "key": "G02.1",
+        "title": "G02.1 · Sign-in cancelled",
+        "screens": [
+          {
+            "id": "145:1514",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1515"
+            ]
+          },
+          {
+            "id": "145:1516",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1517"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G02.2",
+        "title": "G02.2 · Check your sign-in details",
+        "screens": [
+          {
+            "id": "145:1518",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1519"
+            ]
+          },
+          {
+            "id": "145:1520",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1521"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G02.3",
+        "title": "G02.3 · Complete your profile",
+        "screens": [
+          {
+            "id": "145:1522",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1523"
+            ]
+          },
+          {
+            "id": "145:1524",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1525"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G02.4",
+        "title": "G02.4 · Sign in again",
+        "screens": [
+          {
+            "id": "145:1526",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1527"
+            ]
+          },
+          {
+            "id": "145:1528",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1529"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G02.5",
+        "title": "G02.5 · Access unavailable",
+        "screens": [
+          {
+            "id": "145:1530",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1531"
+            ]
+          },
+          {
+            "id": "145:1532",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1533"
+            ]
+          }
+        ]
+      }
+    ],
+    "G03": [
+      {
+        "key": "G03.1",
+        "title": "G03.1 · Campus offices",
+        "screens": [
+          {
+            "id": "145:1534",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1535"
+            ]
+          },
+          {
+            "id": "145:1536",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1537"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G03.2",
+        "title": "G03.2 · Couldn't load offices",
+        "screens": [
+          {
+            "id": "145:1538",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1539"
+            ]
+          },
+          {
+            "id": "145:1540",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1541"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G03.3",
+        "title": "G03.3 · No matching offices or services",
+        "screens": [
+          {
+            "id": "145:1542",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1543"
+            ]
+          },
+          {
+            "id": "145:1544",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1545"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G03.4",
+        "title": "G03.4 · No services listed yet",
+        "screens": [
+          {
+            "id": "145:1546",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1547"
+            ]
+          },
+          {
+            "id": "145:1548",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1549"
+            ]
+          }
+        ]
+      }
+    ],
+    "G04": [
+      {
+        "key": "G04.1",
+        "title": "G04.1 · Choose a service",
+        "screens": [
+          {
+            "id": "145:1550",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1551"
+            ]
+          },
+          {
+            "id": "145:1552",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1553"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G04.2",
+        "title": "G04.2 · Review request",
+        "screens": [
+          {
+            "id": "145:1554",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1555"
+            ]
+          },
+          {
+            "id": "145:1556",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1557"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G04.3",
+        "title": "G04.3 · Review request",
+        "screens": [
+          {
+            "id": "145:1558",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1559"
+            ]
+          },
+          {
+            "id": "145:1560",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1561"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G04.4",
+        "title": "G04.4 · Fee review pending",
+        "screens": [
+          {
+            "id": "145:1562",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1563"
+            ]
+          },
+          {
+            "id": "145:1564",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1565"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G04.5",
+        "title": "G04.5 · Submitting request…",
+        "screens": [
+          {
+            "id": "145:1566",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1567"
+            ]
+          },
+          {
+            "id": "145:1568",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1569"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G04.6",
+        "title": "G04.6 · Request not submitted",
+        "screens": [
+          {
+            "id": "145:1570",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1571"
+            ]
+          },
+          {
+            "id": "145:1572",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1573"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G04.7",
+        "title": "G04.7 · Request submitted",
+        "screens": [
+          {
+            "id": "145:1574",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1575"
+            ]
+          },
+          {
+            "id": "145:1576",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1577"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G04.detail-free",
+        "title": "G04.detail-free · Request detail",
+        "screens": [
+          {
+            "id": "148:1536",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1537"
+            ]
+          },
+          {
+            "id": "148:1538",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1539"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G04.receipt-required",
+        "title": "G04.receipt-required · Request submitted",
+        "screens": [
+          {
+            "id": "217:7488",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "217:7489"
+            ]
+          },
+          {
+            "id": "217:7490",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "217:7491"
+            ]
+          }
+        ]
+      }
+    ],
+    "G05": [
+      {
+        "key": "G05.1",
+        "title": "G05.1 · Payment declaration",
+        "screens": [
+          {
+            "id": "145:1578",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1579"
+            ]
+          },
+          {
+            "id": "145:1580",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1581"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G05.2",
+        "title": "G05.2 · Saving fee declaration…",
+        "screens": [
+          {
+            "id": "145:1582",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1583"
+            ]
+          },
+          {
+            "id": "145:1584",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1585"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G05.3",
+        "title": "G05.3 · Fee declaration wasn't saved",
+        "screens": [
+          {
+            "id": "145:1586",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1587"
+            ]
+          },
+          {
+            "id": "145:1588",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1589"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G05.required",
+        "title": "G05.required · Payment declaration",
+        "screens": [
+          {
+            "id": "148:1540",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1541"
+            ]
+          },
+          {
+            "id": "148:1542",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1543"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G05.pending",
+        "title": "G05.pending · Payment declaration",
+        "screens": [
+          {
+            "id": "148:1544",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1545"
+            ]
+          },
+          {
+            "id": "148:1546",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1547"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G05.saved",
+        "title": "G05.saved · Payment declaration saved",
+        "screens": [
+          {
+            "id": "217:7484",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "217:7485"
+            ]
+          },
+          {
+            "id": "217:7486",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "217:7487"
+            ]
+          }
+        ]
+      }
+    ],
+    "G06": [
+      {
+        "key": "G06.1",
+        "title": "G06.1 · Cancel request",
+        "screens": [
+          {
+            "id": "145:1590",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1591"
+            ]
+          },
+          {
+            "id": "145:1592",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1593"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.2",
+        "title": "G06.2 · Cancel request",
+        "screens": [
+          {
+            "id": "145:1594",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1595"
+            ]
+          },
+          {
+            "id": "145:1596",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1597"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.3",
+        "title": "G06.3 · Cancel this request?",
+        "screens": [
+          {
+            "id": "145:1598",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1599"
+            ]
+          },
+          {
+            "id": "145:1600",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1601"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.4",
+        "title": "G06.4 · Request cancelled",
+        "screens": [
+          {
+            "id": "145:1602",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1603"
+            ]
+          },
+          {
+            "id": "145:1604",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1605"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.5",
+        "title": "G06.5 · Request cancelled",
+        "screens": [
+          {
+            "id": "145:1606",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1607"
+            ]
+          },
+          {
+            "id": "145:1608",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1609"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.staff-reject",
+        "title": "G06.staff-reject · Reject request",
+        "screens": [
+          {
+            "id": "148:1548",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1549"
+            ]
+          },
+          {
+            "id": "148:1550",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1551"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.staff-reject-error",
+        "title": "G06.staff-reject-error · Reject request",
+        "screens": [
+          {
+            "id": "148:1552",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1553"
+            ]
+          },
+          {
+            "id": "148:1554",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1555"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.staff-reject-confirm",
+        "title": "G06.staff-reject-confirm · Reject this request?",
+        "screens": [
+          {
+            "id": "148:1556",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1557"
+            ]
+          },
+          {
+            "id": "148:1558",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1559"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.staff-rejected",
+        "title": "G06.staff-rejected · Request rejected",
+        "screens": [
+          {
+            "id": "148:1560",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1561"
+            ]
+          },
+          {
+            "id": "148:1562",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1563"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.staff-cancel",
+        "title": "G06.staff-cancel · Cancel request",
+        "screens": [
+          {
+            "id": "148:1564",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1565"
+            ]
+          },
+          {
+            "id": "148:1566",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1567"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.staff-cancel-error",
+        "title": "G06.staff-cancel-error · Cancel request",
+        "screens": [
+          {
+            "id": "148:1568",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1569"
+            ]
+          },
+          {
+            "id": "148:1570",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1571"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.staff-cancel-confirm",
+        "title": "G06.staff-cancel-confirm · Cancel this request?",
+        "screens": [
+          {
+            "id": "148:1572",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1573"
+            ]
+          },
+          {
+            "id": "148:1574",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1575"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.staff-cancelled",
+        "title": "G06.staff-cancelled · Request cancelled",
+        "screens": [
+          {
+            "id": "148:1576",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1577"
+            ]
+          },
+          {
+            "id": "148:1578",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1579"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.free-confirm",
+        "title": "G06.free-confirm · Cancel this request?",
+        "screens": [
+          {
+            "id": "148:1580",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1581"
+            ]
+          },
+          {
+            "id": "148:1582",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "148:1583"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.detail-cancelled-free",
+        "title": "G06.detail-cancelled-free · Request detail",
+        "screens": [
+          {
+            "id": "217:7476",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "217:7477"
+            ]
+          },
+          {
+            "id": "217:7478",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "217:7479"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G06.detail-cancelled-paid",
+        "title": "G06.detail-cancelled-paid · Request detail",
+        "screens": [
+          {
+            "id": "217:7480",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "217:7481"
+            ]
+          },
+          {
+            "id": "217:7482",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "217:7483"
+            ]
+          }
+        ]
+      }
+    ],
+    "G07": [
+      {
+        "key": "G07.1",
+        "title": "G07.1 · Payment confirmed",
+        "screens": [
+          {
+            "id": "145:1610",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1611"
+            ]
+          },
+          {
+            "id": "145:1612",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1613"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G07.2",
+        "title": "G07.2 · Payment failed",
+        "screens": [
+          {
+            "id": "145:1614",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1615"
+            ]
+          },
+          {
+            "id": "145:1616",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1617"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G07.3",
+        "title": "G07.3 · Payment session expired",
+        "screens": [
+          {
+            "id": "145:1618",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1619"
+            ]
+          },
+          {
+            "id": "145:1620",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1621"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G07.4",
+        "title": "G07.4 · Payment cancelled",
+        "screens": [
+          {
+            "id": "145:1622",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1623"
+            ]
+          },
+          {
+            "id": "145:1624",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1625"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G07.5",
+        "title": "G07.5 · Checking payment status…",
+        "screens": [
+          {
+            "id": "145:1626",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1627"
+            ]
+          },
+          {
+            "id": "145:1628",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1629"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G07.6",
+        "title": "G07.6 · Couldn't check payment status",
+        "screens": [
+          {
+            "id": "145:1630",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1631"
+            ]
+          },
+          {
+            "id": "145:1632",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1633"
+            ]
+          }
+        ]
+      }
+    ],
+    "G08": [
+      {
+        "key": "G08.1",
+        "title": "G08.1 · No payment found",
+        "screens": [
+          {
+            "id": "145:1634",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1635"
+            ]
+          },
+          {
+            "id": "145:1636",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1637"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G08.2",
+        "title": "G08.2 · Payment already confirmed",
+        "screens": [
+          {
+            "id": "145:1638",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1639"
+            ]
+          },
+          {
+            "id": "145:1640",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1641"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G08.3",
+        "title": "G08.3 · Confirming payment…",
+        "screens": [
+          {
+            "id": "145:1642",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1643"
+            ]
+          },
+          {
+            "id": "145:1644",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1645"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G08.4",
+        "title": "G08.4 · Payment wasn't confirmed",
+        "screens": [
+          {
+            "id": "145:1646",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1647"
+            ]
+          },
+          {
+            "id": "145:1648",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1649"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G08.5",
+        "title": "G08.5 · Payment confirmed",
+        "screens": [
+          {
+            "id": "145:1650",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1651"
+            ]
+          },
+          {
+            "id": "145:1652",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1653"
+            ]
+          }
+        ]
+      }
+    ],
+    "G09": [
+      {
+        "key": "G09.1",
+        "title": "G09.1 · Appointment booked",
+        "screens": [
+          {
+            "id": "145:1654",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1655"
+            ]
+          },
+          {
+            "id": "145:1656",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1657"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G09.2",
+        "title": "G09.2 · Cancel this appointment?",
+        "screens": [
+          {
+            "id": "145:1658",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1659"
+            ]
+          },
+          {
+            "id": "145:1660",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1661"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G09.2.cancelled",
+        "title": "G09.2.cancelled · Appointment cancelled",
+        "screens": [
+          {
+            "id": "145:1662",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1663"
+            ]
+          },
+          {
+            "id": "145:1664",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1665"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G09.3",
+        "title": "G09.3 · Choose a new time",
+        "screens": [
+          {
+            "id": "145:1666",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1667"
+            ]
+          },
+          {
+            "id": "145:1668",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1669"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G09.4",
+        "title": "G09.4 · Review new time",
+        "screens": [
+          {
+            "id": "145:1670",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1671"
+            ]
+          },
+          {
+            "id": "145:1672",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1673"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G09.5",
+        "title": "G09.5 · This time is no longer available",
+        "screens": [
+          {
+            "id": "145:1674",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1675"
+            ]
+          },
+          {
+            "id": "145:1676",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1677"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G09.6",
+        "title": "G09.6 · No available times",
+        "screens": [
+          {
+            "id": "145:1678",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1679"
+            ]
+          },
+          {
+            "id": "145:1680",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1681"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G09.5.new-booking",
+        "title": "G09.5.new-booking · This time is no longer available",
+        "screens": [
+          {
+            "id": "161:6172",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6173"
+            ]
+          },
+          {
+            "id": "161:6174",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6175"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G09.6.new-booking",
+        "title": "G09.6.new-booking · No available times",
+        "screens": [
+          {
+            "id": "161:6176",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6177"
+            ]
+          },
+          {
+            "id": "161:6178",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6179"
+            ]
+          }
+        ]
+      }
+    ],
+    "G10": [
+      {
+        "key": "G10.1",
+        "title": "G10.1 · Review attachment",
+        "screens": [
+          {
+            "id": "145:1682",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1683"
+            ]
+          },
+          {
+            "id": "145:1684",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1685"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G10.2",
+        "title": "G10.2 · Uploading attachment…",
+        "screens": [
+          {
+            "id": "145:1686",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1687"
+            ]
+          },
+          {
+            "id": "145:1688",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1689"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G10.3",
+        "title": "G10.3 · Attachment wasn't uploaded",
+        "screens": [
+          {
+            "id": "145:1690",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1691"
+            ]
+          },
+          {
+            "id": "145:1692",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1693"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G10.4",
+        "title": "G10.4 · File access unavailable",
+        "screens": [
+          {
+            "id": "145:1694",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1695"
+            ]
+          },
+          {
+            "id": "145:1696",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1697"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G10.5",
+        "title": "G10.5 · No verified file yet",
+        "screens": [
+          {
+            "id": "145:1698",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1699"
+            ]
+          },
+          {
+            "id": "145:1700",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1701"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G10.6",
+        "title": "G10.6 · File no longer available",
+        "screens": [
+          {
+            "id": "145:1702",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1703"
+            ]
+          },
+          {
+            "id": "145:1704",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1705"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G10.payment-gate",
+        "title": "G10.payment-gate · Payment required before download",
+        "screens": [
+          {
+            "id": "161:6168",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6169"
+            ]
+          },
+          {
+            "id": "161:6170",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6171"
+            ]
+          }
+        ]
+      }
+    ],
+    "G11": [
+      {
+        "key": "G11.1",
+        "title": "G11.1 · Ready for pickup",
+        "screens": [
+          {
+            "id": "145:1706",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1707"
+            ]
+          },
+          {
+            "id": "145:1708",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1709"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G11.2",
+        "title": "G11.2 · Pickup confirmed",
+        "screens": [
+          {
+            "id": "145:1710",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1711"
+            ]
+          },
+          {
+            "id": "145:1712",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1713"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G11.3",
+        "title": "G11.3 · Code not found",
+        "screens": [
+          {
+            "id": "145:1714",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1715"
+            ]
+          },
+          {
+            "id": "145:1716",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1717"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G11.4",
+        "title": "G11.4 · Pickup code expired",
+        "screens": [
+          {
+            "id": "145:1718",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1719"
+            ]
+          },
+          {
+            "id": "145:1720",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1721"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G11.5",
+        "title": "G11.5 · Pickup unavailable",
+        "screens": [
+          {
+            "id": "145:1722",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1723"
+            ]
+          },
+          {
+            "id": "145:1724",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1725"
+            ]
+          }
+        ]
+      }
+    ],
+    "G12": [
+      {
+        "key": "G12.1",
+        "title": "Seryo — allowed chat",
+        "screens": [
+          {
+            "id": "145:1726",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:8523"
+            ]
+          },
+          {
+            "id": "145:1728",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:8765"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.2",
+        "title": "Seryo — AI off",
+        "screens": [
+          {
+            "id": "145:1730",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:8601"
+            ]
+          },
+          {
+            "id": "145:1732",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:8843"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.3",
+        "title": "Seryo — PDF inline preview",
+        "screens": [
+          {
+            "id": "145:1734",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:8943"
+            ]
+          },
+          {
+            "id": "145:1736",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9341"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.4",
+        "title": "Attachment not accepted",
+        "screens": [
+          {
+            "id": "145:1738",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9725"
+            ]
+          },
+          {
+            "id": "145:1740",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10073"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.5",
+        "title": "Seryo is working…",
+        "screens": [
+          {
+            "id": "145:1742",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10427"
+            ]
+          },
+          {
+            "id": "145:1744",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10773"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.6",
+        "title": "Seryo can't answer this request",
+        "screens": [
+          {
+            "id": "145:1746",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:11106"
+            ]
+          },
+          {
+            "id": "145:1748",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:11432"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.7",
+        "title": "Try again later",
+        "screens": [
+          {
+            "id": "145:1750",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:11185"
+            ]
+          },
+          {
+            "id": "145:1752",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:11511"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.8",
+        "title": "File cleanup not confirmed",
+        "screens": [
+          {
+            "id": "145:1754",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:11273"
+            ]
+          },
+          {
+            "id": "145:1756",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:11599"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.9",
+        "title": "Temporary file removed",
+        "screens": [
+          {
+            "id": "145:1758",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:11353"
+            ]
+          },
+          {
+            "id": "145:1760",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:11679"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.explain-draft",
+        "title": "Seryo — Explain this file",
+        "screens": [
+          {
+            "id": "274:8362",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9142"
+            ]
+          },
+          {
+            "id": "274:8369",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9540"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.extract-draft",
+        "title": "Seryo — Extract text",
+        "screens": [
+          {
+            "id": "274:8363",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9241"
+            ]
+          },
+          {
+            "id": "274:8370",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9639"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.picker",
+        "title": "Choose a photo or file",
+        "screens": [
+          {
+            "id": "274:8360",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9908"
+            ]
+          },
+          {
+            "id": "274:8367",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10256"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.picker-cancelled",
+        "title": "Seryo — no file selected",
+        "screens": [
+          {
+            "id": "274:8361",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:9987"
+            ]
+          },
+          {
+            "id": "274:8368",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10335"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.explain-result",
+        "title": "Seryo — Explanation",
+        "screens": [
+          {
+            "id": "274:8364",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10508"
+            ]
+          },
+          {
+            "id": "274:8371",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10854"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.extract-result",
+        "title": "Seryo — Extracted text",
+        "screens": [
+          {
+            "id": "274:8365",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10589"
+            ]
+          },
+          {
+            "id": "274:8372",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10935"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G12.no-readable-text",
+        "title": "Seryo — No readable text found",
+        "screens": [
+          {
+            "id": "274:8366",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:10681"
+            ]
+          },
+          {
+            "id": "274:8373",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "285:11027"
+            ]
+          }
+        ]
+      }
+    ],
+    "G13": [
+      {
+        "key": "G13.1",
+        "title": "G13.1 · Publishing update…",
+        "screens": [
+          {
+            "id": "145:1762",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1763"
+            ]
+          },
+          {
+            "id": "145:1764",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1765"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G13.2",
+        "title": "G13.2 · Update wasn't published",
+        "screens": [
+          {
+            "id": "145:1766",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1767"
+            ]
+          },
+          {
+            "id": "145:1768",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1769"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G13.3",
+        "title": "G13.3 · Update published",
+        "screens": [
+          {
+            "id": "145:1770",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1771"
+            ]
+          },
+          {
+            "id": "145:1772",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1773"
+            ]
+          }
+        ]
+      }
+    ],
+    "G14": [
+      {
+        "key": "G14.1",
+        "title": "G14.1 · Assign inquiry",
+        "screens": [
+          {
+            "id": "145:1774",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1775"
+            ]
+          },
+          {
+            "id": "145:1776",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1777"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G14.2",
+        "title": "G14.2 · Sending message…",
+        "screens": [
+          {
+            "id": "145:1778",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1779"
+            ]
+          },
+          {
+            "id": "145:1780",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1781"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G14.3",
+        "title": "G14.3 · Message wasn't sent",
+        "screens": [
+          {
+            "id": "145:1782",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1783"
+            ]
+          },
+          {
+            "id": "145:1784",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "145:1785"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G14.staff-sending",
+        "title": "G14.staff-sending · Sending office reply…",
+        "screens": [
+          {
+            "id": "161:6180",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6181"
+            ]
+          },
+          {
+            "id": "161:6182",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6183"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G14.staff-failed",
+        "title": "G14.staff-failed · Reply wasn't sent",
+        "screens": [
+          {
+            "id": "161:6184",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6185"
+            ]
+          },
+          {
+            "id": "161:6186",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6187"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G14.assignment-review",
+        "title": "G14.assignment-review · Review assignment",
+        "screens": [
+          {
+            "id": "161:6188",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6189"
+            ]
+          },
+          {
+            "id": "161:6190",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6191"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "G14.assignment-failed",
+        "title": "G14.assignment-failed · Assignment wasn't changed",
+        "screens": [
+          {
+            "id": "161:6192",
+            "theme": "Light",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6193"
+            ]
+          },
+          {
+            "id": "161:6194",
+            "theme": "Dark",
+            "width": 390,
+            "height": 844,
+            "noteIds": [
+              "161:6195"
+            ]
+          }
+        ]
+      }
+    ],
+    "proofs": [
+      {
+        "key": "student/home|320x720|1",
+        "title": "Home · 320×720 · 1× text",
+        "screens": [
+          {
+            "id": "170:6790",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          },
+          {
+            "id": "170:6919",
+            "theme": "Dark",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "student/home|320x844|2",
+        "title": "Home · 320×844 · 2× text",
+        "screens": [
+          {
+            "id": "170:7188",
+            "theme": "Light",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "170:7317",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "states/G04.3|320x844|2",
+        "title": "G04.3 · 320×844 · 2× text",
+        "screens": [
+          {
+            "id": "170:7586",
+            "theme": "Light",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "170:7666",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "states/G05.required|320x844|2",
+        "title": "G05.Required · 320×844 · 2× text",
+        "screens": [
+          {
+            "id": "170:7746",
+            "theme": "Light",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "170:7810",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "states/G10.payment-gate|320x844|2",
+        "title": "G10.Payment Gate · 320×844 · 2× text",
+        "screens": [
+          {
+            "id": "170:7874",
+            "theme": "Light",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "170:7935",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "auth/sign-in|320x720|1",
+        "title": "sign-in · 320×720 · 1× text",
+        "screens": [
+          {
+            "id": "229:7846",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          },
+          {
+            "id": "229:7889",
+            "theme": "Dark",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "auth/sign-up|320x720|1",
+        "title": "sign-up · 320×720 · 1× text",
+        "screens": [
+          {
+            "id": "210:7558",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          },
+          {
+            "id": "210:7591",
+            "theme": "Dark",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "auth/email-credentials|320x844|2",
+        "title": "email-credentials · 320×844 · 2× text",
+        "screens": [
+          {
+            "id": "210:7624",
+            "theme": "Light",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "210:7670",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "auth/email-profile|320x844|2",
+        "title": "email-profile · 320×844 · 2× text",
+        "screens": [
+          {
+            "id": "210:7716",
+            "theme": "Light",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "210:7782",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "auth/terms-view|320x844|2",
+        "title": "terms-view · 320×844 · 2× text",
+        "screens": [
+          {
+            "id": "229:7932",
+            "theme": "Light",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "229:7961",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "auth/reset-password|320x720|1",
+        "title": "reset-password · 320×720 · 1× text",
+        "screens": [
+          {
+            "id": "229:7990",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          },
+          {
+            "id": "229:8028",
+            "theme": "Dark",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "seryo/empty|320x720|1",
+        "title": "Seryo empty · 320×720 · 1× text",
+        "screens": [
+          {
+            "id": "257:7924",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          },
+          {
+            "id": "257:8224",
+            "theme": "Dark",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "seryo/empty|320x844|2",
+        "title": "Seryo empty · 320×844 · 2× text",
+        "screens": [
+          {
+            "id": "257:7995",
+            "theme": "Light",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "257:8295",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "seryo/conversation|320x720|1",
+        "title": "Seryo conversation · 320×720 · 1× text",
+        "screens": [
+          {
+            "id": "257:8066",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          },
+          {
+            "id": "257:8366",
+            "theme": "Dark",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "seryo/conversation|320x844|2",
+        "title": "Seryo conversation · 320×844 · 2× text",
+        "screens": [
+          {
+            "id": "257:8145",
+            "theme": "Light",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "257:8445",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "seryo/conversation-menu|320x720|1",
+        "title": "Seryo conversation-menu · 320×720 · 1× text",
+        "screens": [
+          {
+            "id": "257:8524",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          },
+          {
+            "id": "257:8742",
+            "theme": "Dark",
+            "width": 320,
+            "height": 720,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "seryo/conversation-menu|320x844|2",
+        "title": "Seryo conversation-menu · 320×844 · 2× text",
+        "screens": [
+          {
+            "id": "257:8633",
+            "theme": "Light",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          },
+          {
+            "id": "257:8851",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": []
+          }
+        ]
+      },
+      {
+        "key": "seryo-inline-proof-95:2",
+        "title": "Seryo inline · Seryo privacy",
+        "screens": [
+          {
+            "id": "287:8816",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": [],
+            "actualTheme": "Light",
+            "caption": "Light · Seryo privacy · 320×720 · 1× text"
+          },
+          {
+            "id": "287:8891",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": [],
+            "actualTheme": "Light",
+            "caption": "Light · Seryo privacy · 320×844 · 2× text"
+          }
+        ]
+      },
+      {
+        "key": "seryo-inline-proof-145:1732",
+        "title": "Seryo inline · Seryo — AI off",
+        "screens": [
+          {
+            "id": "287:8966",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": [],
+            "actualTheme": "Dark",
+            "caption": "Dark · Seryo — AI off · 320×720 · 1× text"
+          },
+          {
+            "id": "287:9033",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": [],
+            "actualTheme": "Dark",
+            "caption": "Dark · Seryo — AI off · 320×844 · 2× text"
+          }
+        ]
+      },
+      {
+        "key": "seryo-inline-proof-24:82",
+        "title": "Seryo inline · Seryo — image inline preview",
+        "screens": [
+          {
+            "id": "287:9100",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": [],
+            "actualTheme": "Light",
+            "caption": "Light · Seryo — image inline preview · 320×720 · 1× text"
+          },
+          {
+            "id": "287:9185",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": [],
+            "actualTheme": "Light",
+            "caption": "Light · Seryo — image inline preview · 320×844 · 2× text"
+          }
+        ]
+      },
+      {
+        "key": "seryo-inline-proof-274:8372",
+        "title": "Seryo inline · Seryo — Extracted text",
+        "screens": [
+          {
+            "id": "287:9270",
+            "theme": "Light",
+            "width": 320,
+            "height": 720,
+            "noteIds": [],
+            "actualTheme": "Dark",
+            "caption": "Dark · Seryo — Extracted text · 320×720 · 1× text"
+          },
+          {
+            "id": "287:9340",
+            "theme": "Dark",
+            "width": 320,
+            "height": 844,
+            "noteIds": [],
+            "actualTheme": "Dark",
+            "caption": "Dark · Seryo — Extracted text · 320×844 · 2× text"
+          }
+        ]
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "95:12",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / AI Chat"
+    },
+    {
+      "id": "98:322",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / Home"
+    },
+    {
+      "id": "98:393",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / Requests"
+    },
+    {
+      "id": "98:464",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / Consult"
+    },
+    {
+      "id": "98:535",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / Inbox"
+    },
+    {
+      "id": "98:606",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / More"
+    },
+    {
+      "id": "112:1275",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / AI Chat / Dark"
+    },
+    {
+      "id": "112:1309",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / Home / Dark"
+    },
+    {
+      "id": "112:1343",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / Requests / Dark"
+    },
+    {
+      "id": "112:1377",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / Consult / Dark"
+    },
+    {
+      "id": "112:1411",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / Inbox / Dark"
+    },
+    {
+      "id": "112:1445",
+      "type": "COMPONENT",
+      "width": 390,
+      "height": 56,
+      "name": "GoServe / Capsule navigation / More / Dark"
+    },
+    {
+      "id": "132:1260",
+      "type": "COMPONENT_SET",
+      "width": 382,
+      "height": 140,
+      "name": "GoServe / Search control"
+    },
+    {
+      "id": "132:1273",
+      "type": "COMPONENT_SET",
+      "width": 142,
+      "height": 260,
+      "name": "GoServe / Filter control"
+    },
+    {
+      "id": "132:1278",
+      "type": "COMPONENT_SET",
+      "width": 96,
+      "height": 140,
+      "name": "GoServe / Inline action control"
+    },
+    {
+      "id": "144:1590",
+      "type": "COMPONENT_SET",
+      "width": 2080,
+      "height": 300,
+      "name": "GoServe / State action"
+    },
+    {
+      "id": "144:1591",
+      "type": "COMPONENT_SET",
+      "width": 2080,
+      "height": 400,
+      "name": "GoServe / Staff navigation"
+    },
+    {
+      "id": "144:1592",
+      "type": "COMPONENT_SET",
+      "width": 2080,
+      "height": 300,
+      "name": "GoServe / Teller navigation"
+    },
+    {
+      "id": "254:7812",
+      "type": "COMPONENT",
+      "name": "GoServe / Seryo tools menu / Light",
+      "width": 350,
+      "height": 200
+    },
+    {
+      "id": "254:7928",
+      "type": "COMPONENT",
+      "name": "GoServe / Seryo tools menu / Dark",
+      "width": 350,
+      "height": 200
+    },
+    {
+      "id": "294:9166",
+      "name": "GoServe / Email field states",
+      "type": "COMPONENT_SET",
+      "width": 804,
+      "height": 632,
+      "noteIds": [
+        "294:9167",
+        "294:9168",
+        "294:9169",
+        "294:9170",
+        "294:9171",
+        "294:9172",
+        "294:9173",
+        "294:9174",
+        "294:9175",
+        "294:9176"
+      ]
+    },
+    {
+      "id": "294:9201",
+      "name": "GoServe / Primary action states",
+      "type": "COMPONENT_SET",
+      "width": 804,
+      "height": 448,
+      "noteIds": [
+        "294:9202",
+        "294:9203",
+        "294:9204",
+        "294:9205",
+        "294:9206",
+        "294:9207",
+        "294:9208",
+        "294:9209",
+        "294:9210",
+        "294:9211"
+      ]
+    }
+  ],
+  "retained": [
+    {
+      "id": "51:2",
+      "name": "section / LIGHT",
+      "type": "TEXT",
+      "visible": true,
+      "width": 600,
+      "height": 35
+    },
+    {
+      "id": "51:3",
+      "name": "section / DARK",
+      "type": "TEXT",
+      "visible": true,
+      "width": 600,
+      "height": 35
+    },
+    {
+      "id": "60:36",
+      "name": "GoServe 2.1 • student/office-osa",
+      "type": "FRAME",
+      "visible": false,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:172",
+      "name": "GoServe 2.1 • student/new-request-osa",
+      "type": "FRAME",
+      "visible": false,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:215",
+      "name": "GoServe 2.1 • student/payment-osa",
+      "type": "FRAME",
+      "visible": false,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:280",
+      "name": "GoServe 2.1 • dark/student/office-osa",
+      "type": "FRAME",
+      "visible": false,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:416",
+      "name": "GoServe 2.1 • dark/student/new-request-osa",
+      "type": "FRAME",
+      "visible": false,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "60:459",
+      "name": "GoServe 2.1 • dark/student/payment-osa",
+      "type": "FRAME",
+      "visible": false,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "64:2",
+      "name": "group / 1 / light",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:3",
+      "name": "group / 1 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:4",
+      "name": "group / 2 / light",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:5",
+      "name": "group / 2 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:6",
+      "name": "group / 3 / light",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:7",
+      "name": "group / 3 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:8",
+      "name": "group / 4 / light",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:9",
+      "name": "group / 4 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:10",
+      "name": "group / 5 / light",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:11",
+      "name": "group / 5 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:12",
+      "name": "group / 6 / light",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:13",
+      "name": "group / 6 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:14",
+      "name": "group / 7 / light",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:15",
+      "name": "group / 7 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:16",
+      "name": "group / 8 / light",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "64:17",
+      "name": "group / 8 / dark",
+      "type": "TEXT",
+      "visible": true,
+      "width": 1900,
+      "height": 26
+    },
+    {
+      "id": "197:7490",
+      "name": "Retired auth email-academic",
+      "type": "FRAME",
+      "width": 390,
+      "height": 844,
+      "visible": false
+    },
+    {
+      "id": "197:7491",
+      "name": "Retired auth email-academic",
+      "type": "FRAME",
+      "width": 390,
+      "height": 844,
+      "visible": false
+    },
+    {
+      "id": "197:7498",
+      "name": "Retired auth google-academic",
+      "type": "FRAME",
+      "width": 390,
+      "height": 844,
+      "visible": false
+    },
+    {
+      "id": "197:7499",
+      "name": "Retired auth google-academic",
+      "type": "FRAME",
+      "width": 390,
+      "height": 844,
+      "visible": false
+    },
+    {
+      "id": "197:7510",
+      "name": "Retired auth email-academic-errors",
+      "type": "FRAME",
+      "width": 390,
+      "height": 844,
+      "visible": false
+    },
+    {
+      "id": "197:7511",
+      "name": "Retired auth email-academic-errors",
+      "type": "FRAME",
+      "width": 390,
+      "height": 844,
+      "visible": false
+    },
+    {
+      "id": "203:7486",
+      "name": "Retired auth annotation email-academic",
+      "type": "TEXT",
+      "width": 390,
+      "height": 200,
+      "visible": false
+    },
+    {
+      "id": "203:7487",
+      "name": "Retired auth annotation email-academic",
+      "type": "TEXT",
+      "width": 390,
+      "height": 200,
+      "visible": false
+    },
+    {
+      "id": "203:7496",
+      "name": "Retired auth annotation google-academic",
+      "type": "TEXT",
+      "width": 390,
+      "height": 200,
+      "visible": false
+    },
+    {
+      "id": "203:7497",
+      "name": "Retired auth annotation google-academic",
+      "type": "TEXT",
+      "width": 390,
+      "height": 200,
+      "visible": false
+    },
+    {
+      "id": "203:7508",
+      "name": "Retired auth annotation email-academic-errors",
+      "type": "TEXT",
+      "width": 390,
+      "height": 200,
+      "visible": false
+    },
+    {
+      "id": "203:7509",
+      "name": "Retired auth annotation email-academic-errors",
+      "type": "TEXT",
+      "width": 390,
+      "height": 200,
+      "visible": false
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Roboto",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500,
+        "wdth": 100
+      }
+    },
+    {
+      "family": "Montserrat",
+      "style": "ExtraBold",
+      "variationSettings": {
+        "wght": 800
+      }
+    },
+    {
+      "family": "Karla",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    {
+      "family": "Karla",
+      "style": "SemiBold",
+      "variationSettings": {
+        "wght": 600
+      }
+    },
+    {
+      "family": "Material Symbols Rounded",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400,
+        "GRAD": 0,
+        "FILL": 0
+      }
+    },
+    {
+      "family": "Archivo",
+      "style": "Bold",
+      "variationSettings": {
+        "wght": 700,
+        "wdth": 100
+      }
+    },
+    {
+      "family": "Roboto",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400,
+        "wdth": 100
+      }
+    }
+  ]
+}

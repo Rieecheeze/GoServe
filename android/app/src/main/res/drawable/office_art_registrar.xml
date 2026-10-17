@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="168dp" android:height="122dp" android:viewportWidth="168" android:viewportHeight="122">
+    <path android:fillColor="@color/gs_art_registrar" android:pathData="M18,0H150Q168,0 168,18V104Q168,122 150,122H18Q0,122 0,104V18Q0,0 18,0" />
+    <path android:fillColor="@color/gs_art_paper" android:pathData="M110,40H148Q152,40 152,44V94Q152,98 148,98H110Q106,98 106,94V44Q106,40 110,40" />
+    <path android:fillColor="@color/gs_art_ink" android:pathData="M115,52H143V54H115Z M115,64H143V66H115Z M115,76H143V78H115Z" />
+</vector>

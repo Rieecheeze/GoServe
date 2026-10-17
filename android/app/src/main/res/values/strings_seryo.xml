@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="seryo_name">Seryo</string>
+    <string name="seryo_role">GoServe AI chatbot · Powered by eGovAI</string>
+    <string name="seryo_hero">Ask Seryo</string>
+    <string name="seryo_intro">Ask about campus offices, services, and the next step for a request.</string>
+    <string name="seryo_pending_title">Seryo setup in progress</string>
+    <string name="seryo_pending_body">Chat will open after Seryo’s tasks and procedures are configured. You can browse offices while setup is underway.</string>
+    <string name="seryo_question_label">Your question</string>
+    <string name="seryo_question_hint">What would you like to ask?</string>
+    <string name="seryo_send">Send to Seryo</string>
+    <string name="seryo_attachment">Attach a file</string>
+    <string name="seryo_privacy">Review AI privacy</string>
+    <string name="seryo_offices">Browse offices</string>
+    <string name="seryo_privacy_title">Seryo privacy</string>
+    <string name="seryo_privacy_heading">You choose what to share</string>
+    <string name="seryo_privacy_body">AI help is optional. Avoid sharing passwords, payment credentials, or sensitive student records.</string>
+    <string name="seryo_guidance">Seryo provides guidance. The responsible office confirms official requirements and decisions.</string>
+    <string name="seryo_retention">Questions are not sent while setup is pending. Drafts stay on this screen and are not saved as chat history.</string>
+    <string name="seryo_consent">I consent to temporary AI analysis</string>
+    <string name="seryo_consent_pending">Consent will be requested before enabled AI processing. This preview does not record consent.</string>
+    <string name="seryo_back_chat">Back to Seryo</string>
+    <string name="seryo_attachment_title">Temporary file analysis</string>
+    <string name="seryo_attachment_heading">Explain a document</string>
+    <string name="seryo_attachment_body">Planned support: one PDF, JPG, or PNG, up to 10 MB. Select a non-sensitive file.</string>
+    <string name="seryo_choose_file">Choose file</string>
+    <string name="seryo_no_upload">File selection and upload will open when Seryo is configured. No file has been selected or uploaded.</string>
+    <string name="seryo_cleanup_plan">Planned handling: temporary analysis only, with immediate file cleanup after success or failure. Server support must be completed before uploads are enabled.</string>
+</resources>

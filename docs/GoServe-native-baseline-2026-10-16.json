@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-16",
+  "status": "blocked_before_test_execution",
+  "scope": "Read-only native inspection and offline baseline rerun; no native/backend source changes",
+  "working_directory": "C:/Users/Rieecheeze/Documents/ChatGPT/GoServe/android",
+  "sdk_directory": "D:/ANDROID STUDIO FILES",
+  "attempts": [
+    {"command": "$env:JAVA_HOME='D:/Android Studio/jbr'; & ./gradlew.bat testDebugUnitTest --offline --rerun-tasks --console=plain", "runtime": "OpenJDK 25.0.3", "sandbox_exit_code": 1, "escalated_exit_code": 1, "error": "java.io.IOException: Unable to establish loopback connection"},
+    {"command": "$env:JAVA_HOME='C:/Program Files/Amazon Corretto/jdk21.0.12_12'; & ./gradlew.bat testDebugUnitTest --offline --rerun-tasks --no-daemon --console=plain", "runtime": "Existing Amazon Corretto JDK 21", "sandbox_exit_code": 1, "sandbox_error": "Gradle wrapper gradle-8.9-bin.zip.lck access denied", "escalated_exit_code": 1, "error": "java.io.IOException: Unable to establish loopback connection"}
+  ],
+  "fresh_results": {"tests": null, "passed": null, "failures": null, "reason": "Gradle failed before running tests; no current baseline count established"},
+  "historical_results": {
+    "source": "android/app/build/test-results/testDebugUnitTest/TEST-*.xml",
+    "xml_last_modified_utc": "2026-10-15T00:05:52.912Z through 2026-10-15T00:05:52.919Z",
+    "suites": 12,
+    "tests": 41,
+    "passed": 39,
+    "failures": 2,
+    "errors": 0,
+    "skipped": 0,
+    "matches_prior_record": true,
+    "is_fresh_verification": false,
+    "failure_details": [
+      {"test": "CapsuleNavigationTest.allSixStudentDestinationsHaveTouchTargetsAtLargeText", "source": "android/app/src/test/java/ph/edu/tip/goserve/ui/CapsuleNavigationTest.java:52", "expected": "View.VISIBLE (0)", "actual": "View.GONE (8)"},
+      {"test": "SeryoInteractionTest.homePreviewAndOpenedRequestUseTheSameCatalogIdentity", "source": "android/app/src/test/java/ph/edu/tip/goserve/ui/SeryoInteractionTest.java:100", "expected": "Enrollment certificate", "actual": "Certificate of enrollment"}
+    ]
+  },
+  "next_steps": [
+    "Restore Gradle local loopback operation in the host environment and rerun the recorded offline command before claiming a current test result.",
+    "After revised Figma UI approval, align the navigation assertion with the approved selected-label behavior while preserving touch-target and accessibility checks.",
+    "After UI approval, make the Home preview use its RequestPreviewCatalog identity consistently with the opened detail; keep the catalog identity test."
+  ],
+  "limitations": "No dependency installs, downloads, provider calls, secrets, commits, or native/backend source edits. Android Studio JBR is version 25, not the assumed 17. Existing no-daemon command still requests a single-use Gradle daemon."
+}

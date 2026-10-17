@@ -1,0 +1,653 @@
+[
+  {
+    "key":"G01.1","group":"G01","family":"empty","kind":"empty","title":"Inbox","body":"No messages yet. Ask an office when you need help with a service or request.","nav":"Inbox","back":"@student/home","sections":[],"actions":[{"label":"Ask an office","target":"@student/new-thread","style":"Primary","disabled":false}],"planned":false,"annotation":"Default new-account Inbox. Replace populated default; retain original example separately. No fabricated personal messages."
+  },
+  {
+    "key":"G01.2","group":"G01","family":"empty","kind":"empty","title":"Notifications","body":"You're up to date. Updates about your requests, payments, and appointments will appear here.","nav":"Home","back":"@student/home","sections":[],"actions":[{"label":"Browse offices","target":"@student/offices","style":"Primary","disabled":false}],"planned":false,"annotation":"Default new-account Notifications. No sample notification rows or unread counts."
+  },
+  {
+    "key":"G01.3","group":"G01","family":"empty","kind":"empty","title":"My appointments","body":"No appointments yet. Find an available consultation to book your first appointment.","nav":"Consult","back":"@student/consult","sections":[],"actions":[{"label":"Find a consultation","target":"@student/consult","style":"Primary","disabled":false}],"planned":false,"annotation":"Owned appointment list, distinct from public office availability."
+  },
+  {
+    "key":"G01.4","group":"G01","family":"zero-dashboard","kind":"empty","title":"Office dashboard","body":"No activity yet. New requests and appointment updates for your office will appear here.","nav":"Staff","back":"@staff/more","sections":[{"type":"summary","title":"Office activity","body":"No records in this example.","rows":[{"label":"Pending requests","value":"0"},{"label":"Appointments today","value":"0"}]}],"actions":[{"label":"View queue","target":"G01.5","style":"Primary","disabled":false},{"label":"Edit availability","target":"@staff/availability","style":"Secondary","disabled":false}],"planned":false,"annotation":"Explicit zero-data office example. New staff accounts may still see valid office-wide records; do not clear those records because the account is new. Actual profile fields only."
+  },
+  {
+    "key":"G01.5","group":"G01","family":"empty","kind":"empty","title":"Office queue","body":"No requests in this view. Requests assigned to your office will appear here.","nav":"Staff","back":"G01.4","sections":[],"actions":[{"label":"Back to dashboard","target":"G01.4","style":"Primary","disabled":false}],"planned":false,"annotation":"No active filters in this variant. A filtered empty variant may offer Clear filters only when a filter is actually applied."
+  },
+  {
+    "key":"G01.6","group":"G01","family":"empty","kind":"empty","title":"Office inbox","body":"No inquiries yet. Inquiries sent to your office will appear here.","nav":"Staff","back":"G01.4","sections":[],"actions":[{"label":"Back to dashboard","target":"G01.4","style":"Primary","disabled":false}],"planned":false,"annotation":"No fabricated inquiry thread or outgoing message."
+  },
+  {
+    "key":"G01.7","group":"G01","family":"empty","kind":"empty","title":"Office schedule","body":"No appointments for this date. Select another date or manage your available times.","nav":"Staff","back":"G01.4","sections":[{"type":"field","label":"Date","value":"","hint":"Choose a date","error":"","multiline":false}],"actions":[{"label":"Change date","target":"@staff/guidance","style":"Primary","disabled":false},{"label":"Manage availability","target":"@staff/guidance-slot","style":"Secondary","disabled":false}],"planned":false,"annotation":"Reuse for guidance/faculty with capability-correct schedule and slot destinations. Do not expose another capability's editor."
+  },
+  {
+    "key":"G01.8","group":"G01","family":"empty","kind":"empty","title":"Pending payments","body":"No pending payments. Payments awaiting Cashiering confirmation will appear here.","nav":"Teller","back":"@teller/cash","sections":[],"actions":[{"label":"Search reference","target":"@teller/cash","style":"Primary","disabled":false}],"planned":false,"annotation":"Cashiering role only. No payment rows in zero-data example."
+  },
+  {
+    "key":"G01.9","group":"G01","family":"empty","kind":"empty","title":"Payment history","body":"No confirmed payments yet. Payments you are authorized to view will appear here after confirmation.","nav":"Teller","back":"@teller/cash","sections":[],"actions":[{"label":"Search reference","target":"@teller/cash","style":"Primary","disabled":false}],"planned":false,"annotation":"Cashiering role only. Keep original populated history as a separate example."
+  },
+  {
+    "key":"G02.1","group":"G02","family":"recovery","kind":"result","title":"Sign-in cancelled","body":"You can try again when you're ready.","nav":"none","back":"@shared/sign-in","sections":[],"actions":[{"label":"Try again","target":"@shared/sign-in","style":"Primary","disabled":false},{"label":"Back to sign in","target":"@shared/sign-in","style":"Secondary","disabled":false}],"planned":false,"annotation":"Return to the originating sign-in method. A deliberate user cancellation need not be presented as an error."
+  },
+  {
+    "key": "G02.2",
+    "group": "G02",
+    "family": "recovery",
+    "kind": "form",
+    "title": "Check your sign-in details",
+    "body": "Enter your email and password to sign in.",
+    "nav": "none",
+    "back": "@shared/sign-in",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Email address",
+        "value": "",
+        "hint": "student1@demo.com",
+        "error": "Enter your email.",
+        "multiline": false
+      },
+      {
+        "type": "field",
+        "label": "Password",
+        "value": "",
+        "hint": "Enter password",
+        "error": "Enter your password.",
+        "multiline": false
+      }
+    ],
+    "actions": [
+      {
+        "label": "Forgot password?",
+        "target": "@auth/reset-email",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Back to sign in",
+        "target": "@shared/sign-in",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Create an account",
+        "target": "@shared/sign-up",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard. Canonical metadata mirrors auth/sign-in-error; email/password self-registration is permitted. Forgot password resolves to the existing GoServe 2.3 auth/reset-email screen, not an older assigned-account flow. On actual sign-in failure preserve the email, keep the password masked, and do not disclose whether the account exists."
+  },
+  {
+    "key": "G02.3",
+    "group": "G02",
+    "family": "recovery",
+    "kind": "result",
+    "title": "Complete your profile",
+    "body": "Your student profile is required before you enter GoServe.",
+    "nav": "none",
+    "back": "@shared/sign-in",
+    "sections": [
+      {
+        "type": "text",
+        "text": "Add your name, student ID, academic details, mobile number and gender.",
+        "role": "Support"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Complete profile",
+        "target": "@student/consent",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Sign out",
+        "target": "@shared/sign-in",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Editable UI design. Google and email are both supported. Prototype navigation previews the next step; native validation, account creation, consent and profile completion must be enforced before dashboard access. No real account operation occurs in Figma. First-time registration only. Completed returning accounts skip registration and profile collection. Passwords remain transient and masked; reopening a valid session routes directly to the dashboard. Canonical metadata mirrors auth/profile-required. Complete profile resumes the existing student/consent frame, now the combined student-details form. This state is a missing-profile guard, not an email-domain restriction; completed returning accounts bypass onboarding."
+  },
+  {
+    "key":"G02.4","group":"G02","family":"recovery","kind":"result","title":"Sign in again","body":"Your session has ended. Sign in to continue.","nav":"none","back":"@shared/sign-in","sections":[],"actions":[{"label":"Sign in","target":"@shared/sign-in","style":"Primary","disabled":false}],"planned":false,"annotation":"After successful authentication restore only an authorized originating destination. Clear private content from the expired screen."
+  },
+  {
+    "key":"G02.5","group":"G02","family":"recovery","kind":"result","title":"Access unavailable","body":"You don't have permission to open this record.","nav":"Requests","back":"@student/requests","sections":[],"actions":[{"label":"Back to my requests","target":"@student/requests","style":"Primary","disabled":false}],"planned":false,"annotation":"Role-context variant returns staff/teller to their own queue/search. Do not show hidden reference, owner, amount, filename or preview."
+  },
+  {
+    "key":"G03.1","group":"G03","family":"directory-state","kind":"loading","title":"Campus offices","body":"Loading offices…","nav":"Home","back":"@student/home","sections":[{"type":"field","label":"Search","value":"","hint":"Search offices or services","error":"","multiline":false},{"type":"choice","label":"Services","options":[{"label":"All services","detail":"","selected":true,"target":"G03.1"},{"label":"Documents","detail":"","selected":false,"target":"@student/offices-documents"},{"label":"Payments","detail":"","selected":false,"target":"@student/offices-payments"}]}],"actions":[{"label":"Back to Home","target":"@student/home","style":"Secondary","disabled":false}],"planned":false,"annotation":"Restrained indeterminate progress; preserve actual query/filter while loading. Do not fabricate office skeleton rows or progress percent."
+  },
+  {
+    "key":"G03.2","group":"G03","family":"directory-state","kind":"result","title":"Couldn't load offices","body":"Check your connection and try again.","nav":"Home","back":"@student/home","sections":[{"type":"field","label":"Search","value":"","hint":"Search offices or services","error":"","multiline":false},{"type":"choice","label":"Services","options":[{"label":"All services","detail":"","selected":true,"target":"G03.2"},{"label":"Documents","detail":"","selected":false,"target":"@student/offices-documents"},{"label":"Payments","detail":"","selected":false,"target":"@student/offices-payments"}]}],"actions":[{"label":"Retry","target":"G03.1","style":"Primary","disabled":false},{"label":"Back to Home","target":"@student/home","style":"Secondary","disabled":false}],"planned":false,"annotation":"Retry preserves query/filter. State cause only if established; use neutral network guidance rather than claiming a server outage."
+  },
+  {
+    "key":"G03.3","group":"G03","family":"directory-state","kind":"empty","title":"No matching offices or services","body":"Try a different name or clear your search.","nav":"Home","back":"@student/offices","sections":[{"type":"field","label":"Search","value":"","hint":"Your search","error":"","multiline":false},{"type":"choice","label":"Services","options":[{"label":"All services","detail":"","selected":true,"target":"G03.3"},{"label":"Documents","detail":"","selected":false,"target":"@student/offices-documents"},{"label":"Payments","detail":"","selected":false,"target":"@student/offices-payments"}]}],"actions":[{"label":"Clear search","target":"@student/offices","style":"Primary","disabled":false}],"planned":false,"annotation":"Actual user query appears in the field in a live state. Clear keeps selected category; do not confuse search-empty with load failure."
+  },
+  {
+    "key":"G03.4","group":"G03","family":"empty-office-services","kind":"empty","title":"No services listed yet","body":"This office hasn't published request services here.","nav":"Home","back":"@student/offices","sections":[],"actions":[{"label":"Ask this office","target":"@student/new-thread","style":"Primary","disabled":false},{"label":"Back to offices","target":"@student/offices","style":"Secondary","disabled":false}],"planned":false,"annotation":"Contextual office name/header retained from origin. Pass the authorized office destination into inquiry. Hide New request until a configured service exists."
+  },
+  {
+    "key":"G04.1","group":"G04","family":"service-selection","kind":"form","title":"Choose a service","body":"Select a published service from this office.","nav":"Requests","back":"@student/office-registrar","sections":[{"type":"choice","label":"Available services","options":[{"label":"Enrollment certificate","detail":"Design example · No payment required","selected":false,"target":"@student/new-request"}]},{"type":"text","text":"The office declares whether each service requires payment.","role":"Support"}],"actions":[{"label":"Continue","target":"@student/new-request","style":"Disabled","disabled":true},{"label":"Back to office","target":"@student/office-registrar","style":"Secondary","disabled":false}],"planned":false,"annotation":"Enrollment certificate is the existing design example, not a seeded new-account request. Populate only configured services; enable Continue after selecting one. Empty types route G03.4. Service fee choices are not student-editable."
+  },
+  {
+    "key": "G04.2",
+    "group": "G04",
+    "family": "request-review",
+    "kind": "form",
+    "title": "Review request",
+    "body": "Check your details before submitting. This service does not require payment.",
+    "nav": "Requests",
+    "back": "@student/new-request",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Request details",
+        "body": "",
+        "rows": [
+          {
+            "label": "Office",
+            "value": "Registrar"
+          },
+          {
+            "label": "Service",
+            "value": "Enrollment certificate"
+          },
+          {
+            "label": "Fee",
+            "value": "No payment required"
+          }
+        ]
+      },
+      {
+        "type": "summary",
+        "title": "Your information",
+        "body": "",
+        "rows": [
+          {
+            "label": "Purpose",
+            "value": "Selected purpose"
+          },
+          {
+            "label": "Notes",
+            "value": "No notes added"
+          },
+          {
+            "label": "Supporting evidence",
+            "value": "No attachment selected"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Submit request",
+        "target": "G04.5",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Edit details",
+        "target": "@student/new-request",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Free branch skips payment choice entirely. Actual review must render entered fields/evidence, not this design explanation. On confirmed submission proceed to G04.7."
+  },
+  {
+    "key": "G04.3",
+    "group": "G04",
+    "family": "request-review",
+    "kind": "form",
+    "title": "Review request",
+    "body": "This service requires a fee. Cashiering handles the payment.",
+    "nav": "Requests",
+    "back": "@student/new-request",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Request details",
+        "body": "",
+        "rows": [
+          {
+            "label": "Office",
+            "value": "Registrar"
+          },
+          {
+            "label": "Service",
+            "value": "Selected service"
+          },
+          {
+            "label": "Fee",
+            "value": "Payment required"
+          },
+          {
+            "label": "Amount",
+            "value": "Not configured"
+          },
+          {
+            "label": "Payment office",
+            "value": "Cashiering"
+          }
+        ]
+      },
+      {
+        "type": "status",
+        "title": "Amount unavailable",
+        "body": "The office must configure the fee before you continue.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Submit request",
+        "target": "G04.5",
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Ask office",
+        "target": "@student/new-thread",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Edit details",
+        "target": "@student/new-request",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "No official amount invented. Replace Not configured with server-declared amount and enable Submit only when valid configuration loads. Receipt then routes to @student/payment; student cannot supply amount."
+  },
+  {
+    "key":"G04.4","group":"G04","family":"request-review","kind":"form","title":"Fee review pending","body":"This office hasn't confirmed whether payment is required. No payment is due yet.","nav":"Requests","back":"@student/new-request","sections":[{"type":"summary","title":"Fee declaration","body":"Awaiting the office's decision.","rows":[{"label":"Fee","value":"Pending office review"},{"label":"Payment","value":"Not requested"}]}],"actions":[{"label":"Submit request","target":"G04.5","style":"Disabled","disabled":true},{"label":"Ask office","target":"@student/new-thread","style":"Primary","disabled":false},{"label":"Back to form","target":"@student/new-request","style":"Secondary","disabled":false}],"planned":false,"annotation":"Conservative default: new submission disabled until pending-fee submission policy is confirmed. Existing submitted pending records remain viewable; no paid/processing claim and no unsupported Save draft."
+  },
+  {
+    "key":"G04.5","group":"G04","family":"submission-state","kind":"loading","title":"Submitting request…","body":"Your request is being submitted.","nav":"Requests","back":"G04.2","sections":[{"type":"status","title":"Submission in progress","body":"Wait for confirmation before submitting again.","tone":"neutral"}],"actions":[{"label":"Submitting…","target":"G04.7","style":"Disabled","disabled":true}],"planned":false,"annotation":"Async state. Root may provide design-preview success/failure navigation off canvas; no artificial live delay. Resolve to G04.7 or G04.6. Keep reviewed data and block duplicate create. No reference exists yet."
+  },
+  {
+    "key":"G04.6","group":"G04","family":"submission-state","kind":"result","title":"Request not submitted","body":"Your details are still here. Try again.","nav":"Requests","back":"G04.2","sections":[{"type":"status","title":"Submission failed","body":"No successful submission has been confirmed.","tone":"error"}],"actions":[{"label":"Retry","target":"G04.5","style":"Primary","disabled":false},{"label":"Edit details","target":"@student/new-request","style":"Secondary","disabled":false}],"planned":false,"annotation":"For an uncertain network result reconcile before another create attempt. Preserve originating free/required branch and validated form data."
+  },
+  {
+    "key": "G04.7",
+    "group": "G04",
+    "family": "submission-state",
+    "kind": "result",
+    "title": "Request submitted",
+    "body": "The office has received your request.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Submitted",
+        "body": "Submission receipt · Design example",
+        "tone": "success"
+      },
+      {
+        "type": "summary",
+        "title": "Request receipt",
+        "body": "",
+        "rows": [
+          {
+            "label": "Reference",
+            "value": "—"
+          },
+          {
+            "label": "Submitted",
+            "value": "—"
+          },
+          {
+            "label": "Office",
+            "value": "Registrar"
+          },
+          {
+            "label": "Service",
+            "value": "Enrollment certificate"
+          },
+          {
+            "label": "Fee",
+            "value": "No payment required"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "View request",
+        "target": "G04.detail-free",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to requests",
+        "target": "@student/requests-existing-data",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Free receipt design example, isolated from zero-data default. Actual UI shows server-confirmed reference and time immediately; replace explanatory placeholders. Required-fee variant changes primary action to Choose payment method → @student/payment; preserve same confirmed receipt structure."
+  },
+  {
+    "key": "G05.1",
+    "group": "G05",
+    "family": "office-fee-editor",
+    "kind": "form",
+    "title": "Payment declaration",
+    "body": "Set the payment declaration for this office's service.",
+    "nav": "Staff",
+    "back": "@staff/home",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Registrar",
+        "body": "",
+        "rows": [
+          {
+            "label": "Service",
+            "value": "Enrollment certificate"
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "label": "Fee declaration",
+        "options": [
+          {
+            "label": "No payment required",
+            "detail": "The request skips payment.",
+            "selected": true,
+            "target": "G05.1"
+          },
+          {
+            "label": "Payment required",
+            "detail": "Enter an authorized amount; Cashiering collects payment.",
+            "selected": false,
+            "target": "G05.required"
+          },
+          {
+            "label": "Pending office review",
+            "detail": "Payment has not been declared.",
+            "selected": false,
+            "target": "G05.pending"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Save declaration",
+        "target": "G05.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel",
+        "target": "@staff/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Prototype editor only; actual amount field appears only when Payment required is selected. No official amount invented. Require numeric validation and review before save. Staff authority must be server-verified; effect of fee changes on existing requests unresolved. No student/teller route. Registrar and enrollment certificate are illustrative service context; actual office/service must come from the authorized configuration."
+  },
+  {
+    "key":"G05.2","group":"G05","family":"office-fee-editor","kind":"loading","title":"Saving fee declaration…","body":"Your reviewed declaration is being saved.","nav":"Staff","back":"G05.1","sections":[{"type":"summary","title":"Reviewed change","body":"Keep the selected declaration and authorized amount visible while saving.","rows":[]}],"actions":[{"label":"Saving…","target":"@staff/home","style":"Disabled","disabled":true}],"planned":false,"annotation":"Block duplicate save and mode changes. Confirmed result uses G13.3-style read-only declaration with server actor/time; failure G05.3. No success on a local navigation alone."
+  },
+  {
+    "key": "G05.3",
+    "group": "G05",
+    "family": "office-fee-editor",
+    "kind": "form",
+    "title": "Fee declaration wasn't saved",
+    "body": "Your changes are still here.",
+    "nav": "Staff",
+    "back": "G05.1",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Save failed",
+        "body": "The previous declaration is still in effect.",
+        "tone": "error"
+      },
+      {
+        "type": "choice",
+        "label": "Unsaved declaration",
+        "options": [
+          {
+            "label": "No payment required",
+            "detail": "Selected change retained",
+            "selected": true,
+            "target": "G05.1"
+          },
+          {
+            "label": "Payment required",
+            "detail": "Authorized amount required",
+            "selected": false,
+            "target": "G05.required"
+          },
+          {
+            "label": "Pending office review",
+            "detail": "No fee declared",
+            "selected": false,
+            "target": "G05.pending"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Retry",
+        "target": "G05.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Continue editing",
+        "target": "G05.1",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel changes",
+        "target": "@staff/home",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Actual view preserves selected mode and entered amount. Cancel restores prior server value; validation errors attach to the field."
+  },
+  {
+    "key": "G06.1",
+    "group": "G06",
+    "family": "reason-sheet",
+    "kind": "sheet",
+    "title": "Cancel request",
+    "body": "Tell the office why you want to cancel this request.",
+    "nav": "Requests",
+    "back": "@student/request-detail",
+    "sections": [
+      {
+        "type": "field",
+        "label": "Reason",
+        "value": "",
+        "hint": "Enter a reason",
+        "error": "",
+        "multiline": true
+      }
+    ],
+    "actions": [
+      {
+        "label": "Review cancellation",
+        "target": "G06.2",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@student/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Prototype origin must pass affected record. Empty submit routes G06.2; nonempty submit G06.3. Staff variant title Reject request or Cancel request, back @staff/request-detail, nav Staff. Show only server-authorized transitions."
+  },
+  {
+    "key":"G06.2","group":"G06","family":"reason-sheet","kind":"sheet","title":"Cancel request","body":"A reason is required before this request can be cancelled.","nav":"Requests","back":"G06.1","sections":[{"type":"field","label":"Reason","value":"","hint":"Enter a reason","error":"Reason is required.","multiline":true}],"actions":[{"label":"Review cancellation","target":"G06.3","style":"Disabled","disabled":true},{"label":"Back to reason","target":"G06.1","style":"Secondary","disabled":false},{"label":"Keep request","target":"@student/request-detail","style":"Secondary","disabled":false}],"planned":false,"annotation":"Focus reason field. Staff rejection/cancellation reuses validation with correct title and return target. No request transition occurs."
+  },
+  {
+    "key": "G06.3",
+    "group": "G06",
+    "family": "stop-confirmation",
+    "kind": "sheet",
+    "title": "Cancel this request?",
+    "body": "Review your reason before confirming.",
+    "nav": "Requests",
+    "back": "G06.1",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Cancellation review",
+        "body": "",
+        "rows": []
+      },
+      {
+        "type": "status",
+        "title": "If this request is paid",
+        "body": "Payment remains recorded. Contact Cashiering for payment follow-up.",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Confirm cancellation",
+        "target": "G06.5",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to reason",
+        "target": "G06.1",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Keep request",
+        "target": "@student/request-detail",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Actual confirmation shows affected reference/service and entered reason, with paid notice only on paid records. Paid confirm → G06.5. Staff Reject variant uses Reject this request? and Confirm rejection, preserving staff return. No cancellation deadline invented."
+  },
+  {
+    "key": "G06.4",
+    "group": "G06",
+    "family": "stopped-request-result",
+    "kind": "result",
+    "title": "Request cancelled",
+    "body": "This request has stopped. The cancellation reason is included in its status history.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "status",
+        "title": "Cancelled",
+        "body": "Confirmed transition · Design example",
+        "tone": "neutral"
+      }
+    ],
+    "actions": [
+      {
+        "label": "View request",
+        "target": "G06.detail-cancelled-free",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to requests",
+        "target": "@student/requests-existing-data",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Render terminal detail with real reason/actor/time only after confirmation; existing request-detail alias must be overridden to contextual terminal variant. Staff rejection title Request rejected; return to staff queue. Do not show Processing on destination."
+  },
+  {
+    "key": "G06.5",
+    "group": "G06",
+    "family": "stopped-request-result",
+    "kind": "result",
+    "title": "Request cancelled",
+    "body": "Payment remains recorded. Contact Cashiering about the payment.",
+    "nav": "Requests",
+    "back": "@student/requests-existing-data",
+    "sections": [
+      {
+        "type": "summary",
+        "title": "Payment follow-up",
+        "body": "Cancellation does not automatically refund or void a payment.",
+        "rows": [
+          {
+            "label": "Request",
+            "value": "Cancelled"
+          },
+          {
+            "label": "Payment",
+            "value": "Paid"
+          },
+          {
+            "label": "Contact",
+            "value": "Cashiering"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "label": "Contact Cashiering",
+        "target": "@student/new-thread",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "View request",
+        "target": "G06.detail-cancelled-paid",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": false,
+    "annotation": "Contextual terminal paid-request example. Inquiry recipient preselected Cashiering. Actual detail retains paid record and cancellation reason/actor/time. Staff rejection reuses outcome with correct label. No automatic refund promise."
+  },
+  {
+    "key":"G07.1","group":"G07","family":"payment-result","kind":"result","title":"Payment confirmed","body":"A confirmed payment record is available for this request.","nav":"Requests","back":"@student/request-detail","sections":[{"type":"status","title":"Paid","body":"Verified server result required","tone":"success"},{"type":"text","text":"Request progress is tracked separately from payment.","role":"Support"}],"actions":[{"label":"View request","target":"@student/request-detail","style":"Primary","disabled":false}],"planned":true,"annotation":"Planned authoritative result; isolated from disabled integration. Actual result includes reference, server amount and verified source/actor/time. Receipt action appears only if a real receipt exists. Never mark Paid from browser return."
+  },
+  {
+    "key":"G07.2","group":"G07","family":"payment-result","kind":"result","title":"Payment failed","body":"This payment wasn't confirmed.","nav":"Requests","back":"@student/request-detail","sections":[{"type":"status","title":"Failed payment attempt","body":"Your service request has a separate status.","tone":"error"}],"actions":[{"label":"Try payment again","target":"@student/payment","style":"Disabled","disabled":true},{"label":"Contact Cashiering","target":"@student/new-thread","style":"Primary","disabled":false},{"label":"View request","target":"@student/request-detail","style":"Secondary","disabled":false}],"planned":true,"annotation":"Provider disabled; retry enabled only after server permits another attempt and payment contracts are verified. Preselect Cashiering inquiry."
+  },
+  {
+    "key":"G07.3","group":"G07","family":"payment-result","kind":"result","title":"Payment session expired","body":"No payment was confirmed for this session.","nav":"Requests","back":"@student/request-detail","sections":[{"type":"status","title":"Expired","body":"A new payment session may be needed.","tone":"neutral"}],"actions":[{"label":"Start a new session","target":"@student/payment","style":"Disabled","disabled":true},{"label":"View request","target":"@student/request-detail","style":"Primary","disabled":false}],"planned":true,"annotation":"Provider disabled; start new session only after server-authorized eligibility. Do not cancel the request when a payment session expires."
+  },
+  {
+    "key":"G07.4","group":"G07","family":"payment-result","kind":"result","title":"Payment cancelled","body":"No payment was confirmed for this attempt. Your request is separate from this payment attempt.","nav":"Requests","back":"@student/request-detail","sections":[{"type":"status","title":"Cancelled payment attempt","body":"This does not cancel your service request.","tone":"neutral"}],"actions":[{"label":"Choose payment method","target":"@student/payment","style":"Disabled","disabled":true},{"label":"View request","target":"@student/request-detail","style":"Primary","disabled":false}],"planned":true,"annotation":"Provider disabled; payment choice enabled only when authoritative state permits another attempt."
+  },
+  {
+    "key":"G07.5","group":"G07","family":"payment-result","kind":"loading","title":"Checking payment status…","body":"Returning from the payment page does not confirm payment.","nav":"Requests","back":"@student/payment-pending","sections":[{"type":"status","title":"Pending verification","body":"Wait for the latest confirmed status.","tone":"neutral"}],"actions":[{"label":"Checking…","target":"G07.1","style":"Disabled","disabled":true},{"label":"View request","target":"@student/request-detail","style":"Secondary","disabled":false}],"planned":true,"annotation":"Planned async verification state. No active provider call. Real result routes to authoritative state; error G07.6; app return alone stays pending."
+  },
+  {
+    "key":"G07.6","group":"G07","family":"payment-result","kind":"result","title":"Couldn't check payment status","body":"The last confirmed status hasn't changed.","nav":"Requests","back":"@student/payment-pending","sections":[{"type":"status","title":"Pending verification","body":"No confirmed payment has been received.","tone":"neutral"}],"actions":[{"label":"Check again","target":"G07.5","style":"Disabled","disabled":true},{"label":"View request","target":"@student/request-detail","style":"Primary","disabled":false},{"label":"Contact Cashiering","target":"@student/new-thread","style":"Secondary","disabled":false}],"planned":true,"annotation":"Current provider-disabled variant keeps Check again inactive. Enabled future error permits safe status retry. Preserve last verified state and route inquiry to Cashiering."
+  }
+]

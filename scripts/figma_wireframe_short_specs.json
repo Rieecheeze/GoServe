@@ -1,0 +1,253 @@
+{
+  "purpose": "Concise professor-facing overview; detailed state inventories remain in the plan and existing UI page.",
+  "cases": [
+    {
+      "key": "short_request",
+      "title": "06 · Review a service request",
+      "role": "Student",
+      "toolbar": "Request review",
+      "heading": "Review your request",
+      "body": "Check the selected service, requirements and fee before submitting.",
+      "fields": [
+        {
+          "label": "Office and service",
+          "value": "Select an approved request type"
+        },
+        {
+          "label": "Delivery",
+          "value": "Physical pickup or private PDF"
+        },
+        {
+          "label": "Fee",
+          "value": "Free or the selected type’s configured amount"
+        },
+        {
+          "label": "Details and evidence",
+          "value": "Your entered details and required files"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Submit request",
+          "target": "request_submitted",
+          "style": "primary"
+        }
+      ],
+      "notes": [
+        "The server validates the current fee and requirements. Pending declaration blocks submission. Repeated taps create one reference.",
+        "Paid requests use eGovPay or teller-confirmed cash; processing starts after authoritative payment. Office receives a committed submission live."
+      ]
+    },
+    {
+      "key": "pickup_ready",
+      "title": "07 · Ready for physical pickup",
+      "role": "Student",
+      "toolbar": "Request details",
+      "heading": "Ready for pickup",
+      "body": "Claim this request to get your pickup code.",
+      "fields": [
+        {
+          "label": "Status",
+          "value": "Ready for pickup"
+        },
+        {
+          "label": "Responsible office",
+          "value": "The office handling your request"
+        },
+        {
+          "label": "Pickup code",
+          "value": "Not issued yet"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Claim request",
+          "target": "pickup_issued",
+          "style": "primary"
+        }
+      ],
+      "notes": [
+        "Office marks Ready → this student screen updates live. Ready alone generates no QR.",
+        "Claim checks ownership, status and payment. An unconfigured expiry or failed check leaves the request Ready with retry."
+      ]
+    },
+    {
+      "key": "pickup_issued",
+      "title": "08 · Student pickup QR",
+      "role": "Student",
+      "toolbar": "Pickup code",
+      "heading": "Show this at pickup",
+      "body": "Staff reviews your code and confirms the handover.",
+      "fields": [
+        {
+          "label": "QR placeholder",
+          "value": "Design placeholder only"
+        },
+        {
+          "label": "Manual code",
+          "value": "NOT A VALID PICKUP CODE"
+        },
+        {
+          "label": "Valid until",
+          "value": "Server-provided expiry"
+        }
+      ],
+      "actions": [],
+      "notes": [
+        "Claim generates or retrieves one valid server code. Reopening reuses it until expiry or invalidation.",
+        "Scan or manual entry → authorized office review → explicit handover confirmation → Completed on both sides live."
+      ]
+    },
+    {
+      "key": "digital_downloaded",
+      "title": "09 · Digital document receipt",
+      "role": "Student",
+      "toolbar": "Digital result",
+      "heading": "Your PDF result",
+      "body": "Download the released PDF, then confirm receipt.",
+      "fields": [
+        {
+          "label": "Document",
+          "value": "Private office-issued PDF"
+        },
+        {
+          "label": "Download",
+          "value": "Successful download · illustrated state"
+        },
+        {
+          "label": "Request status",
+          "value": "Ready for Download"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Download PDF",
+          "target": "digital_downloaded",
+          "style": "secondary"
+        },
+        {
+          "label": "Confirm receipt",
+          "target": "digital_completed",
+          "style": "primary"
+        }
+      ],
+      "notes": [
+        "Office verifies/releases the PDF → student receives Ready for Download live.",
+        "Confirm receipt enables only after successful download of the released version. Confirmation completes both sides; failed download does not."
+      ]
+    },
+    {
+      "key": "short_office",
+      "title": "13 · Authorized office workspace",
+      "role": "Office staff",
+      "toolbar": "Office workspace",
+      "heading": "Manage your office",
+      "body": "Review assigned work and update students in real time.",
+      "fields": [
+        {
+          "label": "Requests",
+          "value": "Review evidence · update request status"
+        },
+        {
+          "label": "Service catalogue",
+          "value": "Per-type Free / Fee required / Pending"
+        },
+        {
+          "label": "Office updates",
+          "value": "Availability and announcements"
+        },
+        {
+          "label": "Inbox and consultations",
+          "value": "Reply to inquiries · manage permitted schedules"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Review pickup",
+          "target": "pickup_review",
+          "style": "primary"
+        },
+        {
+          "label": "Open inquiries",
+          "target": "staff/thread",
+          "style": "secondary"
+        }
+      ],
+      "notes": [
+        "Committed submissions and inquiries arrive in the assigned office’s queue/inbox live.",
+        "Staff processes eligible requests and marks physical results Ready or releases verified PDFs. Faculty/Guidance manage their schedules; CCS secretary has assigned coordination access."
+      ]
+    },
+    {
+      "key": "pickup_review",
+      "title": "14 · Office confirms handover",
+      "role": "Office staff",
+      "toolbar": "Pickup review",
+      "heading": "Review before handover",
+      "body": "Check the matching request before handing over the result.",
+      "fields": [
+        {
+          "label": "Pickup validation",
+          "value": "Eligible code · scan or manual entry"
+        },
+        {
+          "label": "Matching request",
+          "value": "Student, office and request match"
+        },
+        {
+          "label": "Current status",
+          "value": "Ready for pickup"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Confirm handover",
+          "target": "pickup_completed",
+          "style": "primary"
+        },
+        {
+          "label": "Enter another code",
+          "target": "pickup_scan",
+          "style": "secondary"
+        }
+      ],
+      "notes": [
+        "Scanning only validates. The authorized office confirms the actual handover.",
+        "Server consumes the code and completes once. Wrong-office, expired, used or invalid codes are rejected. Completion updates student and office live."
+      ]
+    },
+    {
+      "key": "short_cashier",
+      "title": "15 · Cashiering payment confirmation",
+      "role": "Teller",
+      "toolbar": "Cashiering",
+      "heading": "Review cash payment",
+      "body": "Check the request and received amount before confirming.",
+      "fields": [
+        {
+          "label": "Request reference",
+          "value": "Server-confirmed request reference"
+        },
+        {
+          "label": "Amount due",
+          "value": "Frozen submitted fee · server value"
+        },
+        {
+          "label": "Payment status",
+          "value": "Pending"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Confirm cash received",
+          "target": "cash_paid",
+          "style": "primary"
+        }
+      ],
+      "notes": [
+        "Only an authorized teller confirms the exact amount once. Student and responsible office update live.",
+        "Free requests skip payment. eGovPay uses trusted callback/reconciliation after contract approval; browser return never proves payment."
+      ]
+    }
+  ]
+}

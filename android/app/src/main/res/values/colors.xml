@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gs_background">#F4F4F4</color>
+    <color name="gs_surface">#FFFFFF</color>
+    <color name="gs_primary">#171717</color>
+    <color name="gs_on_primary">#FFFFFF</color>
+    <color name="gs_text">#171717</color>
+    <color name="gs_secondary">#595959</color>
+    <color name="gs_border">#D5D5D5</color>
+    <color name="gs_muted">#EBEBEB</color>
+    <color name="gs_error">#A42622</color>
+    <color name="gs_art_registrar">#D1D1D1</color>
+    <color name="gs_art_accounting">#A8A8A8</color>
+    <color name="gs_art_paper">#FFFFFF</color>
+    <color name="gs_art_ink">#171717</color>
+    <color name="gs_ripple">#28171717</color>
+    <bool name="gs_light_system_bars">true</bool>
+</resources>

@@ -1,0 +1,3819 @@
+{
+  "runId": "goserve-ui-2026-10-15",
+  "fileKey": "SvT9gBUFjdLgbrJ80LPDno",
+  "pageId": "14:2",
+  "phase": "figma_ui_ready_for_review",
+  "components": [
+    {
+      "id": "144:1296",
+      "family": "State action",
+      "theme": "Light",
+      "style": "Primary"
+    },
+    {
+      "id": "144:1298",
+      "family": "State action",
+      "theme": "Light",
+      "style": "Secondary"
+    },
+    {
+      "id": "144:1300",
+      "family": "State action",
+      "theme": "Light",
+      "style": "Disabled"
+    },
+    {
+      "id": "144:1302",
+      "family": "State action",
+      "theme": "Dark",
+      "style": "Primary"
+    },
+    {
+      "id": "144:1304",
+      "family": "State action",
+      "theme": "Dark",
+      "style": "Secondary"
+    },
+    {
+      "id": "144:1306",
+      "family": "State action",
+      "theme": "Dark",
+      "style": "Disabled"
+    },
+    {
+      "id": "144:1308",
+      "family": "Staff navigation",
+      "theme": "Light",
+      "active": "Home"
+    },
+    {
+      "id": "144:1325",
+      "family": "Staff navigation",
+      "theme": "Light",
+      "active": "Queue"
+    },
+    {
+      "id": "144:1342",
+      "family": "Staff navigation",
+      "theme": "Light",
+      "active": "Schedule"
+    },
+    {
+      "id": "144:1359",
+      "family": "Staff navigation",
+      "theme": "Light",
+      "active": "Inbox"
+    },
+    {
+      "id": "144:1376",
+      "family": "Staff navigation",
+      "theme": "Light",
+      "active": "More"
+    },
+    {
+      "id": "144:1393",
+      "family": "Staff navigation",
+      "theme": "Dark",
+      "active": "Home"
+    },
+    {
+      "id": "144:1410",
+      "family": "Staff navigation",
+      "theme": "Dark",
+      "active": "Queue"
+    },
+    {
+      "id": "144:1427",
+      "family": "Staff navigation",
+      "theme": "Dark",
+      "active": "Schedule"
+    },
+    {
+      "id": "144:1444",
+      "family": "Staff navigation",
+      "theme": "Dark",
+      "active": "Inbox"
+    },
+    {
+      "id": "144:1461",
+      "family": "Staff navigation",
+      "theme": "Dark",
+      "active": "More"
+    },
+    {
+      "id": "144:1478",
+      "family": "Teller navigation",
+      "theme": "Light",
+      "active": "Search"
+    },
+    {
+      "id": "144:1492",
+      "family": "Teller navigation",
+      "theme": "Light",
+      "active": "Pending"
+    },
+    {
+      "id": "144:1506",
+      "family": "Teller navigation",
+      "theme": "Light",
+      "active": "History"
+    },
+    {
+      "id": "144:1520",
+      "family": "Teller navigation",
+      "theme": "Light",
+      "active": "More"
+    },
+    {
+      "id": "144:1534",
+      "family": "Teller navigation",
+      "theme": "Dark",
+      "active": "Search"
+    },
+    {
+      "id": "144:1548",
+      "family": "Teller navigation",
+      "theme": "Dark",
+      "active": "Pending"
+    },
+    {
+      "id": "144:1562",
+      "family": "Teller navigation",
+      "theme": "Dark",
+      "active": "History"
+    },
+    {
+      "id": "144:1576",
+      "family": "Teller navigation",
+      "theme": "Dark",
+      "active": "More"
+    }
+  ],
+  "screens": [
+    {
+      "key": "G01.1",
+      "theme": "Light",
+      "id": "23:285",
+      "title": "Inbox"
+    },
+    {
+      "key": "G01.1",
+      "theme": "Dark",
+      "id": "36:630",
+      "title": "Inbox"
+    },
+    {
+      "key": "G01.2",
+      "theme": "Light",
+      "id": "23:388",
+      "title": "Notifications"
+    },
+    {
+      "key": "G01.2",
+      "theme": "Dark",
+      "id": "36:733",
+      "title": "Notifications"
+    },
+    {
+      "key": "G01.3",
+      "theme": "Light",
+      "id": "145:1486",
+      "title": "My appointments"
+    },
+    {
+      "key": "G01.3",
+      "theme": "Dark",
+      "id": "145:1488",
+      "title": "My appointments"
+    },
+    {
+      "key": "G01.4",
+      "theme": "Light",
+      "id": "145:1490",
+      "title": "Office dashboard"
+    },
+    {
+      "key": "G01.4",
+      "theme": "Dark",
+      "id": "145:1492",
+      "title": "Office dashboard"
+    },
+    {
+      "key": "G01.5",
+      "theme": "Light",
+      "id": "145:1494",
+      "title": "Office queue"
+    },
+    {
+      "key": "G01.5",
+      "theme": "Dark",
+      "id": "145:1496",
+      "title": "Office queue"
+    },
+    {
+      "key": "G01.6",
+      "theme": "Light",
+      "id": "145:1498",
+      "title": "Office inbox"
+    },
+    {
+      "key": "G01.6",
+      "theme": "Dark",
+      "id": "145:1500",
+      "title": "Office inbox"
+    },
+    {
+      "key": "G01.7",
+      "theme": "Light",
+      "id": "145:1502",
+      "title": "Office schedule"
+    },
+    {
+      "key": "G01.7",
+      "theme": "Dark",
+      "id": "145:1504",
+      "title": "Office schedule"
+    },
+    {
+      "key": "G01.8",
+      "theme": "Light",
+      "id": "145:1506",
+      "title": "Pending payments"
+    },
+    {
+      "key": "G01.8",
+      "theme": "Dark",
+      "id": "145:1508",
+      "title": "Pending payments"
+    },
+    {
+      "key": "G01.9",
+      "theme": "Light",
+      "id": "145:1510",
+      "title": "Payment history"
+    },
+    {
+      "key": "G01.9",
+      "theme": "Dark",
+      "id": "145:1512",
+      "title": "Payment history"
+    },
+    {
+      "key": "G02.1",
+      "theme": "Light",
+      "id": "145:1514",
+      "title": "Sign-in cancelled"
+    },
+    {
+      "key": "G02.1",
+      "theme": "Dark",
+      "id": "145:1516",
+      "title": "Sign-in cancelled"
+    },
+    {
+      "key": "G02.2",
+      "theme": "Light",
+      "id": "145:1518",
+      "title": "Check your sign-in details"
+    },
+    {
+      "key": "G02.2",
+      "theme": "Dark",
+      "id": "145:1520",
+      "title": "Check your sign-in details"
+    },
+    {
+      "key": "G02.3",
+      "theme": "Light",
+      "id": "145:1522",
+      "title": "Complete your profile"
+    },
+    {
+      "key": "G02.3",
+      "theme": "Dark",
+      "id": "145:1524",
+      "title": "Complete your profile"
+    },
+    {
+      "key": "G02.4",
+      "theme": "Light",
+      "id": "145:1526",
+      "title": "Sign in again"
+    },
+    {
+      "key": "G02.4",
+      "theme": "Dark",
+      "id": "145:1528",
+      "title": "Sign in again"
+    },
+    {
+      "key": "G02.5",
+      "theme": "Light",
+      "id": "145:1530",
+      "title": "Access unavailable"
+    },
+    {
+      "key": "G02.5",
+      "theme": "Dark",
+      "id": "145:1532",
+      "title": "Access unavailable"
+    },
+    {
+      "key": "G03.1",
+      "theme": "Light",
+      "id": "145:1534",
+      "title": "Campus offices"
+    },
+    {
+      "key": "G03.1",
+      "theme": "Dark",
+      "id": "145:1536",
+      "title": "Campus offices"
+    },
+    {
+      "key": "G03.2",
+      "theme": "Light",
+      "id": "145:1538",
+      "title": "Couldn't load offices"
+    },
+    {
+      "key": "G03.2",
+      "theme": "Dark",
+      "id": "145:1540",
+      "title": "Couldn't load offices"
+    },
+    {
+      "key": "G03.3",
+      "theme": "Light",
+      "id": "145:1542",
+      "title": "No matching offices or services"
+    },
+    {
+      "key": "G03.3",
+      "theme": "Dark",
+      "id": "145:1544",
+      "title": "No matching offices or services"
+    },
+    {
+      "key": "G03.4",
+      "theme": "Light",
+      "id": "145:1546",
+      "title": "No services listed yet"
+    },
+    {
+      "key": "G03.4",
+      "theme": "Dark",
+      "id": "145:1548",
+      "title": "No services listed yet"
+    },
+    {
+      "key": "G04.1",
+      "theme": "Light",
+      "id": "145:1550",
+      "title": "Choose a service"
+    },
+    {
+      "key": "G04.1",
+      "theme": "Dark",
+      "id": "145:1552",
+      "title": "Choose a service"
+    },
+    {
+      "key": "G04.2",
+      "theme": "Light",
+      "id": "145:1554",
+      "title": "Review request"
+    },
+    {
+      "key": "G04.2",
+      "theme": "Dark",
+      "id": "145:1556",
+      "title": "Review request"
+    },
+    {
+      "key": "G04.3",
+      "theme": "Light",
+      "id": "145:1558",
+      "title": "Review request"
+    },
+    {
+      "key": "G04.3",
+      "theme": "Dark",
+      "id": "145:1560",
+      "title": "Review request"
+    },
+    {
+      "key": "G04.4",
+      "theme": "Light",
+      "id": "145:1562",
+      "title": "Fee review pending"
+    },
+    {
+      "key": "G04.4",
+      "theme": "Dark",
+      "id": "145:1564",
+      "title": "Fee review pending"
+    },
+    {
+      "key": "G04.5",
+      "theme": "Light",
+      "id": "145:1566",
+      "title": "Submitting request…"
+    },
+    {
+      "key": "G04.5",
+      "theme": "Dark",
+      "id": "145:1568",
+      "title": "Submitting request…"
+    },
+    {
+      "key": "G04.6",
+      "theme": "Light",
+      "id": "145:1570",
+      "title": "Request not submitted"
+    },
+    {
+      "key": "G04.6",
+      "theme": "Dark",
+      "id": "145:1572",
+      "title": "Request not submitted"
+    },
+    {
+      "key": "G04.7",
+      "theme": "Light",
+      "id": "145:1574",
+      "title": "Request submitted"
+    },
+    {
+      "key": "G04.7",
+      "theme": "Dark",
+      "id": "145:1576",
+      "title": "Request submitted"
+    },
+    {
+      "key": "G05.1",
+      "theme": "Light",
+      "id": "145:1578",
+      "title": "Payment declaration"
+    },
+    {
+      "key": "G05.1",
+      "theme": "Dark",
+      "id": "145:1580",
+      "title": "Payment declaration"
+    },
+    {
+      "key": "G05.2",
+      "theme": "Light",
+      "id": "145:1582",
+      "title": "Saving fee declaration…"
+    },
+    {
+      "key": "G05.2",
+      "theme": "Dark",
+      "id": "145:1584",
+      "title": "Saving fee declaration…"
+    },
+    {
+      "key": "G05.3",
+      "theme": "Light",
+      "id": "145:1586",
+      "title": "Fee declaration wasn't saved"
+    },
+    {
+      "key": "G05.3",
+      "theme": "Dark",
+      "id": "145:1588",
+      "title": "Fee declaration wasn't saved"
+    },
+    {
+      "key": "G06.1",
+      "theme": "Light",
+      "id": "145:1590",
+      "title": "Cancel request"
+    },
+    {
+      "key": "G06.1",
+      "theme": "Dark",
+      "id": "145:1592",
+      "title": "Cancel request"
+    },
+    {
+      "key": "G06.2",
+      "theme": "Light",
+      "id": "145:1594",
+      "title": "Cancel request"
+    },
+    {
+      "key": "G06.2",
+      "theme": "Dark",
+      "id": "145:1596",
+      "title": "Cancel request"
+    },
+    {
+      "key": "G06.3",
+      "theme": "Light",
+      "id": "145:1598",
+      "title": "Cancel this request?"
+    },
+    {
+      "key": "G06.3",
+      "theme": "Dark",
+      "id": "145:1600",
+      "title": "Cancel this request?"
+    },
+    {
+      "key": "G06.4",
+      "theme": "Light",
+      "id": "145:1602",
+      "title": "Request cancelled"
+    },
+    {
+      "key": "G06.4",
+      "theme": "Dark",
+      "id": "145:1604",
+      "title": "Request cancelled"
+    },
+    {
+      "key": "G06.5",
+      "theme": "Light",
+      "id": "145:1606",
+      "title": "Request cancelled"
+    },
+    {
+      "key": "G06.5",
+      "theme": "Dark",
+      "id": "145:1608",
+      "title": "Request cancelled"
+    },
+    {
+      "key": "G07.1",
+      "theme": "Light",
+      "id": "145:1610",
+      "title": "Payment confirmed"
+    },
+    {
+      "key": "G07.1",
+      "theme": "Dark",
+      "id": "145:1612",
+      "title": "Payment confirmed"
+    },
+    {
+      "key": "G07.2",
+      "theme": "Light",
+      "id": "145:1614",
+      "title": "Payment failed"
+    },
+    {
+      "key": "G07.2",
+      "theme": "Dark",
+      "id": "145:1616",
+      "title": "Payment failed"
+    },
+    {
+      "key": "G07.3",
+      "theme": "Light",
+      "id": "145:1618",
+      "title": "Payment session expired"
+    },
+    {
+      "key": "G07.3",
+      "theme": "Dark",
+      "id": "145:1620",
+      "title": "Payment session expired"
+    },
+    {
+      "key": "G07.4",
+      "theme": "Light",
+      "id": "145:1622",
+      "title": "Payment cancelled"
+    },
+    {
+      "key": "G07.4",
+      "theme": "Dark",
+      "id": "145:1624",
+      "title": "Payment cancelled"
+    },
+    {
+      "key": "G07.5",
+      "theme": "Light",
+      "id": "145:1626",
+      "title": "Checking payment status…"
+    },
+    {
+      "key": "G07.5",
+      "theme": "Dark",
+      "id": "145:1628",
+      "title": "Checking payment status…"
+    },
+    {
+      "key": "G07.6",
+      "theme": "Light",
+      "id": "145:1630",
+      "title": "Couldn't check payment status"
+    },
+    {
+      "key": "G07.6",
+      "theme": "Dark",
+      "id": "145:1632",
+      "title": "Couldn't check payment status"
+    },
+    {
+      "key": "G08.1",
+      "theme": "Light",
+      "id": "145:1634",
+      "title": "No payment found"
+    },
+    {
+      "key": "G08.1",
+      "theme": "Dark",
+      "id": "145:1636",
+      "title": "No payment found"
+    },
+    {
+      "key": "G08.2",
+      "theme": "Light",
+      "id": "145:1638",
+      "title": "Payment already confirmed"
+    },
+    {
+      "key": "G08.2",
+      "theme": "Dark",
+      "id": "145:1640",
+      "title": "Payment already confirmed"
+    },
+    {
+      "key": "G08.3",
+      "theme": "Light",
+      "id": "145:1642",
+      "title": "Confirming payment…"
+    },
+    {
+      "key": "G08.3",
+      "theme": "Dark",
+      "id": "145:1644",
+      "title": "Confirming payment…"
+    },
+    {
+      "key": "G08.4",
+      "theme": "Light",
+      "id": "145:1646",
+      "title": "Payment wasn't confirmed"
+    },
+    {
+      "key": "G08.4",
+      "theme": "Dark",
+      "id": "145:1648",
+      "title": "Payment wasn't confirmed"
+    },
+    {
+      "key": "G08.5",
+      "theme": "Light",
+      "id": "145:1650",
+      "title": "Payment confirmed"
+    },
+    {
+      "key": "G08.5",
+      "theme": "Dark",
+      "id": "145:1652",
+      "title": "Payment confirmed"
+    },
+    {
+      "key": "G09.1",
+      "theme": "Light",
+      "id": "145:1654",
+      "title": "Appointment booked"
+    },
+    {
+      "key": "G09.1",
+      "theme": "Dark",
+      "id": "145:1656",
+      "title": "Appointment booked"
+    },
+    {
+      "key": "G09.2",
+      "theme": "Light",
+      "id": "145:1658",
+      "title": "Cancel this appointment?"
+    },
+    {
+      "key": "G09.2",
+      "theme": "Dark",
+      "id": "145:1660",
+      "title": "Cancel this appointment?"
+    },
+    {
+      "key": "G09.2.cancelled",
+      "theme": "Light",
+      "id": "145:1662",
+      "title": "Appointment cancelled"
+    },
+    {
+      "key": "G09.2.cancelled",
+      "theme": "Dark",
+      "id": "145:1664",
+      "title": "Appointment cancelled"
+    },
+    {
+      "key": "G09.3",
+      "theme": "Light",
+      "id": "145:1666",
+      "title": "Choose a new time"
+    },
+    {
+      "key": "G09.3",
+      "theme": "Dark",
+      "id": "145:1668",
+      "title": "Choose a new time"
+    },
+    {
+      "key": "G09.4",
+      "theme": "Light",
+      "id": "145:1670",
+      "title": "Review new time"
+    },
+    {
+      "key": "G09.4",
+      "theme": "Dark",
+      "id": "145:1672",
+      "title": "Review new time"
+    },
+    {
+      "key": "G09.5",
+      "theme": "Light",
+      "id": "145:1674",
+      "title": "This time is no longer available"
+    },
+    {
+      "key": "G09.5",
+      "theme": "Dark",
+      "id": "145:1676",
+      "title": "This time is no longer available"
+    },
+    {
+      "key": "G09.6",
+      "theme": "Light",
+      "id": "145:1678",
+      "title": "No available times"
+    },
+    {
+      "key": "G09.6",
+      "theme": "Dark",
+      "id": "145:1680",
+      "title": "No available times"
+    },
+    {
+      "key": "G10.1",
+      "theme": "Light",
+      "id": "145:1682",
+      "title": "Review attachment"
+    },
+    {
+      "key": "G10.1",
+      "theme": "Dark",
+      "id": "145:1684",
+      "title": "Review attachment"
+    },
+    {
+      "key": "G10.2",
+      "theme": "Light",
+      "id": "145:1686",
+      "title": "Uploading attachment…"
+    },
+    {
+      "key": "G10.2",
+      "theme": "Dark",
+      "id": "145:1688",
+      "title": "Uploading attachment…"
+    },
+    {
+      "key": "G10.3",
+      "theme": "Light",
+      "id": "145:1690",
+      "title": "Attachment wasn't uploaded"
+    },
+    {
+      "key": "G10.3",
+      "theme": "Dark",
+      "id": "145:1692",
+      "title": "Attachment wasn't uploaded"
+    },
+    {
+      "key": "G10.4",
+      "theme": "Light",
+      "id": "145:1694",
+      "title": "File access unavailable"
+    },
+    {
+      "key": "G10.4",
+      "theme": "Dark",
+      "id": "145:1696",
+      "title": "File access unavailable"
+    },
+    {
+      "key": "G10.5",
+      "theme": "Light",
+      "id": "145:1698",
+      "title": "No verified file yet"
+    },
+    {
+      "key": "G10.5",
+      "theme": "Dark",
+      "id": "145:1700",
+      "title": "No verified file yet"
+    },
+    {
+      "key": "G10.6",
+      "theme": "Light",
+      "id": "145:1702",
+      "title": "File no longer available"
+    },
+    {
+      "key": "G10.6",
+      "theme": "Dark",
+      "id": "145:1704",
+      "title": "File no longer available"
+    },
+    {
+      "key": "G11.1",
+      "theme": "Light",
+      "id": "145:1706",
+      "title": "Ready for pickup"
+    },
+    {
+      "key": "G11.1",
+      "theme": "Dark",
+      "id": "145:1708",
+      "title": "Ready for pickup"
+    },
+    {
+      "key": "G11.2",
+      "theme": "Light",
+      "id": "145:1710",
+      "title": "Pickup confirmed"
+    },
+    {
+      "key": "G11.2",
+      "theme": "Dark",
+      "id": "145:1712",
+      "title": "Pickup confirmed"
+    },
+    {
+      "key": "G11.3",
+      "theme": "Light",
+      "id": "145:1714",
+      "title": "Code not found"
+    },
+    {
+      "key": "G11.3",
+      "theme": "Dark",
+      "id": "145:1716",
+      "title": "Code not found"
+    },
+    {
+      "key": "G11.4",
+      "theme": "Light",
+      "id": "145:1718",
+      "title": "Pickup code expired"
+    },
+    {
+      "key": "G11.4",
+      "theme": "Dark",
+      "id": "145:1720",
+      "title": "Pickup code expired"
+    },
+    {
+      "key": "G11.5",
+      "theme": "Light",
+      "id": "145:1722",
+      "title": "Pickup unavailable"
+    },
+    {
+      "key": "G11.5",
+      "theme": "Dark",
+      "id": "145:1724",
+      "title": "Pickup unavailable"
+    },
+    {
+      "key": "G12.1",
+      "theme": "Light",
+      "id": "145:1726",
+      "title": "Before using Seryo"
+    },
+    {
+      "key": "G12.1",
+      "theme": "Dark",
+      "id": "145:1728",
+      "title": "Before using Seryo"
+    },
+    {
+      "key": "G12.2",
+      "theme": "Light",
+      "id": "145:1730",
+      "title": "Seryo is off"
+    },
+    {
+      "key": "G12.2",
+      "theme": "Dark",
+      "id": "145:1732",
+      "title": "Seryo is off"
+    },
+    {
+      "key": "G12.3",
+      "theme": "Light",
+      "id": "145:1734",
+      "title": "Review attachment"
+    },
+    {
+      "key": "G12.3",
+      "theme": "Dark",
+      "id": "145:1736",
+      "title": "Review attachment"
+    },
+    {
+      "key": "G12.4",
+      "theme": "Light",
+      "id": "145:1738",
+      "title": "Attachment not accepted"
+    },
+    {
+      "key": "G12.4",
+      "theme": "Dark",
+      "id": "145:1740",
+      "title": "Attachment not accepted"
+    },
+    {
+      "key": "G12.5",
+      "theme": "Light",
+      "id": "145:1742",
+      "title": "Seryo is working…"
+    },
+    {
+      "key": "G12.5",
+      "theme": "Dark",
+      "id": "145:1744",
+      "title": "Seryo is working…"
+    },
+    {
+      "key": "G12.6",
+      "theme": "Light",
+      "id": "145:1746",
+      "title": "Seryo can't answer this request"
+    },
+    {
+      "key": "G12.6",
+      "theme": "Dark",
+      "id": "145:1748",
+      "title": "Seryo can't answer this request"
+    },
+    {
+      "key": "G12.7",
+      "theme": "Light",
+      "id": "145:1750",
+      "title": "Try again later"
+    },
+    {
+      "key": "G12.7",
+      "theme": "Dark",
+      "id": "145:1752",
+      "title": "Try again later"
+    },
+    {
+      "key": "G12.8",
+      "theme": "Light",
+      "id": "145:1754",
+      "title": "File cleanup not confirmed"
+    },
+    {
+      "key": "G12.8",
+      "theme": "Dark",
+      "id": "145:1756",
+      "title": "File cleanup not confirmed"
+    },
+    {
+      "key": "G12.9",
+      "theme": "Light",
+      "id": "145:1758",
+      "title": "Temporary file removed"
+    },
+    {
+      "key": "G12.9",
+      "theme": "Dark",
+      "id": "145:1760",
+      "title": "Temporary file removed"
+    },
+    {
+      "key": "G13.1",
+      "theme": "Light",
+      "id": "145:1762",
+      "title": "Publishing update…"
+    },
+    {
+      "key": "G13.1",
+      "theme": "Dark",
+      "id": "145:1764",
+      "title": "Publishing update…"
+    },
+    {
+      "key": "G13.2",
+      "theme": "Light",
+      "id": "145:1766",
+      "title": "Update wasn't published"
+    },
+    {
+      "key": "G13.2",
+      "theme": "Dark",
+      "id": "145:1768",
+      "title": "Update wasn't published"
+    },
+    {
+      "key": "G13.3",
+      "theme": "Light",
+      "id": "145:1770",
+      "title": "Update published"
+    },
+    {
+      "key": "G13.3",
+      "theme": "Dark",
+      "id": "145:1772",
+      "title": "Update published"
+    },
+    {
+      "key": "G14.1",
+      "theme": "Light",
+      "id": "145:1774",
+      "title": "Assign inquiry"
+    },
+    {
+      "key": "G14.1",
+      "theme": "Dark",
+      "id": "145:1776",
+      "title": "Assign inquiry"
+    },
+    {
+      "key": "G14.2",
+      "theme": "Light",
+      "id": "145:1778",
+      "title": "Sending message…"
+    },
+    {
+      "key": "G14.2",
+      "theme": "Dark",
+      "id": "145:1780",
+      "title": "Sending message…"
+    },
+    {
+      "key": "G14.3",
+      "theme": "Light",
+      "id": "145:1782",
+      "title": "Message wasn't sent"
+    },
+    {
+      "key": "G14.3",
+      "theme": "Dark",
+      "id": "145:1784",
+      "title": "Message wasn't sent"
+    },
+    {
+      "key": "G04.detail-free",
+      "theme": "Light",
+      "id": "148:1536",
+      "title": "Request detail"
+    },
+    {
+      "key": "G04.detail-free",
+      "theme": "Dark",
+      "id": "148:1538",
+      "title": "Request detail"
+    },
+    {
+      "key": "G05.required",
+      "theme": "Light",
+      "id": "148:1540",
+      "title": "Payment declaration"
+    },
+    {
+      "key": "G05.required",
+      "theme": "Dark",
+      "id": "148:1542",
+      "title": "Payment declaration"
+    },
+    {
+      "key": "G05.pending",
+      "theme": "Light",
+      "id": "148:1544",
+      "title": "Payment declaration"
+    },
+    {
+      "key": "G05.pending",
+      "theme": "Dark",
+      "id": "148:1546",
+      "title": "Payment declaration"
+    },
+    {
+      "key": "G06.staff-reject",
+      "theme": "Light",
+      "id": "148:1548",
+      "title": "Reject request"
+    },
+    {
+      "key": "G06.staff-reject",
+      "theme": "Dark",
+      "id": "148:1550",
+      "title": "Reject request"
+    },
+    {
+      "key": "G06.staff-reject-error",
+      "theme": "Light",
+      "id": "148:1552",
+      "title": "Reject request"
+    },
+    {
+      "key": "G06.staff-reject-error",
+      "theme": "Dark",
+      "id": "148:1554",
+      "title": "Reject request"
+    },
+    {
+      "key": "G06.staff-reject-confirm",
+      "theme": "Light",
+      "id": "148:1556",
+      "title": "Reject this request?"
+    },
+    {
+      "key": "G06.staff-reject-confirm",
+      "theme": "Dark",
+      "id": "148:1558",
+      "title": "Reject this request?"
+    },
+    {
+      "key": "G06.staff-rejected",
+      "theme": "Light",
+      "id": "148:1560",
+      "title": "Request rejected"
+    },
+    {
+      "key": "G06.staff-rejected",
+      "theme": "Dark",
+      "id": "148:1562",
+      "title": "Request rejected"
+    },
+    {
+      "key": "G06.staff-cancel",
+      "theme": "Light",
+      "id": "148:1564",
+      "title": "Cancel request"
+    },
+    {
+      "key": "G06.staff-cancel",
+      "theme": "Dark",
+      "id": "148:1566",
+      "title": "Cancel request"
+    },
+    {
+      "key": "G06.staff-cancel-error",
+      "theme": "Light",
+      "id": "148:1568",
+      "title": "Cancel request"
+    },
+    {
+      "key": "G06.staff-cancel-error",
+      "theme": "Dark",
+      "id": "148:1570",
+      "title": "Cancel request"
+    },
+    {
+      "key": "G06.staff-cancel-confirm",
+      "theme": "Light",
+      "id": "148:1572",
+      "title": "Cancel this request?"
+    },
+    {
+      "key": "G06.staff-cancel-confirm",
+      "theme": "Dark",
+      "id": "148:1574",
+      "title": "Cancel this request?"
+    },
+    {
+      "key": "G06.staff-cancelled",
+      "theme": "Light",
+      "id": "148:1576",
+      "title": "Request cancelled"
+    },
+    {
+      "key": "G06.staff-cancelled",
+      "theme": "Dark",
+      "id": "148:1578",
+      "title": "Request cancelled"
+    },
+    {
+      "key": "G06.free-confirm",
+      "theme": "Light",
+      "id": "148:1580",
+      "title": "Cancel this request?"
+    },
+    {
+      "key": "G06.free-confirm",
+      "theme": "Dark",
+      "id": "148:1582",
+      "title": "Cancel this request?"
+    },
+    {
+      "key": "G10.payment-gate",
+      "theme": "Light",
+      "id": "161:6168",
+      "title": "Payment required before download"
+    },
+    {
+      "key": "G10.payment-gate",
+      "theme": "Dark",
+      "id": "161:6170",
+      "title": "Payment required before download"
+    },
+    {
+      "key": "G09.5.new-booking",
+      "theme": "Light",
+      "id": "161:6172",
+      "title": "This time is no longer available"
+    },
+    {
+      "key": "G09.5.new-booking",
+      "theme": "Dark",
+      "id": "161:6174",
+      "title": "This time is no longer available"
+    },
+    {
+      "key": "G09.6.new-booking",
+      "theme": "Light",
+      "id": "161:6176",
+      "title": "No available times"
+    },
+    {
+      "key": "G09.6.new-booking",
+      "theme": "Dark",
+      "id": "161:6178",
+      "title": "No available times"
+    },
+    {
+      "key": "G14.staff-sending",
+      "theme": "Light",
+      "id": "161:6180",
+      "title": "Sending office reply…"
+    },
+    {
+      "key": "G14.staff-sending",
+      "theme": "Dark",
+      "id": "161:6182",
+      "title": "Sending office reply…"
+    },
+    {
+      "key": "G14.staff-failed",
+      "theme": "Light",
+      "id": "161:6184",
+      "title": "Reply wasn't sent"
+    },
+    {
+      "key": "G14.staff-failed",
+      "theme": "Dark",
+      "id": "161:6186",
+      "title": "Reply wasn't sent"
+    },
+    {
+      "key": "G14.assignment-review",
+      "theme": "Light",
+      "id": "161:6188",
+      "title": "Review assignment"
+    },
+    {
+      "key": "G14.assignment-review",
+      "theme": "Dark",
+      "id": "161:6190",
+      "title": "Review assignment"
+    },
+    {
+      "key": "G14.assignment-failed",
+      "theme": "Light",
+      "id": "161:6192",
+      "title": "Assignment wasn't changed"
+    },
+    {
+      "key": "G14.assignment-failed",
+      "theme": "Dark",
+      "id": "161:6194",
+      "title": "Assignment wasn't changed"
+    },
+    {
+      "key": "G06.detail-cancelled-free",
+      "theme": "Light",
+      "id": "217:7476",
+      "title": "Request detail",
+      "contentHeight": 1072,
+      "viewportHeight": 654,
+      "planned": false
+    },
+    {
+      "key": "G06.detail-cancelled-free",
+      "theme": "Dark",
+      "id": "217:7478",
+      "title": "Request detail",
+      "contentHeight": 1072,
+      "viewportHeight": 654,
+      "planned": false
+    },
+    {
+      "key": "G06.detail-cancelled-paid",
+      "theme": "Light",
+      "id": "217:7480",
+      "title": "Request detail",
+      "contentHeight": 1254,
+      "viewportHeight": 654,
+      "planned": false
+    },
+    {
+      "key": "G06.detail-cancelled-paid",
+      "theme": "Dark",
+      "id": "217:7482",
+      "title": "Request detail",
+      "contentHeight": 1254,
+      "viewportHeight": 654,
+      "planned": false
+    },
+    {
+      "key": "G05.saved",
+      "theme": "Light",
+      "id": "217:7484",
+      "title": "Payment declaration saved",
+      "contentHeight": 722,
+      "viewportHeight": 654,
+      "planned": false
+    },
+    {
+      "key": "G05.saved",
+      "theme": "Dark",
+      "id": "217:7486",
+      "title": "Payment declaration saved",
+      "contentHeight": 722,
+      "viewportHeight": 654,
+      "planned": false
+    },
+    {
+      "key": "G04.receipt-required",
+      "theme": "Light",
+      "id": "217:7488",
+      "title": "Request submitted",
+      "contentHeight": 924,
+      "viewportHeight": 654,
+      "planned": false
+    },
+    {
+      "key": "G04.receipt-required",
+      "theme": "Dark",
+      "id": "217:7490",
+      "title": "Request submitted",
+      "contentHeight": 924,
+      "viewportHeight": 654,
+      "planned": false
+    }
+  ],
+  "pending": [
+    "User review and final approval of Figma UI",
+    "Android Java/XML implementation of newly approved auth and profile flows",
+    "Native device, keyboard, auth, recovery and provider verification after implementation"
+  ],
+  "workflow": "Figma first; Android held until user finalizes UI",
+  "updatedAt": "2026-10-15",
+  "stateCount": 100,
+  "frameCount": 200,
+  "reviewIndex": {
+    "id": "175:7272",
+    "width": 1800,
+    "height": 2546,
+    "stateCount": 96,
+    "url": "https://www.figma.com/design/SvT9gBUFjdLgbrJ80LPDno/GoServe?node-id=175-7272"
+  },
+  "responsiveProofs": [
+    {
+      "id": "170:6790",
+      "source": "19:93",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 19:93 / 320x720 / 1x"
+    },
+    {
+      "id": "170:6919",
+      "source": "36:93",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 36:93 / 320x720 / 1x"
+    },
+    {
+      "id": "170:7048",
+      "source": "24:51",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 24:51 / 320x720 / 1x"
+    },
+    {
+      "id": "170:7118",
+      "source": "36:819",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 36:819 / 320x720 / 1x"
+    },
+    {
+      "id": "170:7188",
+      "source": "19:93",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 19:93 / 320x844 / 2x"
+    },
+    {
+      "id": "170:7317",
+      "source": "36:93",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 36:93 / 320x844 / 2x"
+    },
+    {
+      "id": "170:7446",
+      "source": "24:51",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 24:51 / 320x844 / 2x"
+    },
+    {
+      "id": "170:7516",
+      "source": "36:819",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 36:819 / 320x844 / 2x"
+    },
+    {
+      "id": "170:7586",
+      "source": "145:1558",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 145:1558 / 320x844 / 2x"
+    },
+    {
+      "id": "170:7666",
+      "source": "145:1560",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 145:1560 / 320x844 / 2x"
+    },
+    {
+      "id": "170:7746",
+      "source": "148:1540",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 148:1540 / 320x844 / 2x"
+    },
+    {
+      "id": "170:7810",
+      "source": "148:1542",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 148:1542 / 320x844 / 2x"
+    },
+    {
+      "id": "170:7874",
+      "source": "161:6168",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 161:6168 / 320x844 / 2x"
+    },
+    {
+      "id": "170:7935",
+      "source": "161:6170",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 161:6170 / 320x844 / 2x"
+    },
+    {
+      "id": "229:7846",
+      "source": "19:2",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 19:2 / 320x720 / 1x"
+    },
+    {
+      "id": "229:7889",
+      "source": "36:2",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 36:2 / 320x720 / 1x"
+    },
+    {
+      "id": "210:7558",
+      "source": "56:38",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 56:38 / 320x720 / 1x"
+    },
+    {
+      "id": "210:7591",
+      "source": "56:66",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 56:66 / 320x720 / 1x"
+    },
+    {
+      "id": "210:7624",
+      "source": "197:7492",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 197:7492 / 320x844 / 2x"
+    },
+    {
+      "id": "210:7670",
+      "source": "197:7493",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 197:7493 / 320x844 / 2x"
+    },
+    {
+      "id": "210:7716",
+      "source": "197:7488",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 197:7488 / 320x844 / 2x"
+    },
+    {
+      "id": "210:7782",
+      "source": "197:7489",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 197:7489 / 320x844 / 2x"
+    },
+    {
+      "id": "229:7932",
+      "source": "213:7486",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 213:7486 / 320x844 / 2x"
+    },
+    {
+      "id": "229:7961",
+      "source": "213:7515",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 213:7515 / 320x844 / 2x"
+    },
+    {
+      "id": "229:7990",
+      "source": "219:7732",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 219:7732 / 320x720 / 1x"
+    },
+    {
+      "id": "229:8028",
+      "source": "219:7733",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 219:7733 / 320x720 / 1x"
+    }
+  ],
+  "verification": {
+    "scope": "Figma only",
+    "mobileGeometry": {
+      "brandExceptionIds": [
+        "56:53",
+        "56:81"
+      ],
+      "rootCount": 332,
+      "totalTextCount": 3492,
+      "totalIssueCount": 0,
+      "totalLegacyCount": 0,
+      "passedRootCount": 332,
+      "reports": []
+    },
+    "prototypeLinks": {
+      "count": 2280,
+      "uniqueDestinations": 208,
+      "missing": [],
+      "hidden": []
+    },
+    "navigationContrast": [
+      {
+        "theme": "Light",
+        "ratio": 13.903679551973065
+      },
+      {
+        "theme": "Dark",
+        "ratio": 13.903679551973065
+      }
+    ],
+    "seryoSend": [
+      {
+        "id": "123:1158",
+        "name": "Action / Send • disabled",
+        "reactionCount": 0
+      },
+      {
+        "id": "123:1192",
+        "name": "Action / Send • disabled",
+        "reactionCount": 0
+      }
+    ],
+    "unsupportedOfficeRoots": [
+      {
+        "id": "60:36",
+        "visible": false
+      },
+      {
+        "id": "60:172",
+        "visible": false
+      },
+      {
+        "id": "60:215",
+        "visible": false
+      },
+      {
+        "id": "60:280",
+        "visible": false
+      },
+      {
+        "id": "60:416",
+        "visible": false
+      },
+      {
+        "id": "60:459",
+        "visible": false
+      }
+    ],
+    "limitations": [
+      "No Android implementation, build, emulator, device or IME verification in this UI review phase.",
+      "Large-text proofs simulate enlarged Figma text; they do not establish Android system font-scale behavior.",
+      "Provider, payment, file and AI state screens are design states, not live service transactions."
+    ],
+    "responsiveProofs": {
+      "count": 14,
+      "width": 320,
+      "textScales": [
+        1,
+        2
+      ],
+      "previousGeometryPassed": 14,
+      "changedFeeEditorProofs": {
+        "brandExceptionIds": [],
+        "rootCount": 2,
+        "totalTextCount": 34,
+        "totalIssueCount": 0,
+        "totalLegacyCount": 0,
+        "passedRootCount": 2,
+        "reports": []
+      },
+      "limitation": "Simulated Figma text enlargement, not Android native font scaling."
+    },
+    "latestUiReview": {
+      "date": "2026-10-15",
+      "scope": "Figma UI only",
+      "status": "ready_for_user_ui_review",
+      "uiApproved": false,
+      "androidImplementation": "held_until_ui_approval",
+      "organization": {
+        "sourceCount": 777,
+        "allSourcesGrouped": true,
+        "sections": [
+          {
+            "key": "start",
+            "id": "189:7484",
+            "parentId": "14:2",
+            "bounds": [
+              0,
+              0,
+              1896,
+              4682
+            ],
+            "visible": true
+          },
+          {
+            "key": "components",
+            "id": "189:7485",
+            "parentId": "14:2",
+            "bounds": [
+              2080,
+              0,
+              4400,
+              1792
+            ],
+            "visible": true
+          },
+          {
+            "key": "auth",
+            "id": "189:7504",
+            "parentId": "14:2",
+            "bounds": [
+              0,
+              5000,
+              1840,
+              21908
+            ],
+            "visible": true
+          },
+          {
+            "key": "student",
+            "id": "189:7513",
+            "parentId": "14:2",
+            "bounds": [
+              0,
+              27088,
+              1936,
+              16912
+            ],
+            "visible": true
+          },
+          {
+            "key": "home",
+            "id": "189:7514",
+            "parentId": "189:7513",
+            "bounds": [
+              48,
+              72,
+              1840,
+              4956
+            ],
+            "visible": true
+          },
+          {
+            "key": "requests",
+            "id": "189:7535",
+            "parentId": "189:7513",
+            "bounds": [
+              48,
+              5148,
+              1840,
+              6160
+            ],
+            "visible": true
+          },
+          {
+            "key": "consult",
+            "id": "189:7560",
+            "parentId": "189:7513",
+            "bounds": [
+              48,
+              11428,
+              1840,
+              1128
+            ],
+            "visible": true
+          },
+          {
+            "key": "account",
+            "id": "189:7565",
+            "parentId": "189:7513",
+            "bounds": [
+              48,
+              12676,
+              1840,
+              4188
+            ],
+            "visible": true
+          },
+          {
+            "key": "staff",
+            "id": "189:7582",
+            "parentId": "14:2",
+            "bounds": [
+              2200,
+              5000,
+              1840,
+              10060
+            ],
+            "visible": true
+          },
+          {
+            "key": "teller",
+            "id": "189:7621",
+            "parentId": "14:2",
+            "bounds": [
+              2200,
+              15240,
+              1840,
+              3108
+            ],
+            "visible": true
+          },
+          {
+            "key": "seryo",
+            "id": "189:7634",
+            "parentId": "14:2",
+            "bounds": [
+              2200,
+              18528,
+              1840,
+              2996
+            ],
+            "visible": true
+          },
+          {
+            "key": "demo",
+            "id": "189:7645",
+            "parentId": "14:2",
+            "bounds": [
+              2200,
+              21704,
+              1840,
+              3976
+            ],
+            "visible": true
+          },
+          {
+            "key": "states",
+            "id": "189:7660",
+            "parentId": "14:2",
+            "bounds": [
+              4280,
+              5000,
+              3936,
+              31664
+            ],
+            "visible": true
+          },
+          {
+            "key": "G01",
+            "id": "189:7661",
+            "parentId": "189:7660",
+            "bounds": [
+              48,
+              72,
+              1840,
+              4232
+            ],
+            "visible": true
+          },
+          {
+            "key": "G02",
+            "id": "189:7676",
+            "parentId": "189:7660",
+            "bounds": [
+              48,
+              4424,
+              1840,
+              3400
+            ],
+            "visible": true
+          },
+          {
+            "key": "G03",
+            "id": "189:7687",
+            "parentId": "189:7660",
+            "bounds": [
+              48,
+              7944,
+              1840,
+              2168
+            ],
+            "visible": true
+          },
+          {
+            "key": "G04",
+            "id": "189:7696",
+            "parentId": "189:7660",
+            "bounds": [
+              48,
+              10232,
+              1840,
+              5584
+            ],
+            "visible": true
+          },
+          {
+            "key": "G05",
+            "id": "189:7713",
+            "parentId": "189:7660",
+            "bounds": [
+              48,
+              15936,
+              1840,
+              3424
+            ],
+            "visible": true
+          },
+          {
+            "key": "G06",
+            "id": "189:7724",
+            "parentId": "189:7660",
+            "bounds": [
+              48,
+              19480,
+              1840,
+              8776
+            ],
+            "visible": true
+          },
+          {
+            "key": "G07",
+            "id": "189:7753",
+            "parentId": "189:7660",
+            "bounds": [
+              48,
+              28376,
+              1840,
+              3240
+            ],
+            "visible": true
+          },
+          {
+            "key": "G08",
+            "id": "189:7766",
+            "parentId": "189:7660",
+            "bounds": [
+              2048,
+              72,
+              1840,
+              3224
+            ],
+            "visible": true
+          },
+          {
+            "key": "G09",
+            "id": "189:7777",
+            "parentId": "189:7660",
+            "bounds": [
+              2048,
+              3416,
+              1840,
+              5424
+            ],
+            "visible": true
+          },
+          {
+            "key": "G10",
+            "id": "189:7796",
+            "parentId": "189:7660",
+            "bounds": [
+              2048,
+              8960,
+              1840,
+              4352
+            ],
+            "visible": true
+          },
+          {
+            "key": "G11",
+            "id": "189:7811",
+            "parentId": "189:7660",
+            "bounds": [
+              2048,
+              13432,
+              1840,
+              3208
+            ],
+            "visible": true
+          },
+          {
+            "key": "G12",
+            "id": "189:7822",
+            "parentId": "189:7660",
+            "bounds": [
+              2048,
+              16760,
+              1840,
+              5368
+            ],
+            "visible": true
+          },
+          {
+            "key": "G13",
+            "id": "189:7841",
+            "parentId": "189:7660",
+            "bounds": [
+              2048,
+              22248,
+              1840,
+              2168
+            ],
+            "visible": true
+          },
+          {
+            "key": "G14",
+            "id": "189:7848",
+            "parentId": "189:7660",
+            "bounds": [
+              2048,
+              24536,
+              1840,
+              4480
+            ],
+            "visible": true
+          },
+          {
+            "key": "proofs",
+            "id": "189:7863",
+            "parentId": "14:2",
+            "bounds": [
+              8520,
+              5000,
+              1840,
+              6668
+            ],
+            "visible": true
+          },
+          {
+            "key": "retained",
+            "id": "189:7878",
+            "parentId": "14:2",
+            "bounds": [
+              8520,
+              11848,
+              2100,
+              12446
+            ],
+            "visible": false
+          }
+        ],
+        "groupingChangedContents": [],
+        "screenFrames": 434,
+        "lightDarkPairs": 217,
+        "phoneProofFrames": 26
+      },
+      "geometry": {
+        "changedAuthAndContext": {
+          "brandExceptionIds": [],
+          "rootCount": 109,
+          "totalTextCount": 1782,
+          "totalIssueCount": 0,
+          "totalLegacyCount": 0,
+          "passedRootCount": 109,
+          "reports": []
+        },
+        "noticeRemovalAndSettings": {
+          "brandExceptionIds": [],
+          "rootCount": 22,
+          "totalTextCount": 458,
+          "totalIssueCount": 0,
+          "totalLegacyCount": 0,
+          "passedRootCount": 22,
+          "reports": []
+        }
+      },
+      "authentication": {
+        "stats": {
+          "caseCount": 39,
+          "authRootsChecked": 78,
+          "authProofsChecked": 12,
+          "generalProofsSkipped": 0,
+          "settingsChecked": 6,
+          "ordinaryTextCount": 1000,
+          "passwordTargetsChecked": 40,
+          "forgotLinksChecked": 8,
+          "termsReadersChecked": 4
+        },
+        "issueCount": 0,
+        "counts": {},
+        "issues": [],
+        "findingsTruncated": false
+      },
+      "prototype": {
+        "rootCount": 435,
+        "routeCount": 2952,
+        "destinationCount": 394,
+        "sourceMissing": [],
+        "ungrouped": [],
+        "topLevelCount": 11,
+        "topLevelSections": 11,
+        "overlaps": [],
+        "sectionOverflow": [],
+        "issueCount": 0,
+        "issues": [],
+        "imageCount": 0,
+        "images": []
+      },
+      "noticeRemoval": {
+        "removedCount": 16,
+        "changedRoots": [
+          "19:93",
+          "36:93",
+          "127:1124",
+          "127:1329",
+          "127:1254",
+          "127:1459",
+          "23:95",
+          "36:440",
+          "106:662",
+          "107:1063",
+          "106:663",
+          "107:1064",
+          "170:6790",
+          "170:6919",
+          "170:7188",
+          "170:7317"
+        ],
+        "remaining": []
+      },
+      "visualReview": {
+        "passed": [
+          "Welcome Light19:2",
+          "Welcome Dark36:2",
+          "Terms Dark213:7515",
+          "Home Light19:93 after removal",
+          "Requests example Light127:1254 after removal",
+          "Settings Light33:106 after spacing fix"
+        ],
+        "findingsResolved": [
+          "Appearance moon overlapped label; left/right text insets corrected across six Settings screens."
+        ]
+      },
+      "limitations": [
+        "Figma does not create or sign in accounts, send recovery emails, reset passwords, restore sessions, process payments or call Seryo.",
+        "Native Android rendering, system font scaling, keyboard/IME and backend/provider validation remain pending UI approval.",
+        "Terms content is draft and needs institutional approval before release."
+      ]
+    }
+  },
+  "androidImplementation": "held_until_ui_approval",
+  "uiApproved": false,
+  "organization": {
+    "updatedAt": "2026-10-15",
+    "status": "grouped_and_verified",
+    "beforeInventory": "docs/GoServe-figma-canvas-before-organization.json",
+    "plan": "scripts/figma_ui_organization_plan.json",
+    "script": "scripts/figma_ui_organize_canvas.js",
+    "sections": [
+      {
+        "key": "start",
+        "id": "189:7484",
+        "parentId": "14:2",
+        "bounds": [
+          0,
+          0,
+          1896,
+          4682
+        ],
+        "visible": true
+      },
+      {
+        "key": "components",
+        "id": "189:7485",
+        "parentId": "14:2",
+        "bounds": [
+          2080,
+          0,
+          4400,
+          1792
+        ],
+        "visible": true
+      },
+      {
+        "key": "auth",
+        "id": "189:7504",
+        "parentId": "14:2",
+        "bounds": [
+          0,
+          5000,
+          1840,
+          21908
+        ],
+        "visible": true
+      },
+      {
+        "key": "student",
+        "id": "189:7513",
+        "parentId": "14:2",
+        "bounds": [
+          0,
+          27088,
+          1936,
+          16912
+        ],
+        "visible": true
+      },
+      {
+        "key": "home",
+        "id": "189:7514",
+        "parentId": "189:7513",
+        "bounds": [
+          48,
+          72,
+          1840,
+          4956
+        ],
+        "visible": true
+      },
+      {
+        "key": "requests",
+        "id": "189:7535",
+        "parentId": "189:7513",
+        "bounds": [
+          48,
+          5148,
+          1840,
+          6160
+        ],
+        "visible": true
+      },
+      {
+        "key": "consult",
+        "id": "189:7560",
+        "parentId": "189:7513",
+        "bounds": [
+          48,
+          11428,
+          1840,
+          1128
+        ],
+        "visible": true
+      },
+      {
+        "key": "account",
+        "id": "189:7565",
+        "parentId": "189:7513",
+        "bounds": [
+          48,
+          12676,
+          1840,
+          4188
+        ],
+        "visible": true
+      },
+      {
+        "key": "staff",
+        "id": "189:7582",
+        "parentId": "14:2",
+        "bounds": [
+          2200,
+          5000,
+          1840,
+          10060
+        ],
+        "visible": true
+      },
+      {
+        "key": "teller",
+        "id": "189:7621",
+        "parentId": "14:2",
+        "bounds": [
+          2200,
+          15240,
+          1840,
+          3108
+        ],
+        "visible": true
+      },
+      {
+        "key": "seryo",
+        "id": "189:7634",
+        "parentId": "14:2",
+        "bounds": [
+          2200,
+          18528,
+          1840,
+          2996
+        ],
+        "visible": true
+      },
+      {
+        "key": "demo",
+        "id": "189:7645",
+        "parentId": "14:2",
+        "bounds": [
+          2200,
+          21704,
+          1840,
+          3976
+        ],
+        "visible": true
+      },
+      {
+        "key": "states",
+        "id": "189:7660",
+        "parentId": "14:2",
+        "bounds": [
+          4280,
+          5000,
+          3936,
+          31664
+        ],
+        "visible": true
+      },
+      {
+        "key": "G01",
+        "id": "189:7661",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          72,
+          1840,
+          4232
+        ],
+        "visible": true
+      },
+      {
+        "key": "G02",
+        "id": "189:7676",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          4424,
+          1840,
+          3400
+        ],
+        "visible": true
+      },
+      {
+        "key": "G03",
+        "id": "189:7687",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          7944,
+          1840,
+          2168
+        ],
+        "visible": true
+      },
+      {
+        "key": "G04",
+        "id": "189:7696",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          10232,
+          1840,
+          5584
+        ],
+        "visible": true
+      },
+      {
+        "key": "G05",
+        "id": "189:7713",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          15936,
+          1840,
+          3424
+        ],
+        "visible": true
+      },
+      {
+        "key": "G06",
+        "id": "189:7724",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          19480,
+          1840,
+          8776
+        ],
+        "visible": true
+      },
+      {
+        "key": "G07",
+        "id": "189:7753",
+        "parentId": "189:7660",
+        "bounds": [
+          48,
+          28376,
+          1840,
+          3240
+        ],
+        "visible": true
+      },
+      {
+        "key": "G08",
+        "id": "189:7766",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          72,
+          1840,
+          3224
+        ],
+        "visible": true
+      },
+      {
+        "key": "G09",
+        "id": "189:7777",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          3416,
+          1840,
+          5424
+        ],
+        "visible": true
+      },
+      {
+        "key": "G10",
+        "id": "189:7796",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          8960,
+          1840,
+          4352
+        ],
+        "visible": true
+      },
+      {
+        "key": "G11",
+        "id": "189:7811",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          13432,
+          1840,
+          3208
+        ],
+        "visible": true
+      },
+      {
+        "key": "G12",
+        "id": "189:7822",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          16760,
+          1840,
+          5368
+        ],
+        "visible": true
+      },
+      {
+        "key": "G13",
+        "id": "189:7841",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          22248,
+          1840,
+          2168
+        ],
+        "visible": true
+      },
+      {
+        "key": "G14",
+        "id": "189:7848",
+        "parentId": "189:7660",
+        "bounds": [
+          2048,
+          24536,
+          1840,
+          4480
+        ],
+        "visible": true
+      },
+      {
+        "key": "proofs",
+        "id": "189:7863",
+        "parentId": "14:2",
+        "bounds": [
+          8520,
+          5000,
+          1840,
+          6668
+        ],
+        "visible": true
+      },
+      {
+        "key": "retained",
+        "id": "189:7878",
+        "parentId": "14:2",
+        "bounds": [
+          8520,
+          11848,
+          2100,
+          12446
+        ],
+        "visible": false
+      }
+    ],
+    "originalObjectCount": 597,
+    "createdNodeIds": [
+      "189:7484",
+      "189:7485",
+      "189:7486",
+      "189:7487",
+      "189:7488",
+      "189:7489",
+      "189:7490",
+      "189:7491",
+      "189:7492",
+      "189:7493",
+      "189:7494",
+      "189:7495",
+      "189:7496",
+      "189:7497",
+      "189:7498",
+      "189:7499",
+      "189:7500",
+      "189:7501",
+      "189:7502",
+      "189:7503",
+      "189:7504",
+      "189:7505",
+      "189:7506",
+      "189:7507",
+      "189:7508",
+      "189:7509",
+      "189:7510",
+      "189:7511",
+      "189:7512",
+      "189:7513",
+      "189:7514",
+      "189:7515",
+      "189:7516",
+      "189:7517",
+      "189:7518",
+      "189:7519",
+      "189:7520",
+      "189:7521",
+      "189:7522",
+      "189:7523",
+      "189:7524",
+      "189:7525",
+      "189:7526",
+      "189:7527",
+      "189:7528",
+      "189:7529",
+      "189:7530",
+      "189:7531",
+      "189:7532",
+      "189:7533",
+      "189:7534",
+      "189:7535",
+      "189:7536",
+      "189:7537",
+      "189:7538",
+      "189:7539",
+      "189:7540",
+      "189:7541",
+      "189:7542",
+      "189:7543",
+      "189:7544",
+      "189:7545",
+      "189:7546",
+      "189:7547",
+      "189:7548",
+      "189:7549",
+      "189:7550",
+      "189:7551",
+      "189:7552",
+      "189:7553",
+      "189:7554",
+      "189:7555",
+      "189:7556",
+      "189:7557",
+      "189:7558",
+      "189:7559",
+      "189:7560",
+      "189:7561",
+      "189:7562",
+      "189:7563",
+      "189:7564",
+      "189:7565",
+      "189:7566",
+      "189:7567",
+      "189:7568",
+      "189:7569",
+      "189:7570",
+      "189:7571",
+      "189:7572",
+      "189:7573",
+      "189:7574",
+      "189:7575",
+      "189:7576",
+      "189:7577",
+      "189:7578",
+      "189:7579",
+      "189:7580",
+      "189:7581",
+      "189:7582",
+      "189:7583",
+      "189:7584",
+      "189:7585",
+      "189:7586",
+      "189:7587",
+      "189:7588",
+      "189:7589",
+      "189:7590",
+      "189:7591",
+      "189:7592",
+      "189:7593",
+      "189:7594",
+      "189:7595",
+      "189:7596",
+      "189:7597",
+      "189:7598",
+      "189:7599",
+      "189:7600",
+      "189:7601",
+      "189:7602",
+      "189:7603",
+      "189:7604",
+      "189:7605",
+      "189:7606",
+      "189:7607",
+      "189:7608",
+      "189:7609",
+      "189:7610",
+      "189:7611",
+      "189:7612",
+      "189:7613",
+      "189:7614",
+      "189:7615",
+      "189:7616",
+      "189:7617",
+      "189:7618",
+      "189:7619",
+      "189:7620",
+      "189:7621",
+      "189:7622",
+      "189:7623",
+      "189:7624",
+      "189:7625",
+      "189:7626",
+      "189:7627",
+      "189:7628",
+      "189:7629",
+      "189:7630",
+      "189:7631",
+      "189:7632",
+      "189:7633",
+      "189:7634",
+      "189:7635",
+      "189:7636",
+      "189:7637",
+      "189:7638",
+      "189:7639",
+      "189:7640",
+      "189:7641",
+      "189:7642",
+      "189:7643",
+      "189:7644",
+      "189:7645",
+      "189:7646",
+      "189:7647",
+      "189:7648",
+      "189:7649",
+      "189:7650",
+      "189:7651",
+      "189:7652",
+      "189:7653",
+      "189:7654",
+      "189:7655",
+      "189:7656",
+      "189:7657",
+      "189:7658",
+      "189:7659",
+      "189:7660",
+      "189:7661",
+      "189:7662",
+      "189:7663",
+      "189:7664",
+      "189:7665",
+      "189:7666",
+      "189:7667",
+      "189:7668",
+      "189:7669",
+      "189:7670",
+      "189:7671",
+      "189:7672",
+      "189:7673",
+      "189:7674",
+      "189:7675",
+      "189:7676",
+      "189:7677",
+      "189:7678",
+      "189:7679",
+      "189:7680",
+      "189:7681",
+      "189:7682",
+      "189:7683",
+      "189:7684",
+      "189:7685",
+      "189:7686",
+      "189:7687",
+      "189:7688",
+      "189:7689",
+      "189:7690",
+      "189:7691",
+      "189:7692",
+      "189:7693",
+      "189:7694",
+      "189:7695",
+      "189:7696",
+      "189:7697",
+      "189:7698",
+      "189:7699",
+      "189:7700",
+      "189:7701",
+      "189:7702",
+      "189:7703",
+      "189:7704",
+      "189:7705",
+      "189:7706",
+      "189:7707",
+      "189:7708",
+      "189:7709",
+      "189:7710",
+      "189:7711",
+      "189:7712",
+      "189:7713",
+      "189:7714",
+      "189:7715",
+      "189:7716",
+      "189:7717",
+      "189:7718",
+      "189:7719",
+      "189:7720",
+      "189:7721",
+      "189:7722",
+      "189:7723",
+      "189:7724",
+      "189:7725",
+      "189:7726",
+      "189:7727",
+      "189:7728",
+      "189:7729",
+      "189:7730",
+      "189:7731",
+      "189:7732",
+      "189:7733",
+      "189:7734",
+      "189:7735",
+      "189:7736",
+      "189:7737",
+      "189:7738",
+      "189:7739",
+      "189:7740",
+      "189:7741",
+      "189:7742",
+      "189:7743",
+      "189:7744",
+      "189:7745",
+      "189:7746",
+      "189:7747",
+      "189:7748",
+      "189:7749",
+      "189:7750",
+      "189:7751",
+      "189:7752",
+      "189:7753",
+      "189:7754",
+      "189:7755",
+      "189:7756",
+      "189:7757",
+      "189:7758",
+      "189:7759",
+      "189:7760",
+      "189:7761",
+      "189:7762",
+      "189:7763",
+      "189:7764",
+      "189:7765",
+      "189:7766",
+      "189:7767",
+      "189:7768",
+      "189:7769",
+      "189:7770",
+      "189:7771",
+      "189:7772",
+      "189:7773",
+      "189:7774",
+      "189:7775",
+      "189:7776",
+      "189:7777",
+      "189:7778",
+      "189:7779",
+      "189:7780",
+      "189:7781",
+      "189:7782",
+      "189:7783",
+      "189:7784",
+      "189:7785",
+      "189:7786",
+      "189:7787",
+      "189:7788",
+      "189:7789",
+      "189:7790",
+      "189:7791",
+      "189:7792",
+      "189:7793",
+      "189:7794",
+      "189:7795",
+      "189:7796",
+      "189:7797",
+      "189:7798",
+      "189:7799",
+      "189:7800",
+      "189:7801",
+      "189:7802",
+      "189:7803",
+      "189:7804",
+      "189:7805",
+      "189:7806",
+      "189:7807",
+      "189:7808",
+      "189:7809",
+      "189:7810",
+      "189:7811",
+      "189:7812",
+      "189:7813",
+      "189:7814",
+      "189:7815",
+      "189:7816",
+      "189:7817",
+      "189:7818",
+      "189:7819",
+      "189:7820",
+      "189:7821",
+      "189:7822",
+      "189:7823",
+      "189:7824",
+      "189:7825",
+      "189:7826",
+      "189:7827",
+      "189:7828",
+      "189:7829",
+      "189:7830",
+      "189:7831",
+      "189:7832",
+      "189:7833",
+      "189:7834",
+      "189:7835",
+      "189:7836",
+      "189:7837",
+      "189:7838",
+      "189:7839",
+      "189:7840",
+      "189:7841",
+      "189:7842",
+      "189:7843",
+      "189:7844",
+      "189:7845",
+      "189:7846",
+      "189:7847",
+      "189:7848",
+      "189:7849",
+      "189:7850",
+      "189:7851",
+      "189:7852",
+      "189:7853",
+      "189:7854",
+      "189:7855",
+      "189:7856",
+      "189:7857",
+      "189:7858",
+      "189:7859",
+      "189:7860",
+      "189:7861",
+      "189:7862",
+      "189:7863",
+      "189:7864",
+      "189:7865",
+      "189:7866",
+      "189:7867",
+      "189:7868",
+      "189:7869",
+      "189:7870",
+      "189:7871",
+      "189:7872",
+      "189:7873",
+      "189:7874",
+      "189:7875",
+      "189:7876",
+      "189:7877",
+      "189:7878"
+    ],
+    "unchangedContentCount": 373,
+    "changedContents": [],
+    "verification": {
+      "sourceCount": 777,
+      "allSourcesGrouped": true,
+      "sections": [
+        {
+          "key": "start",
+          "id": "189:7484",
+          "parentId": "14:2",
+          "bounds": [
+            0,
+            0,
+            1896,
+            4682
+          ],
+          "visible": true
+        },
+        {
+          "key": "components",
+          "id": "189:7485",
+          "parentId": "14:2",
+          "bounds": [
+            2080,
+            0,
+            4400,
+            1792
+          ],
+          "visible": true
+        },
+        {
+          "key": "auth",
+          "id": "189:7504",
+          "parentId": "14:2",
+          "bounds": [
+            0,
+            5000,
+            1840,
+            21908
+          ],
+          "visible": true
+        },
+        {
+          "key": "student",
+          "id": "189:7513",
+          "parentId": "14:2",
+          "bounds": [
+            0,
+            27088,
+            1936,
+            16912
+          ],
+          "visible": true
+        },
+        {
+          "key": "home",
+          "id": "189:7514",
+          "parentId": "189:7513",
+          "bounds": [
+            48,
+            72,
+            1840,
+            4956
+          ],
+          "visible": true
+        },
+        {
+          "key": "requests",
+          "id": "189:7535",
+          "parentId": "189:7513",
+          "bounds": [
+            48,
+            5148,
+            1840,
+            6160
+          ],
+          "visible": true
+        },
+        {
+          "key": "consult",
+          "id": "189:7560",
+          "parentId": "189:7513",
+          "bounds": [
+            48,
+            11428,
+            1840,
+            1128
+          ],
+          "visible": true
+        },
+        {
+          "key": "account",
+          "id": "189:7565",
+          "parentId": "189:7513",
+          "bounds": [
+            48,
+            12676,
+            1840,
+            4188
+          ],
+          "visible": true
+        },
+        {
+          "key": "staff",
+          "id": "189:7582",
+          "parentId": "14:2",
+          "bounds": [
+            2200,
+            5000,
+            1840,
+            10060
+          ],
+          "visible": true
+        },
+        {
+          "key": "teller",
+          "id": "189:7621",
+          "parentId": "14:2",
+          "bounds": [
+            2200,
+            15240,
+            1840,
+            3108
+          ],
+          "visible": true
+        },
+        {
+          "key": "seryo",
+          "id": "189:7634",
+          "parentId": "14:2",
+          "bounds": [
+            2200,
+            18528,
+            1840,
+            2996
+          ],
+          "visible": true
+        },
+        {
+          "key": "demo",
+          "id": "189:7645",
+          "parentId": "14:2",
+          "bounds": [
+            2200,
+            21704,
+            1840,
+            3976
+          ],
+          "visible": true
+        },
+        {
+          "key": "states",
+          "id": "189:7660",
+          "parentId": "14:2",
+          "bounds": [
+            4280,
+            5000,
+            3936,
+            31664
+          ],
+          "visible": true
+        },
+        {
+          "key": "G01",
+          "id": "189:7661",
+          "parentId": "189:7660",
+          "bounds": [
+            48,
+            72,
+            1840,
+            4232
+          ],
+          "visible": true
+        },
+        {
+          "key": "G02",
+          "id": "189:7676",
+          "parentId": "189:7660",
+          "bounds": [
+            48,
+            4424,
+            1840,
+            3400
+          ],
+          "visible": true
+        },
+        {
+          "key": "G03",
+          "id": "189:7687",
+          "parentId": "189:7660",
+          "bounds": [
+            48,
+            7944,
+            1840,
+            2168
+          ],
+          "visible": true
+        },
+        {
+          "key": "G04",
+          "id": "189:7696",
+          "parentId": "189:7660",
+          "bounds": [
+            48,
+            10232,
+            1840,
+            5584
+          ],
+          "visible": true
+        },
+        {
+          "key": "G05",
+          "id": "189:7713",
+          "parentId": "189:7660",
+          "bounds": [
+            48,
+            15936,
+            1840,
+            3424
+          ],
+          "visible": true
+        },
+        {
+          "key": "G06",
+          "id": "189:7724",
+          "parentId": "189:7660",
+          "bounds": [
+            48,
+            19480,
+            1840,
+            8776
+          ],
+          "visible": true
+        },
+        {
+          "key": "G07",
+          "id": "189:7753",
+          "parentId": "189:7660",
+          "bounds": [
+            48,
+            28376,
+            1840,
+            3240
+          ],
+          "visible": true
+        },
+        {
+          "key": "G08",
+          "id": "189:7766",
+          "parentId": "189:7660",
+          "bounds": [
+            2048,
+            72,
+            1840,
+            3224
+          ],
+          "visible": true
+        },
+        {
+          "key": "G09",
+          "id": "189:7777",
+          "parentId": "189:7660",
+          "bounds": [
+            2048,
+            3416,
+            1840,
+            5424
+          ],
+          "visible": true
+        },
+        {
+          "key": "G10",
+          "id": "189:7796",
+          "parentId": "189:7660",
+          "bounds": [
+            2048,
+            8960,
+            1840,
+            4352
+          ],
+          "visible": true
+        },
+        {
+          "key": "G11",
+          "id": "189:7811",
+          "parentId": "189:7660",
+          "bounds": [
+            2048,
+            13432,
+            1840,
+            3208
+          ],
+          "visible": true
+        },
+        {
+          "key": "G12",
+          "id": "189:7822",
+          "parentId": "189:7660",
+          "bounds": [
+            2048,
+            16760,
+            1840,
+            5368
+          ],
+          "visible": true
+        },
+        {
+          "key": "G13",
+          "id": "189:7841",
+          "parentId": "189:7660",
+          "bounds": [
+            2048,
+            22248,
+            1840,
+            2168
+          ],
+          "visible": true
+        },
+        {
+          "key": "G14",
+          "id": "189:7848",
+          "parentId": "189:7660",
+          "bounds": [
+            2048,
+            24536,
+            1840,
+            4480
+          ],
+          "visible": true
+        },
+        {
+          "key": "proofs",
+          "id": "189:7863",
+          "parentId": "14:2",
+          "bounds": [
+            8520,
+            5000,
+            1840,
+            6668
+          ],
+          "visible": true
+        },
+        {
+          "key": "retained",
+          "id": "189:7878",
+          "parentId": "14:2",
+          "bounds": [
+            8520,
+            11848,
+            2100,
+            12446
+          ],
+          "visible": false
+        }
+      ],
+      "groupingChangedContents": [],
+      "screenFrames": 434,
+      "lightDarkPairs": 217,
+      "phoneProofFrames": 26
+    },
+    "screenPairCount": 217,
+    "stateLibraryFrameCount": 200,
+    "stateDefaultFramesInMainAccount": 4,
+    "sourceCount": 777,
+    "latestVerification": {
+      "rootCount": 435,
+      "routeCount": 2952,
+      "destinationCount": 394,
+      "sourceMissing": [],
+      "ungrouped": [],
+      "topLevelCount": 11,
+      "topLevelSections": 11,
+      "overlaps": [],
+      "sectionOverflow": [],
+      "issueCount": 0,
+      "issues": [],
+      "imageCount": 0,
+      "images": []
+    }
+  },
+  "authentication": {
+    "caseCount": 39,
+    "frameCount": 78,
+    "frames": [
+      {
+        "key": "sign-in",
+        "theme": "Light",
+        "id": "19:2",
+        "name": "GoServe 2.1 • shared/sign-in"
+      },
+      {
+        "key": "sign-in",
+        "theme": "Dark",
+        "id": "36:2",
+        "name": "GoServe 2.1 • dark/shared/sign-in"
+      },
+      {
+        "key": "sign-up",
+        "theme": "Light",
+        "id": "56:38",
+        "name": "GoServe 2.1 • shared/sign-up"
+      },
+      {
+        "key": "sign-up",
+        "theme": "Dark",
+        "id": "56:66",
+        "name": "GoServe 2.1 • dark/shared/sign-up"
+      },
+      {
+        "key": "sign-up-ready",
+        "theme": "Light",
+        "id": "197:7484",
+        "name": "GoServe 2.3 • auth/sign-up-ready"
+      },
+      {
+        "key": "sign-up-ready",
+        "theme": "Dark",
+        "id": "197:7485",
+        "name": "GoServe 2.3 • dark/auth/sign-up-ready"
+      },
+      {
+        "key": "terms",
+        "theme": "Light",
+        "id": "197:7486",
+        "name": "GoServe 2.3 • auth/terms"
+      },
+      {
+        "key": "terms",
+        "theme": "Dark",
+        "id": "197:7487",
+        "name": "GoServe 2.3 • dark/auth/terms"
+      },
+      {
+        "key": "email-profile",
+        "theme": "Light",
+        "id": "197:7488",
+        "name": "GoServe 2.3 • auth/email-profile"
+      },
+      {
+        "key": "email-profile",
+        "theme": "Dark",
+        "id": "197:7489",
+        "name": "GoServe 2.3 • dark/auth/email-profile"
+      },
+      {
+        "key": "email-credentials",
+        "theme": "Light",
+        "id": "197:7492",
+        "name": "GoServe 2.3 • auth/email-credentials"
+      },
+      {
+        "key": "email-credentials",
+        "theme": "Dark",
+        "id": "197:7493",
+        "name": "GoServe 2.3 • dark/auth/email-credentials"
+      },
+      {
+        "key": "account-created",
+        "theme": "Light",
+        "id": "197:7494",
+        "name": "GoServe 2.3 • auth/account-created"
+      },
+      {
+        "key": "account-created",
+        "theme": "Dark",
+        "id": "197:7495",
+        "name": "GoServe 2.3 • dark/auth/account-created"
+      },
+      {
+        "key": "sign-in-return",
+        "theme": "Light",
+        "id": "197:7496",
+        "name": "GoServe 2.3 • auth/sign-in-return"
+      },
+      {
+        "key": "sign-in-return",
+        "theme": "Dark",
+        "id": "197:7497",
+        "name": "GoServe 2.3 • dark/auth/sign-in-return"
+      },
+      {
+        "key": "google-profile",
+        "theme": "Light",
+        "id": "19:61",
+        "name": "GoServe 2.1 • student/consent"
+      },
+      {
+        "key": "google-profile",
+        "theme": "Dark",
+        "id": "36:61",
+        "name": "GoServe 2.1 • dark/student/consent"
+      },
+      {
+        "key": "auth-busy",
+        "theme": "Light",
+        "id": "197:7500",
+        "name": "GoServe 2.3 • auth/auth-busy"
+      },
+      {
+        "key": "auth-busy",
+        "theme": "Dark",
+        "id": "197:7501",
+        "name": "GoServe 2.3 • dark/auth/auth-busy"
+      },
+      {
+        "key": "create-busy",
+        "theme": "Light",
+        "id": "197:7502",
+        "name": "GoServe 2.3 • auth/create-busy"
+      },
+      {
+        "key": "create-busy",
+        "theme": "Dark",
+        "id": "197:7503",
+        "name": "GoServe 2.3 • dark/auth/create-busy"
+      },
+      {
+        "key": "google-busy",
+        "theme": "Light",
+        "id": "197:7504",
+        "name": "GoServe 2.3 • auth/google-busy"
+      },
+      {
+        "key": "google-busy",
+        "theme": "Dark",
+        "id": "197:7505",
+        "name": "GoServe 2.3 • dark/auth/google-busy"
+      },
+      {
+        "key": "profile-busy",
+        "theme": "Light",
+        "id": "197:7506",
+        "name": "GoServe 2.3 • auth/profile-busy"
+      },
+      {
+        "key": "profile-busy",
+        "theme": "Dark",
+        "id": "197:7507",
+        "name": "GoServe 2.3 • dark/auth/profile-busy"
+      },
+      {
+        "key": "sign-in-error",
+        "theme": "Light",
+        "id": "145:1518",
+        "name": "GoServe 2.1 • states/G02.2"
+      },
+      {
+        "key": "sign-in-error",
+        "theme": "Dark",
+        "id": "145:1520",
+        "name": "GoServe 2.1 • dark/states/G02.2"
+      },
+      {
+        "key": "profile-required",
+        "theme": "Light",
+        "id": "145:1522",
+        "name": "GoServe 2.1 • states/G02.3"
+      },
+      {
+        "key": "profile-required",
+        "theme": "Dark",
+        "id": "145:1524",
+        "name": "GoServe 2.1 • dark/states/G02.3"
+      },
+      {
+        "key": "email-profile-errors",
+        "theme": "Light",
+        "id": "197:7508",
+        "name": "GoServe 2.3 • auth/email-profile-errors"
+      },
+      {
+        "key": "email-profile-errors",
+        "theme": "Dark",
+        "id": "197:7509",
+        "name": "GoServe 2.3 • dark/auth/email-profile-errors"
+      },
+      {
+        "key": "email-credentials-errors",
+        "theme": "Light",
+        "id": "197:7512",
+        "name": "GoServe 2.3 • auth/email-credentials-errors"
+      },
+      {
+        "key": "email-credentials-errors",
+        "theme": "Dark",
+        "id": "197:7513",
+        "name": "GoServe 2.3 • dark/auth/email-credentials-errors"
+      },
+      {
+        "key": "email-profile-no-middle",
+        "theme": "Light",
+        "id": "200:7476",
+        "name": "GoServe 2.3 • auth/email-profile-no-middle"
+      },
+      {
+        "key": "email-profile-no-middle",
+        "theme": "Dark",
+        "id": "200:7477",
+        "name": "GoServe 2.3 • dark/auth/email-profile-no-middle"
+      },
+      {
+        "key": "google-profile-no-middle",
+        "theme": "Light",
+        "id": "200:7478",
+        "name": "GoServe 2.3 • auth/google-profile-no-middle"
+      },
+      {
+        "key": "google-profile-no-middle",
+        "theme": "Dark",
+        "id": "200:7479",
+        "name": "GoServe 2.3 • dark/auth/google-profile-no-middle"
+      },
+      {
+        "key": "password-weak",
+        "theme": "Light",
+        "id": "206:7476",
+        "name": "GoServe 2.3 • auth/password-weak"
+      },
+      {
+        "key": "password-weak",
+        "theme": "Dark",
+        "id": "206:7477",
+        "name": "GoServe 2.3 • dark/auth/password-weak"
+      },
+      {
+        "key": "password-mismatch",
+        "theme": "Light",
+        "id": "206:7478",
+        "name": "GoServe 2.3 • auth/password-mismatch"
+      },
+      {
+        "key": "password-mismatch",
+        "theme": "Dark",
+        "id": "206:7479",
+        "name": "GoServe 2.3 • dark/auth/password-mismatch"
+      },
+      {
+        "key": "create-failed",
+        "theme": "Light",
+        "id": "206:7480",
+        "name": "GoServe 2.3 • auth/create-failed"
+      },
+      {
+        "key": "create-failed",
+        "theme": "Dark",
+        "id": "206:7481",
+        "name": "GoServe 2.3 • dark/auth/create-failed"
+      },
+      {
+        "key": "sign-in-failed",
+        "theme": "Light",
+        "id": "206:7482",
+        "name": "GoServe 2.3 • auth/sign-in-failed"
+      },
+      {
+        "key": "sign-in-failed",
+        "theme": "Dark",
+        "id": "206:7483",
+        "name": "GoServe 2.3 • dark/auth/sign-in-failed"
+      },
+      {
+        "key": "profile-save-failed",
+        "theme": "Light",
+        "id": "206:7484",
+        "name": "GoServe 2.3 • auth/profile-save-failed"
+      },
+      {
+        "key": "profile-save-failed",
+        "theme": "Dark",
+        "id": "206:7485",
+        "name": "GoServe 2.3 • dark/auth/profile-save-failed"
+      },
+      {
+        "key": "launch",
+        "theme": "Light",
+        "id": "106:642",
+        "name": "GoServe 2.2 • light/authentication-loading"
+      },
+      {
+        "key": "launch",
+        "theme": "Dark",
+        "id": "106:652",
+        "name": "GoServe 2.2 • dark/authentication-loading"
+      },
+      {
+        "key": "google-profile-errors",
+        "theme": "Light",
+        "id": "206:7486",
+        "name": "GoServe 2.3 • auth/google-profile-errors"
+      },
+      {
+        "key": "google-profile-errors",
+        "theme": "Dark",
+        "id": "206:7487",
+        "name": "GoServe 2.3 • dark/auth/google-profile-errors"
+      },
+      {
+        "key": "terms-view",
+        "theme": "Light",
+        "id": "213:7486",
+        "name": "GoServe 2.3 • auth/terms-view"
+      },
+      {
+        "key": "terms-view",
+        "theme": "Dark",
+        "id": "213:7515",
+        "name": "GoServe 2.3 • dark/auth/terms-view"
+      },
+      {
+        "key": "session-retry",
+        "theme": "Light",
+        "id": "213:7544",
+        "name": "GoServe 2.3 • auth/session-retry"
+      },
+      {
+        "key": "session-retry",
+        "theme": "Dark",
+        "id": "213:7563",
+        "name": "GoServe 2.3 • dark/auth/session-retry"
+      },
+      {
+        "key": "reset-email",
+        "theme": "Light",
+        "id": "219:7722",
+        "name": "GoServe 2.3 • auth/reset-email"
+      },
+      {
+        "key": "reset-email",
+        "theme": "Dark",
+        "id": "219:7723",
+        "name": "GoServe 2.3 • dark/auth/reset-email"
+      },
+      {
+        "key": "reset-sending",
+        "theme": "Light",
+        "id": "219:7724",
+        "name": "GoServe 2.3 • auth/reset-sending"
+      },
+      {
+        "key": "reset-sending",
+        "theme": "Dark",
+        "id": "219:7725",
+        "name": "GoServe 2.3 • dark/auth/reset-sending"
+      },
+      {
+        "key": "reset-sent",
+        "theme": "Light",
+        "id": "219:7726",
+        "name": "GoServe 2.3 • auth/reset-sent"
+      },
+      {
+        "key": "reset-sent",
+        "theme": "Dark",
+        "id": "219:7727",
+        "name": "GoServe 2.3 • dark/auth/reset-sent"
+      },
+      {
+        "key": "reset-email-error",
+        "theme": "Light",
+        "id": "219:7728",
+        "name": "GoServe 2.3 • auth/reset-email-error"
+      },
+      {
+        "key": "reset-email-error",
+        "theme": "Dark",
+        "id": "219:7729",
+        "name": "GoServe 2.3 • dark/auth/reset-email-error"
+      },
+      {
+        "key": "reset-failed",
+        "theme": "Light",
+        "id": "219:7730",
+        "name": "GoServe 2.3 • auth/reset-failed"
+      },
+      {
+        "key": "reset-failed",
+        "theme": "Dark",
+        "id": "219:7731",
+        "name": "GoServe 2.3 • dark/auth/reset-failed"
+      },
+      {
+        "key": "reset-password",
+        "theme": "Light",
+        "id": "219:7732",
+        "name": "GoServe 2.3 • auth/reset-password"
+      },
+      {
+        "key": "reset-password",
+        "theme": "Dark",
+        "id": "219:7733",
+        "name": "GoServe 2.3 • dark/auth/reset-password"
+      },
+      {
+        "key": "reset-password-error",
+        "theme": "Light",
+        "id": "219:7734",
+        "name": "GoServe 2.3 • auth/reset-password-error"
+      },
+      {
+        "key": "reset-password-error",
+        "theme": "Dark",
+        "id": "219:7735",
+        "name": "GoServe 2.3 • dark/auth/reset-password-error"
+      },
+      {
+        "key": "reset-saving",
+        "theme": "Light",
+        "id": "219:7736",
+        "name": "GoServe 2.3 • auth/reset-saving"
+      },
+      {
+        "key": "reset-saving",
+        "theme": "Dark",
+        "id": "219:7737",
+        "name": "GoServe 2.3 • dark/auth/reset-saving"
+      },
+      {
+        "key": "reset-complete",
+        "theme": "Light",
+        "id": "219:7738",
+        "name": "GoServe 2.3 • auth/reset-complete"
+      },
+      {
+        "key": "reset-complete",
+        "theme": "Dark",
+        "id": "219:7739",
+        "name": "GoServe 2.3 • dark/auth/reset-complete"
+      },
+      {
+        "key": "reset-link-expired",
+        "theme": "Light",
+        "id": "219:7740",
+        "name": "GoServe 2.3 • auth/reset-link-expired"
+      },
+      {
+        "key": "reset-link-expired",
+        "theme": "Dark",
+        "id": "219:7741",
+        "name": "GoServe 2.3 • dark/auth/reset-link-expired"
+      },
+      {
+        "key": "reset-save-failed",
+        "theme": "Light",
+        "id": "219:7742",
+        "name": "GoServe 2.3 • auth/reset-save-failed"
+      },
+      {
+        "key": "reset-save-failed",
+        "theme": "Dark",
+        "id": "219:7743",
+        "name": "GoServe 2.3 • dark/auth/reset-save-failed"
+      }
+    ],
+    "termsViewer": {
+      "Light": "213:7486",
+      "Dark": "213:7515"
+    },
+    "settings": [
+      {
+        "id": "33:106",
+        "theme": "Light",
+        "role": "Student"
+      },
+      {
+        "id": "36:1818",
+        "theme": "Dark",
+        "role": "Student"
+      },
+      {
+        "id": "33:132",
+        "theme": "Light",
+        "role": "Staff"
+      },
+      {
+        "id": "36:1844",
+        "theme": "Dark",
+        "role": "Staff"
+      },
+      {
+        "id": "33:158",
+        "theme": "Light",
+        "role": "Cashiering"
+      },
+      {
+        "id": "36:1870",
+        "theme": "Dark",
+        "role": "Cashiering"
+      }
+    ],
+    "source": "scripts/figma_ui_auth_registration_states.json",
+    "contract": "docs/GoServe-auth-registration-ui.md",
+    "verification": {
+      "stats": {
+        "caseCount": 39,
+        "authRootsChecked": 78,
+        "authProofsChecked": 12,
+        "generalProofsSkipped": 0,
+        "settingsChecked": 6,
+        "ordinaryTextCount": 1000,
+        "passwordTargetsChecked": 40,
+        "forgotLinksChecked": 8,
+        "termsReadersChecked": 4
+      },
+      "issueCount": 0,
+      "counts": {},
+      "issues": [],
+      "findingsTruncated": false
+    }
+  }
+}

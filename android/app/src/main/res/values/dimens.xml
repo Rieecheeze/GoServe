@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gs_auth_margin">24dp</dimen>
+    <dimen name="gs_content_margin">20dp</dimen>
+    <dimen name="gs_toolbar_height">64dp</dimen>
+    <dimen name="gs_navigation_height">56dp</dimen>
+    <dimen name="gs_content_max_width">600dp</dimen>
+    <dimen name="gs_touch_target">48dp</dimen>
+</resources>

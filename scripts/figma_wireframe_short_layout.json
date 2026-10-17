@@ -1,0 +1,147 @@
+{
+  "pageId": "305:2",
+  "fileKey": "SvT9gBUFjdLgbrJ80LPDno",
+  "panelCount": 16,
+  "groups": [
+    {
+      "key": "account_overview",
+      "title": "01 · Create an account, then sign in",
+      "summary": "First-time email: Terms → credentials → complete profile → account created → explicit Sign in. First-time Google: Terms → TIP Google → same profile → Home.",
+      "panels": [
+        {
+          "key": "sign-in",
+          "title": "01 · Sign in",
+          "notes": "Email/password or TIP Google. Forgot password opens recovery. A valid, complete restored session goes directly to Home.",
+          "id": "308:5",
+          "sourceId": "19:2"
+        },
+        {
+          "key": "terms",
+          "title": "02 · Accept Terms",
+          "notes": "First-time users agree before continuing. Store the accepted version and server timestamp; returning completed users do not repeat unchanged Terms.",
+          "id": "308:254",
+          "sourceId": "197:7486"
+        },
+        {
+          "key": "email-credentials",
+          "title": "03 · Choose credentials",
+          "notes": "Email supports student1@demo.com. Password: at least six characters with a letter, number and symbol. Confirmation must match before the profile step.",
+          "id": "308:9445",
+          "sourceId": "197:7492"
+        },
+        {
+          "key": "email-profile",
+          "title": "04 · Complete student profile",
+          "notes": "All personal, academic and contact fields. No middle name is an explicit exception. Email creation ends with confirmation → Sign in; Google profile save ends at Home.",
+          "id": "308:9807",
+          "sourceId": "197:7488"
+        }
+      ]
+    },
+    {
+      "key": "request_overview",
+      "title": "02 · Submit a request and claim a physical result",
+      "summary": "Submit → server records one reference → optional authoritative payment → office processing → office marks Ready → student Claim request → pickup QR.",
+      "panels": [
+        {
+          "key": "student/home",
+          "title": "05 · Student Home",
+          "notes": "New accounts have no invented activity. Browse Registrar, Student Accounting, Cashiering, Guidance and CCS across Casal and Arlegui.",
+          "id": "308:12008",
+          "sourceId": "19:93"
+        },
+        {
+          "key": "short_request",
+          "title": "06 · Review and submit",
+          "notes": "The server validates the current fee and requirements. Pending declaration blocks submission. Repeated taps create one reference.\nPaid requests use eGovPay or teller-confirmed cash; processing starts after authoritative payment. Office receives a committed submission live.",
+          "id": "312:114",
+          "sourceId": null
+        },
+        {
+          "key": "pickup_ready",
+          "title": "07 · Ready: choose Claim request",
+          "notes": "Office marks Ready → this student screen updates live. Ready alone generates no QR.\nClaim checks ownership, status and payment. An unconfigured expiry or failed check leaves the request Ready with retry.",
+          "id": "312:184",
+          "sourceId": null
+        },
+        {
+          "key": "pickup_issued",
+          "title": "08 · Present the pickup QR",
+          "notes": "Claim generates or retrieves one valid server code. Reopening reuses it until expiry or invalidation.\nScan or manual entry → authorized office review → explicit handover confirmation → Completed on both sides live.",
+          "id": "312:251",
+          "sourceId": null
+        }
+      ]
+    },
+    {
+      "key": "services_overview",
+      "title": "03 · Digital results, consultations, inquiries and Seryo",
+      "summary": "Digital delivery uses receipt confirmation. Consultations and office messages share live database records. Seryo remains a separate guidance conversation.",
+      "panels": [
+        {
+          "key": "digital_downloaded",
+          "title": "09 · Download and confirm receipt",
+          "notes": "Office verifies/releases the PDF → student receives Ready for Download live.\nConfirm receipt enables only after successful download of the released version. Confirmation completes both sides; failed download does not.",
+          "id": "312:317",
+          "sourceId": null
+        },
+        {
+          "key": "student/consult",
+          "title": "10 · Book a consultation",
+          "notes": "Choose Guidance or CCS faculty and an available slot. Atomic capacity prevents overbooking. Safe rescheduling preserves the original appointment if replacement fails.",
+          "id": "308:14582",
+          "sourceId": "23:191"
+        },
+        {
+          "key": "student/thread",
+          "title": "11 · Student–office inquiry",
+          "notes": "Send → database commit → assigned office inbox updates live. Office replies appear here live. Read/unread state persists; retries preserve drafts and avoid duplicate messages.",
+          "id": "308:15143",
+          "sourceId": "23:362"
+        },
+        {
+          "key": "short_seryo",
+          "title": "12 · Seryo and inline attachments",
+          "notes": "Separate Allow/Decline consent. Plus: Attach a file / AI privacy. One PDF, JPG or PNG up to 10 MB. Explain/Extract prepares an unsent draft. Context buttons navigate to Cashiering or an office. Provider gates and verified cleanup apply.",
+          "id": "311:114",
+          "sourceId": "274:8365"
+        }
+      ]
+    },
+    {
+      "key": "office_overview",
+      "title": "04 · Office work, handover, Cashiering and settings",
+      "summary": "Student ↔ shared Supabase records ↔ assigned office / authorized teller. Every relevant committed change reflects on both authorized sides without manual refresh.",
+      "panels": [
+        {
+          "key": "short_office",
+          "title": "13 · Assigned office workspace",
+          "notes": "Committed submissions and inquiries arrive in the assigned office’s queue/inbox live.\nStaff processes eligible requests and marks physical results Ready or releases verified PDFs. Faculty/Guidance manage their schedules; CCS secretary has assigned coordination access.",
+          "id": "312:386",
+          "sourceId": null
+        },
+        {
+          "key": "pickup_review",
+          "title": "14 · Confirm actual handover",
+          "notes": "Scanning only validates. The authorized office confirms the actual handover.\nServer consumes the code and completes once. Wrong-office, expired, used or invalid codes are rejected. Completion updates student and office live.",
+          "id": "312:786",
+          "sourceId": null
+        },
+        {
+          "key": "short_cashier",
+          "title": "15 · Confirm cash payment",
+          "notes": "Only an authorized teller confirms the exact amount once. Student and responsible office update live.\nFree requests skip payment. eGovPay uses trusted callback/reconciliation after contract approval; browser return never proves payment.",
+          "id": "312:837",
+          "sourceId": null
+        },
+        {
+          "key": "student/settings",
+          "title": "16 · Settings and Terms",
+          "notes": "Every role has Settings, appearance controls and a Terms and Conditions button. Reading Terms does not record new consent. Sign-out clears account-scoped local caches and subscriptions.",
+          "id": "308:15541",
+          "sourceId": "33:106"
+        }
+      ]
+    }
+  ]
+}

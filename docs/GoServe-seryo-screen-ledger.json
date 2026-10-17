@@ -1,0 +1,2276 @@
+{
+  "status": "ready_for_user_ui_review",
+  "date": "2026-10-16",
+  "uiApproved": false,
+  "androidImplementation": "held_until_explicit_ui_approval",
+  "seryo": {
+    "flowCases": 19,
+    "flowFrames": 38,
+    "overlays": {
+      "Light": "274:8374",
+      "Dark": "274:8375"
+    },
+    "reviewPanel": "289:9080",
+    "reviewLinks": 40,
+    "inlineUploadPageRemoved": true,
+    "map": [
+      {
+        "key": "privacy",
+        "theme": "Light",
+        "id": "95:2",
+        "name": "GoServe 2.1 • shared/ai-consent",
+        "title": "Seryo privacy",
+        "rendered": true,
+        "attachment": null,
+        "consent": "unknown",
+        "blocked": false,
+        "viewport": {
+          "id": "285:8371",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:8381",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:8386",
+        "send": "285:8390",
+        "annotation": "285:8446"
+      },
+      {
+        "key": "G12.1",
+        "theme": "Light",
+        "id": "145:1726",
+        "name": "GoServe 2.1 • states/G12.1",
+        "title": "Seryo — allowed chat",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:8458",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:8468",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:8473",
+        "send": "285:8477",
+        "annotation": "285:8523"
+      },
+      {
+        "key": "G12.2",
+        "theme": "Light",
+        "id": "145:1730",
+        "name": "GoServe 2.1 • states/G12.2",
+        "title": "Seryo — AI off",
+        "rendered": true,
+        "attachment": null,
+        "consent": "declined",
+        "blocked": false,
+        "viewport": {
+          "id": "285:8535",
+          "h": 484
+        },
+        "composer": {
+          "id": "285:8545",
+          "y": 572,
+          "h": 170
+        },
+        "plus": "285:8550",
+        "send": "285:8554",
+        "annotation": "285:8601"
+      },
+      {
+        "key": "privacy",
+        "theme": "Dark",
+        "id": "97:162",
+        "name": "GoServe 2.1 • dark/shared/ai-consent",
+        "title": "Seryo privacy",
+        "rendered": true,
+        "attachment": null,
+        "consent": "unknown",
+        "blocked": false,
+        "viewport": {
+          "id": "285:8613",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:8623",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:8628",
+        "send": "285:8632",
+        "annotation": "285:8688"
+      },
+      {
+        "key": "G12.1",
+        "theme": "Dark",
+        "id": "145:1728",
+        "name": "GoServe 2.1 • dark/states/G12.1",
+        "title": "Seryo — allowed chat",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:8700",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:8710",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:8715",
+        "send": "285:8719",
+        "annotation": "285:8765"
+      },
+      {
+        "key": "G12.2",
+        "theme": "Dark",
+        "id": "145:1732",
+        "name": "GoServe 2.1 • dark/states/G12.2",
+        "title": "Seryo — AI off",
+        "rendered": true,
+        "attachment": null,
+        "consent": "declined",
+        "blocked": false,
+        "viewport": {
+          "id": "285:8777",
+          "h": 484
+        },
+        "composer": {
+          "id": "285:8787",
+          "y": 572,
+          "h": 170
+        },
+        "plus": "285:8792",
+        "send": "285:8796",
+        "annotation": "285:8843"
+      },
+      {
+        "key": "G12.3",
+        "theme": "Light",
+        "id": "145:1734",
+        "name": "GoServe 2.1 • states/G12.3",
+        "title": "Seryo — PDF inline preview",
+        "rendered": true,
+        "attachment": "document",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:8855",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:8865",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:8870",
+        "send": "285:8874",
+        "annotation": "285:8943"
+      },
+      {
+        "key": "image-ready",
+        "theme": "Light",
+        "id": "24:82",
+        "name": "GoServe 2.5 • shared/assistant-image-ready",
+        "title": "Seryo — image inline preview",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:8955",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:8965",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:8970",
+        "send": "285:8974",
+        "annotation": "285:9043"
+      },
+      {
+        "key": "G12.explain-draft",
+        "theme": "Light",
+        "id": "274:8362",
+        "name": "GoServe 2.1 • states/G12.explain-draft",
+        "title": "Seryo — Explain this file",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9055",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:9065",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:9070",
+        "send": "285:9074",
+        "annotation": "285:9142"
+      },
+      {
+        "key": "G12.extract-draft",
+        "theme": "Light",
+        "id": "274:8363",
+        "name": "GoServe 2.1 • states/G12.extract-draft",
+        "title": "Seryo — Extract text",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9154",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:9164",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:9169",
+        "send": "285:9173",
+        "annotation": "285:9241"
+      },
+      {
+        "key": "G12.3",
+        "theme": "Dark",
+        "id": "145:1736",
+        "name": "GoServe 2.1 • dark/states/G12.3",
+        "title": "Seryo — PDF inline preview",
+        "rendered": true,
+        "attachment": "document",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9253",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:9263",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:9268",
+        "send": "285:9272",
+        "annotation": "285:9341"
+      },
+      {
+        "key": "image-ready",
+        "theme": "Dark",
+        "id": "36:850",
+        "name": "GoServe 2.5 • dark/shared/assistant-image-ready",
+        "title": "Seryo — image inline preview",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9353",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:9363",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:9368",
+        "send": "285:9372",
+        "annotation": "285:9441"
+      },
+      {
+        "key": "G12.explain-draft",
+        "theme": "Dark",
+        "id": "274:8369",
+        "name": "GoServe 2.1 • dark/states/G12.explain-draft",
+        "title": "Seryo — Explain this file",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9453",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:9463",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:9468",
+        "send": "285:9472",
+        "annotation": "285:9540"
+      },
+      {
+        "key": "G12.extract-draft",
+        "theme": "Dark",
+        "id": "274:8370",
+        "name": "GoServe 2.1 • dark/states/G12.extract-draft",
+        "title": "Seryo — Extract text",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9552",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:9562",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:9567",
+        "send": "285:9571",
+        "annotation": "285:9639"
+      },
+      {
+        "key": "G12.4",
+        "theme": "Light",
+        "id": "145:1738",
+        "name": "GoServe 2.1 • states/G12.4",
+        "title": "Attachment not accepted",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9651",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:9661",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:9666",
+        "send": "285:9670",
+        "annotation": "285:9725"
+      },
+      {
+        "key": "retryable-error",
+        "theme": "Light",
+        "id": "24:111",
+        "name": "GoServe 2.1 • shared/ai-error",
+        "title": "Seryo — file could not be processed",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9737",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:9747",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:9752",
+        "send": "285:9756",
+        "annotation": "285:9820"
+      },
+      {
+        "key": "G12.picker",
+        "theme": "Light",
+        "id": "274:8360",
+        "name": "GoServe 2.1 • states/G12.picker",
+        "title": "Choose a photo or file",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9832",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:9842",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:9847",
+        "send": "285:9851",
+        "annotation": "285:9908"
+      },
+      {
+        "key": "G12.picker-cancelled",
+        "theme": "Light",
+        "id": "274:8361",
+        "name": "GoServe 2.1 • states/G12.picker-cancelled",
+        "title": "Seryo — no file selected",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9920",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:9930",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:9935",
+        "send": "285:9939",
+        "annotation": "285:9987"
+      },
+      {
+        "key": "G12.4",
+        "theme": "Dark",
+        "id": "145:1740",
+        "name": "GoServe 2.1 • dark/states/G12.4",
+        "title": "Attachment not accepted",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:9999",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:10009",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:10014",
+        "send": "285:10018",
+        "annotation": "285:10073"
+      },
+      {
+        "key": "retryable-error",
+        "theme": "Dark",
+        "id": "36:879",
+        "name": "GoServe 2.1 • dark/shared/ai-error",
+        "title": "Seryo — file could not be processed",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:10085",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:10095",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:10100",
+        "send": "285:10104",
+        "annotation": "285:10168"
+      },
+      {
+        "key": "G12.picker",
+        "theme": "Dark",
+        "id": "274:8367",
+        "name": "GoServe 2.1 • dark/states/G12.picker",
+        "title": "Choose a photo or file",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:10180",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:10190",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:10195",
+        "send": "285:10199",
+        "annotation": "285:10256"
+      },
+      {
+        "key": "G12.picker-cancelled",
+        "theme": "Dark",
+        "id": "274:8368",
+        "name": "GoServe 2.1 • dark/states/G12.picker-cancelled",
+        "title": "Seryo — no file selected",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:10268",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:10278",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:10283",
+        "send": "285:10287",
+        "annotation": "285:10335"
+      },
+      {
+        "key": "G12.5",
+        "theme": "Light",
+        "id": "145:1742",
+        "name": "GoServe 2.1 • states/G12.5",
+        "title": "Seryo is working…",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": true,
+        "viewport": {
+          "id": "285:10347",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:10357",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:10362",
+        "send": "285:10366",
+        "annotation": "285:10427"
+      },
+      {
+        "key": "G12.explain-result",
+        "theme": "Light",
+        "id": "274:8364",
+        "name": "GoServe 2.1 • states/G12.explain-result",
+        "title": "Seryo — Explanation",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:10439",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:10449",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:10454",
+        "send": "285:10458",
+        "annotation": "285:10508"
+      },
+      {
+        "key": "G12.extract-result",
+        "theme": "Light",
+        "id": "274:8365",
+        "name": "GoServe 2.1 • states/G12.extract-result",
+        "title": "Seryo — Extracted text",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:10520",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:10530",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:10535",
+        "send": "285:10539",
+        "annotation": "285:10589"
+      },
+      {
+        "key": "G12.no-readable-text",
+        "theme": "Light",
+        "id": "274:8366",
+        "name": "GoServe 2.1 • states/G12.no-readable-text",
+        "title": "Seryo — No readable text found",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:10601",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:10611",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:10616",
+        "send": "285:10620",
+        "annotation": "285:10681"
+      },
+      {
+        "key": "G12.5",
+        "theme": "Dark",
+        "id": "145:1744",
+        "name": "GoServe 2.1 • dark/states/G12.5",
+        "title": "Seryo is working…",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": true,
+        "viewport": {
+          "id": "285:10693",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:10703",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:10708",
+        "send": "285:10712",
+        "annotation": "285:10773"
+      },
+      {
+        "key": "G12.explain-result",
+        "theme": "Dark",
+        "id": "274:8371",
+        "name": "GoServe 2.1 • dark/states/G12.explain-result",
+        "title": "Seryo — Explanation",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:10785",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:10795",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:10800",
+        "send": "285:10804",
+        "annotation": "285:10854"
+      },
+      {
+        "key": "G12.extract-result",
+        "theme": "Dark",
+        "id": "274:8372",
+        "name": "GoServe 2.1 • dark/states/G12.extract-result",
+        "title": "Seryo — Extracted text",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:10866",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:10876",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:10881",
+        "send": "285:10885",
+        "annotation": "285:10935"
+      },
+      {
+        "key": "G12.no-readable-text",
+        "theme": "Dark",
+        "id": "274:8373",
+        "name": "GoServe 2.1 • dark/states/G12.no-readable-text",
+        "title": "Seryo — No readable text found",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:10947",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:10957",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:10962",
+        "send": "285:10966",
+        "annotation": "285:11027"
+      },
+      {
+        "key": "G12.6",
+        "theme": "Light",
+        "id": "145:1746",
+        "name": "GoServe 2.1 • states/G12.6",
+        "title": "Seryo can't answer this request",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:11039",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:11049",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:11054",
+        "send": "285:11058",
+        "annotation": "285:11106"
+      },
+      {
+        "key": "G12.7",
+        "theme": "Light",
+        "id": "145:1750",
+        "name": "GoServe 2.1 • states/G12.7",
+        "title": "Try again later",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:11118",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:11128",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:11133",
+        "send": "285:11137",
+        "annotation": "285:11185"
+      },
+      {
+        "key": "G12.8",
+        "theme": "Light",
+        "id": "145:1754",
+        "name": "GoServe 2.1 • states/G12.8",
+        "title": "File cleanup not confirmed",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": true,
+        "viewport": {
+          "id": "285:11197",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:11207",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:11212",
+        "send": "285:11216",
+        "annotation": "285:11273"
+      },
+      {
+        "key": "G12.9",
+        "theme": "Light",
+        "id": "145:1758",
+        "name": "GoServe 2.1 • states/G12.9",
+        "title": "Temporary file removed",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:11285",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:11295",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:11300",
+        "send": "285:11304",
+        "annotation": "285:11353"
+      },
+      {
+        "key": "G12.6",
+        "theme": "Dark",
+        "id": "145:1748",
+        "name": "GoServe 2.1 • dark/states/G12.6",
+        "title": "Seryo can't answer this request",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:11365",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:11375",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:11380",
+        "send": "285:11384",
+        "annotation": "285:11432"
+      },
+      {
+        "key": "G12.7",
+        "theme": "Dark",
+        "id": "145:1752",
+        "name": "GoServe 2.1 • dark/states/G12.7",
+        "title": "Try again later",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:11444",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:11454",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:11459",
+        "send": "285:11463",
+        "annotation": "285:11511"
+      },
+      {
+        "key": "G12.8",
+        "theme": "Dark",
+        "id": "145:1756",
+        "name": "GoServe 2.1 • dark/states/G12.8",
+        "title": "File cleanup not confirmed",
+        "rendered": true,
+        "attachment": "image",
+        "consent": "allowed",
+        "blocked": true,
+        "viewport": {
+          "id": "285:11523",
+          "h": 396
+        },
+        "composer": {
+          "id": "285:11533",
+          "y": 484,
+          "h": 258
+        },
+        "plus": "285:11538",
+        "send": "285:11542",
+        "annotation": "285:11599"
+      },
+      {
+        "key": "G12.9",
+        "theme": "Dark",
+        "id": "145:1760",
+        "name": "GoServe 2.1 • dark/states/G12.9",
+        "title": "Temporary file removed",
+        "rendered": true,
+        "attachment": null,
+        "consent": "allowed",
+        "blocked": false,
+        "viewport": {
+          "id": "285:11611",
+          "h": 468
+        },
+        "composer": {
+          "id": "285:11621",
+          "y": 556,
+          "h": 186
+        },
+        "plus": "285:11626",
+        "send": "285:11630",
+        "annotation": "285:11679"
+      }
+    ]
+  },
+  "proofs": [
+    {
+      "id": "287:8816",
+      "source": "95:2",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 95:2 / 320x720 / 1x"
+    },
+    {
+      "id": "287:8891",
+      "source": "95:2",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 95:2 / 320x844 / 2x"
+    },
+    {
+      "id": "287:8966",
+      "source": "145:1732",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 145:1732 / 320x720 / 1x"
+    },
+    {
+      "id": "287:9033",
+      "source": "145:1732",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 145:1732 / 320x844 / 2x"
+    },
+    {
+      "id": "287:9100",
+      "source": "24:82",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 24:82 / 320x720 / 1x"
+    },
+    {
+      "id": "287:9185",
+      "source": "24:82",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 24:82 / 320x844 / 2x"
+    },
+    {
+      "id": "287:9270",
+      "source": "274:8372",
+      "width": 320,
+      "height": 720,
+      "scale": 1,
+      "name": "GoServe / Responsive proof / 274:8372 / 320x720 / 1x"
+    },
+    {
+      "id": "287:9340",
+      "source": "274:8372",
+      "width": 320,
+      "height": 844,
+      "scale": 2,
+      "name": "GoServe / Responsive proof / 274:8372 / 320x844 / 2x"
+    }
+  ],
+  "interactionReferences": {
+    "createdNodeIds": [
+      "294:9124",
+      "294:9125",
+      "294:9126",
+      "294:9127",
+      "294:9128",
+      "294:9129",
+      "294:9130",
+      "294:9131",
+      "294:9132",
+      "294:9133",
+      "294:9134",
+      "294:9135",
+      "294:9136",
+      "294:9137",
+      "294:9138",
+      "294:9139",
+      "294:9140",
+      "294:9141",
+      "294:9142",
+      "294:9143",
+      "294:9144",
+      "294:9145",
+      "294:9146",
+      "294:9147",
+      "294:9148",
+      "294:9149",
+      "294:9150",
+      "294:9151",
+      "294:9152",
+      "294:9153",
+      "294:9154",
+      "294:9155",
+      "294:9156",
+      "294:9157",
+      "294:9158",
+      "294:9159",
+      "294:9160",
+      "294:9161",
+      "294:9162",
+      "294:9163",
+      "294:9164",
+      "294:9165",
+      "294:9166",
+      "294:9167",
+      "294:9168",
+      "294:9169",
+      "294:9170",
+      "294:9171",
+      "294:9172",
+      "294:9173",
+      "294:9174",
+      "294:9175",
+      "294:9176",
+      "294:9177",
+      "294:9178",
+      "294:9179",
+      "294:9180",
+      "294:9181",
+      "294:9182",
+      "294:9183",
+      "294:9184",
+      "294:9185",
+      "294:9186",
+      "294:9187",
+      "294:9188",
+      "294:9189",
+      "294:9190",
+      "294:9191",
+      "294:9192",
+      "294:9193",
+      "294:9194",
+      "294:9195",
+      "294:9196",
+      "294:9197",
+      "294:9198",
+      "294:9199",
+      "294:9200",
+      "294:9201",
+      "294:9202",
+      "294:9203",
+      "294:9204",
+      "294:9205",
+      "294:9206",
+      "294:9207",
+      "294:9208",
+      "294:9209",
+      "294:9210",
+      "294:9211"
+    ],
+    "mutatedNodeIds": [
+      "189:7485"
+    ],
+    "deletedNodeIds": [],
+    "createdStyleIds": [
+      "S:744da5751bfd32d108effd831d142af05ae2ab57,",
+      "S:85efbbd57c9d2ff7121590294392b44ab07d34d0,",
+      "S:32194c90ae41045afd2194bb937f3de5719431d6,",
+      "S:3b0a329d182df9fb48d4da681c1e9440db808c63,"
+    ],
+    "mutatedStyleIds": [],
+    "componentSetIds": [
+      "294:9166",
+      "294:9201"
+    ],
+    "components": [
+      {
+        "id": "294:9166",
+        "name": "GoServe / Email field states",
+        "bounds": {
+          "x": 4412,
+          "y": 112,
+          "w": 804,
+          "h": 632
+        },
+        "variantCount": 8,
+        "coverage": [
+          {
+            "id": "294:9124",
+            "theme": "Light",
+            "state": "Rest",
+            "parts": {
+              "input": "294:9126",
+              "validation": "294:9128"
+            },
+            "bounds": {
+              "w": 350,
+              "h": 104
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9129",
+            "theme": "Light",
+            "state": "Focused",
+            "parts": {
+              "input": "294:9131",
+              "validation": "294:9133"
+            },
+            "bounds": {
+              "w": 350,
+              "h": 104
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9134",
+            "theme": "Light",
+            "state": "Invalid",
+            "parts": {
+              "input": "294:9136",
+              "validation": "294:9138"
+            },
+            "bounds": {
+              "w": 350,
+              "h": 104
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9140",
+            "theme": "Light",
+            "state": "Disabled",
+            "parts": {
+              "input": "294:9142",
+              "validation": "294:9144"
+            },
+            "bounds": {
+              "w": 350,
+              "h": 104
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9145",
+            "theme": "Dark",
+            "state": "Rest",
+            "parts": {
+              "input": "294:9147",
+              "validation": "294:9149"
+            },
+            "bounds": {
+              "w": 350,
+              "h": 104
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9150",
+            "theme": "Dark",
+            "state": "Focused",
+            "parts": {
+              "input": "294:9152",
+              "validation": "294:9154"
+            },
+            "bounds": {
+              "w": 350,
+              "h": 104
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9155",
+            "theme": "Dark",
+            "state": "Invalid",
+            "parts": {
+              "input": "294:9157",
+              "validation": "294:9159"
+            },
+            "bounds": {
+              "w": 350,
+              "h": 104
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9161",
+            "theme": "Dark",
+            "state": "Disabled",
+            "parts": {
+              "input": "294:9163",
+              "validation": "294:9165"
+            },
+            "bounds": {
+              "w": 350,
+              "h": 104
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          }
+        ],
+        "referenceNoteIds": [
+          "294:9167",
+          "294:9168",
+          "294:9169",
+          "294:9170",
+          "294:9171",
+          "294:9172",
+          "294:9173",
+          "294:9174",
+          "294:9175",
+          "294:9176"
+        ]
+      },
+      {
+        "id": "294:9201",
+        "name": "GoServe / Primary action states",
+        "bounds": {
+          "x": 5280,
+          "y": 112,
+          "w": 804,
+          "h": 448
+        },
+        "variantCount": 8,
+        "coverage": [
+          {
+            "id": "294:9177",
+            "theme": "Light",
+            "state": "Rest",
+            "parts": {
+              "control": "294:9178",
+              "focusRing": null
+            },
+            "bounds": {
+              "w": 350,
+              "h": 58
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9180",
+            "theme": "Light",
+            "state": "Pressed",
+            "parts": {
+              "control": "294:9181",
+              "focusRing": null
+            },
+            "bounds": {
+              "w": 350,
+              "h": 58
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9183",
+            "theme": "Light",
+            "state": "Focused",
+            "parts": {
+              "control": "294:9184",
+              "focusRing": "294:9183"
+            },
+            "bounds": {
+              "w": 350,
+              "h": 58
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9186",
+            "theme": "Light",
+            "state": "Disabled",
+            "parts": {
+              "control": "294:9187",
+              "focusRing": null
+            },
+            "bounds": {
+              "w": 350,
+              "h": 58
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9189",
+            "theme": "Dark",
+            "state": "Rest",
+            "parts": {
+              "control": "294:9190",
+              "focusRing": null
+            },
+            "bounds": {
+              "w": 350,
+              "h": 58
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9192",
+            "theme": "Dark",
+            "state": "Pressed",
+            "parts": {
+              "control": "294:9193",
+              "focusRing": null
+            },
+            "bounds": {
+              "w": 350,
+              "h": 58
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9195",
+            "theme": "Dark",
+            "state": "Focused",
+            "parts": {
+              "control": "294:9196",
+              "focusRing": "294:9195"
+            },
+            "bounds": {
+              "w": 350,
+              "h": 58
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          },
+          {
+            "id": "294:9198",
+            "theme": "Dark",
+            "state": "Disabled",
+            "parts": {
+              "control": "294:9199",
+              "focusRing": null
+            },
+            "bounds": {
+              "w": 350,
+              "h": 58
+            },
+            "minimumHitHeight": 48,
+            "colorsBound": true,
+            "static": true
+          }
+        ],
+        "referenceNoteIds": [
+          "294:9202",
+          "294:9203",
+          "294:9204",
+          "294:9205",
+          "294:9206",
+          "294:9207",
+          "294:9208",
+          "294:9209",
+          "294:9210",
+          "294:9211"
+        ]
+      }
+    ],
+    "referenceNotes": [
+      {
+        "id": "294:9167",
+        "owner": "294:9166",
+        "kind": "state-caption",
+        "theme": "Light",
+        "state": "Rest"
+      },
+      {
+        "id": "294:9168",
+        "owner": "294:9166",
+        "kind": "state-caption",
+        "theme": "Light",
+        "state": "Focused"
+      },
+      {
+        "id": "294:9169",
+        "owner": "294:9166",
+        "kind": "state-caption",
+        "theme": "Light",
+        "state": "Invalid"
+      },
+      {
+        "id": "294:9170",
+        "owner": "294:9166",
+        "kind": "state-caption",
+        "theme": "Light",
+        "state": "Disabled"
+      },
+      {
+        "id": "294:9171",
+        "owner": "294:9166",
+        "kind": "state-caption",
+        "theme": "Dark",
+        "state": "Rest"
+      },
+      {
+        "id": "294:9172",
+        "owner": "294:9166",
+        "kind": "state-caption",
+        "theme": "Dark",
+        "state": "Focused"
+      },
+      {
+        "id": "294:9173",
+        "owner": "294:9166",
+        "kind": "state-caption",
+        "theme": "Dark",
+        "state": "Invalid"
+      },
+      {
+        "id": "294:9174",
+        "owner": "294:9166",
+        "kind": "state-caption",
+        "theme": "Dark",
+        "state": "Disabled"
+      },
+      {
+        "id": "294:9175",
+        "owner": "294:9166",
+        "kind": "title"
+      },
+      {
+        "id": "294:9176",
+        "owner": "294:9166",
+        "kind": "description"
+      },
+      {
+        "id": "294:9202",
+        "owner": "294:9201",
+        "kind": "state-caption",
+        "theme": "Light",
+        "state": "Rest"
+      },
+      {
+        "id": "294:9203",
+        "owner": "294:9201",
+        "kind": "state-caption",
+        "theme": "Light",
+        "state": "Pressed"
+      },
+      {
+        "id": "294:9204",
+        "owner": "294:9201",
+        "kind": "state-caption",
+        "theme": "Light",
+        "state": "Focused"
+      },
+      {
+        "id": "294:9205",
+        "owner": "294:9201",
+        "kind": "state-caption",
+        "theme": "Light",
+        "state": "Disabled"
+      },
+      {
+        "id": "294:9206",
+        "owner": "294:9201",
+        "kind": "state-caption",
+        "theme": "Dark",
+        "state": "Rest"
+      },
+      {
+        "id": "294:9207",
+        "owner": "294:9201",
+        "kind": "state-caption",
+        "theme": "Dark",
+        "state": "Pressed"
+      },
+      {
+        "id": "294:9208",
+        "owner": "294:9201",
+        "kind": "state-caption",
+        "theme": "Dark",
+        "state": "Focused"
+      },
+      {
+        "id": "294:9209",
+        "owner": "294:9201",
+        "kind": "state-caption",
+        "theme": "Dark",
+        "state": "Disabled"
+      },
+      {
+        "id": "294:9210",
+        "owner": "294:9201",
+        "kind": "title"
+      },
+      {
+        "id": "294:9211",
+        "owner": "294:9201",
+        "kind": "description"
+      }
+    ],
+    "effectStyles": [
+      {
+        "key": "Light|Rest",
+        "id": "S:744da5751bfd32d108effd831d142af05ae2ab57,",
+        "name": "GoServe / Action elevation / Light / Rest"
+      },
+      {
+        "key": "Light|Pressed",
+        "id": "S:85efbbd57c9d2ff7121590294392b44ab07d34d0,",
+        "name": "GoServe / Action elevation / Light / Pressed"
+      },
+      {
+        "key": "Dark|Rest",
+        "id": "S:32194c90ae41045afd2194bb937f3de5719431d6,",
+        "name": "GoServe / Action elevation / Dark / Rest"
+      },
+      {
+        "key": "Dark|Pressed",
+        "id": "S:3b0a329d182df9fb48d4da681c1e9440db808c63,",
+        "name": "GoServe / Action elevation / Dark / Pressed"
+      }
+    ],
+    "stateCoverage": {
+      "themes": [
+        "Light",
+        "Dark"
+      ],
+      "field": [
+        "Rest",
+        "Focused",
+        "Invalid",
+        "Disabled"
+      ],
+      "action": [
+        "Rest",
+        "Pressed",
+        "Focused",
+        "Disabled"
+      ],
+      "totalVariants": 16
+    },
+    "errors": [],
+    "limits": {
+      "staticReferencesOnly": true,
+      "prototypeReactions": 0,
+      "nativeFocusImplemented": false,
+      "providerCalls": false,
+      "noPhoneRoots": true,
+      "existingScreensChanged": false
+    }
+  },
+  "evidence": {
+    "acceptance": {
+      "stats": {
+        "flowCases": 19,
+        "flowFrames": 38,
+        "proofFrames": 8,
+        "overlays": 2,
+        "mainScreens": 4,
+        "legacyMenus": 4,
+        "components": 2,
+        "visibleTexts": 692,
+        "disabledSends": 50,
+        "overlayOpeners": 30,
+        "closeControls": 4,
+        "attachmentChips": 18,
+        "verifiedDestinations": 42,
+        "timedReactions": 0,
+        "externalActions": 0
+      },
+      "issueCount": 0,
+      "issues": [],
+      "truncated": false,
+      "flows": [
+        {
+          "key": "privacy",
+          "theme": "Light",
+          "id": "95:2",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.1",
+          "theme": "Light",
+          "id": "145:1726",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.2",
+          "theme": "Light",
+          "id": "145:1730",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "privacy",
+          "theme": "Dark",
+          "id": "97:162",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.1",
+          "theme": "Dark",
+          "id": "145:1728",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.2",
+          "theme": "Dark",
+          "id": "145:1732",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.3",
+          "theme": "Light",
+          "id": "145:1734",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "document",
+          "sendDisabled": true
+        },
+        {
+          "key": "image-ready",
+          "theme": "Light",
+          "id": "24:82",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.explain-draft",
+          "theme": "Light",
+          "id": "274:8362",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.extract-draft",
+          "theme": "Light",
+          "id": "274:8363",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.3",
+          "theme": "Dark",
+          "id": "145:1736",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "document",
+          "sendDisabled": true
+        },
+        {
+          "key": "image-ready",
+          "theme": "Dark",
+          "id": "36:850",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.explain-draft",
+          "theme": "Dark",
+          "id": "274:8369",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.extract-draft",
+          "theme": "Dark",
+          "id": "274:8370",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.4",
+          "theme": "Light",
+          "id": "145:1738",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "retryable-error",
+          "theme": "Light",
+          "id": "24:111",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.picker",
+          "theme": "Light",
+          "id": "274:8360",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.picker-cancelled",
+          "theme": "Light",
+          "id": "274:8361",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.4",
+          "theme": "Dark",
+          "id": "145:1740",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "retryable-error",
+          "theme": "Dark",
+          "id": "36:879",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.picker",
+          "theme": "Dark",
+          "id": "274:8367",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.picker-cancelled",
+          "theme": "Dark",
+          "id": "274:8368",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.5",
+          "theme": "Light",
+          "id": "145:1742",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.explain-result",
+          "theme": "Light",
+          "id": "274:8364",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.extract-result",
+          "theme": "Light",
+          "id": "274:8365",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.no-readable-text",
+          "theme": "Light",
+          "id": "274:8366",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.5",
+          "theme": "Dark",
+          "id": "145:1744",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.explain-result",
+          "theme": "Dark",
+          "id": "274:8371",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.extract-result",
+          "theme": "Dark",
+          "id": "274:8372",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.no-readable-text",
+          "theme": "Dark",
+          "id": "274:8373",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.6",
+          "theme": "Light",
+          "id": "145:1746",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.7",
+          "theme": "Light",
+          "id": "145:1750",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.8",
+          "theme": "Light",
+          "id": "145:1754",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.9",
+          "theme": "Light",
+          "id": "145:1758",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.6",
+          "theme": "Dark",
+          "id": "145:1748",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.7",
+          "theme": "Dark",
+          "id": "145:1752",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.8",
+          "theme": "Dark",
+          "id": "145:1756",
+          "issues": 0,
+          "scroll": true,
+          "attachment": "image",
+          "sendDisabled": true
+        },
+        {
+          "key": "G12.9",
+          "theme": "Dark",
+          "id": "145:1760",
+          "issues": 0,
+          "scroll": true,
+          "attachment": null,
+          "sendDisabled": true
+        }
+      ],
+      "readOnly": true,
+      "evidenceBoundary": "Figma structure, visible copy, prototype destinations, disabled sends and frame geometry only. No Android, real picker, provider, consent persistence or cleanup execution is claimed."
+    },
+    "geometry": {
+      "brandExceptionIds": [],
+      "rootCount": 46,
+      "totalTextCount": 456,
+      "totalIssueCount": 0,
+      "totalLegacyCount": 0,
+      "passedRootCount": 46,
+      "reports": []
+    },
+    "scroll": {
+      "phase": "inspect",
+      "createdNodeIds": [],
+      "mutatedNodeIds": [],
+      "deletedNodeIds": [],
+      "rootCount": 468,
+      "missingRootIds": [],
+      "skippedRootIds": [
+        "60:36",
+        "60:172",
+        "60:215",
+        "60:280",
+        "60:416",
+        "60:459",
+        "197:7490",
+        "197:7491",
+        "197:7498",
+        "197:7499",
+        "197:7510",
+        "197:7511"
+      ],
+      "coverage": {
+        "viewports": 468,
+        "safeViewports": 468,
+        "longBodies": 107,
+        "enabledScrollViewports": 468,
+        "elevatedSurfaces": 466,
+        "viewportKinds": {
+          "auth": 90,
+          "android": 304,
+          "chat": 66,
+          "menu": 8
+        },
+        "elevationKinds": {
+          "auth": 90,
+          "nav": 278,
+          "card": 12,
+          "composer": 66,
+          "preview": 12,
+          "menu": 8
+        }
+      },
+      "unsafeNodeIds": [],
+      "issues": [],
+      "issueCount": 0,
+      "errors": [],
+      "geometryChanges": [],
+      "samples": {
+        "roots": [
+          {
+            "id": "19:2",
+            "theme": "Light",
+            "viewports": 1,
+            "safe": 1,
+            "raised": 1,
+            "escapedText": 0
+          },
+          {
+            "id": "36:2",
+            "theme": "Dark",
+            "viewports": 1,
+            "safe": 1,
+            "raised": 1,
+            "escapedText": 0
+          },
+          {
+            "id": "56:38",
+            "theme": "Light",
+            "viewports": 1,
+            "safe": 1,
+            "raised": 1,
+            "escapedText": 0
+          },
+          {
+            "id": "56:66",
+            "theme": "Dark",
+            "viewports": 1,
+            "safe": 1,
+            "raised": 1,
+            "escapedText": 0
+          },
+          {
+            "id": "106:642",
+            "theme": "Light",
+            "viewports": 1,
+            "safe": 1,
+            "raised": 1,
+            "escapedText": 0
+          },
+          {
+            "id": "106:652",
+            "theme": "Dark",
+            "viewports": 1,
+            "safe": 1,
+            "raised": 1,
+            "escapedText": 0
+          },
+          {
+            "id": "19:61",
+            "theme": "Light",
+            "viewports": 1,
+            "safe": 1,
+            "raised": 1,
+            "escapedText": 0
+          },
+          {
+            "id": "36:61",
+            "theme": "Dark",
+            "viewports": 1,
+            "safe": 1,
+            "raised": 1,
+            "escapedText": 0
+          }
+        ],
+        "longBodies": [
+          {
+            "root": "19:61",
+            "id": "207:7822",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:7823",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1496,
+            "range": 700
+          },
+          {
+            "root": "36:61",
+            "id": "207:7882",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:7883",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1496,
+            "range": 700
+          },
+          {
+            "root": "197:7486",
+            "id": "198:7687",
+            "kind": "auth",
+            "h": 796,
+            "body": "198:7688",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1060,
+            "range": 264
+          },
+          {
+            "root": "197:7487",
+            "id": "198:7717",
+            "kind": "auth",
+            "h": 796,
+            "body": "198:7718",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1060,
+            "range": 264
+          },
+          {
+            "root": "197:7488",
+            "id": "207:7556",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:7557",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1476,
+            "range": 680
+          },
+          {
+            "root": "197:7489",
+            "id": "207:7616",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:7617",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1476,
+            "range": 680
+          },
+          {
+            "root": "197:7492",
+            "id": "207:7676",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:7677",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 862,
+            "range": 66
+          },
+          {
+            "root": "197:7493",
+            "id": "207:7716",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:7717",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 862,
+            "range": 66
+          },
+          {
+            "root": "197:7508",
+            "id": "207:8042",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:8043",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1720,
+            "range": 924
+          },
+          {
+            "root": "197:7509",
+            "id": "207:8110",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:8111",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1720,
+            "range": 924
+          },
+          {
+            "root": "200:7476",
+            "id": "207:8252",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:8253",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1476,
+            "range": 680
+          },
+          {
+            "root": "200:7477",
+            "id": "207:8314",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:8315",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1476,
+            "range": 680
+          },
+          {
+            "root": "200:7478",
+            "id": "207:8376",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:8377",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1496,
+            "range": 700
+          },
+          {
+            "root": "200:7479",
+            "id": "207:8438",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:8439",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1496,
+            "range": 700
+          },
+          {
+            "root": "206:7486",
+            "id": "207:8867",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:8868",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1720,
+            "range": 924
+          },
+          {
+            "root": "206:7487",
+            "id": "207:8940",
+            "kind": "auth",
+            "h": 796,
+            "body": "207:8941",
+            "safe": true,
+            "scrollRequired": true,
+            "enabled": true,
+            "contentH": 1720,
+            "range": 924
+          }
+        ],
+        "elevation": []
+      },
+      "limits": {
+        "bodyGeometryChanged": false,
+        "contentChanged": false,
+        "reactionsChanged": false,
+        "parentingChanged": false,
+        "fontsUntouched": true,
+        "plainRepliesAndBubblesUntouched": true,
+        "inspectionOnly": true
+      }
+    },
+    "canvas": {
+      "sourceCount": 859,
+      "frameCount": 470,
+      "preservedFrames": 470,
+      "prototypeLinks": 2990,
+      "uniqueDestinations": 264,
+      "sectionCount": 28,
+      "topLevelSections": 11,
+      "issueCount": 0,
+      "issues": [],
+      "legacyUploadLabels": []
+    }
+  },
+  "pending": [
+    "User review and approval of the Figma UI",
+    "After approval, implement Android Java/XML layouts, form validation, sessions, consent and recovery",
+    "Verify native scrolling, keyboard, TalkBack, real picker, authentication and backend authorization",
+    "Configure Seryo only after approved procedures/provider contract; verify real error, cancellation and cleanup behavior",
+    "Approve final institutional Terms and privacy wording before release"
+  ]
+}

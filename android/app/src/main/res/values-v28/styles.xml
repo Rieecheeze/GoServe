@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.GoServe.Body" parent="Base.TextAppearance.GoServe.Body">
+        <item name="android:lineHeight">24sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Body.Secondary" parent="Base.TextAppearance.GoServe.Body.Secondary">
+        <item name="android:lineHeight">20sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Caption" parent="Base.TextAppearance.GoServe.Caption">
+        <item name="android:lineHeight">16sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Label" parent="Base.TextAppearance.GoServe.Label">
+        <item name="android:lineHeight">20sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Heading" parent="Base.TextAppearance.GoServe.Heading">
+        <item name="android:lineHeight">38sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Heading.Section" parent="Base.TextAppearance.GoServe.Heading.Section">
+        <item name="android:lineHeight">28sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Heading.Toolbar" parent="Base.TextAppearance.GoServe.Heading.Toolbar">
+        <item name="android:lineHeight">28sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Heading.Office" parent="Base.TextAppearance.GoServe.Heading.Office">
+        <item name="android:lineHeight">24sp</item>
+    </style>
+    <style name="TextAppearance.GoServe.Navigation" parent="Base.TextAppearance.GoServe.Navigation">
+        <item name="android:lineHeight">16sp</item>
+    </style>
+</resources>

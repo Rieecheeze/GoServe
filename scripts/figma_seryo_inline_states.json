@@ -1,0 +1,500 @@
+[
+  {
+    "key": "G12.1",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "allowed chat",
+    "body": "Choose a file to explain or extract text.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Attach a file",
+        "target": "G12.picker",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Review AI privacy",
+        "target": "@shared/ai-consent",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.2",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "AI off",
+    "body": "AI assistance is off. You can still use campus services.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Review AI privacy",
+        "target": "@shared/ai-consent",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.3",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "PDF inline preview",
+    "body": "Current PDF remains inside the chat and composer. It has not been sent.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Explain this file",
+        "target": "G12.explain-draft",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Extract text",
+        "target": "G12.extract-draft",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Choose another file",
+        "target": "G12.picker",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Remove current attachment",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "document",
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.4",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Attachment not accepted",
+    "body": "Choose one PDF, JPG or PNG up to 10 MB. Show the actual validation reason.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Choose another file",
+        "target": "G12.picker",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Remove attachment",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Back to chat",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.5",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Seryo is working…",
+    "body": "Your current question and attachment remain visible while a response is pending.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Waiting for Seryo…",
+        "target": null,
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Back to chat",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "image",
+    "draft": null,
+    "processingBlocked": true,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.6",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Seryo can't answer this request",
+    "body": "Ask the responsible office for an authoritative answer.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Return to chat",
+        "target": "G12.1",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.7",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Try again later",
+    "body": "Seryo is temporarily unavailable for another request.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Return to chat",
+        "target": "G12.1",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.8",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "File cleanup not confirmed",
+    "body": "The app has not received confirmation that the temporary file was removed. Further processing remains blocked.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Back to chat",
+        "target": "G12.1",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "image",
+    "draft": null,
+    "processingBlocked": true,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.9",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Temporary file removed",
+    "body": "Removal of the temporary file has been verified. The original file is not available from chat history.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Return to chat",
+        "target": "G12.1",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.picker",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Choose a photo or file",
+    "body": "System picker preview. One PDF, JPG or PNG up to 10 MB. Example choices demonstrate a return to chat without reading a file.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Select example image",
+        "target": "@shared/assistant-image-ready",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Select example PDF",
+        "target": "G12.3",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Cancel",
+        "target": "G12.picker-cancelled",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.picker-cancelled",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "no file selected",
+    "body": "No file selected. Preserve the actual unsent question and any existing valid file on a cancelled replacement.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Attach a file",
+        "target": "G12.picker",
+        "style": "Primary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": null,
+    "draft": "Explain this file.",
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.explain-draft",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Explain this file",
+    "body": "Explain this file.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Explain this file",
+        "target": null,
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Extract text",
+        "target": "G12.extract-draft",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Choose another file",
+        "target": "G12.picker",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Remove current attachment",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "image",
+    "draft": "Explain this file.",
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.extract-draft",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Extract text",
+    "body": "Extract text from this file.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Explain this file",
+        "target": "G12.explain-draft",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Extract text",
+        "target": null,
+        "style": "Disabled",
+        "disabled": true
+      },
+      {
+        "label": "Choose another file",
+        "target": "G12.picker",
+        "style": "Secondary",
+        "disabled": false
+      },
+      {
+        "label": "Remove current attachment",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "image",
+    "draft": "Extract text from this file.",
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.explain-result",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Explanation",
+    "body": "The image shows a Settings heading and a Light and dark appearance option.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": true,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.extract-result",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "Extracted text",
+    "body": "Settings\nLight and dark appearance",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [],
+    "planned": true,
+    "attachment": null,
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": true,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  },
+  {
+    "key": "G12.no-readable-text",
+    "group": "G12",
+    "family": "seryo-inline",
+    "kind": "chat",
+    "renderer": "figma_seryo_inline_v2_5.js",
+    "title": "No readable text found",
+    "body": "Try a clearer image or another supported file.",
+    "nav": "AI Chat",
+    "back": "G12.1",
+    "sections": [],
+    "actions": [
+      {
+        "label": "Choose another file",
+        "target": "G12.picker",
+        "style": "Primary",
+        "disabled": false
+      },
+      {
+        "label": "Back to chat",
+        "target": "G12.1",
+        "style": "Secondary",
+        "disabled": false
+      }
+    ],
+    "planned": true,
+    "attachment": "image",
+    "draft": null,
+    "processingBlocked": false,
+    "resultFixture": false,
+    "annotation": "Editable UI fixture. No provider call, OS picker, automatic success, persisted history or consent change. Allow opens empty chat; Decline preserves ordinary app access. Preserve actual current-session draft/thread/file on picker cancel, removal, replacement and retry. Send stays disabled until approved procedures and provider contract. Verified-cleanup copy requires server evidence. Example result source: supplied Settings screenshot only."
+  }
+]
