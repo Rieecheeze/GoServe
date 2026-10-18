@@ -1,0 +1,1 @@
+{"name":"goserve-backend","private":true,"type":"module","scripts":{"test":"node tests/bootstrap-user.test.mjs && node tests/egovpay.test.mjs && node --wasm-num-compilation-tasks=1 --max-old-space-size=384 tests/v23.test.mjs && node tests/edge-v23.test.mjs"},"devDependencies":{"@electric-sql/pglite":"0.4.6"}}

@@ -129,7 +129,15 @@ Deno.serve(async (request: Request): Promise<Response> => {
     if (method === "google" && profile.role !== "student") {
       return respond(403, { error: "Office accounts must use their assigned email and password." });
     }
-    return respond(200, profile);
+    const scoped = createClient(url, serviceKey, {
+      auth: { autoRefreshToken: false, persistSession: false, detectSessionInUrl: false },
+      global: { headers: { Authorization: `Bearer ${token}` } },
+    });
+    const account = await scoped.rpc("account_view");
+    if (account.error || !account.data || account.data.id !== user.id) {
+      return respond(503, { error: "GoServe could not load account readiness. Retry shortly." });
+    }
+    return respond(200, { ...profile, ...account.data });
   } catch {
     return respond(503, { error: "GoServe could not complete sign-in. Retry shortly." });
   }

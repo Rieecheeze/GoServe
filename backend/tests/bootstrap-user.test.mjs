@@ -70,6 +70,12 @@ function createClient(url, key, options) {
   assert.equal(options.auth.persistSession, false);
   assert.equal(options.auth.autoRefreshToken, false);
   return {
+    async rpc(name) {
+      assert.equal(name, "account_view");
+      assert.equal(options.global.headers.Authorization, `Bearer ${state.expectedToken}`);
+      return { data: { id: userId, profile_complete: false,
+        terms: { current_version: null, accepted_version: null }, next_action: "accept_terms" }, error: state.accountError ?? null };
+    },
     auth: {
       async getUser(receivedToken) {
         state.authCalls++;
@@ -213,4 +219,7 @@ await check({ insertError: { code: "23505" }, lookupQueue: [null, profile("staff
 await check({ profile: { ...profile(), role: "administrator" } }, 403);
 await check({ profile: { ...profile(), id: "someone-else" } }, 403);
 
+await check({ profile: profile(), accountError: { message: 'private database detail' } }, 503);
+response = await check({ profile: profile() }, 200);
+assert.equal((await response.json()).next_action, 'accept_terms');
 console.log(`PASS: ${scenarios} GoServe bootstrap endpoint scenarios`);

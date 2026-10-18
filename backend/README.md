@@ -1,5 +1,10 @@
 # GoServe backend foundation
 
+The additive v2.3 source is documented in [API-v2.3.md](API-v2.3.md) and
+[DEPLOYMENT-v2.3.md](DEPLOYMENT-v2.3.md). It has not been deployed. The historical
+foundation instructions below describe the prior baseline; deploy the ordered v2.3
+migrations before the updated bootstrap source.
+
 Target project: `uuvexkewiuxdbuelwogy` at `https://uuvexkewiuxdbuelwogy.supabase.co`.
 The Android app uses Supabase Auth, Supabase Postgres, and the `bootstrap-user` Edge Function.
 
