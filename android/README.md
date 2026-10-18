@@ -25,11 +25,26 @@ Compile/target SDK 35, minimum SDK 26 (Android 8.0), Gradle 8.9, Android Gradle 
 The local SDK was installed in `../.tools/android-sdk`. `local.properties` points there and is excluded from version control. On another PC, select that PC's SDK in Android Studio. In Android Studio settings, select a compatible Gradle JDK. On this PC, Corretto 21 is installed at `C:/Program Files/Amazon Corretto/jdk21.0.12_12`.
 
 ```powershell
-# From the GoServe workspace root on this PC:
-& '.tools/build-android.ps1'
+# From the GoServe workspace root (uses installed tools and cached dependencies):
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-android.ps1
+# An existing Gradle installation can live anywhere:
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-android.ps1 -GradleHome C:/Tools/gradle-8.9 -JavaHome C:/Tools/jdk-21
 ```
 
-The debug APK was built successfully at `app/build/outputs/apk/debug/app-debug.apk`; a delivery copy is at `../output/android/GoServe-foundation-debug.apk`. This PC needs a workspace socket directory because its default Java temporary socket path fails. The local helper sets `JAVA_TOOL_OPTIONS=-Djdk.net.unixdomain.tmpdir=<workspace>/.tools/tmp`; the Android Studio launcher uses the same setting. On other machines, use the standard Gradle wrapper with a configured SDK and compatible JDK. A physical device or emulator is still required to verify installation, browser return, keyboards and actual system bars.
+The committed launcher discovers a compatible installed JDK 17–22, prefers the local Gradle 8.9 installation, then checks the standard wrapper distribution cache. It runs unit tests, debug assembly and lint offline with one worker. It preserves local settings and restores its process environment when finished. It does not install tools or download dependencies. The explicit quoted, forward-slash workspace socket directory avoids the Windows Java temporary socket-path failure.
+
+For a new workstation, install a compatible JDK and Android SDK 35 through the normal tools, and point `local.properties` or `ANDROID_HOME` to that SDK. The standard `gradlew`, `gradlew.bat`, wrapper JAR and SHA-256-pinned Gradle 8.9 distribution URL are committed. If Gradle/dependencies are not cached yet, perform this **manual first online build** from the repository root before using the offline launcher:
+
+```powershell
+$env:JAVA_HOME = 'C:/Tools/jdk-21' # Use your existing JDK directory.
+$env:GRADLE_USER_HOME = Join-Path $PWD '.tools/gradle-cache'
+$socketDirectory = (Join-Path $PWD '.tools/tmp').Replace('\', '/')
+New-Item -ItemType Directory -Force -Path $socketDirectory | Out-Null
+$env:JAVA_TOOL_OPTIONS = '"-Djdk.net.unixdomain.tmpdir=' + $socketDirectory + '"'
+& ./android/gradlew.bat -p android --no-daemon --max-workers=1 :app:testDebugUnitTest :app:assembleDebug :app:lintDebug
+```
+
+That explicit bootstrap downloads the official wrapper distribution and required dependencies; the offline launcher subsequently discovers the cached distribution. An already installed Gradle 8.9 directory can instead be supplied with `-GradleHome`. The APK output is `app/build/outputs/apk/debug/app-debug.apk`. Physical-device verification of installation, browser return, keyboards and system bars remains a separate gate.
 
 ## Supabase setup
 

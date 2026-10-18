@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import ph.edu.tip.goserve.R;
 import ph.edu.tip.goserve.databinding.FragmentHomeBinding;
+import ph.edu.tip.goserve.domain.ServiceRequest;
 
 public final class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
@@ -37,8 +38,9 @@ public final class HomeFragment extends Fragment {
         binding.notificationsButton.setOnClickListener(v -> host.feature(R.string.notifications_title_logic, R.string.notifications_pending_logic, true));
         binding.activeRequestCard.setVisibility(host.isPreview() ? View.VISIBLE : View.GONE);
         if (host.isPreview()) {
-            binding.requestTitle.setText(R.string.preview_request_title_logic);
-            binding.requestMeta.setText(R.string.preview_request_meta_logic);
+            ServiceRequest preview = RequestPreviewCatalog.find(requireContext(), RequestPreviewCatalog.REQUIRED_ID);
+            binding.requestTitle.setText(preview.title);
+            binding.requestMeta.setText(preview.officeName + " · " + preview.reference);
             binding.requestStatus.setText(R.string.preview_request_status_logic);
         }
         binding.previewNotice.setVisibility(View.VISIBLE);

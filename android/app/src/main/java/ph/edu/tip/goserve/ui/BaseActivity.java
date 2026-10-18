@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 public abstract class BaseActivity extends AppCompatActivity {
     @Override protected void onCreate(Bundle state) { super.onCreate(state); EdgeToEdge.enable(this); }
     protected void applyInsets(View root) {
+        SharedMotion.install(root);
         ViewCompat.setOnApplyWindowInsetsListener(root, (view, windowInsets) -> {
             Insets bars = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
             Insets keyboard = windowInsets.getInsets(WindowInsetsCompat.Type.ime());

@@ -103,7 +103,7 @@ public final class CapsuleNavigationView extends LinearLayout {
         for (int index = 0; index < items.getChildCount(); index++) {
             items.getChildAt(index).findViewById(R.id.navigationItemLabel).setVisibility(GONE);
         }
-        selectedLabel.setVisibility(GONE);
+        selectedLabel.setVisibility(VISIBLE);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
