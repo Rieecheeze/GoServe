@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/gs_background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center_vertical" android:paddingHorizontal="12dp" android:paddingVertical="8dp">
+        <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/workspaceBack" style="@style/Widget.GoServe.IconButton" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_back" android:contentDescription="@string/back" />
+        <TextView style="@style/TextAppearance.GoServe.Heading.Toolbar" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/workspace_title" />
+    </LinearLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+            <TextView style="@style/TextAppearance.GoServe.Heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/workspace_heading" />
+            <TextView style="@style/TextAppearance.GoServe.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:textColor="@color/gs_secondary" android:text="@string/workspace_body" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="20dp" android:padding="16dp" android:background="@drawable/bg_request_record">
+                <TextView style="@style/TextAppearance.GoServe.Label" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/workspace_activity" />
+                <TextView android:id="@+id/workspaceOffice" style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:textColor="@color/gs_secondary" />
+                <TextView style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/workspace_requests" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton android:id="@+id/workspaceQueue" style="@style/Widget.GoServe.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/workspace_queue" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/workspaceSchedule" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/workspace_schedule" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/workspaceScan" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/workspace_scan" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/workspaceInbox" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/workspace_inbox" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/workspaceNotifications" style="@style/Widget.GoServe.Button.Text" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/workspace_notifications" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/workspaceOfficeManage" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/office_mgmt_office" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/workspaceAnnouncementsManage" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/office_mgmt_announcements" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/workspaceServicesManage" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/office_mgmt_services" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

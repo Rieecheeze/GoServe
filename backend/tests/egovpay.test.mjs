@@ -68,17 +68,19 @@ function errorCode(code, status) {
   };
 }
 
-test("payload signs the exact decimal spelling using independent HMAC fixtures", async () => {
+test("payload signs a canonical decimal without changing its monetary value", async () => {
   const { buildPaymentPayload } = await adapter();
-  for (const [amount, digest] of [
-    ["1000", "2b998e3274cd2c529774bed6cb56780c56e6488894b1b212fcb1ad9c89664b8f"],
-    ["1000.00", "7021dd6b46e68aa03fe97ee9432da118ecbe08564d2c83eb4c17aa85de043c0e"],
-    ["0.50", "90ac74b2bde399fb0697700be1b76fc2fb24a5fc075a6d9d3e2d311564409cee"],
+  for (const [amount, canonical] of [
+    ["1000", "1000"],
+    ["1000.00", "1000"],
+    ["0.50", "0.5"],
+    ["0001.2500", "1.25"],
   ]) {
     const payload = await buildPaymentPayload({ ...input, amount, items: [{ name: "Fee", amount }] }, apiToken);
-    assert.equal(payload.amount, amount);
-    assert.equal(payload.items[0].amount, amount);
-    assert.equal(payload.digest, digest);
+    assert.equal(payload.amount, canonical);
+    assert.equal(payload.items[0].amount, canonical);
+    const {createHmac}=await import('node:crypto');
+    assert.equal(payload.digest,createHmac('sha256',apiToken).update(canonical+'|TESTREF123').digest('hex'));
     assert.equal(payload.currency, "PHP");
     assert.equal(payload.settlement_template_uuid, templateUuid);
     assert.equal(payload.callback_url, input.callbackUrl);
@@ -151,12 +153,12 @@ test("an opaque hexadecimal token works only with explicit enabled demo configur
   const config = { ...enabledConfig, apiToken: opaqueToken };
   const creation = transport({ data: { uuid, url: checkoutUrl } }, 201);
   assert.deepEqual(await createPayment(config, input, creation.fetch), { uuid, url: checkoutUrl });
-  assert.equal(creation.calls[0].init.headers["X-eGovPay-Token"], opaqueToken);
+  assert.equal(creation.calls[0].init.headers["X-eGovPay-Token"], 'test_'+opaqueToken);
   assert.ok(!creation.calls[0].url.includes(opaqueToken));
   assert.ok(!creation.calls[0].init.body.includes(opaqueToken));
   const lookup = transport(details());
   assert.equal((await getTransaction(config, uuid, lookup.fetch)).environment_type, "TEST");
-  assert.equal(lookup.calls[0].init.headers["X-eGovPay-Token"], opaqueToken);
+  assert.equal(lookup.calls[0].init.headers["X-eGovPay-Token"], 'test_'+opaqueToken);
 
   const blocked = transport({ data: { uuid, url: checkoutUrl } }, 201);
   await assert.rejects(() => createPayment({ ...config, integrationEnabled: false }, input, blocked.fetch),
@@ -182,7 +184,8 @@ test("create sends the documented POST with header-only credentials and returns 
   assert.equal(init.credentials, "omit");
   assert.ok(!url.includes(apiToken));
   assert.ok(!init.body.includes(apiToken));
-  assert.equal(JSON.parse(init.body).digest, "2b998e3274cd2c529774bed6cb56780c56e6488894b1b212fcb1ad9c89664b8f");
+  const {createHmac}=await import('node:crypto');
+  assert.equal(JSON.parse(init.body).digest,createHmac('sha256','fake-token').update('1000|TESTREF123').digest('hex'));
 });
 
 test("legacy checkout response may omit the channel reference", async () => {
@@ -211,7 +214,8 @@ test("get uses the documented UUID route and keeps INITIAL pending", async () =>
   const { getTransaction } = await adapter();
   const boundary = transport(details());
   const status = await getTransaction(enabledConfig, uuid, boundary.fetch);
-  assert.deepEqual(status, { uuid, environment_type: "TEST", payment_status: "INITIAL", state: "pending" });
+  assert.deepEqual(status, { uuid, environment_type: "TEST", payment_status: "INITIAL", state: "pending",
+    txnid: "TESTREF123", amount: "1000", currency: "PHP" });
   assert.equal(boundary.calls[0].url, `${baseUrl}/api/v1/transaction/${uuid}`);
   assert.equal(boundary.calls[0].init.method, "GET");
   assert.equal(boundary.calls[0].init.headers["X-eGovPay-Token"], apiToken);
@@ -220,13 +224,19 @@ test("get uses the documented UUID route and keeps INITIAL pending", async () =>
 
 test("unverified statuses never become paid even when a paid timestamp is present", async () => {
   const { getTransaction } = await adapter();
-  for (const payment_status of ["SUCCESS", "PAID", "FAILED", "CANCELLED", "FUTURE_STATUS"]) {
+  for (const payment_status of ["SUCCESS", "FAILED", "CANCELLED", "FUTURE_STATUS"]) {
     const boundary = transport(details({ payment_status, paid_at: "2026-10-14T00:00:00Z" }));
     const status = await getTransaction(enabledConfig, uuid, boundary.fetch);
     assert.equal(status.payment_status, payment_status);
     assert.equal(status.state, "unknown");
     assert.equal(status.environment_type, "TEST");
   }
+});
+
+test("PAID requires the paid_at field verified on the marked TEST checkout",async()=>{
+  const {getTransaction}=await adapter();
+  assert.equal((await getTransaction(enabledConfig,uuid,transport(details({payment_status:'PAID',paid_at:'October 23, 2026 06:38:24 AM'})).fetch)).state,'paid');
+  for(const paid_at of [null,undefined,'',42])assert.equal((await getTransaction(enabledConfig,uuid,transport(details({payment_status:'PAID',paid_at})).fetch)).state,'unknown');
 });
 
 test("get rejects non-TEST or omitted environment markers", async () => {

@@ -45,8 +45,12 @@ public final class SecureSessionStore {
         }
     }
 
-    public synchronized void remove(String name) { preferences.edit().remove(name).commit(); }
-    public synchronized void clear() { preferences.edit().clear().commit(); }
+    public synchronized void remove(String name) {
+        if (!preferences.edit().remove(name).commit()) throw new IllegalStateException("Could not clear saved session. Please retry.");
+    }
+    public synchronized void clear() {
+        if (!preferences.edit().clear().commit()) throw new IllegalStateException("Could not clear saved session. Please retry.");
+    }
 
     private SecretKey key() throws Exception {
         KeyStore store = KeyStore.getInstance("AndroidKeyStore");

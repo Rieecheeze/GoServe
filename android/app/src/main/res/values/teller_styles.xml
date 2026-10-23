@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.GoServe.Body.Small" parent="TextAppearance.GoServe.Body.Secondary">
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+</resources>

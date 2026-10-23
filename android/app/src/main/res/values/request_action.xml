@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_title">Update request</string>
+    <string name="action_open">Request actions</string>
+    <string name="action_reason">Reason or office note</string>
+    <string name="action_reason_hint">A reason is required for cancellation or rejection</string>
+    <string name="action_loading">Checking the available actions…</string>
+    <string name="action_saving">Updating the request…</string>
+    <string name="action_none">No actions are currently available for this request. Refresh its details or contact the assigned office.</string>
+    <string name="action_payment_separate">Payment and request progress are separate. This screen cannot mark a payment as paid. The office checks payment and any required private deliverable before accepting a status update.</string>
+    <string name="action_process">Review: start processing</string>
+    <string name="action_ready">Review: mark ready</string>
+    <string name="action_cancel">Review cancellation</string>
+    <string name="action_reject">Review rejection</string>
+    <string name="action_confirm">Confirm update</string>
+    <string name="action_retry">Retry same update</string>
+    <string name="action_edit">Edit update</string>
+    <string name="action_retry_options">Retry available actions</string>
+    <string name="action_reload">Reload request details</string>
+    <string name="action_review">Change this request from %1$s to %2$s. Check the reason above, then select Confirm update. No change has been sent yet.</string>
+    <string name="action_review_sent">Reviewed update: %1$s to %2$s. Retrying keeps this update unchanged.</string>
+    <string name="action_uncertain">The update could not be verified. Retry the same update to check its result. Keep the details unchanged until it is resolved.</string>
+    <string name="action_reason_required">Enter a reason before reviewing a cancellation or rejection.</string>
+    <string name="action_stale">This request changed. Reload its details before reviewing another update.</string>
+    <string name="action_payment_blocked">The office could not confirm the required payment. Reload the request to check its current payment status.</string>
+    <string name="action_file_blocked">A verified private deliverable is required before this request can be marked ready.</string>
+    <string name="action_policy_blocked">This action is not available under the office’s current policy. Reload the request before choosing another action.</string>
+    <string name="action_read_failed">The available actions could not be checked. Try again.</string>
+</resources>

@@ -4,7 +4,7 @@ import {stripTypeScriptTypes} from 'node:module';
 import {runInNewContext} from 'node:vm';
 let source=stripTypeScriptTypes(await readFile(new URL('../lib/v23.ts',import.meta.url),'utf8'),{mode:'transform'}).replaceAll(/^export /gm,'');
 source+='\nglobalThis.api={DomainError,validateRegistration,registerStudent,providerBoundary,cleanOne,authenticated,errorResponse};';
-const context={Response,Request,ReadableStream,Uint8Array,TextDecoder,crypto,console};runInNewContext(source,context);const api=context.api;
+const context={Response,Request,URL,AbortSignal,ReadableStream,Uint8Array,TextDecoder,crypto,console};runInNewContext(source,context);const api=context.api;
 let count=0;
 const body={email:'student@demo.com',password:'Abcd1!',terms_version:'test-v1',idempotency_key:'00000000-0000-4000-8000-000000000001',profile:{first_name:'A',middle_name:null,no_middle_name:true,last_name:'B',student_id:'1',course_program:'Test',year_level:'Test',mobile_number:'Contact',gender:'Self described'}};
 for(const value of [{...body,role:'staff'},{...body,password:'abcdef'},{...body,profile:{...body.profile,no_middle_name:false}},{...body,profile:{...body.profile,office_id:'OFF-REG'}},{...body,email:'bad'}]){assert.throws(()=>api.validateRegistration(value),/VALIDATION_FAILED/);count++;}
@@ -54,9 +54,10 @@ const edgeDeps={admin:{auth:{getUser:async()=>({data:{user:{id:'owner',is_anonym
 const fileReply=await endpoint('request-file',edgeDeps,new Request('https://test/request-file',{method:'POST',headers:{Authorization:'Bearer test','X-GoServe-Upload':'file'},body:new Uint8Array([1])}));
 const safe=await fileReply.json();assert.equal(safe.id,'file');for(const hidden of ['object_path','policy','expires_at'])assert.equal(safe[hidden],undefined);count++;
 await assert.rejects(()=>endpoint('download-deliverable',edgeDeps,new Request('https://test/download-deliverable',{method:'POST',headers:{Authorization:'Bearer test'},body:JSON.stringify({kind:'forged',download_id:'id'})})),/VALIDATION_FAILED/);count++;
-context.Deno={env:{get:()=> 'goserve://approved-recovery'}};
-for(const error of [null,{message:'unknown account'}]){
-  const recovery=await endpoint('recovery-request',{admin:{auth:{resetPasswordForEmail:async()=>({error})}}},new Request('https://test/recovery-request',{method:'POST',body:JSON.stringify({email:'mailbox@demo.com'})}));
+context.Deno={env:{get:name=>({SUPABASE_URL:'https://fixture.supabase.co',SUPABASE_ANON_KEY:'fixture',GOSERVE_RECOVERY_REDIRECT:'goserve://auth/recovery'})[name]}};
+for(const status of [200,422]){
+  context.fetch=async()=>new Response('{}',{status});
+  const recovery=await endpoint('recovery-request',{},new Request('https://test/recovery-request',{method:'POST',body:JSON.stringify({email:'mailbox@demo.com',code_challenge:'a'.repeat(43),code_challenge_method:'s256',state:'b'.repeat(43)})}));
   assert.deepEqual(await recovery.json(),{request_received:true});count++;
 }
 console.log(`PASS: ${count} v2.3 Edge/adapter assertions (external Auth/Storage/parser boundaries injected)`);

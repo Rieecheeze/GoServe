@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pdf_toolbar">Verified PDF</string>
+    <string name="pdf_heading">Deliver a verified file</string>
+    <string name="pdf_support">Use a private PDF. The owning student downloads only when the request and payment gates pass.</string>
+    <string name="pdf_label">PDF file</string>
+    <string name="pdf_choose">Choose verified PDF</string>
+    <string name="pdf_change">Change PDF</string>
+    <string name="pdf_policy">PDF · Up to %1$s</string>
+    <string name="pdf_payment_title">Payment gate</string>
+    <string name="pdf_payment_body">The student can download only a current verified PDF when the request is ready and any required payment is confirmed.</string>
+    <string name="pdf_empty_title">Upload needs a PDF</string>
+    <string name="pdf_empty_body">Choose a PDF to review before uploading it for this request.</string>
+    <string name="pdf_selected_title">PDF selected</string>
+    <string name="pdf_selected_body">Review this file before confirming the upload. Verification happens on the server.</string>
+    <string name="pdf_selected_name">%1$s · %2$s</string>
+    <string name="pdf_review_title">Review this PDF</string>
+    <string name="pdf_review_body">Nothing is uploaded until you confirm. A newly verified PDF replaces the current deliverable for %1$s.</string>
+    <string name="pdf_review_sent">The PDF for %1$s has been submitted for verification. Wait for its result.</string>
+    <string name="pdf_uncertain">The upload outcome for %1$s is unconfirmed. Retry the same PDF to check its result.</string>
+    <string name="pdf_review_action">Review PDF upload</string>
+    <string name="pdf_confirm">Upload verified PDF</string>
+    <string name="pdf_retry">Retry same PDF upload</string>
+    <string name="pdf_edit">Edit selection</string>
+    <string name="pdf_reload">Reload request and policy</string>
+    <string name="pdf_loading">Checking the request and upload policy…</string>
+    <string name="pdf_reading">Reading the selected PDF…</string>
+    <string name="pdf_uploading">Submitting and verifying this PDF…</string>
+    <string name="pdf_unavailable">PDF uploads are unavailable under the current configuration or policy.</string>
+    <string name="pdf_changed">The request changed or is unavailable. Reload before choosing a PDF.</string>
+    <string name="pdf_invalid">This PDF could not be verified. Check its format and the configured limits.</string>
+    <string name="pdf_response_invalid">The upload data could not be verified. Reload the request or retry the same upload.</string>
+    <string name="pdf_unreadable">The selected file could not be read. Choose it again.</string>
+    <string name="pdf_too_large">The selected PDF exceeds the configured upload limit.</string>
+    <string name="pdf_device_limit">This PDF is too large to process safely on this device.</string>
+    <string name="pdf_network">GoServe could not reach the file service. Try again.</string>
+    <string name="pdf_picker_unavailable">The file picker could not be opened. Try choosing the PDF again.</string>
+    <item name="requestPdfOpen" type="id" />
+    <item name="pdfBack" type="id" />
+    <item name="pdfChoose" type="id" />
+    <item name="pdfPolicy" type="id" />
+    <item name="pdfName" type="id" />
+    <item name="pdfLoading" type="id" />
+    <item name="pdfMessage" type="id" />
+    <item name="pdfSelectionTitle" type="id" />
+    <item name="pdfSelectionBody" type="id" />
+    <item name="pdfReview" type="id" />
+    <item name="pdfEdit" type="id" />
+    <item name="pdfPrimary" type="id" />
+    <item name="pdfReload" type="id" />
+    <item name="pdfScroll" type="id" />
+    <item name="pdfContent" type="id" />
+</resources>

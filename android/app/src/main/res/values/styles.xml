@@ -154,7 +154,7 @@
         <item name="android:minHeight">48dp</item>
         <item name="android:minWidth">48dp</item>
         <item name="android:padding">12dp</item>
-        <item name="android:tint">@color/gs_text</item>
+        <item name="tint">@color/gs_text</item>
     </style>
     <style name="Base.TextAppearance.GoServe.Navigation" parent="TextAppearance.Material3.LabelSmall">
         <item name="android:fontFamily">@font/karla_semibold</item>

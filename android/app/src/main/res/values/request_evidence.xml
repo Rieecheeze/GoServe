@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="evidence_title">Add evidence</string>
+    <string name="evidence_heading">Device file or camera</string>
+    <string name="evidence_support">Choose one private file. It is uploaded only when you select Use selected file.</string>
+    <string name="evidence_policy">Accepted formats: %1$s. Service maximum: %2$s.</string>
+    <string name="evidence_choose">Choose file from device</string>
+    <string name="evidence_camera">Use camera</string>
+    <string name="evidence_camera_unavailable">Camera unavailable? Choose a file from the device instead.</string>
+    <string name="evidence_selected">Selected file</string>
+    <string name="evidence_file_detail">%1$s · %2$s · private</string>
+    <string name="evidence_reading">Reading selected file…</string>
+    <string name="evidence_uploading">Uploading private evidence…</string>
+    <string name="evidence_use">Use selected file</string>
+    <string name="evidence_retry">Retry upload</string>
+    <string name="evidence_failed_heading">File cannot be uploaded</string>
+    <string name="evidence_invalid">Check the service’s accepted format and requirements, then choose another file.</string>
+    <string name="evidence_too_large">This file exceeds the service’s configured maximum size. Choose a smaller file.</string>
+    <string name="evidence_device_limit">This file is too large to process on this device. Choose a smaller file.</string>
+    <string name="evidence_unreadable">The file could not be read. Choose it again or select another file.</string>
+    <string name="evidence_network">The upload could not be confirmed. Retry to check the same private file.</string>
+    <string name="evidence_changed">The request selection changed. Return to the form and choose evidence again.</string>
+    <string name="evidence_unavailable">Evidence uploads are not available for this service. Return to the form.</string>
+</resources>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <com.google.android.material.button.MaterialButton android:id="@+id/historyMore" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginTop="14dp" android:text="@string/cash_history_more" android:visibility="gone" />
+</FrameLayout>

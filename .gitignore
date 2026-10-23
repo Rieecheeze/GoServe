@@ -6,6 +6,15 @@ android/local.properties
 android/goserve.properties
 backend/.env
 backend/.env.local
+backend/node_modules/
 android/captures/
 *.iml
 output/android/
+.superpowers/
+**/hs_err_pid*.log
+**/replay_pid*.log
+*.hprof
+tmp/
+output/
+.codex-remote-attachments/
+**/supabase/.temp/

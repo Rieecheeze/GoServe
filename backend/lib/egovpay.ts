@@ -18,9 +18,13 @@ export type PaymentInput = {
 export type PaymentReceipt = { uuid: string; url: string; refno?: string };
 export type TransactionStatus = {
   uuid: string;
+  txnid: string;
+  amount: string;
+  currency: "PHP";
+  paid_at?: string;
   environment_type: "TEST";
   payment_status: string;
-  state: "pending" | "unknown";
+  state: "pending" | "paid" | "unknown";
 };
 export type FetchTransport = (url: string, init: RequestInit) => Promise<Response>;
 
@@ -66,6 +70,12 @@ function isDecimal(value: unknown): value is string {
   return typeof value === "string" && /^[0-9]+(?:\.[0-9]+)?$/.test(value) && /[1-9]/.test(value);
 }
 
+function canonicalDecimal(value:string):string {
+  const [whole,fraction='']=value.split('.');
+  const tail=fraction.replace(/0+$/,'');
+  return whole.replace(/^0+(?=\d)/,'')+(tail?'.'+tail:'');
+}
+
 function httpsUrl(value: unknown, code: ErrorCode, apiToken?: string): URL {
   if (typeof value !== "string" || value !== value.trim()) fail(code);
   let url: URL;
@@ -92,11 +102,14 @@ function transportConfig(config: EgovPayConfig) {
   if (typeof token !== "string" || token.length === 0 || /[\s\u0000-\u001f\u007f]/.test(token)) {
     fail("invalid_configuration");
   }
-  const base = httpsUrl(config.baseUrl, "invalid_configuration", token);
+  const signingToken=token.startsWith('test_')?token.slice(5):token;
+  if(!signingToken)fail('invalid_configuration');
+  const headerToken='test_'+signingToken;
+  const base = httpsUrl(config.baseUrl, "invalid_configuration", signingToken);
   if (base.search || base.hash) fail("invalid_configuration");
   const timeoutMs = config.timeoutMs ?? 10_000;
   if (!Number.isFinite(timeoutMs) || timeoutMs <= 0 || timeoutMs > 60_000) fail("invalid_configuration");
-  return { baseUrl: base.href.replace(/\/+$/, ""), apiToken: token, timeoutMs };
+  return { baseUrl: base.href.replace(/\/+$/, ""), apiToken: headerToken, signingToken, timeoutMs };
 }
 
 export async function buildPaymentPayload(input: PaymentInput, apiToken: string) {
@@ -108,19 +121,20 @@ export async function buildPaymentPayload(input: PaymentInput, apiToken: string)
     if (!object(item) || typeof item.name !== "string" || !item.name.trim() || !isDecimal(item.amount)) {
       fail("invalid_input");
     }
-    return { name: item.name, amount: item.amount };
+    return { name: item.name, amount: canonicalDecimal(item.amount) };
   });
   httpsUrl(input.callbackUrl, "invalid_input", apiToken);
   httpsUrl(input.redirectUrl, "invalid_input", apiToken);
 
-  // Decimal spelling is preserved because the provider has not specified its numeric canonicalization.
+  // Strip insignificant zeros as required by the tested gateway; do not convert money through a floating-point number.
+  const amount=canonicalDecimal(input.amount);
   const encoder = new TextEncoder();
   const key = await crypto.subtle.importKey("raw", encoder.encode(apiToken),
     { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
-  const signature = await crypto.subtle.sign("HMAC", key, encoder.encode(`${input.amount}|${input.txnid}`));
+  const signature = await crypto.subtle.sign("HMAC", key, encoder.encode(`${amount}|${input.txnid}`));
   const digest = Array.from(new Uint8Array(signature), (byte) => byte.toString(16).padStart(2, "0")).join("");
   return {
-    amount: input.amount,
+    amount,
     items,
     currency: "PHP",
     settlement_template_uuid: input.settlementTemplateUuid,
@@ -175,13 +189,15 @@ async function request(config: ReturnType<typeof transportConfig>, path: string,
 export async function createPayment(config: EgovPayConfig, input: PaymentInput,
   fetchImpl: FetchTransport = fetch): Promise<PaymentReceipt> {
   const settings = transportConfig(config);
-  const payload = await buildPaymentPayload(input, settings.apiToken);
+  // The live gateway uses test_ only on the header; HMAC uses the issued undecorated merchant key.
+  const payload = await buildPaymentPayload(input, settings.signingToken);
   const response = object(await request(settings, "/api/v1/transaction", "POST", 201,
     fetchImpl, JSON.stringify(payload)));
   const data = object(response?.data);
   if (!data || !isUuid(data.uuid)) fail("invalid_response");
   if (data.environment_type !== undefined && data.environment_type !== "TEST") fail("non_test_environment");
-  httpsUrl(data.url, "invalid_response", settings.apiToken);
+  const checkout = httpsUrl(data.url, "invalid_response", settings.signingToken);
+  if (checkout.href !== `https://egovpay-pgi-dev.oueg.info/${data.uuid}`) fail("invalid_response");
   const receipt: PaymentReceipt = { uuid: data.uuid, url: data.url as string };
   if (data.channel !== undefined) {
     const channel = object(data.channel);
@@ -201,13 +217,20 @@ export async function getTransaction(config: EgovPayConfig, uuid: string,
   const response = object(await request(settings, `/api/v1/transaction/${uuid}`, "GET", 200, fetchImpl));
   const data = object(response?.data);
   if (!data || !isUuid(data.uuid) || data.uuid.toLowerCase() !== uuid.toLowerCase()
-    || typeof data.payment_status !== "string" || !data.payment_status.trim()) fail("invalid_response");
+    || typeof data.payment_status !== "string" || !data.payment_status.trim() || data.payment_status.length > 80
+    || typeof data.txnid !== "string" || !data.txnid || data.txnid.length > 128
+    || !isDecimal(data.amount) || data.amount.length > 80 || data.currency !== "PHP") fail("invalid_response");
   if (data.environment_type !== "TEST") fail("non_test_environment");
   return {
     uuid: data.uuid,
+    txnid: data.txnid,
+    amount: canonicalDecimal(data.amount),
+    currency: "PHP",
     environment_type: "TEST",
     payment_status: data.payment_status,
-    // Only INITIAL is documented; other values need a verified provider contract before any paid mapping.
-    state: data.payment_status === "INITIAL" ? "pending" : "unknown",
+    ...(typeof data.paid_at==='string'&&data.paid_at.trim()&&data.paid_at.length<=128?{paid_at:data.paid_at}:{}),
+    // PAID with paid_at was verified by authenticated GET after the user approved the TEST checkout.
+    state: data.payment_status === "INITIAL" ? "pending"
+      :data.payment_status==='PAID'&&typeof data.paid_at==='string'&&data.paid_at.trim()&&data.paid_at.length<=128?'paid':'unknown',
   };
 }

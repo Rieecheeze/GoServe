@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SeryoMascotView">
+        <attr name="seryoCompact" format="boolean" />
+        <attr name="seryoState" format="enum">
+            <enum name="loading" value="0" />
+            <enum name="idle" value="1" />
+            <enum name="thinking" value="2" />
+        </attr>
+    </declare-styleable>
+    <integer name="seryo_loading_ms">1400</integer>
+    <integer name="seryo_idle_ms">2800</integer>
+    <integer name="seryo_thinking_ms">1100</integer>
+    <string name="seryo_processing">Seryo is processing your request</string>
+</resources>

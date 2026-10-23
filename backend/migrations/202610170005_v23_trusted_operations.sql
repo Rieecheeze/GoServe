@@ -52,28 +52,71 @@ begin
  return jsonb_build_object('attempt_id',a.id,'state',(select state from goserve_private.registration_attempts where id=a.id),'auth_id',u,'may_create',fresh);
 end$$;
 create function public.file_server_operation(p_actor uuid,p_file_id uuid,p_command text,p_sha256 text default null) returns jsonb language plpgsql security definer set search_path='' as $$
-declare f public.request_files;o goserve_private.file_objects;r public.requests;a public.profiles;
+declare
+ f public.request_files;
+ o goserve_private.file_objects;
+ r public.requests;
+ a public.profiles;
 begin
- select * into a from public.profiles where id=p_actor;if not found or a.profile_completed_at is null then perform goserve_private.fail('FORBIDDEN');end if;
- select * into f from public.request_files where id=p_file_id for update;if not found then perform goserve_private.fail('NOT_FOUND');end if;
+ select * into a from public.profiles where id=p_actor;
+ if not found or a.profile_completed_at is null then
+   perform goserve_private.fail('FORBIDDEN');
+ end if;
+ select * into f from public.request_files where id=p_file_id;
+ if not found then perform goserve_private.fail('NOT_FOUND');end if;
+ -- All releases take the request lock before any file lock, including concurrent pending uploads.
+ if f.request_id is not null then
+   select * into r from public.requests where id=f.request_id for update;
+ end if;
+ select * into f from public.request_files where id=p_file_id for update;
  select * into o from goserve_private.file_objects where file_id=f.id;
  if p_command='read' then
- if f.kind<>'evidence' or f.verification<>'verified' or f.deleted_at is not null then perform goserve_private.fail('UPLOAD_INVALID');end if;
- select * into r from public.requests where id=f.request_id;
- if f.owner_id<>p_actor and (r.id is null or a.role<>'staff' or a.office_id is distinct from r.office_id or (a.staff_capability is not null and not exists(select 1 from goserve_private.capabilities where profile_id=p_actor and office_id=r.office_id and capability='requests'))) then perform goserve_private.fail('FORBIDDEN');end if;
- return to_jsonb(f)||jsonb_build_object('object_path',o.object_path);end if;
- if f.kind='evidence' then if f.owner_id<>p_actor or f.request_id is not null then perform goserve_private.fail('FORBIDDEN');end if;
- else select * into r from public.requests where id=f.request_id for update;
- if a.role<>'staff' or a.office_id is distinct from r.office_id or (a.staff_capability is not null and not exists(select 1 from goserve_private.capabilities where profile_id=p_actor and office_id=r.office_id and capability='requests')) or r.status not in('Processing','Ready for Pickup/Download') then perform goserve_private.fail('FORBIDDEN');end if;end if;
- if f.deleted_at is not null or o.expires_at<=now() then perform goserve_private.fail('UPLOAD_INVALID');end if;
+   if f.kind<>'evidence' or f.verification<>'verified' or f.deleted_at is not null then
+     perform goserve_private.fail('UPLOAD_INVALID');
+   end if;
+   if f.owner_id<>p_actor and (
+     r.id is null or a.role<>'staff' or a.office_id is distinct from r.office_id
+     or (a.staff_capability is not null and not exists(
+       select 1 from goserve_private.capabilities
+       where profile_id=p_actor and office_id=r.office_id and capability='requests'
+     ))
+   ) then perform goserve_private.fail('FORBIDDEN'); end if;
+   return to_jsonb(f)||jsonb_build_object('object_path',o.object_path);
+ end if;
+ if f.kind='evidence' then
+   if f.owner_id<>p_actor or f.request_id is not null then
+     perform goserve_private.fail('FORBIDDEN');
+   end if;
+ else
+   if r.id is null or a.role<>'staff' or a.office_id is distinct from r.office_id
+     or (a.staff_capability is not null and not exists(
+       select 1 from goserve_private.capabilities
+       where profile_id=p_actor and office_id=r.office_id and capability='requests'
+     )) or r.status not in('Processing','Ready for Pickup/Download') then
+     perform goserve_private.fail('FORBIDDEN');
+   end if;
+ end if;
+ if f.deleted_at is not null or o.expires_at<=now() then
+   perform goserve_private.fail('UPLOAD_INVALID');
+ end if;
  if p_command='verified' then
- if f.verification='verified' then if o.sha256 is distinct from p_sha256 then perform goserve_private.fail('UPLOAD_INVALID');end if;return to_jsonb(f);end if;
- if p_sha256 is null or p_sha256!~'^[a-f0-9]{64}$' then perform goserve_private.fail('UPLOAD_INVALID');end if;
- if f.kind='deliverable' then update public.request_files set current=false where request_id=f.request_id and kind='deliverable' and id<>f.id;end if;
- update public.request_files set verification='verified' where id=f.id returning * into f;
- update goserve_private.file_objects set sha256=p_sha256,verified_at=now() where file_id=f.id;
- return to_jsonb(f);
- elsif p_command<>'authorize' then perform goserve_private.fail('VALIDATION_FAILED');end if;
+   if f.verification='verified' then
+     if o.sha256 is distinct from p_sha256 then perform goserve_private.fail('UPLOAD_INVALID'); end if;
+     return to_jsonb(f);
+   end if;
+   if p_sha256 is null or p_sha256!~'^[a-f0-9]{64}$' then
+     perform goserve_private.fail('UPLOAD_INVALID');
+   end if;
+   if f.kind='deliverable' then
+     update public.request_files set current=false
+     where request_id=f.request_id and kind='deliverable' and verification='verified' and current and id<>f.id;
+   end if;
+   update public.request_files set verification='verified',current=true where id=f.id returning * into f;
+   update goserve_private.file_objects set sha256=p_sha256,verified_at=now() where file_id=f.id;
+   return to_jsonb(f);
+ elsif p_command<>'authorize' then
+   perform goserve_private.fail('VALIDATION_FAILED');
+ end if;
  return to_jsonb(f)||jsonb_build_object('object_path',o.object_path,'expires_at',o.expires_at,'policy',(select value from goserve_private.policies where name='file_'||f.service_id::text||'_'||f.kind));
 end$$;
 create function public.download_server_operation(p_actor uuid,p_download_id uuid,p_complete boolean default false) returns jsonb language plpgsql security definer set search_path='' as $$
@@ -81,6 +124,7 @@ declare d goserve_private.downloads;f public.request_files;r public.requests;o g
 begin
  select * into d from goserve_private.downloads where id=p_download_id and owner_id=p_actor for update;if not found then perform goserve_private.fail('NOT_FOUND');end if;
  select * into f from public.request_files where id=d.file_id;select * into r from public.requests where id=f.request_id for update;select * into o from goserve_private.file_objects where file_id=f.id;
+ select * into f from public.request_files where id=d.file_id;
  if r.owner_id<>p_actor or r.status<>'Ready for Pickup/Download' or r.delivery_mode<>'digital' or not f.current or f.verification<>'verified' or f.deleted_at is not null or d.expires_at<=now() or not goserve_private.paid(r.id) or not exists(select 1 from public.profiles where id=p_actor and profile_completed_at is not null) then perform goserve_private.fail('INVALID_STATE');end if;
  if p_complete then update goserve_private.downloads set transfer_completed_at=coalesce(transfer_completed_at,now()) where id=d.id;end if;
  return jsonb_build_object('download_id',d.id,'object_path',o.object_path,'sha256',o.sha256,'size_bytes',f.size_bytes);
@@ -122,7 +166,7 @@ $$;
 create policy payments_teller_read on public.payments for select to authenticated using(goserve_private.ready() and method='cash' and goserve_private.cash_access(request_id));
 do $$declare t text;begin foreach t in array ARRAY['registration_attempts','ai_consent_audit','ai_operations','ai_attachments','provider_payment_events'] loop execute format('alter table goserve_private.%I enable row level security',t);execute format('revoke all on goserve_private.%I from public,anon,authenticated',t);execute format('grant all on goserve_private.%I to service_role',t);end loop;end$$;
 revoke all on all functions in schema goserve_private from public,anon,authenticated;
-grant execute on function goserve_private.ready(),goserve_private.capable(text,text),goserve_private.request_access(uuid),goserve_private.thread_access(uuid),goserve_private.schedule_access(text,uuid),goserve_private.appointment_access(uuid),goserve_private.cash_access(uuid) to authenticated;
+grant execute on function goserve_private.ready(),goserve_private.capable(text,text),goserve_private.request_access(uuid),goserve_private.thread_access(uuid),goserve_private.schedule_access(text,uuid),goserve_private.appointment_access(uuid),goserve_private.cash_access(uuid),goserve_private.department_contact_allowed(text),goserve_private.consultation_owner_allowed(text,uuid) to authenticated;
 revoke all on function public.seryo_state(),public.set_ai_consent(text,bigint,uuid) from public,anon;grant execute on function public.seryo_state(),public.set_ai_consent(text,bigint,uuid) to authenticated;
 do $$declare f record;begin for f in select p.oid::regprocedure sig from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and p.proname in('registration_operation','file_server_operation','download_server_operation','cleanup_claim','cleanup_finish') loop execute format('revoke all on function %s from public,anon,authenticated',f.sig);execute format('grant execute on function %s to service_role',f.sig);end loop;end$$;
 do $$declare t text;begin

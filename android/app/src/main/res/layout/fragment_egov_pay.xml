@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center_vertical" android:paddingStart="8dp" android:paddingEnd="20dp" android:paddingTop="8dp" android:paddingBottom="8dp">
+        <ImageButton android:id="@+id/egovpayBack" style="@style/Widget.GoServe.IconButton" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_back" android:contentDescription="@string/back" />
+        <TextView style="@style/TextAppearance.GoServe.Heading.Toolbar" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp" android:text="@string/egovpay_title" />
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView android:id="@+id/egovpayScroll" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+            <TextView android:id="@+id/egovpayHeading" style="@style/TextAppearance.GoServe.Heading.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/egovpay_pending" android:accessibilityLiveRegion="polite" />
+            <TextView style="@style/TextAppearance.GoServe.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:padding="16dp" android:background="@drawable/bg_muted" android:text="@string/egovpay_test_notice" />
+            <LinearLayout android:id="@+id/egovpaySummary" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="24dp">
+                <TextView style="@style/TextAppearance.GoServe.Label" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/egovpay_amount_label" />
+                <TextView android:id="@+id/egovpayAmount" style="@style/TextAppearance.GoServe.Heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:saveEnabled="false" />
+                <TextView style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="@color/gs_secondary" android:text="@string/egovpay_fee_note" />
+            </LinearLayout>
+            <ph.edu.tip.goserve.ui.BrandLoadingView android:id="@+id/egovpayLoading" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="16dp" android:importantForAccessibility="no" android:visibility="gone" />
+            <TextView android:id="@+id/egovpayStatus" style="@style/TextAppearance.GoServe.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:accessibilityLiveRegion="polite" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/egovpayPrepare" style="@style/Widget.GoServe.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginTop="24dp" android:text="@string/egovpay_prepare" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/egovpayBrowser" style="@style/Widget.GoServe.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginTop="24dp" android:text="@string/egovpay_browser" android:visibility="gone" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/egovpayRefresh" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginTop="12dp" android:text="@string/egovpay_refresh" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/egovpayReturn" style="@style/Widget.GoServe.Button.Text" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginTop="12dp" android:text="@string/egovpay_return" android:visibility="gone" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

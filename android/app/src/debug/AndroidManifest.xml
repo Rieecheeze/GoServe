@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <activity android:name=".ui.SeryoUiPreviewActivity" android:exported="true" android:label="Debug Figma fixture · Seryo" />
+        <activity android:name=".ui.MascotPreviewActivity" android:exported="true" android:label="@string/mascot_preview_title" />
+    </application>
+</manifest>

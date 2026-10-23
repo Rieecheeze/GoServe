@@ -36,6 +36,7 @@ import ph.edu.tip.goserve.R;
 import ph.edu.tip.goserve.data.AuthRepository;
 import ph.edu.tip.goserve.data.SecureSessionStore;
 import ph.edu.tip.goserve.data.SupabaseClient;
+import ph.edu.tip.goserve.ui.common.SeryoMascotView;
 import static org.junit.Assert.*;
 
 @RunWith(RobolectricTestRunner.class)
@@ -61,6 +62,7 @@ public final class AuthLifecycleTest {
         ShadowServer.refreshRelease = null;
         ShadowServer.settingsEntered = null;
         ShadowServer.settingsRelease = null;
+        ShadowServer.termsEntered=null; ShadowServer.termsRelease=null;
         ReflectionHelpers.setStaticField(ViewModelProvider.AndroidViewModelFactory.class, "_instance", null);
         application = (GoServeApplication) RuntimeEnvironment.getApplication();
         replaceProcessRepository();
@@ -78,16 +80,19 @@ public final class AuthLifecycleTest {
         ShadowSessionStore.values.put("refresh_token", "saved-refresh-token");
         ActivityController<AuthActivity> first = launch(null, null);
         awaitAuthenticated(first.get(), STUDENT);
-        assertTrue(first.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof ConsentFragment);
+        assertTrue(first.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof TermsFragment);
         Bundle saved = saveAndDestroy(first);
 
         replaceProcessRepository();
         assertNull(application.auth().profile());
         ActivityController<AuthActivity> restored = launch(null, saved);
         awaitAuthenticated(restored.get(), STUDENT);
-        assertTrue(restored.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof ConsentFragment);
+        assertTrue(restored.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof TermsFragment);
 
-        ((CheckBox) restored.get().findViewById(R.id.privacyCheck)).setChecked(true);
+        assertNotNull(restored.get().findViewById(R.id.termsContent));
+        assertFalse(restored.get().findViewById(R.id.acceptButton).isEnabled());
+        agreeToTerms(restored.get()).setChecked(true);
+        assertTrue(restored.get().findViewById(R.id.acceptButton).isEnabled());
         restored.get().findViewById(R.id.acceptButton).performClick();
         await(() -> application.auth().profile() != null && application.auth().profile().consentAccepted,
                 "Restored consent must be accepted against an authenticated repository.");
@@ -106,7 +111,7 @@ public final class AuthLifecycleTest {
 
         ActivityController<AuthActivity> restored = launch(callback, saved);
         awaitAuthenticated(restored.get(), STUDENT);
-        assertTrue(restored.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof ConsentFragment);
+        assertTrue(restored.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof TermsFragment);
         assertEquals("The one-time auth code must be exchanged once.", 1, ShadowServer.pkceCalls.get());
         assertNull(ShadowSessionStore.values.get("oauth_pending"));
     }
@@ -119,7 +124,7 @@ public final class AuthLifecycleTest {
         controller.recreate();
         awaitAuthenticated(controller.get(), STUDENT);
         assertEquals("Rotation must not reuse a one-time auth code.", 1, ShadowServer.pkceCalls.get());
-        assertTrue(controller.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof ConsentFragment);
+        assertTrue(controller.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof TermsFragment);
     }
 
     @Test public void staleOriginalCallbackRestoresTheSavedSessionAfterProcessRestart() throws Exception {
@@ -133,7 +138,7 @@ public final class AuthLifecycleTest {
         awaitAuthenticated(restored.get(), STUDENT);
         assertEquals("The consumed auth code must not be exchanged again.", 1, ShadowServer.pkceCalls.get());
         assertEquals("A fresh process must restore its saved refresh session.", 1, ShadowServer.refreshCalls.get());
-        assertTrue(restored.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof ConsentFragment);
+        assertTrue(restored.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof TermsFragment);
     }
 
     @Test public void newCallbackDuringRestoreIsProcessedBeforeTheOlderSessionCanRoute() throws Exception {
@@ -149,7 +154,8 @@ public final class AuthLifecycleTest {
 
         // Model the persisted PKCE attempt belonging to the returning browser while refresh is in flight.
         ShadowSessionStore.values.put("oauth_pending", new JSONObject().put("nonce", "browser-nonce")
-                .put("verifier", "A".repeat(43)).put("started_at", System.currentTimeMillis()).toString());
+                .put("verifier", "A".repeat(43)).put("flow","google")
+                .put("started_at", org.robolectric.shadows.ShadowSystem.currentTimeMillis()).toString());
         Uri callback = Uri.parse(AuthRepository.CALLBACK).buildUpon().appendQueryParameter("nonce", "browser-nonce")
                 .appendQueryParameter("code", "test-auth-code").build();
         try {
@@ -162,7 +168,7 @@ public final class AuthLifecycleTest {
         assertEquals("A callback arriving during restore must not be dropped.", 1, ShadowServer.pkceCalls.get());
         assertNull("The superseded session must not route to the main activity.",
                 Shadows.shadowOf(controller.get()).getNextStartedActivity());
-        assertTrue(controller.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof ConsentFragment);
+        assertTrue(controller.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof TermsFragment);
     }
 
     @Test public void restoredConsentReturnsToSignInWhenTheSavedSessionIsInvalid() throws Exception {
@@ -188,7 +194,10 @@ public final class AuthLifecycleTest {
         ShadowSessionStore.values.put("refresh_token", "saved-refresh-token");
         ActivityController<AuthActivity> controller = launch(null, null);
         awaitAuthenticated(controller.get(), STUDENT);
-        ((CheckBox) controller.get().findViewById(R.id.privacyCheck)).setChecked(true);
+        assertNotNull(controller.get().findViewById(R.id.termsContent));
+        assertFalse(controller.get().findViewById(R.id.acceptButton).isEnabled());
+        agreeToTerms(controller.get()).setChecked(true);
+        assertTrue(controller.get().findViewById(R.id.acceptButton).isEnabled());
         ShadowServer.consentFails = true;
         assertTrue(controller.get().findViewById(R.id.acceptButton).performClick());
 
@@ -199,7 +208,7 @@ public final class AuthLifecycleTest {
         assertNotNull(application.auth().profile());
         assertEquals(STUDENT, application.auth().profile().id);
         assertFalse(application.auth().profile().consentAccepted);
-        assertTrue(controller.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof ConsentFragment);
+        assertTrue(controller.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof TermsFragment);
         assertTrue(controller.get().findViewById(R.id.acceptButton).isEnabled());
         assertNull(Shadows.shadowOf(controller.get()).getNextStartedActivity());
 
@@ -213,32 +222,41 @@ public final class AuthLifecycleTest {
         assertEquals(MainActivity.class.getName(), next.getComponent().getClassName());
     }
 
-    @Test public void loginShowsTheBrandLogoWhileConnecting() throws Exception { checkBrandLoading(false); }
+    @Test public void loginShowsOnlyTheBrandWhileConnecting() throws Exception { checkBrandLoading(false); }
 
-    @Test public void signupShowsTheBrandLogoWhileConnecting() throws Exception { checkBrandLoading(true); }
+    @Test public void signupShowsOnlyTheBrandWhileConnecting() throws Exception { checkBrandLoading(true); }
 
     private void checkBrandLoading(boolean signup) throws Exception {
         ActivityController<AuthActivity> controller = launch(null, null);
         AuthActivity activity = controller.get();
         await(() -> !model(activity).state().getValue().loading, "Initial authentication must finish loading.");
-        if (signup) activity.findViewById(R.id.signupTab).performClick();
-        ShadowServer.settingsEntered = new CountDownLatch(1);
-        ShadowServer.settingsRelease = new CountDownLatch(1);
+        android.view.View decor = activity.getWindow().getDecorView();
+        Object attachInfo = ReflectionHelpers.getField(decor, "mAttachInfo");
+        ReflectionHelpers.setField(attachInfo, "mWindowVisibility", android.view.View.VISIBLE);
+        decor.dispatchWindowVisibilityChanged(android.view.View.VISIBLE);
+        if (signup) { ShadowServer.termsEntered=new CountDownLatch(1); ShadowServer.termsRelease=new CountDownLatch(1); }
+        else { ShadowServer.settingsEntered=new CountDownLatch(1); ShadowServer.settingsRelease=new CountDownLatch(1); }
         try {
-            activity.findViewById(R.id.googleButton).performClick();
-            assertTrue(ShadowServer.settingsEntered.await(5, TimeUnit.SECONDS));
+            activity.findViewById(signup?R.id.signupTab:R.id.googleButton).performClick();
+            assertTrue((signup?ShadowServer.termsEntered:ShadowServer.settingsEntered).await(5, TimeUnit.SECONDS));
             android.view.View panel = activity.findViewById(R.id.activityRoot).findViewWithTag("authBrandLoading");
             assertNotNull("Authentication needs a branded loading state.", panel);
             assertEquals(android.view.View.VISIBLE, panel.getVisibility());
-            android.widget.ImageView logo = panel.findViewWithTag("authBrandLogo");
-            assertNotNull("The logo must be prominent while authentication is in progress.", logo);
-            assertNotNull(logo.getDrawable());
+            assertNull("Authentication must show the GoServe brand without Seryo.",
+                    panel.findViewWithTag("authSeryoMascot"));
+            android.view.View logo = panel.findViewWithTag("authBrandLogo");
+            assertNotNull("The held request must show the approved GoServe logo.", logo);
+            assertTrue(logo.isShown());
+            assertEquals(android.view.View.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS,
+                    activity.findViewById(R.id.authContainer).getImportantForAccessibility());
         } finally {
-            ShadowServer.settingsRelease.countDown();
+            if (signup) ShadowServer.termsRelease.countDown(); else ShadowServer.settingsRelease.countDown();
         }
         await(() -> !model(activity).state().getValue().loading, "The loading state must finish with the request.");
         assertEquals(android.view.View.GONE,
                 activity.findViewById(R.id.activityRoot).findViewWithTag("authBrandLoading").getVisibility());
+        assertEquals(android.view.View.IMPORTANT_FOR_ACCESSIBILITY_AUTO,
+                activity.findViewById(R.id.authContainer).getImportantForAccessibility());
     }
 
     private Uri prepareGoogleCallback() throws Exception {
@@ -276,13 +294,26 @@ public final class AuthLifecycleTest {
         return new ViewModelProvider(activity).get(AuthViewModel.class);
     }
 
+    private CheckBox agreeToTerms(AuthActivity activity) {
+        int id=activity.getResources().getIdentifier("termsAgreement","id",activity.getPackageName());
+        CheckBox agreement=activity.findViewById(id);
+        assertNotNull("Terms acceptance needs an explicit agreement checkbox.",agreement);
+        assertFalse("Agreement must start unchecked.",agreement.isChecked());
+        return agreement;
+    }
+
     private void awaitAuthenticated(AuthActivity activity, String id) throws Exception {
         assertSame("The activity must belong to the current test application.", application, activity.getApplication());
         assertSame("The view model factory must use the current test application.", application, model(activity).getApplication());
-        await(() -> {
+        try { await(() -> {
             AuthViewModel.State state = model(activity).state().getValue();
             return state != null && !state.loading && state.profile != null && id.equals(state.profile.id);
-        }, "Authentication was not restored after activity startup.");
+        }, "Authentication was not restored after activity startup."); }
+        catch (AssertionError failure) {
+            AuthViewModel.State state=model(activity).state().getValue();
+            throw new AssertionError(failure.getMessage()+" Loading="+state.loading+", fixture profile="+(state.profile==null?"none":state.profile.id)
+                    +", safe error="+state.error+", exchanges="+ShadowServer.pkceCalls.get(),failure);
+        }
         assertNotNull(application.auth().profile());
         assertEquals(id, application.auth().profile().id);
         assertNull(model(activity).state().getValue().error);
@@ -321,10 +352,18 @@ public final class AuthLifecycleTest {
         static volatile CountDownLatch refreshRelease;
         static volatile CountDownLatch settingsEntered;
         static volatile CountDownLatch settingsRelease;
+        static volatile CountDownLatch termsEntered,termsRelease;
         private String url;
 
         @Implementation protected void __constructor__(String baseUrl, String key) { url = baseUrl; }
         @Implementation protected String baseUrl() { return url; }
+        @Implementation protected org.json.JSONArray array(String path,String token) throws Exception {
+            if (!path.startsWith("/rest/v1/terms_documents?")) throw new IllegalArgumentException("Unexpected account read.");
+            if (termsEntered!=null) termsEntered.countDown();
+            if (termsRelease!=null && !termsRelease.await(5,TimeUnit.SECONDS)) throw new IllegalStateException("Test Terms read was not released.");
+            return new org.json.JSONArray().put(new JSONObject().put("version","approved-v1").put("content","Controlled approved Terms fixture")
+                    .put("content_digest","fixture-digest").put("published_at","2026-10-14T00:00:00Z"));
+        }
 
         @Implementation protected JSONObject object(String method, String path, JSONObject body, String token) throws Exception {
             if ("GET".equals(method) && "/auth/v1/settings".equals(path)) {
@@ -359,11 +398,13 @@ public final class AuthLifecycleTest {
                 if ("restore-access".equals(token)) return profile(refreshProfileId, refreshConsentAccepted);
                 throw new IllegalArgumentException("Bootstrap did not use an authenticated session.");
             }
-            if ("/rest/v1/rpc/accept_privacy_consent".equals(path)) {
+            if ("/rest/v1/rpc/update_account".equals(path)) {
                 if (!"restore-access".equals(token) && !"pkce-access".equals(token)) {
                     throw new IllegalArgumentException("Consent did not use an authenticated session.");
                 }
                 if (consentFails) throw new SupabaseClient.ApiException(503, "Temporary consent service failure.");
+                if (!"approved-v1".equals(body.getString("p_terms_version")) || !body.isNull("p_student_profile"))
+                    throw new IllegalArgumentException("Terms acceptance must use the approved version without altering profile.");
                 return profile(STUDENT, true);
             }
             throw new IllegalArgumentException("Unexpected authentication endpoint.");
@@ -378,7 +419,11 @@ public final class AuthLifecycleTest {
         private JSONObject profile(String id, boolean consent) throws Exception {
             return new JSONObject().put("id", id).put("email", "student@tip.edu.ph").put("display_name", "Test student")
                     .put("role", "student").put("office_id", JSONObject.NULL).put("staff_capability", JSONObject.NULL)
-                    .put("is_demo", true).put("consent_accepted_at", consent ? "2026-10-14T00:00:00Z" : JSONObject.NULL);
+                    .put("is_demo", true).put("consent_accepted_at", consent ? "2026-10-14T00:00:00Z" : JSONObject.NULL)
+                    .put("version",consent?2:1).put("profile_complete",true)
+                    .put("terms",new JSONObject().put("current_version","approved-v1")
+                            .put("accepted_version",consent?"approved-v1":JSONObject.NULL))
+                    .put("next_action",consent?"home":"accept_terms");
         }
     }
 }

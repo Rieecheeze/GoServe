@@ -23,7 +23,7 @@ begin
  return p;
 end$$;
 create function goserve_private.capable(office text,cap text) returns boolean language sql stable security definer set search_path='' as $$
- select exists(select 1 from public.profiles p where p.id=auth.uid() and p.role='staff' and p.office_id=office and
+ select exists(select 1 from public.profiles p where p.id=auth.uid() and p.role='staff' and p.office_id=office and (office not like 'DEP-%' or p.staff_capability='secretary') and
  (exists(select 1 from goserve_private.capabilities c where c.profile_id=p.id and c.office_id=office and c.capability=cap)
  or (p.staff_capability is null and cap in('catalog','requests','inquiries'))
  or (p.staff_capability in('guidance','secretary') and cap='inquiries')))

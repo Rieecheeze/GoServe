@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gs_background"
+    android:fillViewport="true"
+    android:clipToPadding="false">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/gs_auth_margin">
+        <LinearLayout
+            android:id="@+id/accountCard"
+            style="@style/Widget.GoServe.Account.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_max="@dimen/account_card_max_width"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+            <ImageView android:id="@+id/authLogo" android:layout_width="56dp" android:layout_height="56dp" android:layout_gravity="center_horizontal" android:src="@drawable/goserve_logo" android:scaleType="fitCenter" android:importantForAccessibility="no" />
+            <TextView android:id="@+id/title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/account_group_gap" android:text="@string/account_terms_title" android:textAppearance="@style/TextAppearance.GoServe.Account.Title" android:accessibilityHeading="true" android:gravity="center" />
+            <TextView android:id="@+id/subtitle" style="@style/Widget.GoServe.Account.Support" android:layout_marginTop="@dimen/account_group_gap" android:text="@string/account_terms_intro" android:gravity="center" />
+            <TextView android:id="@+id/termsVersion" style="@style/Widget.GoServe.Account.Support" android:visibility="gone" tools:text="Terms version" />
+            <TextView android:id="@+id/termsContent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/account_group_gap" android:textAppearance="@style/TextAppearance.GoServe.Body.Secondary" android:textIsSelectable="true" android:visibility="gone" tools:text="Approved content is loaded from the server." />
+            <TextView android:id="@+id/termsStatus" style="@style/Widget.GoServe.Account.Support" android:layout_marginTop="@dimen/account_group_gap" android:text="@string/account_terms_unavailable" android:accessibilityLiveRegion="polite" />
+            <TextView android:id="@+id/errorText" style="@style/Widget.GoServe.Account.Error" />
+            <ph.edu.tip.goserve.ui.BrandLoadingView android:id="@+id/progress" android:layout_width="32dp" android:layout_height="32dp" android:layout_gravity="center_horizontal" android:layout_marginTop="@dimen/account_group_gap" android:visibility="gone" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/retryButton" style="@style/Widget.GoServe.Account.Button.Outlined" android:text="@string/account_retry" />
+            <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/termsAgreement" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginTop="@dimen/account_group_gap" android:checked="false" android:saveEnabled="false" android:enabled="false" android:text="@string/account_terms_agreement" android:textAppearance="@style/TextAppearance.GoServe.Label" app:buttonTint="@color/gs_primary" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/acceptButton" style="@style/Widget.GoServe.Account.Button" android:text="@string/account_continue" android:enabled="false" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/backButton" style="@style/Widget.GoServe.Account.Button.Text" android:text="@string/account_terms_back" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

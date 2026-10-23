@@ -6,7 +6,7 @@ const codes = new Set(['AUTH_REQUIRED','AUTH_INVALID','FORBIDDEN','NOT_FOUND','V
   'PROFILE_INCOMPLETE','TERMS_REQUIRED','CONFIGURATION_REQUIRED','STALE_VERSION','QUOTE_STALE',
   'IDEMPOTENCY_CONFLICT','INVALID_STATE','PAYMENT_REQUIRED','ALREADY_PAID','CODE_INVALID','CODE_EXPIRED',
   'CODE_CONSUMED','CAPACITY_FULL','POLICY_BLOCKED','UPLOAD_INVALID','DOWNLOAD_UNCONFIRMED',
-  'CONSENT_REQUIRED','PROVIDER_UNAVAILABLE','CLEANUP_REQUIRED','TEMPORARILY_UNAVAILABLE','IMMUTABLE_RECORD']);
+  'CONSENT_REQUIRED','PROVIDER_UNAVAILABLE','CLEANUP_REQUIRED','TEMPORARILY_UNAVAILABLE','IMMUTABLE_RECORD','CONFLICT']);
 
 export function exact(value: any, allowed: string[], required: string[] = allowed): void {
   if (!value || typeof value !== 'object' || Array.isArray(value)
@@ -31,9 +31,9 @@ export function validateProfile(profile: any): void {
 export function validateRegistration(body: any): void {
   exact(body,['email','password','profile','terms_version','idempotency_key']);
   if (typeof body.email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)
-    || typeof body.password !== 'string' || body.password.length < 6
-    || !/[A-Za-z]/.test(body.password) || !/[0-9]/.test(body.password)
-    || !/[^A-Za-z0-9\s]/.test(body.password)
+    || typeof body.password !== 'string' || [...body.password].length < 6
+    || !/\p{L}/u.test(body.password) || !/\p{Nd}/u.test(body.password)
+    || !/[\p{P}\p{S}]/u.test(body.password)
     || typeof body.terms_version !== 'string' || !body.terms_version.trim()
     || typeof body.idempotency_key !== 'string'
     || !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(body.idempotency_key)) {
@@ -44,8 +44,52 @@ export function validateRegistration(body: any): void {
 
 export async function rpc(client: any, name: string, args: any = {}): Promise<any> {
   const {data,error} = await client.rpc(name,args);
-  if (error) throw new DomainError(codes.has(error.message) ? error.message : 'TEMPORARILY_UNAVAILABLE');
+  if (error) {
+    if (codes.has(error.message)) throw new DomainError(error.message);
+    if (['22P02', '23502', '23514'].includes(error.code)) throw new DomainError('VALIDATION_FAILED');
+    if (error.code === '23505') throw new DomainError('CONFLICT');
+    // Serialization/deadlock and unknown transport failures are safe to retry with the same operation key.
+    throw new DomainError('TEMPORARILY_UNAVAILABLE');
+  }
   return data;
+}
+
+export async function requestRecovery(body: any, configuration: {
+  url?: string; publicKey?: string; redirect?: string;
+}, transport: typeof fetch = fetch): Promise<void> {
+  exact(body, ['email', 'code_challenge', 'code_challenge_method', 'state']);
+  if (typeof body.email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)
+    || typeof body.code_challenge !== 'string' || !/^[A-Za-z0-9_-]{43}$/.test(body.code_challenge)
+    || body.code_challenge_method !== 's256'
+    || typeof body.state !== 'string' || !/^[A-Za-z0-9_-]{43}$/.test(body.state)) {
+    throw new DomainError('VALIDATION_FAILED');
+  }
+  if (!configuration.url || !configuration.publicKey || !configuration.redirect) {
+    throw new DomainError('CONFIGURATION_REQUIRED');
+  }
+  let endpoint: URL;
+  try {
+    const redirect = new URL(configuration.redirect);
+    const base = new URL(configuration.url);
+    if (redirect.hash || redirect.username || redirect.password || base.protocol !== 'https:') throw new Error();
+    redirect.searchParams.set('state', body.state);
+    redirect.searchParams.set('flow', 'recovery');
+    endpoint = new URL('/auth/v1/recover', base);
+    endpoint.searchParams.set('redirect_to', redirect.toString());
+  } catch {
+    throw new DomainError('CONFIGURATION_REQUIRED');
+  }
+  try {
+    const response = await transport(endpoint, {
+      method: 'POST',
+      headers: { apikey: configuration.publicKey, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: body.email, code_challenge: body.code_challenge, code_challenge_method: 's256' }),
+      signal: AbortSignal.timeout(10000),
+    });
+    await response.body?.cancel();
+  } catch {
+    // Upstream status, transport and cleanup failures cannot reveal account existence.
+  }
 }
 
 export async function registerStudent(admin: any, body: any): Promise<any> {

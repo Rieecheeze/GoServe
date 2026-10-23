@@ -1,23 +1,11 @@
 # Seryo eGovAI integration
 
-Seryo is GoServe's AI chatbot. Android opens it from the AI Chat tab.
+Seryo is GoServe's app-focused agent and chat persona. It uses the existing Platforms eGovAI access-code API through the authenticated `seryo-send` backend. A separate custom-engine workspace is optional. Existing credentials stay in Vault.
 
-The supplied access code belongs in Supabase Vault. Server configuration is stored in
-`goserve_private.egovai_configuration`; only `service_role` may read its RPC. Neither the
-access code nor payment tokens belong in Android, source files, documentation, or logs.
+The [current integration decision](../docs/GoServe-Seryo-eGovAI-integration-2026-10-23.md) supersedes the earlier custom-engine requirement. A live public GoServe service-facts question succeeded on the existing endpoint. Sending the full persona/security block upstream triggered a provider safeguard refusal. The Platforms contract exposes one prompt field rather than a documented separate system-message field, so GoServe enforces identity and disclosure rules in its agent layer and sends a supported service intent with approved public facts. It does not claim to replace the provider's system instructions or bypass its safeguards.
 
-The integration is disabled. Agent procedures are blank until the user supplies Seryo's
-tasks and operating instructions. The supplied base URL alone does not establish an API
-route, authentication header, request/response schema, streaming protocol, model selection,
-tool authorization, quota, or retention contract. No guessed provider calls are implemented.
+`lib/seryo-guardrails.ts` stores the user's Seryo identity instructions alongside service-only rules. Narrowly matched identity/model/creator questions receive Seryo's local introduction without a provider call. Other messages are mapped to fixed supported service-intent sentences. Raw user messages, names, identifiers and arbitrary instructions are not forwarded. The provider receives only that intent, a fixed public app guide and the current filtered catalogue projection. It receives no private profiles, payment records, user files, chat history, database credentials or application tool authority.
 
-The Android panels currently show setup pending, privacy information, and the planned
-temporary attachment flow. Send and file selection are disabled. Drafts are not persisted,
-no questions are transmitted, and no AI responses or successful file cleanup are simulated.
+Replies containing provider identities, credentials, personal identifiers, database details or structured tool output are refused before display. A provider refusal is never rewritten into a successful service answer. The separate privacy notice retains accurate data-processing disclosures. Fixed authenticated RPCs enforce current account, profile completion, Terms, separate AI consent, department scope, cleanup state and dispatch limits. Consent is checked again after generation. `get_seryo_provider_configuration()` is executable only by the server role; app readiness contains booleans and controlled blockers, never credentials.
 
-Before enabling chat, implement the documented eGovAI transport behind an authenticated
-Supabase Edge Function. Define grounding and allowed operations from the user's procedures;
-keep request, payment, and private-file permissions enforced by trusted server operations.
-AI output cannot declare fees, confirm payments, release files, or change a request status
-without an explicitly authorized server operation. Obtain separate consent before temporary
-analysis, enforce one PDF/JPG/PNG up to 10 MB, and verify cleanup on success and failure.
+The current deployment is `seryo-send` version 4 and connection readiness is true. The focused privacy/handler suite passed 26 checks; a separate review confirmed the three reported guard gaps were resolved. Twelve deployed access-denial checks passed before the final privacy strengthening. A participant must still complete onboarding and opt in to test the native chat happy path; no profile or consent was fabricated. Pattern checks supplement the structural boundary and do not promise control of provider retention. Temporary AI file analysis remains disabled pending a safe per-user upload/deletion contract. The custom-engine adapter remains available for a future explicitly configured engine.

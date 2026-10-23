@@ -1,0 +1,4 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="14dp" android:orientation="vertical" android:padding="16dp" android:background="@drawable/bg_request_record">
+    <TextView android:id="@+id/officeAnnouncementBody" style="@style/TextAppearance.GoServe.Body" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <TextView android:id="@+id/officeAnnouncementTime" style="@style/TextAppearance.GoServe.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="@color/gs_secondary" />
+</LinearLayout>

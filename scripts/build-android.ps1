@@ -68,8 +68,10 @@ try {
     $env:JAVA_TOOL_OPTIONS = "$($savedEnvironment['JAVA_TOOL_OPTIONS']) `"-Djdk.net.unixdomain.tmpdir=$socketDirectory`"".Trim()
     $gradleArguments = @('-p', $androidProject, '--offline', '--no-daemon', '--no-parallel', '--max-workers=1', '--console=plain', '--stacktrace')
     Write-Host "Building Android with JDK '$JavaHome' and Gradle '$GradleHome'."
+    $ErrorActionPreference = 'Continue'
     & $gradleLauncher @gradleArguments @Tasks
     $buildExitCode = $LASTEXITCODE
+    $ErrorActionPreference = 'Stop'
     if ($buildExitCode -ne 0) {
         Write-Warning "Android build failed (exit $buildExitCode). Review the Gradle error above and android/app/build/reports. Offline dependencies must already exist in .tools/gradle-cache."
     }

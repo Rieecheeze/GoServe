@@ -1,0 +1,8 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="14dp" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/bg_request_record" android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true" android:minHeight="64dp">
+    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+        <TextView android:id="@+id/inquiryRowTitle" style="@style/TextAppearance.GoServe.Label" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/inquiryRowDetail" style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:textColor="@color/gs_secondary" />
+        <TextView android:id="@+id/inquiryRowTime" style="@style/TextAppearance.GoServe.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:textColor="@color/gs_secondary" />
+    </LinearLayout>
+    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginStart="12dp" android:src="@drawable/ic_inbox" android:importantForAccessibility="no" />
+</LinearLayout>

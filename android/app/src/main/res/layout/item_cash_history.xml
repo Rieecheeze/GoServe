@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="14dp" android:orientation="horizontal" android:gravity="center_vertical" android:minHeight="64dp" android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="12dp" android:paddingBottom="12dp" android:background="@drawable/bg_cash_history_row" android:foreground="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+    <TextView android:id="@+id/historyPaymentId" style="@style/TextAppearance.GoServe.Label" android:layout_width="match_parent" android:layout_height="wrap_content" android:importantForAccessibility="no" />
+    <TextView android:id="@+id/historyPaid" style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/gs_secondary" android:importantForAccessibility="no" />
+    <TextView android:id="@+id/historyActor" style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/gs_secondary" android:importantForAccessibility="no" />
+    <TextView android:id="@+id/historyTime" style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/gs_secondary" android:importantForAccessibility="no" />
+    </LinearLayout>
+    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginStart="12dp" android:src="@drawable/ic_cash_receipt" app:tint="@color/gs_text" android:importantForAccessibility="no" />
+</LinearLayout>

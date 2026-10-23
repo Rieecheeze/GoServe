@@ -13,6 +13,10 @@ import ph.edu.tip.goserve.domain.ServiceRequest;
 
 public final class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
+    private RequestListViewModel requests;
+    private NotificationsViewModel notifications;
+    private ph.edu.tip.goserve.data.RealtimeDataSource.Subscription subscription;
+    private ph.edu.tip.goserve.data.RealtimeDataSource.Session subscribedSession;
     @Override public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle saved) { binding = FragmentHomeBinding.inflate(inflater, parent, false); return binding.getRoot(); }
     @Override public void onViewCreated(View view, Bundle saved) {
         MainActivity host = (MainActivity) requireActivity();
@@ -34,8 +38,8 @@ public final class HomeFragment extends Fragment {
         binding.searchButton.setOnClickListener(directory); binding.seeAllButton.setOnClickListener(directory); binding.allServicesButton.setOnClickListener(directory);
         binding.documentsButton.setOnClickListener(v -> host.navigate(OfficesFragment.create("Documents"), true));
         binding.paymentsButton.setOnClickListener(v -> host.navigate(OfficesFragment.create("Payments"), true));
-        binding.consultButton.setOnClickListener(v -> host.feature(R.string.consult_title_logic, R.string.consult_pending_logic, true));
-        binding.notificationsButton.setOnClickListener(v -> host.feature(R.string.notifications_title_logic, R.string.notifications_pending_logic, true));
+        binding.consultButton.setOnClickListener(v -> host.navigate(new ConsultationFragment(),true));
+        binding.notificationsButton.setOnClickListener(v -> host.navigate(NotificationsFragment.create(),true));
         binding.activeRequestCard.setVisibility(host.isPreview() ? View.VISIBLE : View.GONE);
         if (host.isPreview()) {
             ServiceRequest preview = RequestPreviewCatalog.find(requireContext(), RequestPreviewCatalog.REQUIRED_ID);
@@ -43,15 +47,45 @@ public final class HomeFragment extends Fragment {
             binding.requestMeta.setText(preview.officeName + " · " + preview.reference);
             binding.requestStatus.setText(R.string.preview_request_status_logic);
         }
-        binding.previewNotice.setVisibility(View.VISIBLE);
+        binding.previewNotice.setVisibility(host.isPreview()?View.VISIBLE:View.GONE);
         binding.previewNotice.setText(host.isPreview() ? R.string.preview_notice_logic : R.string.foundation_notice_logic);
         View.OnClickListener request = v -> host.navigate(RequestDetailFragment.create(RequestPreviewCatalog.REQUIRED_ID), true);
         binding.activeRequestCard.setOnClickListener(request); binding.requestDetailsButton.setOnClickListener(request);
         model.state().observe(getViewLifecycleOwner(), state -> {
             adapter.submit(state.offices);
-            if (state.error != null) { binding.previewNotice.setText(state.error); binding.previewNotice.setOnClickListener(v -> model.reload(host.isPreview())); }
-            else { binding.previewNotice.setText(host.isPreview() ? R.string.preview_notice_logic : R.string.foundation_notice_logic); binding.previewNotice.setOnClickListener(null); }
+            if (state.error != null) { binding.previewNotice.setVisibility(View.VISIBLE); binding.previewNotice.setText(state.error); binding.previewNotice.setOnClickListener(v -> model.reload(host.isPreview())); }
+            else { binding.previewNotice.setVisibility(host.isPreview()?View.VISIBLE:View.GONE); binding.previewNotice.setText(host.isPreview() ? R.string.preview_notice_logic : R.string.foundation_notice_logic); binding.previewNotice.setOnClickListener(null); }
+        });
+        if(!host.isPreview()) {
+            notifications=new ViewModelProvider(host).get(NotificationsViewModel.class);
+            notifications.state().observe(getViewLifecycleOwner(),s->{
+                if(s.counts!=null)binding.notificationsButton.setContentDescription(getString(R.string.home_unread_notifications,s.counts.notifications));
+            });notifications.refresh();
+            requests=new ViewModelProvider(this).get(RequestListViewModel.class);
+            requests.state().observe(getViewLifecycleOwner(),s->{
+                ph.edu.tip.goserve.domain.RequestData.Record selected=null;
+                if(s.mode==RequestListViewModel.Mode.CONTENT && s.error==null)for(ph.edu.tip.goserve.domain.RequestData.Record r:s.items)
+                    if(r.status!=ph.edu.tip.goserve.domain.RequestStatus.COMPLETED && r.status!=ph.edu.tip.goserve.domain.RequestStatus.CANCELLED && r.status!=ph.edu.tip.goserve.domain.RequestStatus.REJECTED){selected=r;break;}
+                binding.activeRequestCard.setVisibility(selected==null?View.GONE:View.VISIBLE);
+                if(selected!=null){
+                    ph.edu.tip.goserve.domain.RequestData.Record current=selected;
+                    binding.requestTitle.setText(current.snapshot.name);binding.requestMeta.setText(current.officeId+" · "+current.reference);binding.requestStatus.setText(current.status.wireValue);
+                    View.OnClickListener open=v->host.navigate(RequestDetailFragment.create(current.id),true);binding.activeRequestCard.setOnClickListener(open);binding.requestDetailsButton.setOnClickListener(open);
+                }
+            });requests.ensureLoaded();
+        }
+    }
+    @Override public void onStart() {
+        super.onStart(); if(requests==null)return;
+        if(!requests.state().getValue().busy())requests.refresh();
+        if(!notifications.state().getValue().busy())notifications.refresh();
+        ph.edu.tip.goserve.data.RealtimeDataSource.Session session=((ph.edu.tip.goserve.GoServeApplication)requireActivity().getApplication()).realtimeSession();
+        if(session==null || subscription!=null)return;subscribedSession=session;
+        subscription=session.subscribe(java.util.Set.of("requests","payments","notifications","inquiry_messages"),new ph.edu.tip.goserve.data.RealtimeDataSource.Listener(){
+            public void onInvalidated(ph.edu.tip.goserve.data.RealtimeDataSource.Invalidation event){if(binding!=null && subscribedSession==session && event!=null && event.generation==session.generation()){requests.refresh();notifications.refresh();}}
+            public void onStateChanged(ph.edu.tip.goserve.data.RealtimeDataSource.State state){}
         });
     }
+    @Override public void onStop(){subscribedSession=null;if(subscription!=null)subscription.close();subscription=null;super.onStop();}
     @Override public void onDestroyView() { super.onDestroyView(); binding = null; }
 }

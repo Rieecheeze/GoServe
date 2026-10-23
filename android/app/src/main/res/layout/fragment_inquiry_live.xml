@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/gs_background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center_vertical" android:paddingStart="8dp" android:paddingEnd="12dp">
+        <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/inquiryBack" style="@style/Widget.GoServe.IconButton" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_back" android:contentDescription="@string/inquiry_live_back" />
+        <TextView android:id="@+id/inquiryTitle" style="@style/TextAppearance.GoServe.Heading.Toolbar" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/inquiry_live_title" />
+    </LinearLayout>
+    <ScrollView android:id="@+id/inquiryScroll" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+            <TextView android:id="@+id/inquirySection" style="@style/TextAppearance.GoServe.Heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/inquiry_live_section" />
+            <TextView android:id="@+id/inquirySupport" style="@style/TextAppearance.GoServe.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="@color/gs_secondary" android:text="@string/inquiry_live_support" />
+            <TextView android:id="@+id/inquiryCounts" style="@style/TextAppearance.GoServe.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" />
+            <ProgressBar android:id="@+id/inquiryProgress" android:layout_width="48dp" android:layout_height="48dp" android:visibility="gone" android:contentDescription="@string/inquiry_live_loading" />
+            <TextView android:id="@+id/inquiryError" style="@style/TextAppearance.GoServe.Error" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:accessibilityLiveRegion="polite" android:visibility="gone" />
+            <TextView android:id="@+id/inquiryConnection" style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/inquiry_live_connection" android:visibility="gone" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/inquiryRetry" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/inquiry_live_retry" android:visibility="gone" />
+            <LinearLayout android:id="@+id/inquiryEmpty" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingTop="32dp" android:visibility="gone">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_request_empty" android:importantForAccessibility="no" />
+                <TextView android:id="@+id/inquiryEmptyTitle" style="@style/TextAppearance.GoServe.Heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/inquiry_live_empty" />
+                <TextView android:id="@+id/inquiryEmptyBody" style="@style/TextAppearance.GoServe.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:textColor="@color/gs_secondary" android:text="@string/inquiry_live_empty_body" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/inquiryRows" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="16dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/inquiryStart" style="@style/Widget.GoServe.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/inquiry_live_start" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/inquiryMore" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/inquiry_live_more" android:visibility="gone" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/inquiryRefresh" style="@style/Widget.GoServe.Button.Text" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/inquiry_live_refresh" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

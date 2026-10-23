@@ -200,6 +200,9 @@ denied = user();
 denied.identities[0].provider = "github";
 await check({ user: denied }, 403);
 denied = user();
+denied.identities.push({ ...denied.identities[0], provider: 'github' });
+await check({ user: denied }, 403);
+denied = user();
 denied.identities[0].user_id = "someone-else";
 await check({ user: denied }, 403);
 

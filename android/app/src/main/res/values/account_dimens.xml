@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="account_card_max_width">342dp</dimen>
+    <dimen name="account_card_padding">24dp</dimen>
+    <dimen name="account_card_radius">28dp</dimen>
+    <dimen name="account_input_radius">16dp</dimen>
+    <dimen name="account_action_radius">24dp</dimen>
+    <dimen name="account_group_gap">16dp</dimen>
+    <dimen name="account_field_gap">8dp</dimen>
+</resources>

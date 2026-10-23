@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/gs_background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center_vertical" android:paddingStart="20dp" android:paddingEnd="12dp" android:paddingTop="8dp" android:paddingBottom="8dp">
+        <TextView android:id="@+id/historyToolbar" style="@style/TextAppearance.GoServe.Heading.Toolbar" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/cash_history_toolbar" />
+        <ImageButton android:id="@+id/historyRefresh" style="@style/Widget.GoServe.IconButton" android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_popup_sync" android:contentDescription="@string/cash_history_refresh" app:tint="@color/gs_text" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/historyList" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingBottom="24dp" android:clipToPadding="false" />
+</LinearLayout>

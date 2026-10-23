@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/nav_payments" android:icon="@drawable/ic_payments" android:title="@string/payments" />
+    <item android:id="@+id/nav_payments" android:icon="@drawable/ic_search" android:title="@string/cash_search_tab" />
+    <item android:id="@+id/nav_cash_pending" android:icon="@drawable/ic_cash_pending" android:title="@string/cash_pending_tab" />
     <item android:id="@+id/nav_history" android:icon="@drawable/ic_history" android:title="@string/history" />
     <item android:id="@+id/nav_more" android:icon="@drawable/ic_more" android:title="@string/more" />
 </menu>

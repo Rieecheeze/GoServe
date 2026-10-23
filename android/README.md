@@ -1,28 +1,30 @@
-# GoServe Android foundation
+# GoServe Android v2.3
 
-Open this **android** directory in Android Studio. The project uses Java and XML ConstraintLayout, not Compose. `AuthActivity` hosts sign-in and privacy consent; `MainActivity` hosts role navigation. [Architecture and feature map](../docs/GoServe-architecture.md) describes the complete planned app and identifies the first delivery's scope.
+Open this **android** directory in Android Studio. The project uses Java, XML and ViewBinding. `AuthActivity` hosts accounts and recovery; `MainActivity` hosts role navigation. The [23 October activation checkpoint](../docs/GoServe-test-activation-checkpoint-2026-10-23.md) records current verification and remaining live release gates. Older delivery reports describe earlier milestones.
 
 ## What this source implements
 
 - Light/dark design resources, bundled Montserrat ExtraBold headings, Karla body/UI fonts, supplied brand logos and native Android widgets.
-- Responsive sign-in, assigned-account email/password, consent, student home, searchable office directory/detail, and theme settings.
-- Supabase Authentication only: Google OAuth with PKCE, exact callback validation, assigned-account password sign-in, refreshed sessions and Android Keystore protected refresh tokens.
+- Responsive sign-in, Student registration/profile/Terms, Google OAuth with PKCE, password recovery/change, private profile photos and theme settings.
 - Authentication resumes after process restart, queues browser callbacks during restoration, prevents callback replay on recreation and keeps consent failures retryable.
 - Server-returned student/staff/teller routing, exact project status types, loading/error states and a clearly labeled debug design preview.
-- Supabase account/office schema, RLS, consent RPC and trusted account bootstrap source in `../backend`.
+- Supabase account/office schema, RLS, trusted account operations and private photo source in `../backend`.
 - Six student destinations with responsive capsule navigation and a direct AI Chat tab for Seryo.
-- Guarded request list/detail/file design previews with office-declared optional-fee contracts and visible completed-phase checks.
-- Seryo chat, privacy and planned attachment panels. eGovAI transport stays disabled pending provider contracts and user procedures.
+- Canonical service/fee review, idempotent request submission, private evidence, request history, scoped office queue and reviewed transitions.
+- Office availability/notes, announcements and service/fee editors; current directory and active announcements; shared authenticated Realtime with account and reconnect guards.
+- Teller cash confirmation/history, server-issued physical pickup QR/manual review and explicit handover; verified PDF release, download acknowledgement and explicit student receipt.
+- Shared inquiries/read states/notifications, Guidance and matching CCS Secretary consultation entry points, atomic server booking/cancel/reschedule operations.
+- Animated Seryo chat avatar, separate consent/retry, local unsent draft/attachment controls and truthful readiness. Startup uses the brand logo without a mascot.
 
-The screens labeled as upcoming packages are explicit placeholders. Live request submission, private file release, payment processing, staff tools, bookings, messages, Realtime and QR pickup remain unimplemented. Seryo is GoServe's eGovAI chatbot; its visible setup panels do not transmit questions or files. This is not the complete integrated P1 application or a production release.
+The approved test Terms and operating policies are active. Private request-file/download functions and Seryo endpoints are deployed. Request-file cleanup checks every five minutes for files whose request has been terminal for 30 days. Each participant must still accept Terms and complete their own profile. Staff must configure actual test services and schedules; none are fabricated. No preview or fixture bypass is used for a live account.
 
-eGovPay demo credentials are encrypted in Supabase Vault. The Android app contains no merchant token. `BuildConfig.EGOVPAY_CONFIGURED` stays false while callback verification, completed provider statuses and amount canonicalization remain unconfirmed. The server adapter and its offline tests are in `../backend`; it has no active payment endpoint yet.
+The Android app contains no merchant or AI secret. Seryo is GoServe's app persona/agent, connected to the existing eGovAI API through the authenticated backend. Only a fixed supported service intent and approved public facts reach the provider; raw messages are not forwarded. Identity questions are handled locally and disclosure checks run before replies reach chat. A separate custom engine is optional. Temporary AI file analysis remains disabled. The eGovPay checkout and callback/reconciliation flow is deployed and enabled for supervised tests. The actual provider sandbox returned TEST/PAID for the approved diagnostic transaction, which is not an app-bound payment. A browser return cannot declare payment success. The [final rollout record](../docs/GoServe-test-rollout-final-2026-10-23.md) lists current verification and first-test steps.
 
 ## Build setup
 
 Compile/target SDK 35, minimum SDK 26 (Android 8.0), Gradle 8.9, Android Gradle Plugin 8.7.3, Java source level 17. JDK 17 or 21 works with this Gradle version. Do not select Studio's bundled JDK 25 for Gradle 8.9.
 
-The local SDK was installed in `../.tools/android-sdk`. `local.properties` points there and is excluded from version control. On another PC, select that PC's SDK in Android Studio. In Android Studio settings, select a compatible Gradle JDK. On this PC, Corretto 21 is installed at `C:/Program Files/Amazon Corretto/jdk21.0.12_12`.
+Use the SDK already configured by `local.properties` or `ANDROID_HOME`; preserve existing values. On another PC, select that PC's SDK in Android Studio and choose a compatible Gradle JDK. Final local checks use the installed Adoptium JDK 21. The launcher discovers compatible installations without changing the saved configuration.
 
 ```powershell
 # From the GoServe workspace root (uses installed tools and cached dependencies):
@@ -56,7 +58,7 @@ The project is configured for `https://uuvexkewiuxdbuelwogy.supabase.co` using i
 4. Pre-create assigned/demo Auth accounts through trusted administration and corresponding `profiles` rows. The app has no public password registration. Staff/teller roles can only be assigned through trusted server administration.
 5. Google users require verified `@tip.edu.ph` identity and are provisioned as students by the bootstrap function. The Google `hd` hint does not grant authority.
 
-Copy `goserve.properties.example` to `goserve.properties` to change the public client configuration. Never enter a service-role key, eGovAI access code or payment credential. Seryo's access code is stored in Supabase Vault, and its server configuration is disabled until procedures and the provider contract are supplied.
+Copy `goserve.properties.example` to `goserve.properties` only to change the public client configuration. Never enter a service-role key, eGovAI access code or payment credential. Existing configuration is preserved. Provider credentials stay in Supabase Vault, and server-only configuration RPCs are unavailable to app clients.
 
 ## Responsive behavior
 
@@ -66,7 +68,7 @@ Tests passed at widths 320, 360, 390, 412 and 480dp with font scales 1.0, 1.3 an
 
 ## Verification
 
-October 14, 2026: `assembleDebug`, `testDebugUnitTest` and `lintDebug` passed. Fifteen JUnit tests include 131 domain assertions, 105 layout scenarios, six rendered screenshots and seven authentication lifecycle regressions. The lifecycle tests simulate only storage and HTTP boundaries; repository, ViewModel, Activity and consent behavior run as implemented. Android lint reports zero errors and 39 warnings. Backend tests passed 39 bootstrap scenarios and 15 eGovPay adapter tests. Live Supabase checks passed profile privacy, write denial, consent idempotence and server-only eGovPay configuration; synthetic fixtures were rolled back. The merchant token is absent from Android source and the APK. Google provider setup and demo accounts remain pending. No physical device or emulator has been tested yet.
+October 23, 2026: the full gate passed 1,003 Android tests across 84 suites, debug APK assembly and lint (zero errors, 141 warnings). The full backend suite passed 403 checks. Nineteen deployed access/callback/return checks passed, with zero financial events created by forged callbacks. Light/dark payment and icon-only navigation screenshots were inspected, including 320dp with doubled text. These are Android runtime test renders, not a physical-device test. A complete app-bound live payment still requires participant onboarding and a staff-configured test service. The prepared native PostgreSQL race harness could not execute because Windows blocked its existing binaries; deterministic SQL replay and cancellation tests passed. See the final rollout record for evidence paths and limits.
 
 ## Design and asset sources
 

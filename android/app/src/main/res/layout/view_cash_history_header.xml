@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingTop="12dp">
+    <TextView android:id="@+id/historyHeading" style="@style/TextAppearance.GoServe.Heading.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/cash_history_heading" />
+    <TextView style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:layout_marginBottom="14dp" android:textColor="@color/gs_secondary" android:text="@string/cash_history_body" />
+            <TextView android:id="@+id/historyProgress" style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:accessibilityLiveRegion="polite" android:text="@string/cash_history_loading" android:visibility="gone" />
+            <TextView android:id="@+id/historyConnection" style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="14dp" android:text="@string/cash_live_unavailable" android:visibility="gone" />
+            <TextView android:id="@+id/historyError" style="@style/TextAppearance.GoServe.Error" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="14dp" android:accessibilityLiveRegion="polite" android:visibility="gone" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/historyRetry" style="@style/Widget.GoServe.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginBottom="14dp" android:text="@string/cash_history_retry" android:visibility="gone" />
+            <LinearLayout android:id="@+id/historyEmpty" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_teller_receipt" android:padding="22dp" android:visibility="gone">
+                <TextView style="@style/TextAppearance.GoServe.Heading.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/cash_history_empty" />
+                <TextView style="@style/TextAppearance.GoServe.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:textColor="@color/gs_secondary" android:text="@string/cash_history_empty_body" />
+            </LinearLayout>
+</LinearLayout>

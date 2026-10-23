@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cash_summary_surface">#242424</color>
+    <color name="cash_summary_ink">#F4F4F4</color>
+</resources>

@@ -30,7 +30,9 @@ export async function verifyFile(bytes: Uint8Array,mime: string,policy: any,pars
       await parsers.jpeg(bytes,policy);
     }else throw new Error();
   }catch{throw new DomainError('UPLOAD_INVALID');}
-  return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(b=>b.toString(16).padStart(2,'0')).join('');
+  const digestBytes = new Uint8Array(bytes.byteLength);
+  digestBytes.set(bytes);
+  return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',digestBytes.buffer))).map(b=>b.toString(16).padStart(2,'0')).join('');
 }
 
 export async function transferDownload(admin: any,actor: string,downloadId: string,signal: AbortSignal): Promise<Response> {

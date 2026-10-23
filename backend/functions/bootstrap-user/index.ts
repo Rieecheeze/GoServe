@@ -43,6 +43,7 @@ function signInMethod(claims: Record<string, unknown>): "google" | "password" | 
 
 function verifiedGoogleEmail(user: User): string | null {
   if (!user.email || !user.email_confirmed_at || user.is_anonymous) return null;
+  if (user.identities?.some((identity) => !['email', 'phone', 'google'].includes(identity.provider))) return null;
   const email = user.email;
   const separator = email.indexOf("@");
   if (separator <= 0 || separator > 64 || separator !== email.lastIndexOf("@")) return null;

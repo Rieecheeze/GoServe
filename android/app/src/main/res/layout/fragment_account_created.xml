@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gs_background"
+    android:fillViewport="true"
+    android:clipToPadding="false">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/gs_auth_margin">
+        <LinearLayout
+            android:id="@+id/accountCard"
+            style="@style/Widget.GoServe.Account.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_max="@dimen/account_card_max_width"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+            <ImageView android:id="@+id/authLogo" android:layout_width="56dp" android:layout_height="56dp" android:layout_gravity="center_horizontal" android:src="@drawable/goserve_logo" android:scaleType="fitCenter" android:importantForAccessibility="no" />
+            <TextView android:id="@+id/title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/account_group_gap" android:text="@string/account_created_title" android:textAppearance="@style/TextAppearance.GoServe.Account.Title" android:accessibilityHeading="true" android:gravity="center" />
+            <TextView android:id="@+id/subtitle" style="@style/Widget.GoServe.Account.Support" android:layout_marginTop="@dimen/account_group_gap" android:text="@string/account_created_intro" android:gravity="center" />
+            <TextView android:id="@+id/emailLabel" style="@style/Widget.GoServe.Account.Label" android:text="@string/account_email" android:labelFor="@id/emailValue" />
+            <TextView android:id="@+id/emailValue" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/account_group_gap" android:textAppearance="@style/TextAppearance.GoServe.Body" android:textColor="@color/gs_secondary" android:textIsSelectable="true" tools:text="student1@demo.com" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/signInButton" style="@style/Widget.GoServe.Account.Button" android:text="@string/account_go_to_sign_in" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

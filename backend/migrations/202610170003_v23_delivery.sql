@@ -92,6 +92,7 @@ declare f public.request_files;r public.requests;d goserve_private.downloads;sec
 begin
  perform goserve_private.actor();select * into f from public.request_files where id=p_file_id;
  if not found then perform goserve_private.fail('NOT_FOUND');end if;r:=goserve_private.request_row(f.request_id);
+ select * into f from public.request_files where id=p_file_id;
  if r.owner_id<>auth.uid() then perform goserve_private.fail('FORBIDDEN');end if;
  if r.status<>'Ready for Pickup/Download' or r.delivery_mode<>'digital' or not goserve_private.paid(r.id) or not f.current or f.kind<>'deliverable' or f.verification<>'verified' or f.deleted_at is not null then perform goserve_private.fail('INVALID_STATE');end if;
  select (value->>'validity_seconds')::integer into seconds from goserve_private.policies where name='download';if seconds is null or seconds<=0 then perform goserve_private.fail('CONFIGURATION_REQUIRED');end if;
@@ -101,6 +102,7 @@ end$$;
 create function public.acknowledge_download(p_download_id uuid,p_sha256 text) returns jsonb language plpgsql security definer set search_path='' as $$declare d goserve_private.downloads;f public.request_files;r public.requests;begin
  perform goserve_private.actor();select * into d from goserve_private.downloads where id=p_download_id and owner_id=auth.uid() for update;if not found then perform goserve_private.fail('NOT_FOUND');end if;
  select * into f from public.request_files where id=d.file_id;r:=goserve_private.request_row(f.request_id);
+ select * into f from public.request_files where id=d.file_id;
  if d.transfer_completed_at is null then perform goserve_private.fail('DOWNLOAD_UNCONFIRMED');end if;
  if not f.current or f.deleted_at is not null or r.status<>'Ready for Pickup/Download' or not goserve_private.paid(r.id) then perform goserve_private.fail('INVALID_STATE');end if;
  if p_sha256 is distinct from (select sha256 from goserve_private.file_objects where file_id=f.id) then perform goserve_private.fail('DOWNLOAD_UNCONFIRMED');end if;

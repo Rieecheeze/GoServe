@@ -1,0 +1,71 @@
+{
+  "saved_at": "2026-10-18T21:28:00+08:00",
+  "reason": "User requested save state",
+  "status": "source_frozen_for_resume",
+  "workspace": "C:/Users/Rieecheeze/Documents/ChatGPT/GoServe",
+  "resume_document": "docs/GoServe-resume-state-v2.3.md",
+  "ledger": ".superpowers/sdd/goserve-v2.3/progress.md",
+  "user_constraints": {
+    "git_and_github_deferred_until_code_final": true,
+    "preserve_existing_configuration": true,
+    "ui_already_approved": true,
+    "antislop_mode": "during_revisions",
+    "mascot_must_be_animated": true
+  },
+  "last_executed_native": {
+    "tests": 88,
+    "suites": 15,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "debug_assembled": true,
+    "lint_passed": false,
+    "lint_errors": 1,
+    "lint_warnings": 161,
+    "source_changed_since_run": true
+  },
+  "backend": {
+    "source_review": "approved_round_2",
+    "checks": 235,
+    "deno_entrypoints": 11,
+    "parser_checks": 6,
+    "postgres_17_11_authorization_races": 2,
+    "deployed": false
+  },
+  "realtime": {
+    "previous_passing_tests": 25,
+    "new_review_regressions": 3,
+    "current_test_count": 28,
+    "new_regressions_executed": false,
+    "production_fixes_applied": false,
+    "review_important_findings": 2,
+    "review_minor_findings": 1
+  },
+  "accounts": {
+    "validation_tests_passed": 18,
+    "new_layouts": 5,
+    "new_support_xml": 7,
+    "main_integration_complete": false,
+    "api26_style_correction_unverified": true
+  },
+  "mascot": {
+    "transparent_assets_ready": ["seryo_greeting.png", "seryo_idle.png", "seryo_thinking.png"],
+    "asset_dimensions": [1254, 1254],
+    "asset_directory": "android/app/src/main/res/drawable-nodpi",
+    "renderer": "static_test_scaffold_only",
+    "red_test_ready": true,
+    "red_test_executed": false,
+    "animation_implemented": false,
+    "screen_integration_complete": false,
+    "motion_recording_exists": false
+  },
+  "next_validation": "powershell -NoProfile -ExecutionPolicy Bypass -File .superpowers/sdd/goserve-v2.3/run-realtime-check.ps1 -Offline -TestFilter ph.edu.tip.goserve.ui.SeryoMotionTest -IncludeRealtime",
+  "validation_notes": {
+    "heavy_checks_serialized": true,
+    "root_owns_escalation": true,
+    "robolectric_sdk": 34,
+    "avoid_uncached_sdk": 28,
+    "postgres_fixture_stopped": true,
+    "emulator_started_this_segment": false
+  }
+}

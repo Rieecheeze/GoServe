@@ -4,5 +4,4 @@
         <View android:layout_width="36dp" android:layout_height="36dp" android:layout_gravity="center" android:background="@drawable/bg_navigation_indicator" android:duplicateParentState="true" />
         <ImageView android:id="@+id/navigationIcon" android:layout_width="22dp" android:layout_height="22dp" android:layout_gravity="center" android:importantForAccessibility="no" />
     </FrameLayout>
-    <TextView android:id="@+id/navigationItemLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.GoServe.Navigation" android:textColor="@color/capsule_navigation_text" android:gravity="center" android:importantForAccessibility="no" />
 </LinearLayout>

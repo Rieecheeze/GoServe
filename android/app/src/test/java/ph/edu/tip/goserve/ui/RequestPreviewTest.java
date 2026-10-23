@@ -69,11 +69,16 @@ public final class RequestPreviewTest {
         assertEquals("RequestDetailFragment", current().getClass().getSimpleName());
     }
 
-    @Test public void liveAccountNeverReceivesPreviewRequests() throws Exception {
+    @Test public void unreadyAccountNeverReceivesPreviewRequestsOrOperationalReads() throws Exception {
         ReflectionHelpers.setField(activity, "preview", false);
         ReflectionHelpers.setField(activity, "profile", new SessionProfile("live-user", "student@tip.edu.ph", "Student", Role.STUDENT, null, null, false, true));
         openList();
-        assertNotNull(text(current().requireView(), "Requests are not available yet"));
+        View root=current().requireView();
+        root.measure(View.MeasureSpec.makeMeasureSpec(390,View.MeasureSpec.EXACTLY),View.MeasureSpec.makeMeasureSpec(844,View.MeasureSpec.EXACTLY));
+        root.layout(0,0,390,844); idle();
+        RequestListViewModel.State state=new ViewModelProvider(activity).get(RequestListViewModel.class).state().getValue();
+        assertEquals(RequestListViewModel.Mode.UNAVAILABLE,state.mode); assertTrue(state.items.isEmpty());
+        assertNotNull(text(root,"This account cannot access this request workspace."));
         assertNull(text(current().requireView(), "Enrollment certificate"));
         assertNull(text(current().requireView(), "Verified document copy"));
     }

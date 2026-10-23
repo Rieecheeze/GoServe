@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="egovpay_option">eGovPay (test only)</string>
+    <string name="egovpay_unavailable">eGovPay test checkout is unavailable for this service right now.</string>
+    <string name="egovpay_test_notice">Test mode only. Do not use real funds or real payment details.</string>
+    <string name="egovpay_open">View eGovPay test checkout</string>
+    <string name="egovpay_title">eGovPay test checkout</string>
+    <string name="egovpay_amount_label">Service amount</string>
+    <string name="egovpay_amount">PHP %1$s</string>
+    <string name="egovpay_fee_note">The provider may show additional test fees before confirmation.</string>
+    <string name="egovpay_prepare">Prepare test checkout</string>
+    <string name="egovpay_retry">Retry same checkout</string>
+    <string name="egovpay_browser">Open test checkout in browser</string>
+    <string name="egovpay_refresh">Check payment status</string>
+    <string name="egovpay_return">Return to request</string>
+    <string name="egovpay_loading">Checking the server payment record…</string>
+    <string name="egovpay_starting">Preparing your test checkout…</string>
+    <string name="egovpay_pending">Test payment pending</string>
+    <string name="egovpay_ready">Your test checkout is ready. Open it in your browser to continue.</string>
+    <string name="egovpay_pending_body">After the test checkout, return here and check payment status. A browser confirmation alone does not confirm payment.</string>
+    <string name="egovpay_paid">Test payment confirmed</string>
+    <string name="egovpay_failed_title">Test payment failed</string>
+    <string name="egovpay_cancelled_title">Test payment cancelled</string>
+    <string name="egovpay_expired_title">Test checkout expired</string>
+    <string name="egovpay_expired">This test checkout expired. Check payment status for the latest server record.</string>
+    <string name="egovpay_paid_body">The server payment record confirms this test payment. No real funds were collected.</string>
+    <string name="egovpay_unknown">Payment status is not confirmed yet. Check again before retrying.</string>
+    <string name="egovpay_failed">The provider reported a failed test payment. Check the latest status before continuing.</string>
+    <string name="egovpay_cancelled">The test payment was cancelled. Check the latest status before continuing.</string>
+    <string name="egovpay_error">We could not check this payment. Check the status again.</string>
+    <string name="egovpay_configuration">Test checkout is temporarily unavailable. Check again later.</string>
+    <string name="egovpay_uncertain">The checkout result is unknown. Check payment status or retry the same checkout. If it stays unresolved, return to the request and contact the office.</string>
+    <string name="egovpay_reconciliation">We could not recover this test checkout. Check payment status again. If it stays unresolved, return to the request and contact the office.</string>
+    <string name="egovpay_browser_error">No browser could open the test checkout. Try opening it again.</string>
+</resources>

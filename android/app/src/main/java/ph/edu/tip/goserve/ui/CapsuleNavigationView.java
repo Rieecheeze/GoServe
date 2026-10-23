@@ -14,7 +14,6 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
-import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import ph.edu.tip.goserve.R;
 
@@ -22,9 +21,9 @@ public final class CapsuleNavigationView extends LinearLayout {
     public interface OnItemSelectedListener { boolean onNavigationItemSelected(MenuItem item); }
     private final Menu menu;
     private final LinearLayout items;
-    private final TextView selectedLabel;
     private OnItemSelectedListener listener;
     private int selectedId;
+    private boolean compact;
 
     public CapsuleNavigationView(Context context) { this(context, null); }
     public CapsuleNavigationView(Context context, AttributeSet attributes) {
@@ -34,7 +33,6 @@ public final class CapsuleNavigationView extends LinearLayout {
         setBackgroundResource(R.drawable.bg_navigation_capsule);
         LayoutInflater.from(context).inflate(R.layout.view_capsule_navigation, this, true);
         items = findViewById(R.id.navigationItems);
-        selectedLabel = findViewById(R.id.navigationSelectedLabel);
         menu = new PopupMenu(context, this).getMenu();
         TypedArray options = context.obtainStyledAttributes(attributes, R.styleable.CapsuleNavigationView);
         int menuResource = options.getResourceId(R.styleable.CapsuleNavigationView_capsuleMenu, 0);
@@ -44,8 +42,16 @@ public final class CapsuleNavigationView extends LinearLayout {
 
     public Menu getMenu() { return menu; }
     public int getSelectedItemId() { return selectedId; }
+    public void removeMenuItem(int id) {
+        menu.removeItem(id);
+        View target=items.findViewById(id);if(target!=null)items.removeView(target);
+        if(selectedId==id)selectedId=menu.size()==0?0:menu.getItem(0).getItemId();
+        renderSelection();requestLayout();
+    }
     public void setOnItemSelectedListener(OnItemSelectedListener listener) { this.listener = listener; }
     public void inflateMenu(int resource) {
+        compact=resource==R.menu.menu_teller;
+        setPadding(dp(compact?8:4),dp(4),dp(compact?8:4),dp(4));
         new android.view.MenuInflater(getContext()).inflate(resource, menu);
         items.removeAllViews();
         for (int index = 0; index < menu.size(); index++) {
@@ -59,7 +65,6 @@ public final class CapsuleNavigationView extends LinearLayout {
             target.setEnabled(item.isEnabled());
             ImageView icon = target.findViewById(R.id.navigationIcon);
             icon.setImageDrawable(item.getIcon() == null ? null : item.getIcon().mutate());
-            ((TextView) target.findViewById(R.id.navigationItemLabel)).setText(item.getTitle());
             target.setOnClickListener(view -> setSelectedItemId(item.getItemId()));
             target.setAccessibilityDelegate(new AccessibilityDelegate() {
                 @Override public void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo info) {
@@ -82,6 +87,11 @@ public final class CapsuleNavigationView extends LinearLayout {
         selectedId = id;
         renderSelection();
     }
+    public void markSelectedItemId(int id) {
+        MenuItem item=menu.findItem(id);
+        if(item==null || !item.isEnabled() || !item.isVisible())return;
+        selectedId=id; renderSelection();
+    }
 
     private void renderSelection() {
         int active = ContextCompat.getColor(getContext(), R.color.capsule_navigation_ink);
@@ -94,17 +104,7 @@ public final class CapsuleNavigationView extends LinearLayout {
                     .setImageTintList(ColorStateList.valueOf(selected ? active : inactive));
             menu.findItem(target.getId()).setChecked(selected);
         }
-        MenuItem selected = menu.findItem(selectedId);
-        selectedLabel.setText(selected == null ? "" : selected.getTitle());
         requestLayout();
-    }
-
-    @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        for (int index = 0; index < items.getChildCount(); index++) {
-            items.getChildAt(index).findViewById(R.id.navigationItemLabel).setVisibility(GONE);
-        }
-        selectedLabel.setVisibility(VISIBLE);
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     @Override protected Parcelable onSaveInstanceState() {

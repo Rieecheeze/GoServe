@@ -1,0 +1,25 @@
+<resources>
+    <string name="profile_photo_title">Profile picture</string>
+    <string name="profile_photo_choose">Choose photo</string>
+    <string name="profile_photo_remove">Remove photo</string>
+    <string name="profile_photo_reload">Reload saved photo</string>
+    <string name="profile_photo_save">Save photo</string>
+    <string name="profile_photo_saving">Saving…</string>
+    <string name="profile_photo_loading">Loading your saved photo…</string>
+    <string name="profile_photo_selecting">Preparing your photo…</string>
+    <string name="profile_photo_empty">You haven’t added a profile picture.</string>
+    <string name="profile_photo_current">Your saved profile picture.</string>
+    <string name="profile_photo_draft">Review your photo, then tap Save photo.</string>
+    <string name="profile_photo_remove_draft">Tap Save photo to remove your picture.</string>
+    <string name="profile_photo_saved">Profile picture updated.</string>
+    <string name="profile_photo_help">Your picture is optional and private to your account. Choose a JPG, PNG or WebP under 12 MB. GoServe saves a smaller copy without the original photo metadata.</string>
+    <string name="profile_photo_empty_description">Default profile picture</string>
+    <string name="profile_photo_description">Your profile picture preview</string>
+    <string name="profile_photo_invalid">This photo couldn’t be opened. Choose a readable JPG, PNG or WebP under 12 MB. Your previous selection is still here.</string>
+    <string name="profile_photo_load_failed">Your saved photo couldn’t be loaded. Tap Reload saved photo to try again.</string>
+    <string name="profile_photo_uncertain">The update couldn’t be confirmed. Tap Save photo to retry the same update, or Reload saved photo to check your account and discard this draft.</string>
+    <string name="profile_photo_stale">Your picture changed elsewhere. Reload the saved photo before making another change.</string>
+    <string name="profile_photo_reload_required">This update can’t be used. Reload your saved photo, then choose a photo again.</string>
+    <string name="profile_photo_access_required">Profile pictures aren’t available for this session. Return and complete any required account steps.</string>
+    <string name="profile_photo_session_expired">This session ended. Sign in again to change your picture.</string>
+</resources>

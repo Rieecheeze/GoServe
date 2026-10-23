@@ -1,14 +1,15 @@
-# GoServe backend foundation
+# GoServe backend v2.3
 
-The additive v2.3 source is documented in [API-v2.3.md](API-v2.3.md) and
-[DEPLOYMENT-v2.3.md](DEPLOYMENT-v2.3.md). It has not been deployed. The historical
-foundation instructions below describe the prior baseline; deploy the ordered v2.3
-migrations before the updated bootstrap source.
+The v2.3 contracts and exact existing-project deployment history are documented in [API-v2.3.md](API-v2.3.md) and [DEPLOYMENT-v2.3.md](DEPLOYMENT-v2.3.md). The owner-approved core/account/photo transaction was deployed on 21 October, preserving the six profiles, five offices and independent department migration. Bootstrap v2, register-student v1 and recovery-request v1 are active. Terms remain inactive. Request-file, download, cleanup and Seryo Edge sources still require a separately reviewed rollout; payment/AI transports also require approved provider contracts.
+
+The [TIP-only Google Auth hooks](auth-restrictions/README.md) were separately authorized and installed. Google OAuth credentials stay in Supabase, never in Android. The [current delivery report](../docs/GoServe-delivery-v2.3-2026-10-22.md) separates local checks from live acceptance. Do not replay `schema.sql` or the bundled source migrations against the existing managed project.
 
 Target project: `uuvexkewiuxdbuelwogy` at `https://uuvexkewiuxdbuelwogy.supabase.co`.
 The Android app uses Supabase Auth, Supabase Postgres, and the `bootstrap-user` Edge Function.
 
-## Source and deployment
+## Historical foundation setup
+
+The remainder of this document describes the original foundation. For current deployment, account, signup and authorization behavior use the v2.3 documents linked above. The foundation commands below apply only when establishing a new isolated baseline.
 
 `schema.sql` creates new tables and policies in a transaction. Apply it once to the verified empty
 public schema. It deliberately fails if these objects already exist, so it does not overwrite an

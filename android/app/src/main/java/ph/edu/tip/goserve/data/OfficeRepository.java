@@ -13,7 +13,12 @@ public final class OfficeRepository {
     public OfficeRepository(SupabaseClient client, AuthRepository auth) { this.client = client; this.auth = auth; }
 
     public List<Office> load() throws Exception {
-        JSONArray rows = client.array("/rest/v1/offices?select=id,name,campus,status,note,category,is_demo&active=eq.true&order=name", auth.token());
+        return load(auth.sessionLease());
+    }
+    public List<Office> load(AuthRepository.SessionLease lease) throws Exception {
+        auth.requireCurrent(lease);
+        JSONArray rows = client.array("/rest/v1/offices?select=id,name,campus,status,note,category,is_demo&active=eq.true&order=name,id&limit=100", auth.token(lease));
+        auth.requireCurrent(lease);
         List<Office> offices = new ArrayList<>();
         for (int i = 0; i < rows.length(); i++) {
             JSONObject row = rows.getJSONObject(i);
@@ -21,7 +26,7 @@ public final class OfficeRepository {
                     OfficeStatus.fromWire(row.getString("status")), row.optString("note", ""),
                     row.getString("category"), row.getBoolean("is_demo")));
         }
-        return offices;
+        auth.requireCurrent(lease); return offices;
     }
 
     public List<Office> preview() {

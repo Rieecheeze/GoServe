@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request_live_title">Requests</string>
+    <string name="request_live_support">Track requests you submit to campus offices.</string>
+    <string name="request_live_section">Your requests</string>
+    <string name="request_live_office_section">Office queue</string>
+    <string name="request_live_office_support">Requests assigned to your office.</string>
+    <string name="request_live_loading">Loading requests…</string>
+    <string name="request_live_refresh">Refresh requests</string>
+    <string name="request_live_retry">Retry</string>
+    <string name="request_live_more">Load more</string>
+    <string name="request_live_empty_title">No requests yet</string>
+    <string name="request_live_empty_body">Your requests will appear here after you submit one to a campus office.</string>
+    <string name="request_live_empty_office">No requests assigned</string>
+    <string name="request_live_empty_office_body">Requests sent to your office will appear here.</string>
+    <string name="request_live_browse">Browse offices</string>
+    <string name="request_live_failed">Requests could not be refreshed. Displayed details may be out of date. Try again.</string>
+    <string name="request_live_account">Sign in again to continue. Previous request details have been cleared.</string>
+    <string name="request_live_forbidden">This account cannot access this request workspace.</string>
+    <string name="request_live_connection">Live updates are unavailable. Refresh to check the latest requests.</string>
+    <string name="request_live_fee_pending">Awaiting office fee declaration</string>
+    <string name="request_live_fee_free">Free · no payment required</string>
+    <string name="request_live_fee_free_note">This service has no fee. It moves from Submitted to Processing without Awaiting Payment.</string>
+    <string name="request_live_fee_required">Required · %1$s %2$s</string>
+    <string name="request_live_detail_loading">Loading request details…</string>
+    <string name="request_live_detail_refresh">Refresh request details</string>
+    <string name="request_live_not_found">No accessible request found. Return to Requests and try again.</string>
+    <string name="request_live_detail_failed">Request details could not be refreshed. Check your connection and try again.</string>
+    <string name="request_live_payment_paid">Payment confirmed</string>
+    <string name="request_live_payment_note">Payment status comes from the payment record. Office processing is tracked separately.</string>
+    <string name="request_live_payment_pending">Payment pending</string>
+    <string name="request_live_payment_other">Payment status: %1$s</string>
+    <string name="request_live_payment_unknown">Payment status could not be checked. Refresh before taking further action.</string>
+    <string name="request_live_demo_account">Demo account</string>
+</resources>

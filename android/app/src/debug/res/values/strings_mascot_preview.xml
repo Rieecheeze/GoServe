@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mascot_preview_title">Developer animation preview</string>
+    <string name="mascot_preview_notice">Visual states only · no requests are running</string>
+    <string name="mascot_preview_loading">Loading pose preview</string>
+    <string name="mascot_preview_idle">Idle pose preview</string>
+    <string name="mascot_preview_thinking">Thinking pose preview</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cash_summary_surface">#171717</color>
+    <color name="cash_summary_ink">#FFFFFF</color>
+    <string name="cash_search_tab">Search</string>
+    <string name="cash_pending_tab">Pending</string>
+    <string name="cash_no_selection">No payment selected</string>
+    <string name="cash_no_selection_body">Search a payment reference to review its current cash amount.</string>
+    <string name="cash_history_toolbar">Cash history</string>
+    <string name="cash_history_heading">Confirmed by tellers</string>
+    <string name="cash_history_body">Auditable reference, actor, and time.</string>
+    <string name="cash_history_empty">No confirmed cash payments</string>
+    <string name="cash_history_empty_body">Confirmed cash payments will appear here.</string>
+    <string name="cash_history_loading">Loading cash history…</string>
+    <string name="cash_history_refresh">Refresh cash history</string>
+    <string name="cash_history_retry">Retry</string>
+    <string name="cash_history_more">Load more</string>
+    <string name="cash_history_back">Back to history</string>
+    <string name="cash_history_failed">Cash history could not be refreshed. Displayed records may be out of date. Try again.</string>
+    <string name="cash_history_paid">Paid · %1$s %2$s</string>
+    <string name="cash_history_actor">Teller: %1$s</string>
+    <string name="cash_history_time">Confirmed: %1$s</string>
+</resources>

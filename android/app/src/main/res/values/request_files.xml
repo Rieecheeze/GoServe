@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="requestEvidenceOpen" type="id" />
+    <string name="files_toolbar">Review evidence</string>
+    <string name="files_heading">Private evidence</string>
+    <string name="files_caption">%1$s · %2$s</string>
+    <string name="files_refresh">Refresh evidence</string>
+    <string name="files_empty">No verified evidence is available for this request.</string>
+    <string name="files_read_failed">Evidence could not be loaded. Try again.</string>
+    <string name="files_return">Return to request</string>
+    <string name="files_notice_title">Review only</string>
+    <string name="files_notice">Files are private. Access is limited by your account and office permissions. Opening evidence does not confirm delivery.</string>
+    <string name="files_pdf">PDF evidence</string>
+    <string name="files_image">Image evidence</string>
+    <string name="files_requirement">Requirement: %1$s</string>
+    <string name="files_metadata">%1$s · %2$s · Version %3$d</string>
+    <string name="files_open_description">Open %1$s. %2$s. File %3$s</string>
+    <string name="viewer_downloading">Preparing a private copy…</string>
+    <string name="viewer_open">Evidence is open in your viewer.</string>
+    <string name="viewer_failed">The private copy could not be opened. Try again.</string>
+    <string name="viewer_no_app">No viewer is available for this file type. Install a PDF or image viewer, then retry.</string>
+    <string name="viewer_invalid">This evidence may have changed or is unavailable. Reload the files before opening it again.</string>
+    <string name="viewer_storage">There is not enough device storage for this private copy. Free some space, then retry.</string>
+    <string name="viewer_retry">Retry opening</string>
+    <string name="viewer_cancel">Cancel opening</string>
+    <string name="viewer_reload">Reload files</string>
+    <item name="requestFilesBack" type="id" />
+    <item name="requestFilesRefresh" type="id" />
+    <item name="requestFilesList" type="id" />
+    <item name="requestFilesTitle" type="id" />
+    <item name="requestFilesCaption" type="id" />
+    <item name="requestFilesLoading" type="id" />
+    <item name="requestFilesError" type="id" />
+    <item name="requestFilesEmpty" type="id" />
+    <item name="requestFilesRetry" type="id" />
+    <item name="requestFilesMore" type="id" />
+    <item name="requestFilesReturn" type="id" />
+    <item name="requestFilesNotice" type="id" />
+    <item name="evidenceViewerStatus" type="id" />
+    <item name="evidenceViewerLoading" type="id" />
+    <item name="evidenceViewerRetry" type="id" />
+    <item name="evidenceViewerCancel" type="id" />
+    <item name="evidenceFileTitle" type="id" />
+    <item name="evidenceFileMeta" type="id" />
+    <item name="evidenceFileKey" type="id" />
+</resources>

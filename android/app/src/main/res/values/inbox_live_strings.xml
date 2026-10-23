@@ -1,0 +1,4 @@
+<resources>
+    <string name="inbox_live_preview">Preview only. Your private conversations are loaded after signing in.</string>
+    <string name="notification_live_preview">Preview only. Your notifications are loaded after signing in.</string>
+</resources>

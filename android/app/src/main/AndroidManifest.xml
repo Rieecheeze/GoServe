@@ -9,6 +9,12 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="false"
         android:theme="@style/Theme.GoServe">
+        <provider android:name=".data.EvidenceFileProvider" android:authorities="${applicationId}.evidence" android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/evidence_paths" />
+        </provider>
+        <provider android:name=".data.ReviewFileProvider" android:authorities="${applicationId}.documents" android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/review_paths" />
+        </provider>
         <activity android:name=".ui.MainActivity" android:exported="false"
             android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize" />
         <activity android:name=".ui.AuthActivity" android:exported="true"
@@ -23,6 +29,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="goserve" android:host="auth" android:path="/callback" />
+                <data android:scheme="goserve" android:host="auth" android:path="/recovery" />
             </intent-filter>
         </activity>
     </application>

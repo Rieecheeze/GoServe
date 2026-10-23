@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gs_background"
+    android:fillViewport="true"
+    android:clipToPadding="false">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/gs_auth_margin">
+        <LinearLayout
+            android:id="@+id/accountCard"
+            style="@style/Widget.GoServe.Account.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_max="@dimen/account_card_max_width"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+            <ImageView android:id="@+id/authLogo" android:layout_width="56dp" android:layout_height="56dp" android:layout_gravity="center_horizontal" android:src="@drawable/goserve_logo" android:scaleType="fitCenter" android:importantForAccessibility="no" />
+            <TextView android:id="@+id/title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/account_group_gap" android:text="@string/account_profile_title" android:textAppearance="@style/TextAppearance.GoServe.Account.Title" android:accessibilityHeading="true" android:gravity="center" />
+            <TextView android:id="@+id/subtitle" style="@style/Widget.GoServe.Account.Support" android:layout_marginTop="@dimen/account_group_gap" android:text="@string/account_profile_email_intro" android:gravity="center" />
+            <TextView android:id="@+id/personalHeading" style="@style/Widget.GoServe.Account.Section" android:text="@string/account_personal_information" />
+            <TextView android:id="@+id/firstNameLabel" style="@style/Widget.GoServe.Account.Label" android:text="@string/account_first_name" android:labelFor="@id/firstNameInput" />
+            <androidx.appcompat.widget.AppCompatEditText android:id="@+id/firstNameInput" style="@style/Widget.GoServe.Account.Input" android:hint="@string/account_first_name_hint" android:inputType="textPersonName" android:autofillHints="personGivenName" />
+            <TextView android:id="@+id/firstNameError" style="@style/Widget.GoServe.Account.Error" />
+            <TextView android:id="@+id/middleNameLabel" style="@style/Widget.GoServe.Account.Label" android:text="@string/account_middle_name" android:labelFor="@id/middleNameInput" />
+            <androidx.appcompat.widget.AppCompatEditText android:id="@+id/middleNameInput" style="@style/Widget.GoServe.Account.Input" android:hint="@string/account_middle_name_hint" android:inputType="textPersonName" android:autofillHints="personMiddleName" />
+            <TextView android:id="@+id/middleNameError" style="@style/Widget.GoServe.Account.Error" />
+            <TextView android:id="@+id/middleNameHelp" style="@style/Widget.GoServe.Account.Support" android:text="@string/account_middle_name_help" />
+            <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/noMiddleNameCheck" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/account_field_gap" android:minHeight="@dimen/gs_touch_target" android:checked="false" android:text="@string/account_no_middle_name" android:textAppearance="@style/TextAppearance.GoServe.Label" app:buttonTint="@color/gs_primary" />
+            <TextView android:id="@+id/lastNameLabel" style="@style/Widget.GoServe.Account.Label" android:text="@string/account_last_name" android:labelFor="@id/lastNameInput" />
+            <androidx.appcompat.widget.AppCompatEditText android:id="@+id/lastNameInput" style="@style/Widget.GoServe.Account.Input" android:hint="@string/account_last_name_hint" android:inputType="textPersonName" android:autofillHints="personFamilyName" />
+            <TextView android:id="@+id/lastNameError" style="@style/Widget.GoServe.Account.Error" />
+            <TextView android:id="@+id/genderLabel" style="@style/Widget.GoServe.Account.Label" android:text="@string/account_gender" android:labelFor="@id/genderInput" />
+            <androidx.appcompat.widget.AppCompatEditText android:id="@+id/genderInput" style="@style/Widget.GoServe.Account.Input" android:hint="@string/account_gender_hint" android:inputType="text" />
+            <TextView android:id="@+id/genderError" style="@style/Widget.GoServe.Account.Error" />
+            <TextView android:id="@+id/academicHeading" style="@style/Widget.GoServe.Account.Section" android:text="@string/account_academic_information" />
+            <TextView android:id="@+id/studentIdLabel" style="@style/Widget.GoServe.Account.Label" android:text="@string/account_student_id" android:labelFor="@id/studentIdInput" />
+            <androidx.appcompat.widget.AppCompatEditText android:id="@+id/studentIdInput" style="@style/Widget.GoServe.Account.Input" android:hint="@string/account_student_id_hint" android:inputType="text" />
+            <TextView android:id="@+id/studentIdError" style="@style/Widget.GoServe.Account.Error" />
+            <TextView android:id="@+id/programLabel" style="@style/Widget.GoServe.Account.Label" android:text="@string/account_program" android:labelFor="@id/programInput" />
+            <androidx.appcompat.widget.AppCompatEditText android:id="@+id/programInput" style="@style/Widget.GoServe.Account.Input" android:hint="@string/account_program_hint" android:inputType="textCapSentences" />
+            <TextView android:id="@+id/programError" style="@style/Widget.GoServe.Account.Error" />
+            <TextView android:id="@+id/yearLabel" style="@style/Widget.GoServe.Account.Label" android:text="@string/account_year" android:labelFor="@id/yearInput" />
+            <androidx.appcompat.widget.AppCompatEditText android:id="@+id/yearInput" style="@style/Widget.GoServe.Account.Input" android:hint="@string/account_year_hint" android:inputType="text" />
+            <TextView android:id="@+id/yearError" style="@style/Widget.GoServe.Account.Error" />
+            <TextView android:id="@+id/contactHeading" style="@style/Widget.GoServe.Account.Section" android:text="@string/account_contact_information" />
+            <TextView android:id="@+id/mobileLabel" style="@style/Widget.GoServe.Account.Label" android:text="@string/account_mobile" android:labelFor="@id/mobileInput" />
+            <androidx.appcompat.widget.AppCompatEditText android:id="@+id/mobileInput" style="@style/Widget.GoServe.Account.Input" android:hint="@string/account_mobile_hint" android:inputType="text" android:autofillHints="phoneNumber" />
+            <TextView android:id="@+id/mobileError" style="@style/Widget.GoServe.Account.Error" />
+            <TextView android:id="@+id/profileEmailLabel" style="@style/Widget.GoServe.Account.Label" android:text="@string/account_email" android:labelFor="@id/profileEmail" />
+            <TextView android:id="@+id/profileEmail" style="@style/Widget.GoServe.Account.ReadOnly" tools:text="student1@demo.com" />
+            <TextView android:id="@+id/profileEmailHelp" style="@style/Widget.GoServe.Account.Support" android:text="@string/account_profile_email_help" />
+            <TextView android:id="@+id/errorText" style="@style/Widget.GoServe.Account.Error" />
+            <ph.edu.tip.goserve.ui.BrandLoadingView android:id="@+id/progress" android:layout_width="32dp" android:layout_height="32dp" android:layout_gravity="center_horizontal" android:layout_marginTop="@dimen/account_group_gap" android:visibility="gone" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/saveProfileButton" style="@style/Widget.GoServe.Account.Button" android:text="@string/account_create" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/backButton" style="@style/Widget.GoServe.Account.Button.Text" android:text="@string/account_back" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

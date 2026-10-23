@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="8dp" android:paddingEnd="12dp" android:paddingTop="8dp" android:paddingBottom="8dp">
+        <ImageButton android:id="@id/requestFilesBack" style="@style/Widget.GoServe.IconButton" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_back" android:contentDescription="@string/back" />
+        <TextView style="@style/TextAppearance.GoServe.Heading.Toolbar" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp" android:text="@string/files_toolbar" />
+        <ImageButton android:id="@id/requestFilesRefresh" style="@style/Widget.GoServe.IconButton" android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_popup_sync" app:tint="@color/gs_text" android:contentDescription="@string/files_refresh" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/requestFilesList" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:clipToPadding="false" android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingTop="12dp" android:paddingBottom="24dp" />
+    <com.google.android.material.button.MaterialButton android:id="@id/requestFilesReturn" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp" android:layout_marginBottom="12dp" android:layout_marginTop="8dp" android:paddingTop="14dp" android:paddingBottom="14dp" android:text="@string/files_return" />
+</LinearLayout>

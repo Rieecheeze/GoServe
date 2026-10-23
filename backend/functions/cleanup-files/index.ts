@@ -1,9 +1,8 @@
 import { serve,json,DomainError } from '../_shared/runtime.ts';
-import { cleanOne } from '../../lib/v23.ts';
+import { cleanOne,rpc } from '../../lib/v23.ts';
 serve(async(request,{admin})=>{
-  const secret=Deno.env.get('GOSERVE_CLEANUP_SECRET');
-  const seconds=Number(Deno.env.get('GOSERVE_CLEANUP_LEASE_SECONDS'));
-  if(!secret||!Number.isSafeInteger(seconds)||seconds<=0)throw new DomainError('CONFIGURATION_REQUIRED');
-  if(request.headers.get('Authorization')!==`Bearer ${secret}`)throw new DomainError('FORBIDDEN');
-  return json(await cleanOne(admin,seconds));
+  const token=request.headers.get('Authorization')?.match(/^Bearer ([^\s]{16,256})$/)?.[1];
+  if(!token)throw new DomainError('FORBIDDEN');
+  const configuration=await rpc(admin,'cleanup_worker_configuration',{p_token:token});
+  return json(await cleanOne(admin,configuration.lease_seconds));
 });

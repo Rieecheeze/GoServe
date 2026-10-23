@@ -1,0 +1,20 @@
+<resources>
+    <string name="notification_live_title">Notifications</string>
+    <string name="notification_live_section">Updates inside GoServe</string>
+    <string name="notification_live_support">No email or device push messages are sent.</string>
+    <string name="notification_live_empty">You’re up to date</string>
+    <string name="notification_live_empty_body">Updates about your requests, payments, and appointments will appear here.</string>
+    <string name="notification_live_browse">Browse offices</string>
+    <string name="notification_live_inquiry">Inquiry update</string>
+    <string name="notification_live_request">Request update</string>
+    <string name="notification_live_appointment">Appointment update</string>
+    <string name="notification_live_unread">Unread · %1$s</string>
+    <string name="notification_live_read">Read · %1$s</string>
+    <string name="notification_live_total">%1$d unread notifications</string>
+    <string name="notification_live_open">Open update</string>
+    <string name="notification_live_ack">Mark as read</string>
+    <string name="notification_live_more">Older notifications</string>
+    <string name="notification_live_failed">Could not update notifications. Check your connection and retry.</string>
+    <string name="notification_live_target">Record %1$s</string>
+    <string name="notification_live_event">Event %1$s</string>
+</resources>

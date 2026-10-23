@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/gs_background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center_vertical" android:paddingStart="8dp" android:paddingEnd="12dp">
+        <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/notificationBack" style="@style/Widget.GoServe.IconButton" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_back" android:contentDescription="@string/inquiry_live_back" />
+        <TextView android:id="@+id/notificationTitle" style="@style/TextAppearance.GoServe.Heading.Toolbar" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/notification_live_title" />
+    </LinearLayout>
+    <ScrollView android:id="@+id/notificationScroll" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+            <TextView android:id="@+id/notificationSection" style="@style/TextAppearance.GoServe.Heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/notification_live_section" />
+            <TextView style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="@color/gs_secondary" android:text="@string/notification_live_support" />
+            <TextView android:id="@+id/notificationCounts" style="@style/TextAppearance.GoServe.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" />
+            <ProgressBar android:id="@+id/notificationProgress" android:layout_width="48dp" android:layout_height="48dp" android:visibility="gone" android:contentDescription="@string/inquiry_live_loading" />
+            <TextView android:id="@+id/notificationError" style="@style/TextAppearance.GoServe.Error" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:accessibilityLiveRegion="polite" android:visibility="gone" />
+            <TextView android:id="@+id/notificationConnection" style="@style/TextAppearance.GoServe.Body.Small" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/inquiry_live_connection" android:visibility="gone" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/notificationRetry" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/inquiry_live_retry" android:visibility="gone" />
+            <LinearLayout android:id="@+id/notificationEmpty" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingTop="32dp" android:visibility="gone">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_request_empty" android:importantForAccessibility="no" />
+                <TextView style="@style/TextAppearance.GoServe.Heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/notification_live_empty" />
+                <TextView style="@style/TextAppearance.GoServe.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:textColor="@color/gs_secondary" android:text="@string/notification_live_empty_body" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/notificationRows" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/notificationMore" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/notification_live_more" android:visibility="gone" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/notificationRefresh" style="@style/Widget.GoServe.Button.Text" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/inquiry_live_refresh" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

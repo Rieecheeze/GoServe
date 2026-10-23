@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+    <com.google.android.material.button.MaterialButton android:id="@id/requestFilesMore" style="@style/Widget.GoServe.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginBottom="14dp" android:text="@string/request_live_more" android:visibility="gone" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:background="@drawable/bg_muted">
+        <TextView style="@style/TextAppearance.GoServe.Label" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/files_notice_title" />
+        <TextView android:id="@id/requestFilesNotice" style="@style/TextAppearance.GoServe.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:textColor="@color/gs_secondary" android:text="@string/files_notice" />
+    </LinearLayout>
+</LinearLayout>
