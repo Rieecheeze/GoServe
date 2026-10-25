@@ -33,7 +33,14 @@ public final class ProfilePhotoInteractionTest {
     final ProfilePhotoViewModelTest.Fake actions=new ProfilePhotoViewModelTest.Fake();ProfilePhotoViewModel vm;
     @Before public void reset(){ReflectionHelpers.setStaticField(ViewModelProvider.AndroidViewModelFactory.class,"_instance",null);}
     @After public void close(){if(controller!=null)controller.close();RuntimeEnvironment.setFontScale(1f);androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);}
-    @Test public void settingsEntryOpensAnHonestUnavailableScreenInPreview(){host();view(R.id.profilePhotoButton).performClick();idle();assertTrue(current() instanceof ProfilePhotoFragment);assertFalse(view(R.id.photoSave).isEnabled());assertEquals(View.VISIBLE,view(R.id.photoError).getVisibility());}
+    @Test public void settingsEntryAndDirectRouteKeepProfilePictureUnavailableInPreview(){
+        host();view(R.id.accountButton).performClick();idle();
+        assertTrue(current() instanceof SettingsGroupFragment);assertNull(activity.profile());assertFalse(view(R.id.profilePhotoButton).isEnabled());
+        activity.navigate(new ProfilePhotoFragment(),true);idle();
+        assertTrue(current() instanceof ProfilePhotoFragment);assertEquals(ProfilePhotoViewModel.Mode.UNAVAILABLE,new ViewModelProvider(current()).get(ProfilePhotoViewModel.class).state().getValue().mode);
+        assertFalse(view(R.id.photoChoose).isEnabled());assertFalse(view(R.id.photoSave).isEnabled());assertFalse(view(R.id.photoReload).isEnabled());
+        assertEquals(View.VISIBLE,view(R.id.photoError).getVisibility());assertNull(Shadows.shadowOf(activity).getNextStartedActivity());
+    }
     @Test public void loadingKeepsEditingDisabledThenRendersTheSavedPhoto(){launch();assertFalse(view(R.id.photoChoose).isEnabled());load();assertTrue(view(R.id.photoChoose).isEnabled());assertFalse(view(R.id.photoSave).isEnabled());assertEquals(activity.getString(R.string.profile_photo_current),text(R.id.photoStatus));assertFalse(view(R.id.photoImage).isSaveEnabled());assertEquals(View.GONE,view(R.id.bottomNavigation).getVisibility());}
     @Test public void removeStagesAChangeAndSaveIsExplicit(){launch();load();view(R.id.photoRemove).performClick();assertEquals(0,actions.saves);assertTrue(view(R.id.photoSave).isEnabled());assertEquals(activity.getString(R.string.profile_photo_remove_draft),text(R.id.photoStatus));view(R.id.photoSave).performClick();work.run();ui.run();idle();assertEquals(1,actions.saves);assertEquals(activity.getString(R.string.profile_photo_saved),text(R.id.photoStatus));}
     @Test public void saveLocksNavigationAndIgnoresDoubleTap(){launch();load();view(R.id.photoRemove).performClick();view(R.id.photoSave).performClick();view(R.id.photoSave).performClick();assertEquals(1,work.size());assertFalse(view(R.id.photoBack).isEnabled());assertFalse(view(R.id.photoChoose).isEnabled());assertFalse(view(R.id.photoReload).isEnabled());activity.getOnBackPressedDispatcher().onBackPressed();assertTrue(current() instanceof ProfilePhotoFragment);}

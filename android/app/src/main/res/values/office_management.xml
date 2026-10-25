@@ -1,12 +1,12 @@
 <resources>
-    <string name="office_announcements_heading">Office announcements</string>
+    <string name="office_announcements_heading">Office Announcements</string>
     <string name="office_announcements_empty">No current announcements.</string>
     <string name="office_announcements_refresh">Refresh announcements</string>
     <string name="office_announcements_more">Older announcements</string>
     <string name="office_announcements_failed">Could not refresh announcements. Check your connection and retry.</string>
-    <string name="office_mgmt_office">Office information</string>
+    <string name="office_mgmt_office">Office Information</string>
     <string name="office_mgmt_announcements">Announcements</string>
-    <string name="office_mgmt_services">Services and fees</string>
+    <string name="office_mgmt_services">Services And Fees</string>
     <string name="office_mgmt_status">Office status</string>
     <string name="office_mgmt_choose_status">Select status</string>
     <string name="office_mgmt_note">Office note</string>

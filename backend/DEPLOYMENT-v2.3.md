@@ -1,5 +1,7 @@
 # v2.3 source deployment and verification gates
 
+The later [codes-only recovery rollout](recovery-rollout/README.md) supersedes the registration/recovery instructions below. It is additive, retires the old email adapters and stages mandatory saved-code setup separately. Earlier deployment status is historical.
+
 On21October the owner explicitly approved the staged core/account/photo rollout. Remote20261021005108/goserve_v23_core_accounts_workflows_photos applies the first nine source migrations plus the eleventh photo migration in one transaction. The independently deployed tenth, remote20261020222356/profile_department, is preserved and was skipped. Bootstrap v2, register-student v1 and recovery-request v1 are ACTIVE; other Edge sources below are not deployed by this rollout. Original six-profile/five-office checksums match, and all six demo Auth/profile/account_view/bootstrap API checks pass with test sessions closed. Terms documents/acceptances/profile completion and provider transports remain inactive. See ../output/validation/account-rollout/live-rollout.json and http-readiness.json. Do not rerun the bundled sources, the department source or `schema.sql` over this managed installation. Existing TIP-only Auth hooks, provider configuration and keys are preserved.
 
 ## Ordered source
@@ -31,7 +33,7 @@ Every row below is approved server data in `goserve_private.policies`, not clien
 
 Only approved text goes in `terms_documents`. Its SHA-256 digest must match the approved text. Activation is trusted administration. Existing legacy consent is not backfilled into Terms. Existing Staff/Teller completion is not fabricated; trusted provisioning must explicitly establish completion under approved role requirements. Staff capability literals remain `guidance`, `faculty`, `secretary` for compatibility. Ordinary preexisting Staff with null capability retain assigned-office catalog/request/inquiry authority only outside department offices. Department access requires Secretary capability; legacy Faculty assignments or explicit grants cannot bypass that rule. Extra approved grants can be stored in private `capabilities(profile_id,office_id,capability)` using `catalog`, `requests` or `inquiries`, without changing role/office or bypassing the department boundary.
 
-Environment: standard Supabase URL/service-role/anon keys; approved `GOSERVE_RECOVERY_REDIRECT`; separate worker-only `GOSERVE_CLEANUP_SECRET` and `GOSERVE_CLEANUP_LEASE_SECONDS`. Configure invocation cadence externally. Never expose service/worker credentials in Android or logs. Provider flags/credentials alone cannot enable unavailable adapters.
+Environment: standard Supabase URL/service-role/anon keys; validated `GOSERVE_RECOVERY_PROXY_HOPS` for recovery; separate worker-only `GOSERVE_CLEANUP_SECRET` and `GOSERVE_CLEANUP_LEASE_SECONDS`. Configure invocation cadence externally. Never expose service/worker credentials in Android or logs. Provider flags/credentials alone cannot enable unavailable adapters.
 
 ## Local verification
 
@@ -45,7 +47,7 @@ The original bootstrap/eGovPay tests remain. New tests execute the production ad
 
 - Real PostgreSQL 17.11 migrations/advisors and concurrent separate-session races: stale catalog/submit, cash confirmation, claim/handover, digital replacement/receipt, last slot and cross-slot reschedule.
 - Supabase Auth signup/Google/getUser and the registration saga under lost responses, timeout, retries and failed compensation; neutral public errors, edge rate limits and abuse controls; provisioned Staff/Teller compatibility.
-- Recovery email to an actual mailbox, configured redirect/PKCE validation, expired/invalid contexts and blank-password Sign in.
+- Saved recovery code proof, grant/claim/result behavior, strict revoked-session denial, hosted ingress trust, isolated provider mutation/revocation effects and immediate normal sign-in; see the recovery rollout for exact gates.
 - Real Storage denial, actual byte parsing under Edge memory/time limits, interrupted upload/download and verified cleanup including retries and worker lease loss. Abandoned unbound uploads need an approved retention policy and cleanup extension; current cleanup covers request-associated terminal evidence/deliverables only.
 - Realtime cross-role delivery, RLS denial, JWT refresh, reconnect ordering and account-switch cache/subscription clearing. Publication membership alone is insufficient.
 - Approved eGovPay signing/callback/status/amount/reconciliation contract and eGovAI request/knowledge/procedures/file/delete contract, followed by reviewed transport implementations and acceptance tests. These are deliberately unavailable now, not simulated.

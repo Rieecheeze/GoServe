@@ -1,10 +1,10 @@
 <resources>
-    <string name="pickup_title">Pickup code</string>
-    <string name="pickup_staff_title">Validate pickup</string>
+    <string name="pickup_title">Pickup Code</string>
+    <string name="pickup_staff_title">Validate Pickup</string>
     <string name="pickup_open">View pickup code</string>
     <string name="pickup_staff_open">Review pickup handover</string>
-    <string name="pickup_heading">Collect your document</string>
-    <string name="pickup_staff_heading">Scan or enter the pickup code</string>
+    <string name="pickup_heading">Collect Your Document</string>
+    <string name="pickup_staff_heading">Scan Or Enter The Pickup Code</string>
     <string name="pickup_checking">Checking the request, payment and pickup policy…</string>
     <string name="pickup_available">Request a code when you are ready to collect this document. Only the assigned office can validate the code and confirm handover.</string>
     <string name="pickup_issue">Get pickup code</string>
@@ -18,14 +18,14 @@
     <string name="pickup_input_hint">Enter the code exactly</string>
     <string name="pickup_validate">Validate pickup</string>
     <string name="pickup_validating">Checking this code with the assigned office…</string>
-    <string name="pickup_review_heading">Review the handover</string>
+    <string name="pickup_review_heading">Review The Handover</string>
     <string name="pickup_review_body">Code validated for request %1$s. Hand the issued document to the student, then confirm handover. Validation alone leaves the request open.</string>
     <string name="pickup_confirm">Confirm document handover</string>
     <string name="pickup_handing_over">Confirming handover and checking the final request status…</string>
     <string name="pickup_uncertain">Handover for request %1$s is unconfirmed. Retry the same confirmation to check its result. Do not hand over another document.</string>
     <string name="pickup_retry_handover">Retry handover confirmation</string>
     <string name="pickup_edit">Enter another code</string>
-    <string name="pickup_complete">Handover confirmed</string>
+    <string name="pickup_complete">Handover Confirmed</string>
     <string name="pickup_complete_body">Request %1$s is completed. The pickup code has been consumed by the office.</string>
     <string name="pickup_return">Return to request</string>
     <string name="pickup_payment_free">No payment required.</string>

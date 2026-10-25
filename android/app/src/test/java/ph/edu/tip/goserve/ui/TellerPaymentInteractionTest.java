@@ -54,7 +54,7 @@ public final class TellerPaymentInteractionTest {
     }
 
     @Test public void initialSearchHasNoExampleReferenceOrPreselectedCashReceipt() {
-        launch(); assertEquals("Cash payments",text(R.id.cashToolbar)); assertEquals("Find a payment",text(R.id.cashHeading));
+        launch(); assertEquals("Cash Payments",text(R.id.cashToolbar)); assertEquals("Find A Payment",text(R.id.cashHeading));
         assertEquals("",text(R.id.cashReferenceInput)); assertFalse(check().isChecked());
         assertFalse(view(R.id.cashConfirmButton).isEnabled()); assertEquals(View.GONE,view(R.id.cashReviewCard).getVisibility());
         assertEquals(0,actions.lookups); assertEquals(0,actions.confirms); assertFalse(((EditText)view(R.id.cashReferenceInput)).isSaveEnabled());
@@ -68,14 +68,14 @@ public final class TellerPaymentInteractionTest {
         view(R.id.cashReviewButton).performClick(); assertEquals(0,actions.confirms);
         view(R.id.cashConfirmButton).performClick(); view(R.id.cashConfirmButton).performClick();
         assertEquals(View.VISIBLE,view(R.id.cashProgress).getVisibility()); assertEquals(0,actions.confirms);
-        work.run(); ui.run(); idle(); assertEquals(1,actions.confirms); assertEquals("Payment confirmed",text(R.id.cashHeading));
+        work.run(); ui.run(); idle(); assertEquals(1,actions.confirms); assertEquals("Payment Confirmed",text(R.id.cashHeading));
         assertTrue(text(R.id.cashReviewId).contains("00000000-0000-4000-8000-000000000002"));
         assertTrue(text(R.id.cashReviewTime).contains("2026-10-20")); assertFalse(view(R.id.cashConfirmButton).isEnabled());
     }
 
     @Test public void paidLookupShowsReceiptAndNeverOffersASecondConfirmation() {
         actions.review=review(PaymentStatus.PAID); launch(); lookup();
-        assertEquals("Payment already confirmed",text(R.id.cashHeading)); assertEquals(View.GONE,check().getVisibility());
+        assertEquals("Payment Already Confirmed",text(R.id.cashHeading)); assertEquals(View.GONE,check().getVisibility());
         assertFalse(view(R.id.cashConfirmButton).isEnabled()); assertEquals(0,actions.confirms);
         assertEquals(View.VISIBLE,view(R.id.cashReviewTime).getVisibility());
     }
@@ -99,7 +99,7 @@ public final class TellerPaymentInteractionTest {
         assertEquals(1,work.size()); controller.recreate(); activity=controller.get(); idle();
         assertEquals(TellerPaymentViewModel.Mode.CONFIRMING,vm.state().getValue().mode);
         assertEquals(View.VISIBLE,view(R.id.cashProgress).getVisibility()); work.run(); ui.run(); idle();
-        assertEquals(1,actions.confirms); assertEquals("Payment confirmed",text(R.id.cashHeading));
+        assertEquals(1,actions.confirms); assertEquals("Payment Confirmed",text(R.id.cashHeading));
     }
 
     @Test @Config(shadows=SeryoInteractionTest.Api26FontScaling.class)
@@ -166,7 +166,7 @@ public final class TellerPaymentInteractionTest {
     }
 
     @Test public void paymentFoundMustEnterReviewBeforeWritingAndBackRequiresANewAcknowledgement() {
-        launch(); lookup(); assertEquals("Payment found",text(R.id.cashHeading));
+        launch(); lookup(); assertEquals("Payment Found",text(R.id.cashHeading));
         assertEquals(View.VISIBLE,view(R.id.bottomNavigation).getVisibility());
         assertEquals(View.GONE,view(R.id.cashConfirmHost).getVisibility());
         assertFalse(view(R.id.cashReviewButton).isEnabled()); check().performClick();
@@ -183,18 +183,18 @@ public final class TellerPaymentInteractionTest {
         launch(); lookup(); activity.configureRoleNavigation(ph.edu.tip.goserve.domain.Role.TELLER);
         CapsuleNavigationView navigation=activity.findViewById(R.id.bottomNavigation);
         navigation.setSelectedItemId(R.id.nav_more); idle(); navigation.setSelectedItemId(R.id.nav_cash_pending); idle();
-        assertEquals("Payment found",text(R.id.cashHeading)); assertEquals("actual-reference",text(R.id.cashReviewReference));
+        assertEquals("Payment Found",text(R.id.cashHeading)); assertEquals("actual-reference",text(R.id.cashReviewReference));
         assertEquals(1,actions.lookups); assertEquals(0,work.size()); assertFalse(check().isChecked());
-        navigation.setSelectedItemId(R.id.nav_payments); idle(); assertEquals("Find a payment",text(R.id.cashHeading));
+        navigation.setSelectedItemId(R.id.nav_payments); idle(); assertEquals("Find A Payment",text(R.id.cashHeading));
         assertNull(vm.state().getValue().review); assertEquals(0,actions.confirms);
     }
 
     @Test public void pendingWithoutASelectedPaymentOffersSearchWithoutMakingAQueue() {
         launch(); activity.configureRoleNavigation(ph.edu.tip.goserve.domain.Role.TELLER);
         ((CapsuleNavigationView)activity.findViewById(R.id.bottomNavigation)).setSelectedItemId(R.id.nav_cash_pending); idle();
-        assertEquals("No payment selected",text(R.id.cashHeading)); assertEquals(View.GONE,view(R.id.cashReferenceInput).getVisibility());
+        assertEquals("No Payment Selected",text(R.id.cashHeading)); assertEquals(View.GONE,view(R.id.cashReferenceInput).getVisibility());
         assertEquals(0,work.size()); view(R.id.cashEditButton).performClick(); idle();
-        assertEquals("Find a payment",text(R.id.cashHeading)); assertEquals(0,actions.lookups); assertEquals(0,actions.confirms);
+        assertEquals("Find A Payment",text(R.id.cashHeading)); assertEquals(0,actions.lookups); assertEquals(0,actions.confirms);
     }
 
     @Test public void paymentIdArgumentStartsOneCanonicalReadAndSurvivesRecreation() {
@@ -204,7 +204,7 @@ public final class TellerPaymentInteractionTest {
         activity.navigate(detail,true); idle(); assertEquals(1,work.size()); work.run(); ui.run(); idle();
         assertEquals("actual-reference",vm.state().getValue().reference); assertEquals(1,actions.lookups);
         controller.recreate(); activity=controller.get(); idle(); assertEquals(0,work.size()); assertEquals(1,actions.lookups);
-        assertEquals("Payment already confirmed",text(R.id.cashHeading)); assertEquals(0,actions.confirms);
+        assertEquals("Payment Already Confirmed",text(R.id.cashHeading)); assertEquals(0,actions.confirms);
     }
 
     private ViewModelProvider.Factory factory() {

@@ -33,9 +33,9 @@ public final class ScreenRoutesInteractionTest {
     }
     @Test public void moreOpensEachActualSeryoPanelAndNotifications() {
         f.open(true);
-        int[] buttons={R.id.seryoSettingsButton,R.id.seryoPrivacyButton,R.id.seryoHelpButton};String[] panels={"settings","consent","help"};
-        for(int i=0;i<buttons.length;i++){nav().setSelectedItemId(R.id.nav_more);execute();f.v(buttons[i]).performClick();execute();assertTrue(current() instanceof AssistantFragment);assertEquals(panels[i],current().requireArguments().getString("panel"));}
-        nav().setSelectedItemId(R.id.nav_more);execute();f.v(R.id.notificationSettingsButton).performClick();execute();assertTrue(current() instanceof NotificationsFragment);
+        int[] buttons={R.id.seryoSettingsButton,R.id.seryoPrivacyButton,R.id.seryoHelpButton};String[] panels={"settings","privacy","help"};
+        for(int i=0;i<buttons.length;i++){nav().setSelectedItemId(R.id.nav_more);execute();f.v(R.id.seryoButton).performClick();execute();assertTrue(current() instanceof SettingsGroupFragment);f.v(buttons[i]).performClick();execute();assertTrue(current() instanceof AssistantFragment);assertEquals(panels[i],current().requireArguments().getString("panel"));}
+        nav().setSelectedItemId(R.id.nav_more);execute();f.v(R.id.accountButton).performClick();execute();f.v(R.id.notificationSettingsButton).performClick();execute();assertTrue(current() instanceof NotificationsFragment);
     }
     @Test public void assignedWorkspaceOpensEachOfficeManagementEditor(){
         openStaff("DEP-CCS","secretary");int[] ids={R.id.workspaceOfficeManage,R.id.workspaceAnnouncementsManage,R.id.workspaceServicesManage};String[] kinds={"OFFICE","ANNOUNCEMENT","SERVICE"};

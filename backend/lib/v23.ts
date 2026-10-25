@@ -3,7 +3,7 @@ export class DomainError extends Error {
 }
 
 const codes = new Set(['AUTH_REQUIRED','AUTH_INVALID','FORBIDDEN','NOT_FOUND','VALIDATION_FAILED',
-  'PROFILE_INCOMPLETE','TERMS_REQUIRED','CONFIGURATION_REQUIRED','STALE_VERSION','QUOTE_STALE',
+  'PROFILE_INCOMPLETE','TERMS_REQUIRED','RECOVERY_SETUP_REQUIRED','CONFIGURATION_REQUIRED','STALE_VERSION','QUOTE_STALE',
   'IDEMPOTENCY_CONFLICT','INVALID_STATE','PAYMENT_REQUIRED','ALREADY_PAID','CODE_INVALID','CODE_EXPIRED',
   'CODE_CONSUMED','CAPACITY_FULL','POLICY_BLOCKED','UPLOAD_INVALID','DOWNLOAD_UNCONFIRMED',
   'CONSENT_REQUIRED','PROVIDER_UNAVAILABLE','CLEANUP_REQUIRED','TEMPORARILY_UNAVAILABLE','IMMUTABLE_RECORD','CONFLICT']);
@@ -54,42 +54,23 @@ export async function rpc(client: any, name: string, args: any = {}): Promise<an
   return data;
 }
 
-export async function requestRecovery(body: any, configuration: {
-  url?: string; publicKey?: string; redirect?: string;
-}, transport: typeof fetch = fetch): Promise<void> {
-  exact(body, ['email', 'code_challenge', 'code_challenge_method', 'state']);
-  if (typeof body.email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)
-    || typeof body.code_challenge !== 'string' || !/^[A-Za-z0-9_-]{43}$/.test(body.code_challenge)
-    || body.code_challenge_method !== 's256'
-    || typeof body.state !== 'string' || !/^[A-Za-z0-9_-]{43}$/.test(body.state)) {
+export async function readAuthBody(request: Request): Promise<any> {
+  if (!/^application\/json(?:\s*;|$)/i.test(request.headers.get('Content-Type') ?? '') || !request.body) {
     throw new DomainError('VALIDATION_FAILED');
   }
-  if (!configuration.url || !configuration.publicKey || !configuration.redirect) {
-    throw new DomainError('CONFIGURATION_REQUIRED');
-  }
-  let endpoint: URL;
+  const reader = request.body.getReader();
+  const decoder = new TextDecoder();
+  let length = 0, text = '';
   try {
-    const redirect = new URL(configuration.redirect);
-    const base = new URL(configuration.url);
-    if (redirect.hash || redirect.username || redirect.password || base.protocol !== 'https:') throw new Error();
-    redirect.searchParams.set('state', body.state);
-    redirect.searchParams.set('flow', 'recovery');
-    endpoint = new URL('/auth/v1/recover', base);
-    endpoint.searchParams.set('redirect_to', redirect.toString());
-  } catch {
-    throw new DomainError('CONFIGURATION_REQUIRED');
-  }
-  try {
-    const response = await transport(endpoint, {
-      method: 'POST',
-      headers: { apikey: configuration.publicKey, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: body.email, code_challenge: body.code_challenge, code_challenge_method: 's256' }),
-      signal: AbortSignal.timeout(10000),
-    });
-    await response.body?.cancel();
-  } catch {
-    // Upstream status, transport and cleanup failures cannot reveal account existence.
-  }
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      length += value.byteLength;
+      if (length > 8192) { await reader.cancel(); throw new DomainError('VALIDATION_FAILED'); }
+      text += decoder.decode(value, { stream: true });
+    }
+  } finally { reader.releaseLock(); }
+  return JSON.parse(text + decoder.decode());
 }
 
 export async function registerStudent(admin: any, body: any): Promise<any> {
@@ -128,7 +109,7 @@ export async function registerStudent(admin: any, body: any): Promise<any> {
   }
 }
 
-export async function authenticated(request: Request, admin: any, userClient: (token: string) => any): Promise<any> {
+export async function authenticated(request: Request, admin: any, userClient: (token: string) => any, requireReady = false): Promise<any> {
   const token = request.headers.get('Authorization')?.match(/^Bearer ([^\s]+)$/i)?.[1];
   if (!token) throw new DomainError('AUTH_REQUIRED');
   const {data,error} = await admin.auth.getUser(token);
@@ -136,14 +117,21 @@ export async function authenticated(request: Request, admin: any, userClient: (t
   const client = userClient(token);
   const account = await rpc(client,'account_view');
   if (account.id !== data.user.id) throw new DomainError('AUTH_INVALID');
+  if (requireReady && account.next_action !== 'home') {
+    if (account.next_action === 'accept_terms') throw new DomainError('TERMS_REQUIRED');
+    if (account.next_action === 'complete_profile') throw new DomainError('PROFILE_INCOMPLETE');
+    if (account.next_action === 'setup_recovery') throw new DomainError('RECOVERY_SETUP_REQUIRED');
+    throw new DomainError('CONFIGURATION_REQUIRED');
+  }
   return {client,user:data.user,account};
 }
 
 export function errorResponse(error: unknown): Response {
   const code = error instanceof DomainError ? error.code : 'TEMPORARILY_UNAVAILABLE';
   const status = code.startsWith('AUTH_') ? 401 : code==='FORBIDDEN' ? 403 : code==='NOT_FOUND' ? 404
+    : code==='RATE_LIMITED' ? 429
     : ['PROVIDER_UNAVAILABLE','CONFIGURATION_REQUIRED','TEMPORARILY_UNAVAILABLE','CLEANUP_REQUIRED'].includes(code) ? 503
-    : ['VALIDATION_FAILED','UPLOAD_INVALID'].includes(code) ? 422 : 409;
+    : ['VALIDATION_FAILED','UPLOAD_INVALID','RECOVERY_PROOF_INVALID','RECOVERY_GRANT_INVALID','PASSWORD_TOO_LONG','PASSWORD_WEAK'].includes(code) ? 422 : 409;
   return json({ok:false,error:{code}},status);
 }
 

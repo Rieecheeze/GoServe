@@ -50,14 +50,13 @@ async function endpoint(name,dependencies,request){
   runInNewContext(text,context);
   return handler(request,dependencies);
 }
-const edgeDeps={admin:{auth:{getUser:async()=>({data:{user:{id:'owner',is_anonymous:false}}})},rpc:async()=>({data:{id:'file',verification:'verified',object_path:'private/path',policy:{secret:'private'},expires_at:'hidden'}})},userClient:()=>({rpc:async()=>({data:{id:'owner'}})})};
+const edgeDeps={admin:{auth:{getUser:async()=>({data:{user:{id:'owner',is_anonymous:false}}})},rpc:async()=>({data:{id:'file',verification:'verified',object_path:'private/path',policy:{secret:'private'},expires_at:'hidden'}})},userClient:()=>({rpc:async()=>({data:{id:'owner',next_action:'home'}})})};
 const fileReply=await endpoint('request-file',edgeDeps,new Request('https://test/request-file',{method:'POST',headers:{Authorization:'Bearer test','X-GoServe-Upload':'file'},body:new Uint8Array([1])}));
 const safe=await fileReply.json();assert.equal(safe.id,'file');for(const hidden of ['object_path','policy','expires_at'])assert.equal(safe[hidden],undefined);count++;
 await assert.rejects(()=>endpoint('download-deliverable',edgeDeps,new Request('https://test/download-deliverable',{method:'POST',headers:{Authorization:'Bearer test'},body:JSON.stringify({kind:'forged',download_id:'id'})})),/VALIDATION_FAILED/);count++;
-context.Deno={env:{get:name=>({SUPABASE_URL:'https://fixture.supabase.co',SUPABASE_ANON_KEY:'fixture',GOSERVE_RECOVERY_REDIRECT:'goserve://auth/recovery'})[name]}};
-for(const status of [200,422]){
-  context.fetch=async()=>new Response('{}',{status});
-  const recovery=await endpoint('recovery-request',{},new Request('https://test/recovery-request',{method:'POST',body:JSON.stringify({email:'mailbox@demo.com',code_challenge:'a'.repeat(43),code_challenge_method:'s256',state:'b'.repeat(43)})}));
-  assert.deepEqual(await recovery.json(),{request_received:true});count++;
+for(const name of ['recovery-request','password-change']) {
+  let calls=0;context.fetch=async()=>{calls++;throw new Error('Mail must never be sent');};
+  await assert.rejects(()=>endpoint(name,{},new Request('https://test/'+name,{method:'POST',body:'{}'})),/RECOVERY_METHOD_REQUIRED/);
+  assert.equal(calls,0);count++;
 }
 console.log(`PASS: ${count} v2.3 Edge/adapter assertions (external Auth/Storage/parser boundaries injected)`);

@@ -1,5 +1,7 @@
 # TIP-only Google Auth
 
+The later [recovery migration](../recovery-rollout/README.md) tightens Before User Created to deny every new non-Google account. Existing provisioned password sign-in and refresh remain supported. The original standalone migration below describes the earlier hook installation.
+
 This independent Auth configuration adds no application tables and does not apply the nine v2.3 workflow migrations. Its migration was generated with official Supabase CLI2.121.0 using `migration new tip_google_auth_hooks`. It is deployed separately because the owner requested Google activation before the remaining app/backend rollout.
 
 `goserve_auth.before_user_created(jsonb)` rejects Google signups unless their exact email domain is `tip.edu.ph`. ASCII uppercase is accepted; subdomains, trailing whitespace, multiple at-signs, Unicode lookalikes and suffix attacks are rejected. The provider comes from the Auth event's server-owned `app_metadata`, never user metadata. Existing email/password provisioning remains supported.

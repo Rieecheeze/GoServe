@@ -2,11 +2,11 @@
 <resources>
     <string name="request_preview_title">Requests</string>
     <string name="request_preview_notice">Demo requests · Examples only. These are not official office fees, payment records, or issued documents.</string>
-    <string name="request_preview_examples">Request examples</string>
+    <string name="request_preview_examples">Request Examples</string>
     <string name="request_demo_label">Demo request</string>
-    <string name="request_detail_title">Request details</string>
+    <string name="request_detail_title">Request Details</string>
     <string name="request_progress_title">Progress</string>
-    <string name="request_fee_title">Office fee declaration</string>
+    <string name="request_fee_title">Office Fee Declaration</string>
     <string name="request_fee_required">Required · Declared by the office in this example</string>
     <string name="request_fee_free">Free · Declared by the office in this example</string>
     <string name="request_fee_pending">Awaiting office fee declaration</string>
@@ -21,23 +21,23 @@
     <string name="request_phase_description">%1$s: %2$s</string>
     <string name="request_reference">Reference: %1$s</string>
     <string name="request_view_file">View verified file</string>
-    <string name="request_preview_unavailable_title">Requests are not available yet</string>
+    <string name="request_preview_unavailable_title">Requests Are Not Available Yet</string>
     <string name="request_preview_unavailable_body">Your office requests will appear here when request services are available.</string>
-    <string name="request_preview_signed_out_title">Sign in to view requests</string>
+    <string name="request_preview_signed_out_title">Sign In To View Requests</string>
     <string name="request_preview_signed_out_body">Your session has ended. Sign in again to continue.</string>
     <string name="request_browse_offices">Browse offices</string>
     <string name="request_sign_in">Sign in</string>
-    <string name="request_detail_unavailable">This request is not available</string>
+    <string name="request_detail_unavailable">This Request Is Not Available</string>
     <string name="request_detail_unavailable_body">Return to Requests to choose an available request.</string>
-    <string name="request_verified_title">Verified file</string>
+    <string name="request_verified_title">Verified File</string>
     <string name="request_verified_demo_notice">Demo file · Verification example only. No document has been issued or downloaded.</string>
-    <string name="request_verified_complete">Preview verification complete</string>
+    <string name="request_verified_complete">Preview Verification Complete</string>
     <string name="request_verified_description">File verification: Complete</string>
     <string name="request_verified_filename">Enrollment certificate.pdf</string>
     <string name="request_verified_example">This example shows how an office-issued file will appear after verification. The request is free in this preview.</string>
     <string name="request_verified_about_downloads">About downloads</string>
     <string name="request_verified_download_explanation">This preview contains no private file. Download access will be available when an office issues a real document.</string>
-    <string name="request_demo_required_title">Enrollment certificate</string>
-    <string name="request_demo_free_title">Verified document copy</string>
-    <string name="request_demo_pending_title">Student service request</string>
+    <string name="request_demo_required_title">Enrollment Certificate</string>
+    <string name="request_demo_free_title">Verified Document Copy</string>
+    <string name="request_demo_pending_title">Student Service Request</string>
 </resources>

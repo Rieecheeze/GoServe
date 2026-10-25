@@ -51,7 +51,7 @@
     <string name="consultation_live_detail">Appointment details</string>
     <string name="consultation_live_reschedule">Choose a replacement time</string>
     <string name="consultation_live_cancel">Cancel appointment</string>
-    <string name="consultation_live_history">Appointment history</string>
+    <string name="consultation_live_history">Appointment History</string>
     <string name="consultation_live_more">Load more</string>
     <string name="consultation_live_slot">%1$s\n%2$s to %3$s\n%4$d places remaining of %5$d\n%6$s\nSchedule owner: %7$s</string>
     <string name="consultation_live_active_state">Bookings open</string>

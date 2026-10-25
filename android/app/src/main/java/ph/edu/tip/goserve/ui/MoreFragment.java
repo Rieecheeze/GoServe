@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import ph.edu.tip.goserve.GoServeApplication;
+import ph.edu.tip.goserve.BuildConfig;
 import ph.edu.tip.goserve.R;
 import ph.edu.tip.goserve.databinding.FragmentMoreBinding;
 import ph.edu.tip.goserve.domain.SessionProfile;
@@ -22,11 +23,6 @@ public final class MoreFragment extends Fragment {
         MainActivity host = (MainActivity) requireActivity();
         SharedMotion.install(view);
         SessionProfile profile = host.profile();
-        binding.accountText.setText(host.isPreview() ? getString(R.string.preview_notice_logic) : profile.email + "\n" + profile.role.wireValue);
-        if(!host.isPreview() && profile.departmentId!=null) {
-            String department="DEP-CCS".equals(profile.departmentId)?getString(R.string.profile_department_ccs):profile.departmentId;
-            binding.accountText.append("\n"+getString(R.string.profile_department_label,department));
-        }
         int mode = requireContext().getSharedPreferences("appearance", Context.MODE_PRIVATE).getInt("mode", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         binding.themeGroup.check(mode == AppCompatDelegate.MODE_NIGHT_YES ? R.id.radioDark : mode == AppCompatDelegate.MODE_NIGHT_NO ? R.id.radioLight : R.id.radioSystem);
         binding.themeGroup.setOnCheckedChangeListener((group, id) -> {
@@ -35,14 +31,11 @@ public final class MoreFragment extends Fragment {
             AppCompatDelegate.setDefaultNightMode(selected);
         });
         binding.backButton.setOnClickListener(v -> host.getOnBackPressedDispatcher().onBackPressed());
-        binding.changePasswordButton.setOnClickListener(v -> host.navigate(new PasswordChangeFragment(),true));
-        binding.profilePhotoButton.setOnClickListener(v -> host.navigate(new ProfilePhotoFragment(),true));
+        binding.accountButton.setOnClickListener(v -> host.navigate(SettingsGroupFragment.account(),true));
         boolean student=host.isPreview() || profile!=null && profile.role==ph.edu.tip.goserve.domain.Role.STUDENT;
-        binding.seryoSettingsButton.setVisibility(student?View.VISIBLE:View.GONE);binding.seryoPrivacyButton.setVisibility(student?View.VISIBLE:View.GONE);binding.seryoHelpButton.setVisibility(student?View.VISIBLE:View.GONE);
-        binding.seryoSettingsButton.setOnClickListener(v->host.navigate(AssistantFragment.create("settings"),true));
-        binding.seryoPrivacyButton.setOnClickListener(v->host.navigate(AssistantFragment.create("consent"),true));
-        binding.seryoHelpButton.setOnClickListener(v->host.navigate(AssistantFragment.create("help"),true));
-        binding.notificationSettingsButton.setVisibility(profile!=null && profile.ready()?View.VISIBLE:View.GONE);binding.notificationSettingsButton.setOnClickListener(v->host.navigate(NotificationsFragment.create(),true));
+        binding.seryoButton.setVisibility(student?View.VISIBLE:View.GONE);
+        binding.seryoButton.setOnClickListener(v -> host.navigate(SettingsGroupFragment.seryo(),true));
+        binding.aboutButton.setOnClickListener(v -> host.navigate(FeatureStatusFragment.create(getString(R.string.about_goserve),getString(R.string.settings_about_body,BuildConfig.VERSION_NAME)),true));
         binding.viewTermsButton.setOnClickListener(v -> {
             new androidx.lifecycle.ViewModelProvider(host).get(AuthViewModel.class).showTerms(true);
             host.navigate(TermsFragment.readOnly(),true);

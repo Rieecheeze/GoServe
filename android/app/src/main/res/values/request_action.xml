@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_title">Update request</string>
+    <string name="action_title">Update Request</string>
     <string name="action_open">Request actions</string>
     <string name="action_reason">Reason or office note</string>
     <string name="action_reason_hint">A reason is required for cancellation or rejection</string>

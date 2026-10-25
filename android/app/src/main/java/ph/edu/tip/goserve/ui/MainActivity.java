@@ -13,6 +13,8 @@ import ph.edu.tip.goserve.domain.SessionProfile;
 
 public final class MainActivity extends BaseActivity {
     public static final String EXTRA_PREVIEW = "design_preview";
+    public static final String EXTRA_OPEN_RECOVERY_CODES="open_recovery_codes";
+    private String recoveryReturnOwner;
     private ActivityMainBinding binding;
     private boolean preview;
     private SessionProfile profile;
@@ -33,6 +35,11 @@ public final class MainActivity extends BaseActivity {
         if (saved == null) {
             int first = role == Role.TELLER ? R.id.nav_payments : R.id.nav_home;
             binding.bottomNavigation.setSelectedItemId(first);
+            if(!preview&&getIntent().getBooleanExtra(EXTRA_OPEN_RECOVERY_CODES,false)){
+                binding.bottomNavigation.setSelectedItemId(R.id.nav_more);
+                navigate(SettingsGroupFragment.account(),true);
+                navigate(RecoverySecurityFragment.create(RecoverySecurityViewModel.Kind.CODES),true);
+            }
         }
         new ViewModelProvider(this).get(OfficeViewModel.class).ensureLoaded(preview);
         if (!preview) ((GoServeApplication)getApplication()).accountInvalidations().observe(this,ignored -> checkAccountLease());
@@ -88,7 +95,7 @@ public final class MainActivity extends BaseActivity {
             catch (IllegalStateException changed) { returnToSignIn(); }
         }
     }
-    public SessionProfile profile() { return profile; }
+    public SessionProfile profile() { if(!preview)profile=((GoServeApplication)getApplication()).auth().profile(); return profile; }
     public void setRoleNavigationVisible(boolean visible) {
         if(binding!=null)binding.bottomNavigation.setVisibility(visible?android.view.View.VISIBLE:android.view.View.GONE);
     }
@@ -107,10 +114,23 @@ public final class MainActivity extends BaseActivity {
             || current instanceof ConsultationFragment && ((ConsultationFragment)current).mutationPending();
     }
     public void feature(int title, int body, boolean backStack) { navigate(FeatureStatusFragment.create(getString(title), getString(body)), backStack); }
+    public void openAccountPasswordRecovery(){
+        if(preview||isFinishing())return;
+        try{
+            GoServeApplication app=(GoServeApplication)getApplication();ph.edu.tip.goserve.data.AuthRepository.SessionLease expected=accountLease;app.auth().requireCurrent(expected);
+            startActivity(new Intent(this,AuthActivity.class).putExtra(AuthActivity.EXTRA_ACCOUNT_RECOVERY_OWNER,expected.accountId));finish();
+        }catch(IllegalStateException changed){returnToSignIn();}
+    }
+    public void reauthenticateForRecoveryCodes(){
+        SessionProfile current=profile();recoveryReturnOwner=current==null?null:current.id;
+        ((GoServeApplication)getApplication()).auth().invalidateSession();returnToSignIn();
+    }
     public void returnToSignIn() {
         if (isFinishing()) return;
         profile=null; accountLease=null;
         if (binding!=null) binding.getRoot().setVisibility(android.view.View.GONE);
-        startActivity(new Intent(this, AuthActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK)); finish();
+        Intent destination=new Intent(this, AuthActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        if(recoveryReturnOwner!=null)destination.putExtra(AuthActivity.EXTRA_RETURN_RECOVERY_OWNER,recoveryReturnOwner);
+        startActivity(destination); finish();
     }
 }

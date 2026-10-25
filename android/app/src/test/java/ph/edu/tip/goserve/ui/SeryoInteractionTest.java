@@ -65,32 +65,26 @@ public final class SeryoInteractionTest {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
     }
 
-    @Test public void directAiChatOpensPrivacyAndAttachmentsWhileProviderActionsStayDisabled() {
+    @Test public void previewChatRequiresPrivacyThenSendsClearlyLocalResponses() {
         launch(390, 1f, false);
-        activity.findViewById(R.id.nav_assistant).performClick();
-        idleAndLayout();
+        activity.findViewById(R.id.nav_assistant).performClick();idleAndLayout();
         assertTrue(current() instanceof AssistantFragment);
-        assertFalse(activity.findViewById(R.id.sendButton).isEnabled());
         ((EditText) activity.findViewById(R.id.questionInput)).setText("Which office handles a document request?");
-        assertFalse("Typing must not activate an unconfigured provider.", activity.findViewById(R.id.sendButton).isEnabled());
-        assertEquals("Typing is not processing.", SeryoMascotView.State.IDLE,
-                ((SeryoMascotView) activity.findViewById(R.id.seryoIcon)).getState());
-        click(R.id.privacyButton);
-        assertEquals("consent", current().requireArguments().getString("panel"));
-        assertTrue(activity.findViewById(R.id.consentPanel).isShown());
-        assertEquals(SeryoMascotView.State.IDLE, ((SeryoMascotView) activity.findViewById(R.id.seryoIcon)).getState());
-        assertEquals(activity.getString(R.string.seryo_consent_pending), ((TextView) activity.findViewById(R.id.consentPending)).getText().toString());
-        click(R.id.returnToChatButton);
-        assertTrue(activity.findViewById(R.id.chatPanel).isShown());
+        assertFalse("The first privacy choice is required before preview use.",activity.findViewById(R.id.sendButton).isEnabled());
+        click(R.id.privacyButton);assertTrue(activity.findViewById(R.id.consentPanel).isShown());
+        assertTrue(activity.findViewById(R.id.allowAiButton).isEnabled());
+        assertTrue(((TextView)activity.findViewById(R.id.consentPending)).getText().toString().contains("preview choice"));
+        click(R.id.allowAiButton);assertTrue(activity.findViewById(R.id.chatPanel).isShown());
+        assertTrue(activity.findViewById(R.id.sendButton).isEnabled());click(R.id.sendButton);
+        ViewGroup transcript=activity.findViewById(R.id.chatTranscript);assertEquals(2,transcript.getChildCount());
+        assertTrue(((TextView)transcript.getChildAt(1).findViewById(R.id.messageText)).getText().toString().startsWith("Local preview"));
+        assertEquals(SeryoMascotView.State.IDLE,((SeryoMascotView)activity.findViewById(R.id.seryoBubbleAvatar)).getState());
         chooseTool(0);
-        assertEquals("attachment", current().requireArguments().getString("panel"));
-        assertFalse("An unconfigured provider cannot select or upload private files.", activity.findViewById(R.id.chooseFileButton).isEnabled());
-        assertEquals(SeryoMascotView.State.IDLE, ((SeryoMascotView) activity.findViewById(R.id.seryoIcon)).getState());
-        click(R.id.backButton);
-        assertTrue(activity.findViewById(R.id.chatPanel).isShown());
-        assertNull("Pending AI panels must not launch a provider or file picker.", Shadows.shadowOf(activity).getNextStartedActivity());
-        click(R.id.nav_home);
-        assertFalse(current() instanceof AssistantFragment);
+        Intent picker=Shadows.shadowOf(activity).getNextStartedActivity();assertNotNull(picker);
+        assertEquals(Intent.ACTION_OPEN_DOCUMENT,picker.getAction());
+        assertEquals(0,picker.getFlags() & Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        new ViewModelProvider(activity).get(SeryoViewModel.class).finishPicker(null,false);
+        click(R.id.nav_home);assertFalse(current() instanceof AssistantFragment);
     }
 
     @Test public void headerAndBubbleShareStateWithoutDuplicateLoopsAndStopOnViewDestruction() throws IOException {
@@ -275,27 +269,18 @@ public final class SeryoInteractionTest {
         }
     }
 
-    @Test public void plusOffersAttachmentPrivacySettingsAndHelpWithoutSendingTheDraft() {
+    @Test public void plusOnlyOffersFileAndCameraAndRequiresPrivacyBeforeSelection() {
         launch(390, 1f, false);
-        activity.findViewById(R.id.nav_assistant).performClick();
-        idleAndLayout();
-        ((EditText) activity.findViewById(R.id.questionInput)).setText("An unsent campus service question");
-        click(R.id.attachmentButton);
-        android.widget.PopupMenu menu = ShadowPopupMenu.getLatestPopupMenu();
-        assertNotNull("The plus action must open its tools menu.", menu);
-        assertEquals(4, menu.getMenu().size());
-        assertEquals("Attach a file", menu.getMenu().getItem(0).getTitle().toString());
-        assertEquals("AI privacy", menu.getMenu().getItem(1).getTitle().toString());
-        assertEquals(activity.getString(R.string.seryo_settings_title),menu.getMenu().getItem(2).getTitle().toString());
-        assertEquals(activity.getString(R.string.seryo_help_title),menu.getMenu().getItem(3).getTitle().toString());
-        assertTrue(menu.getMenu().performIdentifierAction(menu.getMenu().getItem(1).getItemId(), 0));
-        idleAndLayout();
+        activity.findViewById(R.id.nav_assistant).performClick();idleAndLayout();
+        ((EditText)activity.findViewById(R.id.questionInput)).setText("An unsent campus service question");
+        click(R.id.attachmentButton);android.widget.PopupMenu menu=ShadowPopupMenu.getLatestPopupMenu();assertNotNull(menu);
+        assertEquals(2,menu.getMenu().size());assertEquals("Attach File",menu.getMenu().getItem(0).getTitle().toString());
+        assertEquals("Open Camera",menu.getMenu().getItem(1).getTitle().toString());
+        menu.getMenu().performIdentifierAction(menu.getMenu().getItem(1).getItemId(),0);idleAndLayout();
         assertTrue(activity.findViewById(R.id.consentPanel).isShown());
+        assertNull("Privacy must precede any picker or camera launch.",Shadows.shadowOf(activity).getNextStartedActivity());
         click(R.id.returnToChatButton);
-        chooseTool(0);
-        assertTrue(activity.findViewById(R.id.attachmentPanel).isShown());
-        assertFalse(activity.findViewById(R.id.chooseFileButton).isEnabled());
-        assertNull("Opening tools cannot launch a provider or a file picker.", Shadows.shadowOf(activity).getNextStartedActivity());
+        assertEquals("An unsent campus service question",((EditText)activity.findViewById(R.id.questionInput)).getText().toString());
     }
 
     @Test public void compactAvatarRendersTheApprovedOriginalArtworkCrop() {
@@ -408,7 +393,7 @@ public final class SeryoInteractionTest {
         click(R.id.privacyButton);
         checkScreen("seryo-privacy", capture ? "main-seryo-privacy-" + suffix : null, activity.findViewById(R.id.returnToChatButton));
         click(R.id.returnToChatButton);
-        chooseTool(0);
+        activity.navigate(AssistantFragment.create("attachment"),true);idleAndLayout();
         checkScreen("seryo-attachment", capture ? "main-seryo-attachment-" + suffix : null, activity.findViewById(R.id.cleanupText));
         TextView title = activity.findViewById(R.id.panelTitle);
         View caption = activity.findViewById(R.id.providerCaption);

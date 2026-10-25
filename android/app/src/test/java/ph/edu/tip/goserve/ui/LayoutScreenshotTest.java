@@ -75,6 +75,7 @@ public final class LayoutScreenshotTest {
         Context context = new ContextThemeWrapper(app.createConfigurationContext(configuration),
                 R.style.Theme_GoServe);
         View root = LayoutInflater.from(context).inflate(layout, null, false);
+        if (layout == R.layout.fragment_sign_in) root.findViewById(R.id.previewButton).setVisibility(View.VISIBLE);
         if (layout == R.layout.fragment_home) populateHome(root, context, width, fontScale);
         if (layout == R.layout.activity_auth) root.findViewById(R.id.authLoading).setVisibility(View.VISIBLE);
 

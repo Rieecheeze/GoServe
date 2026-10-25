@@ -3,7 +3,7 @@ import { exact,rpc } from '../../lib/v23.ts';
 import { readBounded,verifyFile } from '../../lib/files.ts';
 import { parsers } from '../_shared/file-parsers.ts';
 serve(async(request,{admin,userClient})=>{
-  const {client,user}=await authenticated(request,admin,userClient);
+  const {client,user}=await authenticated(request,admin,userClient,true);
   const uploadId=request.headers.get('X-GoServe-Upload');
   if(uploadId){
     const args={p_actor:user.id,p_file_id:uploadId};

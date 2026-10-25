@@ -10,6 +10,8 @@ import ph.edu.tip.goserve.BuildConfig;
 import ph.edu.tip.goserve.databinding.ActivityAuthBinding;
 
 public final class AuthActivity extends BaseActivity {
+    public static final String EXTRA_RETURN_RECOVERY_OWNER="return_recovery_owner";
+    public static final String EXTRA_ACCOUNT_RECOVERY_OWNER="account_recovery_owner";
     private ActivityAuthBinding binding;
     private AuthViewModel model;
     @Override protected void onCreate(Bundle saved) {
@@ -24,7 +26,8 @@ public final class AuthActivity extends BaseActivity {
         getOnBackPressedDispatcher().addCallback(this,new androidx.activity.OnBackPressedCallback(true) {
             @Override public void handleOnBackPressed() { if (!model.back()) { setEnabled(false); getOnBackPressedDispatcher().onBackPressed(); } }
         });
-        model.initialize(consumeCallback(getIntent()));
+        String accountRecoveryOwner=getIntent().getStringExtra(EXTRA_ACCOUNT_RECOVERY_OWNER);getIntent().removeExtra(EXTRA_ACCOUNT_RECOVERY_OWNER);
+        if(!model.accountPasswordRecovery()&&!model.startAccountPasswordRecovery(accountRecoveryOwner))model.initialize(consumeCallback(getIntent()));
     }
     private void render(AuthViewModel.State state) {
         binding.authLoading.setVisibility(state.loading?android.view.View.VISIBLE:android.view.View.GONE);
@@ -35,14 +38,17 @@ public final class AuthActivity extends BaseActivity {
             case RESTORING: return;
             case HOME: if (state.profile!=null && state.profile.ready()) openMain(false); return;
             case TERMS: next=new TermsFragment(); break;
+            case REGISTER_GOOGLE: next=new GoogleRegistrationFragment(); break;
+            case RECOVERY_SETUP: next=RecoverySecurityFragment.create(RecoverySecurityViewModel.Kind.SETUP); break;
             case CREDENTIALS: next=new RegistrationFragment(); break;
             case PROFILE: next=new ConsentFragment(); break;
             case ACCOUNT_CREATED: next=new AccountCreatedFragment(); break;
-            case RESET_EMAIL: case RESET_SENT: case RESET_PASSWORD: case RESET_COMPLETE: case RESET_UNAVAILABLE: next=new RecoveryFragment(); break;
+            case RESET_EMAIL: case RESET_SENT: case RESET_PASSWORD: case RESET_COMPLETE: case RESET_UNAVAILABLE: next=RecoverySecurityFragment.create(model.accountPasswordRecovery()?RecoverySecurityViewModel.Kind.PASSWORD_CHANGE:RecoverySecurityViewModel.Kind.FORGOT); break;
             default: next=new SignInFragment();
         }
         Fragment current=getSupportFragmentManager().findFragmentById(binding.authContainer.getId());
-        if (current==null || current.getClass()!=next.getClass()) show(next,false);
+        boolean recoveryKindChanged=current instanceof RecoverySecurityFragment && next instanceof RecoverySecurityFragment && !java.util.Objects.equals(current.requireArguments().getString("kind"),next.requireArguments().getString("kind"));
+        if (current==null || current.getClass()!=next.getClass() || recoveryKindChanged) show(next,false);
     }
     @Override protected void onResume() { super.onResume(); if (model!=null && model.state().getValue()!=null) render(model.state().getValue()); }
     @Override protected void onNewIntent(Intent intent) { super.onNewIntent(intent); setIntent(intent); model.finishGoogle(consumeCallback(intent)); }
@@ -52,5 +58,11 @@ public final class AuthActivity extends BaseActivity {
         if (backStack) { transaction.addToBackStack(null); transaction.commit(); } else transaction.commitNow();
     }
     public void openPreview() { if (BuildConfig.DEBUG) openMain(true); }
-    private void openMain(boolean preview) { startActivity(new Intent(this,MainActivity.class).putExtra(MainActivity.EXTRA_PREVIEW,preview)); finish(); }
+    private void openMain(boolean preview) {
+        String requestedOwner=getIntent().getStringExtra(EXTRA_RETURN_RECOVERY_OWNER);
+        ph.edu.tip.goserve.domain.SessionProfile profile=model.state().getValue().profile;
+        Intent destination=new Intent(this,MainActivity.class).putExtra(MainActivity.EXTRA_PREVIEW,preview);
+        if(!preview&&profile!=null&&profile.id.equals(requestedOwner))destination.putExtra(MainActivity.EXTRA_OPEN_RECOVERY_CODES,true);
+        startActivity(destination);finish();
+    }
 }

@@ -7,7 +7,9 @@
         <item name="android:orientation">vertical</item>
         <item name="android:padding">@dimen/account_card_padding</item>
         <item name="android:background">@drawable/bg_account_card</item>
-        <item name="android:elevation">8dp</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:translationZ">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
     </style>
     <style name="Widget.GoServe.Account.Label" parent="">
         <item name="android:layout_width">match_parent</item>
@@ -114,5 +116,25 @@
         <item name="android:paddingTop">14dp</item>
         <item name="android:paddingBottom">14dp</item>
         <item name="android:gravity">center</item>
+    </style>
+    <style name="Widget.GoServe.SignIn.Button" parent="Widget.GoServe.Account.Button">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+    <style name="Widget.GoServe.SignIn.Button.Outlined" parent="Widget.GoServe.SignIn.Button">
+        <item name="android:textColor">@color/gs_text</item>
+        <item name="backgroundTint">@color/gs_surface</item>
+        <item name="strokeColor">@color/gs_border</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="Widget.GoServe.SignIn.Link" parent="Widget.GoServe.Account.Button.Text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 </resources>

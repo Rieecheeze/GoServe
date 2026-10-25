@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="evidence_title">Add evidence</string>
-    <string name="evidence_heading">Device file or camera</string>
+    <string name="evidence_title">Add Evidence</string>
+    <string name="evidence_heading">Device File Or Camera</string>
     <string name="evidence_support">Choose one private file. It is uploaded only when you select Use selected file.</string>
     <string name="evidence_policy">Accepted formats: %1$s. Service maximum: %2$s.</string>
     <string name="evidence_choose">Choose file from device</string>
@@ -13,7 +13,7 @@
     <string name="evidence_uploading">Uploading private evidence…</string>
     <string name="evidence_use">Use selected file</string>
     <string name="evidence_retry">Retry upload</string>
-    <string name="evidence_failed_heading">File cannot be uploaded</string>
+    <string name="evidence_failed_heading">File Cannot Be Uploaded</string>
     <string name="evidence_invalid">Check the service’s accepted format and requirements, then choose another file.</string>
     <string name="evidence_too_large">This file exceeds the service’s configured maximum size. Choose a smaller file.</string>
     <string name="evidence_device_limit">This file is too large to process on this device. Choose a smaller file.</string>

@@ -30,7 +30,7 @@ public final class AccountIntegrationTest {
         Store.values.clear(); Server.lastBody = null; Server.calls = 0; Server.legacy = false;
         Server.entered = null; Server.release = null; Server.recoveryAmr = true;
         Server.resetStatus=0; Server.resetCalls=0; Server.resetEntered=null; Server.resetRelease=null; Server.refreshStatus=0;
-        Server.termsAvailable=false; Server.complete=true; Server.accepted=true; Server.registrationFails=false;
+        Server.termsAvailable=false; Server.complete=true; Server.accepted=true; Server.registrationFails=false; Server.recoveryRequired=false;
         Server.profileId="student-a"; Server.email="ana@example.com"; Server.role="student"; Server.registerCalls=0; Server.updateCalls=0;
         Server.department=null;
         client = new SupabaseClient("https://example.supabase.co", "fixture-key");
@@ -53,13 +53,9 @@ public final class AccountIntegrationTest {
         try { auth.signInPassword("ana@example.com","verbatim"); fail("Malformed affiliation must be rejected."); }
         catch(IllegalStateException expected) { assertNull(auth.profile()); }
     }
-    @Test public void registrationUsesTrustedExactProfileAndNeverCreatesSession() throws Exception {
-        assertEquals("ana@example.com", auth.registerStudent("ana@example.com", "A1! abc", student(), "v1", "b74907ce-d9c2-4d26-9abb-d24814b6042e"));
-        assertEquals("/functions/v1/register-student", Server.path);
-        assertEquals("A1! abc", Server.lastBody.getString("password"));
-        assertEquals(9, Server.lastBody.getJSONObject("profile").length());
-        assertFalse(Server.lastBody.getJSONObject("profile").has("role"));
-        assertNull(auth.profile()); assertNull(Store.values.get("refresh_token"));
+    @Test public void registrationRequiresTipGoogleWithoutCreatingAnEmailAccount() throws Exception {
+        assertThrows(IllegalStateException.class,()->auth.registerStudent("ana@tip.edu.ph","A1! abc",student(),"v1","b74907ce-d9c2-4d26-9abb-d24814b6042e"));
+        assertEquals(0,Server.registerCalls);assertNull(auth.profile());assertNull(Store.values.get("refresh_token"));
     }
     @Test public void missingApprovedTermsFailsTruthfully() throws Exception {
         try { auth.loadTerms(); fail("Missing approved content must block acceptance."); }
@@ -87,84 +83,19 @@ public final class AccountIntegrationTest {
         assertFalse(request.isAlive()); assertNotNull(failure.get());
         assertNull(Store.values.get("refresh_token")); assertNull(auth.profile());
     }
-    @Test public void recoveryRequestStoresSeparatePkceAndSendsNoVerifier() throws Exception {
-        auth.requestRecovery("ana@example.com");
-        assertEquals("/functions/v1/recovery-request", Server.path);
-        assertEquals(43, Server.lastBody.getString("code_challenge").length());
-        assertEquals(43, Server.lastBody.getString("state").length());
-        assertFalse(Server.lastBody.has("verifier")); assertNotNull(Store.values.get("recovery_pending"));
-        assertNull(Store.values.get("oauth_pending"));
-    }
-    private Uri recoveryCallback() throws Exception {
-        auth.requestRecovery("ana@example.com");
-        return Uri.parse(AuthRepository.RECOVERY_CALLBACK).buildUpon().appendQueryParameter("state", Server.lastBody.getString("state"))
-                .appendQueryParameter("flow", "recovery").appendQueryParameter("code", "recovery-code").build();
-    }
-    @Test public void recoveryCannotAuthorizeResetWithOrdinaryAmr() throws Exception {
-        Uri callback = recoveryCallback(); Server.recoveryAmr = false;
-        try { auth.finishRecovery(callback); fail("Ordinary OAuth/password session must not authorize reset."); }
-        catch (IllegalArgumentException expected) { assertNull(Store.values.get("recovery_pending")); }
-    }
-    @Test public void recoveryIsOneTimeAndResetLeavesBlankOrdinarySession() throws Exception {
-        Uri callback = recoveryCallback(); auth.finishRecovery(callback);
-        assertNull(auth.profile()); assertNull(Store.values.get("refresh_token"));
-        auth.resetPassword("A1! abc", "A1! abc");
-        assertNull(Store.values.get("recovery_pending")); assertNull(Store.values.get("refresh_token"));
-        try { auth.finishRecovery(callback); fail("Consumed recovery link must fail."); }
-        catch (IllegalArgumentException expected) { assertNull(auth.profile()); }
-    }
-    @Test public void wrongRecoveryStateDoesNotExchangeCode() throws Exception {
-        Uri callback = recoveryCallback().buildUpon().clearQuery().appendQueryParameter("state", "wrong")
-                .appendQueryParameter("flow", "recovery").appendQueryParameter("code", "recovery-code").build();
-        int calls = Server.calls;
-        try { auth.finishRecovery(callback); fail("Wrong state must fail before exchange."); }
-        catch (IllegalArgumentException expected) { assertEquals(calls, Server.calls); }
-    }
-    @Test public void terminalResetRejectionClearsAuthorityBeforeAnotherSubmission() throws Exception {
-        for (int status : new int[]{401,403}) {
-            auth.finishRecovery(recoveryCallback()); Server.resetStatus=status;
-            try { auth.resetPassword("A1! abc","A1! abc"); fail("Terminal Auth rejection must be reported."); }
-            catch (SupabaseClient.ApiException expected) { assertEquals(status,expected.status); }
-            int rejectedCalls=Server.resetCalls;
-            try { auth.resetPassword("A1! abc","A1! abc"); fail("Rejected recovery authority must be cleared locally."); }
-            catch (IllegalArgumentException expected) { assertEquals("A terminal rejection must prevent another PUT.",rejectedCalls,Server.resetCalls); }
-            catch (SupabaseClient.ApiException retained) { fail("Terminal recovery authority was reused for another PUT instead of being rejected locally."); }
-            assertNull(auth.profile()); assertNull(Store.values.get("recovery_pending"));
-        }
-    }
-    @Test public void transientResetFailureKeepsCurrentAuthorityAvailableForRetry() throws Exception {
-        auth.finishRecovery(recoveryCallback()); Server.resetStatus=503;
-        try { auth.resetPassword("A1! abc","A1! abc"); fail("The temporary failure must be reported."); }
-        catch (SupabaseClient.ApiException expected) { assertEquals(503,expected.status); }
-        assertEquals(1,Server.resetCalls);
-        Server.resetStatus=0; auth.resetPassword("A1! abc","A1! abc");
-        assertEquals("The same verified flow must allow a transient retry.",2,Server.resetCalls);
-        assertNull(auth.profile()); assertNull(Store.values.get("refresh_token"));
-    }
-    @Test public void lateTerminalRejectionCannotClearANewerVerifiedRecoveryFlow() throws Exception {
-        auth.finishRecovery(recoveryCallback()); Server.resetStatus=401;
-        Server.resetEntered=new CountDownLatch(1); Server.resetRelease=new CountDownLatch(1);
-        AtomicReference<Throwable> failure=new AtomicReference<>();
-        Thread oldReset=new Thread(() -> { try { auth.resetPassword("A1! abc","A1! abc"); } catch (Throwable error) { failure.set(error); } });
-        oldReset.start(); assertTrue(Server.resetEntered.await(3,TimeUnit.SECONDS));
-        try {
-            auth.finishRecovery(recoveryCallback()); Server.resetStatus=0;
-        } finally { Server.resetRelease.countDown(); }
-        oldReset.join(3000); assertFalse(oldReset.isAlive());
-        assertTrue(failure.get() instanceof SupabaseClient.ApiException);
-        Server.resetEntered=null; Server.resetRelease=null;
-        auth.resetPassword("B2! xyz","B2! xyz");
-        assertEquals("The newer flow must still dispatch its own reset.",2,Server.resetCalls);
-        assertNull(auth.profile()); assertNull(Store.values.get("refresh_token"));
+    @Test public void emailRecoveryAndDeepLinksAreRetiredWithoutAnAuthExchange() throws Exception {
+        int calls=Server.calls;
+        assertThrows(IllegalStateException.class,()->auth.requestRecovery("ana@example.com"));
+        assertThrows(IllegalStateException.class,()->auth.finishRecovery(Uri.parse("goserve://auth/recovery?code=old&flow=recovery")));
+        assertThrows(IllegalStateException.class,()->auth.resetPassword("A1! abc","A1! abc"));
+        assertEquals(calls,Server.calls);assertNull(Store.values.get("recovery_pending"));assertNull(auth.profile());
     }
     @Test public void invalidationCallbacksNeverRunUnderAnyAuthMonitorNesting() throws Exception {
         auth.setInvalidationListener(() -> assertFalse("External account cleanup cannot run while holding the auth monitor.",Thread.holdsLock(auth)));
         auth.invalidateSession();
         Uri google=auth.googleAuthorizationUrl(); auth.prepareGoogleCallback();
         auth.finishGoogle(Uri.parse(google.getQueryParameter("redirect_to")).buildUpon().appendQueryParameter("code","google-code").build());
-        auth.finishRecovery(recoveryCallback()); Server.resetStatus=401;
-        try { auth.resetPassword("A1! abc","A1! abc"); fail("Terminal fixture must reject reset."); }
-        catch (SupabaseClient.ApiException expected) { assertEquals(401,expected.status); }
+        auth.signOut();
     }
     @Implements(value = SecureSessionStore.class, isInAndroidSdk = false)
     public static final class Store {
@@ -182,7 +113,7 @@ public final class AccountIntegrationTest {
         static volatile int resetStatus, resetCalls;
         static volatile int refreshStatus;
         static volatile CountDownLatch resetEntered,resetRelease;
-        static boolean termsAvailable,complete,accepted,registrationFails;
+        static boolean termsAvailable,complete,accepted,registrationFails,recoveryRequired;
         static String profileId,email,role;
         static Object department;
         static int registerCalls,updateCalls;
@@ -198,6 +129,7 @@ public final class AccountIntegrationTest {
             calls++; path = endpoint; lastBody = body;
             if ("GET".equals(method) && "/auth/v1/settings".equals(endpoint)) return new JSONObject().put("external",new JSONObject().put("google",true));
             if ("GET".equals(method) && "/auth/v1/user".equals(endpoint)) return new JSONObject().put("id",profileId);
+            if ("/functions/v1/recovery-control".equals(endpoint) && "status".equals(body.optString("action"))) return recoveryStatus();
             if ("PUT".equals(method) && "/auth/v1/user".equals(endpoint)) {
                 ++resetCalls; int status=resetStatus;
                 if (resetEntered!=null) resetEntered.countDown();
@@ -230,9 +162,15 @@ public final class AccountIntegrationTest {
                 JSONObject row = new JSONObject().put("id",profileId).put("email",email).put("display_name","Ana Cruz").put("role",role)
                         .put("office_id",JSONObject.NULL).put("staff_capability",JSONObject.NULL).put("is_demo",true).put("consent_accepted_at",JSONObject.NULL);
                 if (!legacy) row.put("version",1).put("profile_complete",complete).put("terms",new JSONObject().put("current_version","v1").put("accepted_version",accepted?"v1":JSONObject.NULL))
-                        .put("next_action",!accepted?"accept_terms":!complete?"complete_profile":"home");
+                        .put("next_action",!accepted?"accept_terms":!complete?"complete_profile":recoveryRequired?"setup_recovery":"home")
+                        .put("recovery",recoveryStatus());
                 if(department!=null)row.put("department_id",department);
                 return row;
+        }
+        static JSONObject recoveryStatus() throws Exception {
+            return new JSONObject().put("codes_configured",!recoveryRequired).put("codes_acknowledged",!recoveryRequired)
+                    .put("remaining_codes",recoveryRequired?0:10).put("generation",recoveryRequired?JSONObject.NULL:"884cd499-a440-48ef-a6ef-b8ddfe1bc304")
+                    .put("requires_setup",recoveryRequired);
         }
     }
 }

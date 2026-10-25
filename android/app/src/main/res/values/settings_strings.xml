@@ -1,0 +1,23 @@
+<resources>
+    <string name="settings_about">About</string>
+    <string name="settings_seryo_group">Seryo AI</string>
+    <string name="settings_seryo_intro">Manage Seryo settings, review your privacy decision or find help.</string>
+    <string name="settings_seryo_settings">Settings</string>
+    <string name="settings_account_info">Account Information</string>
+    <string name="settings_about_body">GoServe brings campus service information, requests and account tools together. This build is for supervised testing.\n\nVersion: %1$s</string>
+    <string name="settings_account_preview">Design preview has no signed-in account. Profile picture and password changes are unavailable.</string>
+    <string name="account_info_intro">Review and edit your student information.</string>
+    <string name="account_info_email_help">Your sign-in email is managed separately from your student details.</string>
+    <string name="account_info_save">Save Changes</string>
+    <string name="account_info_retry">Retry Save</string>
+    <string name="account_info_saving">Saving changes…</string>
+    <string name="account_info_saved">Your account information was updated.</string>
+    <string name="account_info_preview">Design preview has no account information. Sign in to view or edit your details.</string>
+    <string name="account_info_read_only">Student information can be edited by a signed-in Student account. Your assigned role and office are managed by GoServe.</string>
+    <string name="account_info_unavailable">This account session is unavailable. Return to sign in.</string>
+    <string name="account_info_uncertain">The update could not be confirmed. Retry Save sends the same update again.</string>
+    <string name="account_info_stale">Your account changed elsewhere. The latest saved details are shown. Review them before saving.</string>
+    <string name="account_info_invalid">Complete the highlighted student details.</string>
+    <string name="account_info_required">This field is required.</string>
+    <string name="account_info_middle_conflict">Clear the middle name or turn off No middle name.</string>
+</resources>

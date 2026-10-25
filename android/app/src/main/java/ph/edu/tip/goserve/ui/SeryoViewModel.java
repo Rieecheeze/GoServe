@@ -17,6 +17,8 @@ import androidx.lifecycle.Observer;
 import ph.edu.tip.goserve.GoServeApplication;
 import ph.edu.tip.goserve.data.SeryoAttachmentSource;
 import ph.edu.tip.goserve.data.SupabaseClient;
+import ph.edu.tip.goserve.data.CameraEvidence;
+import ph.edu.tip.goserve.R;
 
 public final class SeryoViewModel extends AndroidViewModel {
     public static final class Message {
@@ -33,10 +35,15 @@ public final class SeryoViewModel extends AndroidViewModel {
         public final boolean consentPending;
         public final java.util.List<Message> messages;
         public final String sendingQuestion;
-        State(boolean busy,SeryoRepository.Readiness readiness,String error,SeryoDraft draft,long decisionSequence,boolean consentPending,java.util.List<Message> messages,String sendingQuestion) {
+        public final boolean preview;
+        public final String consent;
+        State(boolean busy,SeryoRepository.Readiness readiness,String error,SeryoDraft draft,long decisionSequence,boolean consentPending,java.util.List<Message> messages,String sendingQuestion,boolean preview,String consent) {
             this.busy=busy;this.readiness=readiness;this.error=error;this.draft=draft;this.decisionSequence=decisionSequence;this.consentPending=consentPending;
             this.messages=java.util.Collections.unmodifiableList(new java.util.ArrayList<>(messages));this.sendingQuestion=sendingQuestion;
+            this.preview=preview;this.consent=consent;
         }
+        public boolean allowsLocalAttachment(){return !busy && !consentPending && "allow".equals(consent) && (preview || readiness!=null && "clear".equals(readiness.cleanup));}
+        public boolean allowsSend(){return !busy && !consentPending && "allow".equals(consent) && (preview || readiness!=null && readiness.canSend && readiness.providerReady && "clear".equals(readiness.cleanup));}
     }
     private static final class ConsentIntent {
         final String decision,key;
@@ -46,13 +53,15 @@ public final class SeryoViewModel extends AndroidViewModel {
     private final SeryoDraft draft=new SeryoDraft();
     private final java.util.List<Message> messages=new java.util.ArrayList<>();
     private String sendingQuestion;
-    private final MutableLiveData<State> state=new MutableLiveData<>(new State(false,null,null,draft,0,false,java.util.Collections.emptyList(),null));
+    private final MutableLiveData<State> state=new MutableLiveData<>(new State(false,null,null,draft,0,false,java.util.Collections.emptyList(),null,false,null));
     private final Handler main=new Handler(Looper.getMainLooper());
     private final ExecutorService executor;
     private final GoServeApplication app;
     private final Observer<Long> invalidations=ignored -> verifyAccount();
     private SeryoRepository repository;
     private boolean started,preview,pickerLaunched;
+    private String previewConsent="unset";
+    private CameraEvidence capture;
     private volatile boolean cleared;
     private volatile int generation,selectionGeneration;
     private int picker=-1;
@@ -83,8 +92,16 @@ public final class SeryoViewModel extends AndroidViewModel {
     }
     public void decide(String decision) {
         State before=state.getValue();
-        if(preview || repository==null || cleared || before.busy || !current())return;
         if(!java.util.Arrays.asList("allow","decline","revoke").contains(decision))throw new IllegalArgumentException("Choose a consent decision.");
+        if(cleared || before.busy || !current())return;
+        if(preview) {
+            if(!"unset".equals(previewConsent) && !("allow".equals(previewConsent) && "revoke".equals(decision)))return;
+            if("unset".equals(previewConsent) && "revoke".equals(decision))return;
+            previewConsent=decision;++decisionSequence;
+            if(!"allow".equals(decision)){draft.clear();messages.clear();clearCapture();++selectionGeneration;picker=-1;pickerLaunched=false;}
+            publish(false,null,null);return;
+        }
+        if(repository==null)return;
         if(consentIntent!=null) {if(consentIntent.decision.equals(decision))retryConsent();return;}
         if(before.readiness==null)return;
         consentIntent=new ConsentIntent(decision,before.readiness.version);performConsent();
@@ -95,7 +112,9 @@ public final class SeryoViewModel extends AndroidViewModel {
     }
     private void performConsent() {
         ConsentIntent command=consentIntent;
-        int request=++generation;++selectionGeneration;picker=-1;pickerLaunched=false;publish(true,state.getValue().readiness,null);
+        int request=++generation;++selectionGeneration;picker=-1;pickerLaunched=false;clearCapture();
+        if(!"allow".equals(command.decision)){draft.clear();messages.clear();sendingQuestion=null;}
+        publish(true,state.getValue().readiness,null);
         executor.execute(() -> {
             try {
                 repository.consent(command.decision,command.expected,command.key);
@@ -118,11 +137,11 @@ public final class SeryoViewModel extends AndroidViewModel {
         if(repository==null)return false;
         try {repository.requireCurrent();return !cleared;}
         catch(IllegalStateException changed) {
-            ++generation;++selectionGeneration;picker=-1;pickerLaunched=false;consentIntent=null;draft.clear();messages.clear();sendingQuestion=null;repository=null;publish(false,null,"ACCOUNT_CHANGED");return false;
+            ++generation;++selectionGeneration;picker=-1;pickerLaunched=false;clearCapture();consentIntent=null;draft.clear();messages.clear();sendingQuestion=null;repository=null;publish(false,null,"ACCOUNT_CHANGED");return false;
         }
     }
     private boolean accept(int request) {return !cleared && request==generation && current();}
-    private void publish(boolean busy,SeryoRepository.Readiness ready,String error) {state.setValue(new State(busy,ready,error,draft,decisionSequence,consentIntent!=null,messages,sendingQuestion));}
+    private void publish(boolean busy,SeryoRepository.Readiness ready,String error) {state.setValue(new State(busy,ready,error,draft,decisionSequence,consentIntent!=null,messages,sendingQuestion,preview,preview?previewConsent:ready==null?null:ready.consent));}
     private void postFailure(int request,Exception failure) {main.post(() -> {if(accept(request))publish(false,null,errorCode(failure));});}
     private String errorCode(Exception failure) {
         if(failure instanceof SupabaseClient.ApiException)return ((SupabaseClient.ApiException)failure).code;
@@ -133,61 +152,78 @@ public final class SeryoViewModel extends AndroidViewModel {
     }
     public void requestPicker(IntConsumer launch) {
         State before=state.getValue();
-        if(before.busy || consentIntent!=null || picker!=-1 || before.readiness==null || !before.readiness.allowsAttachment() || !current())return;
+        if(!before.allowsLocalAttachment() || picker!=-1 || !current())return;
         int selection=++selectionGeneration;picker=selection;pickerLaunched=false;
+        if(preview){launchPicker(selection,launch);return;}
         int request=++generation;publish(true,null,null);
         executor.execute(() -> {
             try {
                 SeryoRepository.Readiness ready=repository.readiness();
                 main.post(() -> {
                     if(!accept(request) || selection!=selectionGeneration || picker!=selection)return;publish(false,ready,null);
-                    if(ready.allowsAttachment()) {
-                        pickerLaunched=true;
-                        try {launch.accept(selection);}
-                        catch(android.content.ActivityNotFoundException | IllegalStateException | SecurityException unavailable) {
-                            finishPicker(null,false);publish(false,ready,"PICKER_UNAVAILABLE");
-                        }
-                    } else {picker=-1;pickerLaunched=false;}
+                    if(localAllowed(ready))launchPicker(selection,launch);else {picker=-1;pickerLaunched=false;}
                 });
             } catch(Exception failure) {main.post(() -> {if(accept(request) && selection==selectionGeneration) {picker=-1;pickerLaunched=false;publish(false,null,errorCode(failure));}});}
         });
     }
+    private boolean localAllowed(SeryoRepository.Readiness ready){return preview?"allow".equals(previewConsent):ready!=null && "allow".equals(ready.consent) && "clear".equals(ready.cleanup);}
+    private void launchPicker(int selection,IntConsumer launch){
+        pickerLaunched=true;
+        try{launch.accept(selection);}
+        catch(android.content.ActivityNotFoundException | IllegalStateException | SecurityException unavailable){finishPicker(null,false);clearCapture();publish(false,state.getValue().readiness,"PICKER_UNAVAILABLE");}
+    }
+    public void requestCamera(java.util.function.Consumer<Uri> launch){
+        requestPicker(ignored->{
+            try{clearCapture();capture=CameraEvidence.prepare(app);launch.accept(capture.uri());}
+            catch(Exception unavailable){clearCapture();finishPicker(null,false);publish(false,state.getValue().readiness,"CAMERA_UNAVAILABLE");}
+        });
+    }
+    public void finishCamera(boolean selected){
+        CameraEvidence result=capture;capture=null;
+        if(result==null){finishPicker(null,false);return;}
+        finishSelection(result.uri(),selected,result);
+    }
+    private void releaseCapture(CameraEvidence value){if(value!=null){app.revokeUriPermission(value.uri(),Intent.FLAG_GRANT_READ_URI_PERMISSION|Intent.FLAG_GRANT_WRITE_URI_PERMISSION);value.close();}}
+    private void clearCapture(){releaseCapture(capture);capture=null;}
     public void cancelUnlaunchedPicker() {
         if(cleared || picker<0 || pickerLaunched || !current())return;
         ++generation;++selectionGeneration;picker=-1;publish(false,null,null);
     }
     public void finishPicker(Intent result,boolean selected) {
+        if(picker<0 || picker!=selectionGeneration || !current())return;
+        if(selected && result!=null && result.getClipData()!=null && result.getClipData().getItemCount()!=1) {picker=-1;pickerLaunched=false;publish(false,state.getValue().readiness,"ONE_FILE");return;}
+        Uri uri=result==null?null:result.getData();
+        if(uri==null && result!=null && result.getClipData()!=null)uri=result.getClipData().getItemAt(0).getUri();
+        finishSelection(uri,selected,null);
+    }
+    private void finishSelection(Uri uri,boolean selected,CameraEvidence cameraResult){
         int selection=picker;picker=-1;pickerLaunched=false;
-        if(selection<0 || selection!=selectionGeneration || !current())return;
-        if(!selected || result==null)return;
-        if(result.getClipData()!=null && result.getClipData().getItemCount()!=1) {publish(false,state.getValue().readiness,"ONE_FILE");return;}
-        Uri uri=result.getData();
-        if(uri==null && result.getClipData()!=null)uri=result.getClipData().getItemAt(0).getUri();
-        if(uri==null) {publish(false,state.getValue().readiness,"FILE_UNREADABLE");return;}
+        if(selection<0 || selection!=selectionGeneration || !current() || !selected){releaseCapture(cameraResult);return;}
+        if(uri==null) {releaseCapture(cameraResult);publish(false,state.getValue().readiness,"FILE_UNREADABLE");return;}
         Uri candidateUri=uri;int request=++generation;publish(true,null,null);
         executor.execute(() -> {
             SeryoDraft.Attachment candidate=null;
             try {
-                SeryoRepository.Readiness ready=repository.readiness();
-                if(!ready.allowsAttachment()) {main.post(() -> {if(accept(request))publish(false,ready,"FILE_UNAVAILABLE");});return;}
+                SeryoRepository.Readiness ready=preview?null:repository.readiness();
+                if(!localAllowed(ready)) {main.post(() -> {if(accept(request))publish(false,ready,"FILE_UNAVAILABLE");});return;}
                 candidate=new SeryoAttachmentSource().read(app.getContentResolver(),candidateUri,() -> {
-                    repository.requireCurrent();if(selection!=selectionGeneration || Thread.currentThread().isInterrupted())throw new IllegalStateException("Selection changed.");
+                    if(!preview)repository.requireCurrent();if(selection!=selectionGeneration || Thread.currentThread().isInterrupted())throw new IllegalStateException("Selection changed.");
                 });
-                SeryoRepository.Readiness canonical=repository.readiness();
+                SeryoRepository.Readiness canonical=preview?null:repository.readiness();
                 SeryoDraft.Attachment validated=candidate;candidate=null;
                 main.post(() -> {
                     if(!accept(request) || selection!=selectionGeneration) {validated.close();return;}
-                    if(!canonical.allowsAttachment()) {validated.close();publish(false,canonical,"FILE_UNAVAILABLE");return;}
+                    if(!localAllowed(canonical)) {validated.close();publish(false,canonical,"FILE_UNAVAILABLE");return;}
                     draft.replace(validated);publish(false,canonical,null);
                 });
             } catch(Exception failure) {
                 main.post(() -> {if(accept(request) && selection==selectionGeneration)publish(false,null,failure instanceof SupabaseClient.ApiException?errorCode(failure):"FILE_UNREADABLE");});
-            } finally {if(candidate!=null)candidate.close();}
+            } finally {if(candidate!=null)candidate.close();releaseCapture(cameraResult);}
         });
     }
     public void removeAttachment() {
         if(!current() || state.getValue().busy && consentIntent!=null)return;
-        ++selectionGeneration;picker=-1;pickerLaunched=false;++generation;draft.remove();publish(false,state.getValue().readiness,consentIntent==null?null:"CONSENT_UNCERTAIN");
+        ++selectionGeneration;picker=-1;pickerLaunched=false;clearCapture();++generation;draft.remove();publish(false,state.getValue().readiness,consentIntent==null?null:"CONSENT_UNCERTAIN");
     }
     public void prepare(SeryoDraft.Operation operation) {
         if(!current() || state.getValue().busy || draft.attachment==null)return;
@@ -195,9 +231,16 @@ public final class SeryoViewModel extends AndroidViewModel {
     }
     public void checkSend() {
         State before=state.getValue();
-        if(preview || cleared || before.busy || consentIntent!=null || !current())return;
-        if(before.readiness==null || !before.readiness.canSend || !before.readiness.providerReady || !"allow".equals(before.readiness.consent) || !"clear".equals(before.readiness.cleanup))return;
+        if(cleared || before.busy || consentIntent!=null || !current())return;
         String question=draft.text.trim();if(question.isEmpty() || question.length()>2000 || draft.attachment!=null)return;
+        if(preview){
+            if(!"allow".equals(previewConsent))return;
+            String topic=question.toLowerCase(java.util.Locale.ROOT);
+            int answer=topic.contains("request") || topic.contains("document")?R.string.seryo_preview_requests:topic.contains("office") || topic.contains("registrar")?R.string.seryo_preview_offices:R.string.seryo_preview_scope;
+            messages.add(new Message(true,question));messages.add(new Message(false,app.getString(answer)));
+            while(messages.size()>20)messages.remove(0);draft.text="";publish(false,null,null);return;
+        }
+        if(before.readiness==null || !before.readiness.canSend || !before.readiness.providerReady || !"allow".equals(before.readiness.consent) || !"clear".equals(before.readiness.cleanup))return;
         String key=java.util.UUID.randomUUID().toString();sendingQuestion=question;
         int request=++generation;publish(true,before.readiness,null);
         executor.execute(() -> {
@@ -215,6 +258,6 @@ public final class SeryoViewModel extends AndroidViewModel {
         });
     }
     @Override protected void onCleared() {
-        cleared=true;++generation;++selectionGeneration;picker=-1;pickerLaunched=false;consentIntent=null;draft.clear();messages.clear();sendingQuestion=null;executor.shutdownNow();app.accountInvalidations().removeObserver(invalidations);super.onCleared();
+        cleared=true;++generation;++selectionGeneration;picker=-1;pickerLaunched=false;clearCapture();consentIntent=null;draft.clear();messages.clear();sendingQuestion=null;executor.shutdownNow();app.accountInvalidations().removeObserver(invalidations);super.onCleared();
     }
 }

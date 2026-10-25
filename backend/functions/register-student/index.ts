@@ -1,3 +1,2 @@
-import { serve,json } from '../_shared/runtime.ts';
-import { registerStudent } from '../../lib/v23.ts';
-serve(async(request,{admin})=>json(await registerStudent(admin,await request.json())));
+import { serve,DomainError } from '../_shared/runtime.ts';
+serve(async()=>{throw new DomainError('GOOGLE_REGISTRATION_REQUIRED');});

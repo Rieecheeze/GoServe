@@ -1,7 +1,7 @@
 <resources>
-    <string name="delivery_toolbar">Verified file</string>
+    <string name="delivery_toolbar">Verified File</string>
     <string name="delivery_open">View issued PDF</string>
-    <string name="delivery_title">Your issued document</string>
+    <string name="delivery_title">Your Issued Document</string>
     <string name="delivery_loading">Checking the request, payment and current office file…</string>
     <string name="delivery_available">The office has verified this PDF. Prepare the file, then choose where to save it. Saving a copy leaves your request open until you confirm receipt.</string>
     <string name="delivery_prepare">Prepare PDF</string>
@@ -22,7 +22,7 @@
     <string name="delivery_receipt_retry">Retry receipt confirmation</string>
     <string name="delivery_confirming">Confirming receipt and checking the request’s final status…</string>
     <string name="delivery_edit">Back to the file</string>
-    <string name="delivery_complete">Receipt confirmed</string>
+    <string name="delivery_complete">Receipt Confirmed</string>
     <string name="delivery_complete_body">Request %1$s is completed. You can return to the request to view its updated status.</string>
     <string name="delivery_return">Return to request</string>
     <string name="delivery_reload">Check again</string>

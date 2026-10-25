@@ -63,7 +63,7 @@ public final class SeryoConsentInteractionTest {
             assertEquals(2,server.commands.size());assertEquals(1,server.writes);
             assertEquals(server.commands.get(0).toString(),server.commands.get(1).toString());
             assertTrue(activity.findViewById(R.id.chatPanel).isShown());
-            chooseTool(2);settle();assertTrue(activity.findViewById(R.id.supportPanel).isShown());
+            activity.navigate(AssistantFragment.create("settings"),true);settle();assertTrue(activity.findViewById(R.id.supportPanel).isShown());
             checkScreen("seryo-settings-"+(night?"dark-font2":"light"),R.id.refreshStateButton);
             click(R.id.helpSettingsButton);settle();assertTrue(activity.findViewById(R.id.supportPanel).isShown());
             assertEquals(activity.getString(R.string.seryo_help_title),((TextView)activity.findViewById(R.id.supportHeading)).getText().toString());
@@ -76,8 +76,8 @@ public final class SeryoConsentInteractionTest {
     }
     @Test public void leavingAttachmentPanelBeforeAccessCheckCompletesCannotOpenAHiddenPicker() {
         launch(390,1f,false,true);
-        click(R.id.nav_assistant);settle();chooseTool(0);settle();
-        click(R.id.chooseFileButton);assertTrue(model.snapshot().busy);click(R.id.nav_home);
+        click(R.id.nav_assistant);settle();chooseTool(0);
+        assertTrue(model.snapshot().busy);click(R.id.nav_home);
         settle();assertNull("A detached panel must not launch its document picker.",Shadows.shadowOf(activity).getNextStartedActivity());
     }
     private void launch(int requestedWidth,float fontScale,boolean night,boolean futureReady) {

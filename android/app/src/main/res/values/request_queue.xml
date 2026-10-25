@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="queue_title">Request queue</string>
+    <string name="queue_title">Request Queue</string>
     <string name="queue_office_section">%1$s requests</string>
     <string name="queue_all">All</string>
     <string name="queue_submitted">Submitted</string>
     <string name="queue_processing">Processing</string>
     <string name="queue_ready">Ready</string>
-    <string name="queue_empty_filtered">No requests with this status</string>
+    <string name="queue_empty_filtered">No Requests With This Status</string>
     <string name="queue_empty_filtered_body">Choose another status or refresh to check for updates.</string>
 </resources>

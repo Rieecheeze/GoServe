@@ -72,7 +72,7 @@ await test('configured demo PHP quote may submit eGovPay while actor and ownersh
 await test('new payment submission and checkout claims require current active Terms',async()=>{
   await sql("update public.terms_documents set active=false where version='egovpay-fixture'");
   await sql("insert into public.terms_documents values('egovpay-next','Synthetic changed Terms','fixture',now(),true)");
-  assert.equal((await call(owner,'workflow_options_v2',[quote.id,null])).egovpay,false);
+  await deny(()=>call(owner,'workflow_options_v2',[quote.id,null]),'TERMS_REQUIRED');
   await deny(()=>call(owner,'submit_request',[quote.id,[],'','egovpay',randomUUID()]),'TERMS_REQUIRED');
   await deny(()=>srv('claim',payment.id,key),'TERMS_REQUIRED');
   await sql("update public.terms_documents set active=false where version='egovpay-next'");

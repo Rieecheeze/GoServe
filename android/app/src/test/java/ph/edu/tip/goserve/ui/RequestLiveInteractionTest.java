@@ -122,11 +122,11 @@ public final class RequestLiveInteractionTest {
     }
     @Test public void officeQueueFiltersIssueServerReadsAndClearThePriorCategory() {
         listActions.office="OFF-REG"; launchList(); complete();
-        assertEquals("Request queue",text(R.id.liveRequestTitle)); assertEquals(View.VISIBLE,view(R.id.queueFilters).getVisibility());
+        assertEquals("Request Queue",text(R.id.liveRequestTitle)); assertEquals(View.VISIBLE,view(R.id.queueFilters).getVisibility());
         assertTrue(view(R.id.queueAll).isSelected()); assertTrue(text(R.id.liveRequestSection).contains("OFF-REG"));
         listActions.page=new RequestData.RequestPage(List.of(),null,null); view(R.id.queueProcessing).performClick(); idle();
         assertTrue(view(R.id.queueProcessing).isSelected()); assertEquals(2,((RecyclerView)view(R.id.liveRequestList)).getAdapter().getItemCount());
-        complete(); assertEquals(RequestStatus.PROCESSING,listActions.filter); assertEquals("No requests with this status",text(R.id.liveRequestEmptyTitle));
+        complete(); assertEquals(RequestStatus.PROCESSING,listActions.filter); assertEquals("No Requests With This Status",text(R.id.liveRequestEmptyTitle));
         assertNull(listActions.cursorAt); assertNull(listActions.cursorId);
     }
     @Test public void studentHistoryDoesNotExposeOfficeQueueFilters() {

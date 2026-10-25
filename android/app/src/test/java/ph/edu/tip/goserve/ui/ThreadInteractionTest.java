@@ -39,7 +39,7 @@ public final class ThreadInteractionTest {
     }
     @After public void close() { if(controller!=null)controller.close(); RuntimeEnvironment.setFontScale(1f); }
     @Test public void canonicalThreadAndExactMessageAreBoundToTheOffice() {
-        open(true); assertEquals("CCS inquiry",text(R.id.inquiryThreadTitle)); assertTrue(text(R.id.inquiryThreadIdentity).contains(InquiryViewModelTest.THREAD));
+        open(true); assertEquals("CCS Inquiry",text(R.id.inquiryThreadTitle)); assertTrue(text(R.id.inquiryThreadIdentity).contains(InquiryViewModelTest.THREAD));
         assertEquals("Canonical 1",text(R.id.inquiryMessageBody)); assertEquals("Send reply",text(R.id.inquirySend));
     }
     @Test public void unknownSendKeepsExactBodyKeyAndExplicitRetryThroughRecreation() {

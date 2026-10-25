@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="auth_demo_email_unavailable">This demo address cannot receive email. Use a registered account with a real mailbox.</string>
+    <string name="auth_email_delivery_failed">GoServe could not send the email. Please retry later or contact support.</string>
+    <string name="password_too_long">The password is too long. Use up to 72 UTF-8 bytes; some characters use more than one byte.</string>
+</resources>

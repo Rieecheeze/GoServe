@@ -81,7 +81,7 @@ public final class StudentDeliveryInteractionTest {
     }
     @Test public void receiptNeedsItsOwnReviewWithTheActualReferenceAndExplicitConfirmation() {
         open(); view(R.id.deliveryReview).performClick(); idle(); assertTrue(text(R.id.deliveryBody).contains("fixture-reference")); assertEquals(0,actions.confirms);
-        view(R.id.deliveryPrimary).performClick(); assertFalse(view(R.id.deliveryPrimary).isEnabled()); flush(); assertEquals(1,actions.confirms); assertEquals(StudentDeliveryViewModel.Mode.COMPLETE,model().state().getValue().mode); assertEquals("Receipt confirmed",text(R.id.deliveryHeading));
+        view(R.id.deliveryPrimary).performClick(); assertFalse(view(R.id.deliveryPrimary).isEnabled()); flush(); assertEquals(1,actions.confirms); assertEquals(StudentDeliveryViewModel.Mode.COMPLETE,model().state().getValue().mode); assertEquals("Receipt Confirmed",text(R.id.deliveryHeading));
     }
     @Test public void unknownReceiptFreezesTheSameConfirmationAndDoesNotShowCompleted() {
         open(); actions.confirmError=new RequestRepository.WorkflowException("VALIDATION_FAILED"); view(R.id.deliveryReview).performClick(); view(R.id.deliveryPrimary).performClick(); flush();

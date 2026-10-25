@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/gs_background" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+        <ImageView android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center_horizontal" android:src="@drawable/goserve_logo" android:importantForAccessibility="no" />
+        <TextView android:id="@+id/title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/recovery_registration_title" android:textAppearance="@style/TextAppearance.GoServe.Account.Title" android:gravity="center" android:accessibilityHeading="true" />
+        <TextView style="@style/Widget.GoServe.Account.Support" android:layout_marginTop="16dp" android:text="@string/recovery_registration_intro" />
+        <TextView style="@style/Widget.GoServe.Account.Support" android:layout_marginTop="16dp" android:text="@string/recovery_registration_steps" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/registrationGoogleContinue" style="@style/Widget.GoServe.Account.Button" android:text="@string/recovery_registration_continue" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/registrationViewTerms" style="@style/Widget.GoServe.Account.Button.Text" android:text="@string/account_terms_title" />
+        <TextView android:id="@+id/errorText" style="@style/Widget.GoServe.Account.Error" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/registrationBack" style="@style/Widget.GoServe.Account.Button.Text" android:text="@string/account_back_to_sign_in" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

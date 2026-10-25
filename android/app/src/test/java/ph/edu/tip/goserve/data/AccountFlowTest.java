@@ -6,13 +6,15 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.widget.TextView;
 import android.widget.CheckBox;
+import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModelProvider;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BooleanSupplier;
-import java.time.Duration;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +32,9 @@ import ph.edu.tip.goserve.R;
 import ph.edu.tip.goserve.domain.StudentProfile;
 import ph.edu.tip.goserve.ui.AuthActivity;
 import ph.edu.tip.goserve.ui.AuthViewModel;
+import ph.edu.tip.goserve.ui.GoogleRegistrationFragment;
 import ph.edu.tip.goserve.ui.MainActivity;
+import ph.edu.tip.goserve.ui.RecoverySecurityViewModel;
 import ph.edu.tip.goserve.ui.SignInFragment;
 import static org.junit.Assert.*;
 
@@ -70,28 +74,25 @@ public final class AccountFlowTest {
         assertTrue(message,condition.getAsBoolean());
     }
     private StudentProfile student() { return new StudentProfile("Ana","",true,"Cruz","Campus ID","Course","Year","Mobile","Self described"); }
-    @Test public void confirmedPasswordNoticeSurvivesRotationWithBlankPassword() throws Exception {
-        auth.signInPassword("ana@example.com","Current 1! password");
-        auth.changePassword(auth.sessionLease(),"Current 1! password","Next 2! password","Next 2! password",null);
-        ActivityController<AuthActivity> controller=launch(null,null); idle(model(controller.get()));
-        TextView notice=controller.get().findViewById(R.id.passwordNoticeText);
-        assertEquals(android.view.View.VISIBLE,notice.getVisibility());
-        assertEquals(app.getString(R.string.password_change_notice),notice.getText().toString());
-        assertEquals(AuthRepository.PasswordChangeNotice.CHANGED,model(controller.get()).state().getValue().passwordNotice);
-        assertEquals("",((TextView)controller.get().findViewById(R.id.passwordInput)).getText().toString());
-        controller.recreate(); idle(model(controller.get()));
-        assertEquals(app.getString(R.string.password_change_notice),((TextView)controller.get().findViewById(R.id.passwordNoticeText)).getText().toString());
-        assertNull(auth.consumePasswordChangeNotice()); assertTrue(AccountIntegrationTest.Store.values.isEmpty());
+    @Test public void provisionedPasswordSigninStillEntersHomeAndClearsPassword() throws Exception {
+        AuthActivity activity=launch(null,null).get(); AuthViewModel model=model(activity); idle(model);
+        model.password("ana@example.com","Current 1! password"); idle(model);
+        await(activity::isFinishing,"Existing password credentials must still enter Home.");
+        assertEquals(AuthViewModel.Route.HOME,model.state().getValue().route);
+        assertEquals("ana@example.com",auth.profile().email); assertTrue(auth.profile().ready());
+        assertEquals("",model.signinPassword()); assertNull(model.state().getValue().passwordNotice);
+        assertEquals(0,AccountIntegrationTest.Server.registerCalls);
+        assertNotNull(AccountIntegrationTest.Store.values.get("refresh_token"));
+        assertEquals(MainActivity.class.getName(),Shadows.shadowOf(activity).getNextStartedActivity().getComponent().getClassName());
     }
-    @Test public void uncertainPasswordNoticeNeverClaimsSuccess() throws Exception {
-        AccountIntegrationTest.Server.profileId="student-b";
+    @Test public void retiredPasswordChangeCannotDispatchOrClaimSuccess() throws Exception {
         auth.signInPassword("ana@example.com","Current 1! password");
-        assertThrows(AuthRepository.PasswordChangeException.class,()->auth.changePassword(auth.sessionLease(),"Current 1! password","Next 2! password","Next 2! password",null));
-        AuthActivity activity=launch(null,null).get(); idle(model(activity));
-        TextView notice=activity.findViewById(R.id.passwordNoticeText);
-        assertEquals(android.view.View.VISIBLE,notice.getVisibility());
-        assertEquals(app.getString(R.string.password_change_uncertain_notice),notice.getText().toString());
-        assertEquals(AuthRepository.PasswordChangeNotice.UNCERTAIN,model(activity).state().getValue().passwordNotice);
+        int calls=AccountIntegrationTest.Server.calls;
+        AuthRepository.SessionLease lease=auth.sessionLease();
+        assertThrows(IllegalStateException.class,()->auth.changePassword(lease,"Current 1! password","Next 2! password","Next 2! password",null));
+        assertThrows(IllegalStateException.class,()->auth.requestPasswordReauthentication(lease));
+        assertEquals(calls,AccountIntegrationTest.Server.calls); assertEquals(0,AccountIntegrationTest.Server.resetCalls);
+        assertNull(auth.consumePasswordChangeNotice()); assertTrue(auth.profile().ready());
     }
     @Test public void intentExtrasCannotForgeAPasswordChangeNotice() throws Exception {
         Intent intent=new Intent(app,AuthActivity.class).putExtra("password_changed",true).putExtra("password_notice","CHANGED");
@@ -99,46 +100,42 @@ public final class AccountFlowTest {
         assertEquals(android.view.View.GONE,controller.get().findViewById(R.id.passwordNoticeText).getVisibility());
         assertNull(model(controller.get()).state().getValue().passwordNotice);
     }
-    private void registration(AuthViewModel model) throws Exception {
-        model.startRegistration(); assertEquals(AuthViewModel.Route.TERMS,model.state().getValue().route); idle(model);
-        assertNotNull(model.state().getValue().terms); model.acceptTerms();
-        assertEquals(AuthViewModel.Route.CREDENTIALS,model.state().getValue().route);
-        model.credentials("ana@example.com","Å١! abc","Å١! abc");
-        assertEquals(AuthViewModel.Route.PROFILE,model.state().getValue().route);
+    @Test public void registrationRequiresTipGoogleAndSurvivesRotationWithoutCredentials() throws Exception {
+        ActivityController<AuthActivity> controller=launch(null,null); AuthViewModel model=model(controller.get()); idle(model);
+        int calls=AccountIntegrationTest.Server.calls; model.startRegistration();
+        assertEquals(AuthViewModel.Route.REGISTER_GOOGLE,model.state().getValue().route);
+        assertTrue(controller.get().getSupportFragmentManager().findFragmentById(R.id.authContainer) instanceof GoogleRegistrationFragment);
+        assertNotNull(controller.get().findViewById(R.id.registrationGoogleContinue));
+        assertNull(controller.get().findViewById(R.id.passwordInput)); assertFalse(model.registering());
+        controller.recreate(); model=model(controller.get()); idle(model);
+        assertEquals(AuthViewModel.Route.REGISTER_GOOGLE,model.state().getValue().route);
+        assertEquals(calls,AccountIntegrationTest.Server.calls); assertEquals(0,AccountIntegrationTest.Server.registerCalls);
+        assertNull(auth.profile()); assertNull(AccountIntegrationTest.Store.values.get("refresh_token")); assertSecretsCleared(model);
+        model.signInScreen();
+        assertEquals("",((TextView)controller.get().findViewById(R.id.passwordInput)).getText().toString());
     }
-    @Test public void trustedRegistrationEndsAtCreatedThenExplicitBlankSignin() throws Exception {
-        AuthActivity activity=launch(null,null).get(); AuthViewModel model=model(activity); idle(model); registration(model);
-        model.submitProfile(student()); idle(model);
-        assertEquals(AuthViewModel.Route.ACCOUNT_CREATED,model.state().getValue().route);
-        assertNull(auth.profile()); assertNull(AccountIntegrationTest.Store.values.get("refresh_token"));
-        assertEquals(1,AccountIntegrationTest.Server.registerCalls);
-        assertEquals("Å١! abc",AccountIntegrationTest.Server.lastBody.getString("password"));
-        model.signInScreen(); Shadows.shadowOf(Looper.getMainLooper()).idle();
-        assertEquals(AuthViewModel.Route.SIGN_IN,model.state().getValue().route);
-        assertEquals("",model.registrationPassword());
-        assertNotNull(activity.findViewById(R.id.passwordInput));
-        assertEquals("",((TextView)activity.findViewById(R.id.passwordInput)).getText().toString());
+    @Test public void legacyRegistrationCredentialsReturnToGoogleWithoutNetworkOrSecrets() throws Exception {
+        AuthViewModel model=model(launch(null,null).get()); idle(model); int calls=AccountIntegrationTest.Server.calls;
+        for (String email:new String[]{"ana@tip.edu.ph","ana@example.com","not an email"}) {
+            model.setRegistrationPasswords("A1! abc","different"); model.setSigninPassword("Current 1! password"); model.setResetPasswords("B2! xyz","B2! xyz");
+            model.credentials(email,"A1! abc","A1! abc");
+            assertEquals(AuthViewModel.Route.REGISTER_GOOGLE,model.state().getValue().route); assertSecretsCleared(model);
+            assertFalse(model.registering()); assertEquals(calls,AccountIntegrationTest.Server.calls);
+        }
+        assertEquals(0,AccountIntegrationTest.Server.registerCalls); assertNull(auth.profile());
+        assertNull(AccountIntegrationTest.Store.values.get("refresh_token"));
     }
-    @Test public void invalidCredentialsStayOnCredentialsWithSpecificFieldErrors() throws Exception {
-        AuthViewModel model=model(launch(null,null).get()); idle(model);
-        model.startRegistration(); assertEquals(AuthViewModel.Route.TERMS,model.state().getValue().route); idle(model); model.acceptTerms();
-        model.credentials("ana@example.com","A1! abc","different");
-        assertEquals(AuthViewModel.Route.CREDENTIALS,model.state().getValue().route);
-        assertTrue(model.state().getValue().fieldErrors.containsKey("confirmation"));
-        model.credentials("not an email","A1! abc","A1! abc");
-        assertTrue(model.state().getValue().fieldErrors.containsKey("email")); assertEquals(0,AccountIntegrationTest.Server.registerCalls);
-    }
-    @Test public void failedSaveRetainsDraftOnRotationButProcessRestoreRequiresPasswordAgain() throws Exception {
-        ActivityController<AuthActivity> controller=launch(null,null); AuthViewModel model=model(controller.get()); idle(model); registration(model);
-        AccountIntegrationTest.Server.registrationFails=true; model.submitProfile(student()); idle(model);
-        assertEquals(AuthViewModel.Route.PROFILE,model.state().getValue().route); assertNotNull(model.state().getValue().error);
-        controller.recreate(); model=model(controller.get());
-        assertEquals("Ana",model.draft().profile.firstName); assertEquals("Å١! abc",model.registrationPassword());
-        Bundle saved=new Bundle(); controller.saveInstanceState(saved).pause().stop().destroy(); activities.remove(controller);
-        replaceAuth(); AuthViewModel restored=model(launch(null,saved).get()); idle(restored);
-        assertEquals(AuthViewModel.Route.CREDENTIALS,restored.state().getValue().route);
-        assertEquals("ana@example.com",restored.draft().email); assertEquals("Ana",restored.draft().profile.firstName);
-        assertEquals("",restored.registrationPassword());
+    @Test public void restoredLegacyRegistrationDraftRequiresGoogleAndNoPassword() throws Exception {
+        for (String step:new String[]{"CREDENTIALS","PROFILE"}) {
+            Map<String,Object> values=new HashMap<>(); values.put("step",step); values.put("email","ana@example.com"); values.put("first_name","Ana");
+            AuthViewModel restored=new AuthViewModel(app,new SavedStateHandle(values));
+            try {
+                int calls=AccountIntegrationTest.Server.calls; restored.initialize(null); idle(restored);
+                assertEquals(AuthViewModel.Route.REGISTER_GOOGLE,restored.state().getValue().route);
+                assertEquals("ana@example.com",restored.draft().email); assertEquals("Ana",restored.draft().profile.firstName);
+                assertFalse(restored.registering()); assertSecretsCleared(restored); assertEquals(calls,AccountIntegrationTest.Server.calls);
+            } finally { ReflectionHelpers.callInstanceMethod(restored,"onCleared"); }
+        }
     }
     @Test public void completeRestoredAccountRoutesWithoutSigninFlash() throws Exception {
         AccountIntegrationTest.Store.values.put("refresh_token","fixture-refresh");
@@ -148,28 +145,34 @@ public final class AccountFlowTest {
         assertEquals(MainActivity.class.getName(),Shadows.shadowOf(activity).getNextStartedActivity().getComponent().getClassName());
         assertTrue(auth.profile().ready());
     }
-    @Test public void googleUsesSameReadonlyEmailProfileAndThenHome() throws Exception {
-        AccountIntegrationTest.Server.complete=false; AccountIntegrationTest.Server.accepted=false; AccountIntegrationTest.Server.email="student@tip.edu.ph";
-        Uri authorization=auth.googleAuthorizationUrl(); Uri callback=Uri.parse(authorization.getQueryParameter("redirect_to")).buildUpon().appendQueryParameter("code","google-code").build();
-        AuthActivity activity=launch(callback,null).get(); AuthViewModel model=model(activity); idle(model);
+    @Test public void googleUsesReadonlyEmailProfileThenRequiresRecoverySetupBeforeHome() throws Exception {
+        AccountIntegrationTest.Server.recoveryRequired=true;
+        AuthActivity activity=launchGoogle(); AuthViewModel model=model(activity);
         assertEquals(AuthViewModel.Route.TERMS,model.state().getValue().route); model.acceptTerms(); idle(model);
         assertEquals(AuthViewModel.Route.PROFILE,model.state().getValue().route);
         assertEquals("student@tip.edu.ph",model.draft().email);
         assertEquals("student@tip.edu.ph",((TextView)activity.findViewById(R.id.profileEmail)).getText().toString());
-        model.submitProfile(student()); idle(model); await(activity::isFinishing,"Completed Google account must enter Home.");
-        assertTrue(auth.profile().ready()); assertEquals(0,AccountIntegrationTest.Server.registerCalls);
+        model.submitProfile(student()); idle(model);
+        assertEquals(AuthViewModel.Route.RECOVERY_SETUP,model.state().getValue().route);
+        RecoverySecurityViewModel recovery=recoveryModel(activity);
+        await(()->recovery.state().getValue()!=null&&!recovery.state().getValue().busy,"Recovery setup status did not load.");
+        assertEquals(RecoverySecurityViewModel.Kind.SETUP,recovery.state().getValue().kind);
+        assertEquals(RecoverySecurityViewModel.Page.STATUS,recovery.state().getValue().page);
+        assertTrue(recovery.state().getValue().status.requiresSetup); assertFalse(recovery.state().getValue().status.codesAcknowledged);
+        assertFalse(auth.profile().ready()); assertEquals("setup_recovery",auth.profile().nextAction);
+        assertFalse(activity.isFinishing()); assertNull(Shadows.shadowOf(activity).getNextStartedActivity());
+        assertEquals(0,AccountIntegrationTest.Server.registerCalls); assertEquals(2,AccountIntegrationTest.Server.updateCalls);
     }
-    @Test public void recoveryIntentOverridesOrdinarySessionAndEndsAtBlankSignin() throws Exception {
-        auth.requestRecovery("ana@example.com"); String state=AccountIntegrationTest.Server.lastBody.getString("state");
+    @Test public void retiredRecoveryIntentCannotExchangeCredentialsOrOpenHome() throws Exception {
         AccountIntegrationTest.Store.values.put("refresh_token","fixture-refresh"); auth.restore(); assertTrue(auth.profile().ready());
-        Uri callback=Uri.parse(AuthRepository.RECOVERY_CALLBACK).buildUpon().appendQueryParameter("flow","recovery").appendQueryParameter("state",state).appendQueryParameter("code","recovery-code").build();
+        int calls=AccountIntegrationTest.Server.calls;
+        Uri callback=Uri.parse(AuthRepository.RECOVERY_CALLBACK).buildUpon().appendQueryParameter("flow","recovery").appendQueryParameter("state","retired-state").appendQueryParameter("code","recovery-code").build();
         AuthActivity activity=launch(callback,null).get(); AuthViewModel model=model(activity); idle(model);
-        assertEquals(AuthViewModel.Route.RESET_PASSWORD,model.state().getValue().route); assertNull(auth.profile());
+        assertEquals(AuthViewModel.Route.RESET_UNAVAILABLE,model.state().getValue().route); assertSecretsCleared(model);
+        assertTrue(model.state().getValue().error.contains("retired"));
+        assertEquals(calls,AccountIntegrationTest.Server.calls); assertEquals(0,AccountIntegrationTest.Server.resetCalls);
         assertNull(Shadows.shadowOf(activity).getNextStartedActivity());
-        model.resetPassword("B2! xyz","B2! xyz"); idle(model);
-        assertEquals(AuthViewModel.Route.RESET_COMPLETE,model.state().getValue().route); model.signInScreen(); Shadows.shadowOf(Looper.getMainLooper()).idle();
-        assertEquals("",((TextView)activity.findViewById(R.id.passwordInput)).getText().toString());
-        assertNull(AccountIntegrationTest.Store.values.get("refresh_token"));
+        assertFalse(activity.isFinishing()); assertTrue(auth.profile().ready());
     }
     @Test public void readonlyTermsNeverRecordsAcceptance() throws Exception {
         AuthActivity activity=launch(null,null).get(); AuthViewModel model=model(activity); idle(model); model.showTerms(true);
@@ -178,55 +181,62 @@ public final class AccountFlowTest {
         assertEquals(android.view.View.GONE,activity.findViewById(R.id.acceptButton).getVisibility());
         assertEquals(android.view.View.GONE,agreement(activity).getVisibility());
     }
-    @Test public void registrationRequiresUncheckedExplicitAgreementOnEachAttempt() throws Exception {
-        AuthActivity activity=launch(null,null).get(); AuthViewModel model=model(activity); idle(model);
+    @Test public void authenticatedGoogleRequiresUncheckedExplicitTermsAgreement() throws Exception {
         AccountIntegrationTest.Server.termsAvailable=false;
-        model.startRegistration(); idle(model);
+        ActivityController<AuthActivity> controller=launchGoogleController(); AuthActivity activity=controller.get(); AuthViewModel model=model(activity);
+        assertEquals(AuthViewModel.Route.TERMS,model.state().getValue().route); assertNotNull(auth.profile());
         assertFalse(activity.findViewById(R.id.acceptButton).isEnabled());
         assertFalse(agreement(activity).isChecked());
         assertFalse("Unavailable Terms cannot be agreed to.",agreement(activity).isEnabled());
         AccountIntegrationTest.Server.termsAvailable=true; model.loadTerms(); idle(model);
         assertFalse("Loading approved Terms alone must not enable Continue.",activity.findViewById(R.id.acceptButton).isEnabled());
         assertFalse(agreement(activity).isChecked());
+        agreement(activity).setChecked(true); controller.recreate(); activity=controller.get(); model=model(activity); idle(model);
+        assertFalse("A recreated agreement attempt must begin unchecked.",agreement(activity).isChecked());
+        assertFalse(activity.findViewById(R.id.acceptButton).isEnabled());
         agreement(activity).setChecked(true);
         assertTrue(activity.findViewById(R.id.acceptButton).isEnabled());
         agreement(activity).setChecked(false);
         assertFalse("Withdrawing the check must disable Continue again.",activity.findViewById(R.id.acceptButton).isEnabled());
         agreement(activity).setChecked(true); activity.findViewById(R.id.acceptButton).performClick();
-        assertEquals(AuthViewModel.Route.CREDENTIALS,model.state().getValue().route);
-        model.back(); Shadows.shadowOf(Looper.getMainLooper()).idle();
-        assertFalse("A new agreement attempt must begin unchecked.",agreement(activity).isChecked());
-        assertFalse(activity.findViewById(R.id.acceptButton).isEnabled());
-        assertEquals(0,AccountIntegrationTest.Server.updateCalls);
+        idle(model); assertEquals(AuthViewModel.Route.PROFILE,model.state().getValue().route);
+        assertEquals(1,AccountIntegrationTest.Server.updateCalls); assertEquals(0,AccountIntegrationTest.Server.registerCalls);
     }
-    @Test public void locallyExpiredRecoveryClearsSecretsAndLeavesEditableForm() throws Exception {
-        AuthActivity activity=launchRecovery(); AuthViewModel model=model(activity);
-        org.robolectric.shadows.ShadowSystemClock.advanceBy(Duration.ofHours(2));
+    @Test public void directResetWithoutSavedCodeProofClearsSecretsWithoutNetwork() throws Exception {
+        AuthActivity activity=launch(null,null).get(); AuthViewModel model=model(activity); idle(model);
+        model.setRegistrationPasswords("A1! abc","A1! abc"); model.setSigninPassword("Current 1! password"); model.setResetPasswords("B2! xyz","B2! xyz");
+        int calls=AccountIntegrationTest.Server.calls;
         model.resetPassword("B2! xyz","B2! xyz"); idle(model);
         assertEquals(AuthViewModel.Route.RESET_UNAVAILABLE,model.state().getValue().route);
-        assertEquals("",model.resetPasswordDraft()); assertEquals("",model.resetConfirmationDraft());
-        assertEquals("An expired local credential must never dispatch a password update.",0,AccountIntegrationTest.Server.resetCalls);
+        assertSecretsCleared(model); assertEquals(calls,AccountIntegrationTest.Server.calls);
+        assertEquals(0,AccountIntegrationTest.Server.resetCalls);
         assertNull(auth.profile()); assertNull(Shadows.shadowOf(activity).getNextStartedActivity());
         model.recoveryEmail();
         assertEquals(AuthViewModel.Route.RESET_EMAIL,model.state().getValue().route);
     }
-    @Test public void terminalRecoverySaveRejectionLeavesEditableFormAndClearsSecrets() throws Exception {
-        for (int status:new int[]{401,403}) {
-            AuthViewModel model=model(launchRecovery()); AccountIntegrationTest.Server.resetStatus=status;
-            model.resetPassword("B2! xyz","B2! xyz"); idle(model);
-            assertEquals(AuthViewModel.Route.RESET_UNAVAILABLE,model.state().getValue().route);
-            assertEquals("",model.resetPasswordDraft()); assertEquals("",model.resetConfirmationDraft());
-        }
+    @Test public void retiredEmailRequestKeepsSavedCodeFormWithoutSendingEmail() throws Exception {
+        AuthActivity activity=launch(null,null).get(); AuthViewModel model=model(activity); idle(model);
+        model.setRegistrationPasswords("A1! abc","A1! abc"); model.setSigninPassword("Current 1! password"); model.setResetPasswords("B2! xyz","B2! xyz");
+        model.recoveryEmail(); model.setRecoveryEmail("ana@example.com"); int calls=AccountIntegrationTest.Server.calls;
+        model.requestRecovery(); idle(model);
+        assertEquals(AuthViewModel.Route.RESET_EMAIL,model.state().getValue().route);
+        assertTrue(model.state().getValue().error.contains("No recovery email is sent")); assertSecretsCleared(model);
+        assertEquals(calls,AccountIntegrationTest.Server.calls); assertNull(AccountIntegrationTest.Store.values.get("recovery_pending"));
+        RecoverySecurityViewModel recovery=recoveryModel(activity);
+        assertEquals(RecoverySecurityViewModel.Kind.FORGOT,recovery.state().getValue().kind);
+        assertEquals(RecoverySecurityViewModel.Page.PROOF,recovery.state().getValue().page);
+        assertNull(auth.profile()); assertNull(Shadows.shadowOf(activity).getNextStartedActivity());
     }
-    @Test public void transientRecoverySaveFailureRetainsEditableDraftForRetry() throws Exception {
-        AuthViewModel model=model(launchRecovery()); AccountIntegrationTest.Server.resetStatus=503;
-        model.resetPassword("B2! xyz","B2! xyz"); idle(model);
-        assertEquals(AuthViewModel.Route.RESET_PASSWORD,model.state().getValue().route);
-        assertNotNull(model.state().getValue().error);
-        assertEquals("B2! xyz",model.resetPasswordDraft()); assertEquals("B2! xyz",model.resetConfirmationDraft());
+    @Test public void retiredResetCannotBecomeAnAuthorizedRetryAfterRotation() throws Exception {
+        ActivityController<AuthActivity> controller=launch(null,null); AuthViewModel model=model(controller.get()); idle(model);
+        int calls=AccountIntegrationTest.Server.calls; AccountIntegrationTest.Server.resetStatus=503;
+        model.setResetPasswords("B2! xyz","B2! xyz"); model.resetPassword("B2! xyz","B2! xyz"); idle(model);
+        controller.recreate(); model=model(controller.get()); idle(model);
+        assertEquals(AuthViewModel.Route.RESET_UNAVAILABLE,model.state().getValue().route); assertSecretsCleared(model);
         AccountIntegrationTest.Server.resetStatus=0; model.resetPassword("B2! xyz","B2! xyz"); idle(model);
-        assertEquals(AuthViewModel.Route.RESET_COMPLETE,model.state().getValue().route);
-        assertEquals("",model.resetPasswordDraft()); assertEquals(2,AccountIntegrationTest.Server.resetCalls);
+        assertEquals(AuthViewModel.Route.RESET_UNAVAILABLE,model.state().getValue().route); assertSecretsCleared(model);
+        assertEquals(calls,AccountIntegrationTest.Server.calls); assertEquals(0,AccountIntegrationTest.Server.resetCalls);
+        assertNull(auth.profile()); assertNull(Shadows.shadowOf(controller.get()).getNextStartedActivity());
     }
     private CheckBox agreement(AuthActivity activity) {
         int id=activity.getResources().getIdentifier("termsAgreement","id",activity.getPackageName());
@@ -234,14 +244,22 @@ public final class AccountFlowTest {
         assertNotNull("Terms acceptance needs an explicit agreement checkbox.",agreement);
         return agreement;
     }
-    private AuthActivity launchRecovery() throws Exception {
-        auth.requestRecovery("ana@example.com");
-        Uri callback=Uri.parse(AuthRepository.RECOVERY_CALLBACK).buildUpon().appendQueryParameter("flow","recovery")
-                .appendQueryParameter("state",AccountIntegrationTest.Server.lastBody.getString("state"))
-                .appendQueryParameter("code","recovery-code").build();
-        AuthActivity activity=launch(callback,null).get(); idle(model(activity));
-        assertEquals(AuthViewModel.Route.RESET_PASSWORD,model(activity).state().getValue().route);
-        return activity;
+    private void assertSecretsCleared(AuthViewModel model) {
+        assertEquals("",model.registrationPassword()); assertEquals("",model.registrationConfirmation());
+        assertEquals("",model.signinPassword()); assertEquals("",model.resetPasswordDraft()); assertEquals("",model.resetConfirmationDraft());
+    }
+    private RecoverySecurityViewModel recoveryModel(AuthActivity activity) {
+        return new ViewModelProvider(activity.getSupportFragmentManager().findFragmentById(R.id.authContainer)).get(RecoverySecurityViewModel.class);
+    }
+    private ActivityController<AuthActivity> launchGoogleController() throws Exception {
+        AccountIntegrationTest.Server.complete=false; AccountIntegrationTest.Server.accepted=false; AccountIntegrationTest.Server.email="student@tip.edu.ph";
+        Uri authorization=auth.googleAuthorizationUrl();
+        assertEquals("tip.edu.ph",authorization.getQueryParameter("hd"));
+        Uri callback=Uri.parse(authorization.getQueryParameter("redirect_to")).buildUpon().appendQueryParameter("code","google-code").build();
+        ActivityController<AuthActivity> controller=launch(callback,null); idle(model(controller.get())); return controller;
+    }
+    private AuthActivity launchGoogle() throws Exception {
+        return launchGoogleController().get();
     }
     @Test public void provisionedStaffRetainsRoleAndDoesNotEnterStudentForm() throws Exception {
         AccountIntegrationTest.Server.role="staff"; AccountIntegrationTest.Store.values.put("refresh_token","fixture-refresh");

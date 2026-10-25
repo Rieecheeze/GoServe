@@ -148,22 +148,34 @@ public final class SupabaseClient {
             JSONObject error=new JSONObject(response);
             if (error.opt("error") instanceof JSONObject) code=error.getJSONObject("error").optString("code","UNKNOWN");
             else {
-                String sql=error.optString("code","");
+                String sql=error.opt("code") instanceof String?error.getString("code"):"";
                 if ("P0001".equals(sql)) code=error.optString("message","UNKNOWN");
                 else if (java.util.Arrays.asList("22P02","23502","23514").contains(sql)) code="VALIDATION_FAILED";
                 else if ("23505".equals(sql)) code="CONFLICT";
                 else if ("40P01".equals(sql) || "40001".equals(sql)) code="TEMPORARILY_UNAVAILABLE";
                 else if ((status==400 || status==409) && ("Duplicate".equals(error.optString("error")) || "ResourceAlreadyExists".equals(sql) || "KeyAlreadyExists".equals(sql))) code="STORAGE_EXISTS";
+                else if(!sql.isEmpty())code=sql;
+                else if(error.opt("error_code") instanceof String)code=error.getString("error_code");
             }
         } catch (Exception ignored) {}
         java.util.Set<String> known=new java.util.HashSet<>(java.util.Arrays.asList("AUTH_REQUIRED","AUTH_INVALID","FORBIDDEN","NOT_FOUND","VALIDATION_FAILED","PROFILE_INCOMPLETE","TERMS_REQUIRED","CONFIGURATION_REQUIRED","STALE_VERSION","QUOTE_STALE","IDEMPOTENCY_CONFLICT","INVALID_STATE","PAYMENT_REQUIRED","ALREADY_PAID","CODE_INVALID","CODE_EXPIRED","CODE_CONSUMED","CAPACITY_FULL","POLICY_BLOCKED","UPLOAD_INVALID","DOWNLOAD_UNCONFIRMED","CONSENT_REQUIRED","PROVIDER_UNAVAILABLE","CLEANUP_REQUIRED","TEMPORARILY_UNAVAILABLE","IMMUTABLE_RECORD","CONFLICT"));
         known.add("STORAGE_EXISTS");
         known.add("CHECKOUT_UNCONFIRMED");
+        known.addAll(java.util.Arrays.asList("RECENT_AUTH_REQUIRED","RECOVERY_SETUP_REQUIRED","RECOVERY_PROOF_INVALID","RECOVERY_GRANT_INVALID","RECOVERY_OPERATION_PENDING"));
+        known.addAll(java.util.Arrays.asList("EMAIL_UNAVAILABLE","EMAIL_DELIVERY_FAILED","CURRENT_PASSWORD_INVALID","PASSWORD_TOO_LONG","PASSWORD_REUSED","PASSWORD_WEAK","PASSWORD_CHANGE_FAILED","RATE_LIMITED",
+                "invalid_credentials","current_password_invalid","current_password_mismatch","reauthentication_needed","reauthentication_not_valid","same_password","weak_password","otp_expired"));
         if (!known.contains(code)) code="UNKNOWN";
         String message="STALE_VERSION".equals(code) || "QUOTE_STALE".equals(code) ? "This information changed. Review the latest version and retry."
+                : "RECENT_AUTH_REQUIRED".equals(code) ? "Sign in again with your password or TIP Google before changing recovery codes."
+                : "RECOVERY_SETUP_REQUIRED".equals(code) ? "Generate and save your recovery codes before continuing."
+                : "RECOVERY_PROOF_INVALID".equals(code) ? "The email or recovery code was not accepted. Check the details and retry."
+                : "RECOVERY_GRANT_INVALID".equals(code) ? "This recovery attempt expired or was already used. Verify another saved code."
+                : "RECOVERY_OPERATION_PENDING".equals(code) ? "The password result is still being confirmed. Check its status before continuing."
                 : "TERMS_REQUIRED".equals(code) ? "Review and accept the approved Terms to continue."
                 : "CONFIGURATION_REQUIRED".equals(code) ? "This GoServe feature needs server setup. Please retry later."
                 : "PROVIDER_UNAVAILABLE".equals(code) ? "This service is not available yet."
+                : "EMAIL_UNAVAILABLE".equals(code) ? "This demo address cannot receive email. Use a registered account with a real mailbox."
+                : "EMAIL_DELIVERY_FAILED".equals(code) ? "GoServe could not send the email. Please retry later or contact support."
                 : status==401 ? "Your session expired. Sign in again." : status==403 ? "This account is not authorized for this action."
                 : status==429 ? "Too many attempts. Wait a moment and retry." : status>=500 ? "GoServe could not reach the service. Please retry."
                 : status==404 ? "This GoServe feature has not been configured on the server yet." : "The request was not accepted. Check the details and retry.";

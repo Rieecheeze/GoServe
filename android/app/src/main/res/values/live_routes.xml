@@ -2,8 +2,8 @@
     <string name="home_unread_notifications">Notifications, %1$d unread</string>
     <string name="pickup_view_code">View pickup code</string>
     <string name="pickup_review_handover">Review document handover</string>
-    <string name="workspace_title">Office dashboard</string>
-    <string name="workspace_heading">Your office workspace</string>
+    <string name="workspace_title">Office Dashboard</string>
+    <string name="workspace_heading">Your Office Workspace</string>
     <string name="workspace_body">Review service requests and consultation updates for your assigned office.</string>
     <string name="workspace_activity">Office activity</string>
     <string name="workspace_scope">Assigned office: %1$s</string>
@@ -14,6 +14,6 @@
     <string name="workspace_notifications">Notifications</string>
     <string name="workspace_inbox">Office inquiries</string>
     <string name="settings_seryo">Seryo settings</string>
-    <string name="settings_seryo_privacy">Seryo privacy and consent</string>
-    <string name="settings_seryo_help">Seryo help</string>
+    <string name="settings_seryo_privacy">Privacy And Consent</string>
+    <string name="settings_seryo_help">Help</string>
 </resources>

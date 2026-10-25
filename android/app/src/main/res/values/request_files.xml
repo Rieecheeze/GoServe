@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="requestEvidenceOpen" type="id" />
-    <string name="files_toolbar">Review evidence</string>
-    <string name="files_heading">Private evidence</string>
+    <string name="files_toolbar">Review Evidence</string>
+    <string name="files_heading">Private Evidence</string>
     <string name="files_caption">%1$s · %2$s</string>
     <string name="files_refresh">Refresh evidence</string>
     <string name="files_empty">No verified evidence is available for this request.</string>
     <string name="files_read_failed">Evidence could not be loaded. Try again.</string>
     <string name="files_return">Return to request</string>
-    <string name="files_notice_title">Review only</string>
+    <string name="files_notice_title">Review Only</string>
     <string name="files_notice">Files are private. Access is limited by your account and office permissions. Opening evidence does not confirm delivery.</string>
     <string name="files_pdf">PDF evidence</string>
     <string name="files_image">Image evidence</string>

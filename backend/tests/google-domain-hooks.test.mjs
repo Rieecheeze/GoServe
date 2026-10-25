@@ -14,6 +14,7 @@ const directory = new URL('../auth-restrictions/supabase/migrations/', import.me
 const files = (await readdir(directory)).filter(name => name.endsWith('_tip_google_auth_hooks.sql'));
 assert.equal(files.length, 1, 'Use the single CLI-generated hook migration');
 await db.exec(await readFile(new URL(files[0], directory), 'utf8'));
+await db.exec(await readFile(new URL('../migrations/20261024003558_account_recovery.sql',import.meta.url),'utf8').then(source=>source.slice(source.indexOf('-- Recovery registration policy')).replace(/commit;\s*$/,'')));
 const id = randomUUID();
 const claims = { sub: id, email: 'student@tip.edu.ph', amr: [{ method: 'oauth', timestamp: 1 }], role: 'authenticated', custom: { retained: true } };
 const event = (method = 'oauth', overrides = {}) => ({ user_id: id, authentication_method: method, claims, ...overrides });
@@ -49,8 +50,8 @@ test('new Google signup rejects other domains, subdomains, lookalikes and malfor
 test('editable user metadata cannot override Google signup domain', async () => {
   denied(await call('before_user_created', signup('student@gmail.com', 'google', { user_metadata: { email: 'student@tip.edu.ph', provider: 'email', email_verified: true } })));
 });
-test('email/password signup is preserved and unsupported hook envelopes fail closed', async () => {
-  assert.deepEqual(await call('before_user_created', signup('assigned@example.test', 'email')), {});
+test('new email/password signup and unsupported hook envelopes fail closed', async () => {
+  denied(await call('before_user_created', signup('assigned@example.test', 'email')));
   for (const input of [{}, { user: {} }, signup('student@tip.edu.ph', 'other')]) denied(await call('before_user_created', input));
 });
 test('verified Google OAuth returns every original claim unchanged', async () => {

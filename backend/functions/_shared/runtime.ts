@@ -7,7 +7,8 @@ export function clients() {
   const anon=Deno.env.get('SUPABASE_ANON_KEY');
   if (!url?.startsWith('https://') || !secret || !anon) throw new DomainError('CONFIGURATION_REQUIRED');
   const options={auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}};
-  return {admin:createClient(url,secret,options),userClient:(token: string)=>createClient(url,anon,{...options,global:{headers:{Authorization:`Bearer ${token}`}}})};
+  const proxyHops=Deno.env.get('GOSERVE_RECOVERY_PROXY_HOPS');
+  return {admin:createClient(url,secret,options),recoveryProxyHops:proxyHops==='0'?0:undefined,userClient:(token: string)=>createClient(url,anon,{...options,global:{headers:{Authorization:`Bearer ${token}`}}})};
 }
 
 export function serve(handler: (request: Request, dependencies: ReturnType<typeof clients>)=>Promise<Response>) {

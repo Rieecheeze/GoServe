@@ -19,8 +19,8 @@ public final class AuthRepository {
     private final SupabaseClient client;
     private final SecureSessionStore store;
     private final Object refreshLock = new Object();
-    private String accessToken, recoveryAccess;
-    private long expiresAt, generation, recoveryExpiresAt, recoveryGeneration;
+    private String accessToken;
+    private long expiresAt, generation;
     private volatile SessionProfile profile;
     private PasswordChangeNotice passwordChangeNotice;
     private Runnable invalidationListener = () -> {};
@@ -43,6 +43,19 @@ public final class AuthRepository {
     }
     public AuthRepository(SupabaseClient client, SecureSessionStore store) { this.client = client; this.store = store; }
     public SessionProfile profile() { return profile; }
+    SupabaseClient recoveryClient(){return client;}
+    SessionProfile signInAfterRecovery(String email,String password,long expectedGeneration)throws Exception {
+        SessionProfile next=signInPassword(email,password,expectedGeneration);
+        long request;
+        synchronized(this){if(profile!=next)throw changed();request=generation;}
+        if(next.email==null || !email.equalsIgnoreCase(next.email.trim())){invalidateIfCurrent(request,false);throw changed();}
+        return next;
+    }
+    void discardRecoverySignIn(SessionProfile result){
+        long request;synchronized(this){if(profile!=result)return;request=generation;}
+        invalidateIfCurrent(request,false);
+    }
+
     public synchronized void setInvalidationListener(Runnable listener) { invalidationListener = listener; }
     public synchronized SessionLease sessionLease() {
         if (profile == null) throw new IllegalStateException("Sign in to GoServe to continue.");
@@ -74,6 +87,13 @@ public final class AuthRepository {
         try { synchronized (this) { advanceLocked(false); store.remove("recovery_pending"); return generation; } }
         finally { notifyInvalidation(); }
     }
+    private long beginAuthenticationIfCurrent(long expected) {
+        boolean advanced=false;
+        try {synchronized(this){
+            requireGeneration(expected);
+            advanced=true;advanceLocked(false);store.remove("recovery_pending");return generation;
+        }} finally {if(advanced)notifyInvalidation();}
+    }
     private long advanceLocked(boolean all) {
         clearMemory(); ++generation;
         if (all) store.clear(); else store.remove("refresh_token");
@@ -83,10 +103,10 @@ public final class AuthRepository {
     private void invalidateIfCurrent(long request,boolean recoveryOnly) {
         boolean changed=false;
         try { synchronized (this) {
-            if (request==generation && (!recoveryOnly || recoveryGeneration==request)) { changed=true; advanceLocked(true); }
+            if (request==generation) { changed=true; advanceLocked(true); }
         } } finally { if (changed) notifyInvalidation(); }
     }
-    private void clearMemory() { accessToken = null; expiresAt = 0; profile = null; recoveryAccess = null; recoveryExpiresAt = 0; recoveryGeneration = 0; passwordChangeNotice=null; }
+    private void clearMemory() { accessToken = null; expiresAt = 0; profile = null; passwordChangeNotice=null; }
 
     public Uri googleAuthorizationUrl() throws Exception {
         long request = beginAuthentication();
@@ -121,9 +141,12 @@ public final class AuthRepository {
         return bootstrap(request);
     }
     public SessionProfile signInPassword(String email, String password) throws Exception {
+        return signInPassword(email,password,null);
+    }
+    private SessionProfile signInPassword(String email,String password,Long expectedGeneration)throws Exception {
         if (email == null || email.trim().isEmpty() || password == null || password.isEmpty()) throw new IllegalArgumentException("Enter your email and password.");
-        long request = beginAuthentication();
-        synchronized (this) { store.remove("oauth_pending"); }
+        long request = expectedGeneration==null?beginAuthentication():beginAuthenticationIfCurrent(expectedGeneration);
+        synchronized (this) { requireGeneration(request); store.remove("oauth_pending"); }
         try {
             saveTokens(client.object("POST", "/auth/v1/token?grant_type=password", new JSONObject().put("email", email.trim()).put("password", password), null), request);
         } catch (SupabaseClient.ApiException error) {
@@ -135,11 +158,11 @@ public final class AuthRepository {
     }
     public SessionProfile restore() throws Exception { long request = generation(); tokenFor(request); return bootstrap(request); }
     public SessionProfile resumeSession(Uri callback) throws Exception {
-        String saved; synchronized (this) { saved = store.get("oauth_pending"); }
+        String saved; long request; synchronized (this) { request=generation; saved = store.get("oauth_pending"); }
         if (callback != null && saved != null) return finishGoogle(callback);
         if (saved != null) {
             try { validAge(new JSONObject(saved)); return null; }
-            catch (IllegalArgumentException expired) { synchronized (this) { store.remove("oauth_pending"); } }
+            catch (IllegalArgumentException expired) { synchronized (this) { if (request==generation && saved.equals(store.get("oauth_pending"))) store.remove("oauth_pending"); } }
         }
         if (hasSavedSession()) return restore();
         if (callback != null) return finishGoogle(callback);
@@ -165,15 +188,7 @@ public final class AuthRepository {
         return new TermsDocument(version, content, row.getString("content_digest"), row.getString("published_at"));
     }
     public String registerStudent(String email, String password, StudentProfile student, String termsVersion, String operationKey) throws Exception {
-        if (!AccountValidation.isValidEmail(email) || AccountValidation.passwordError(password,password) != null) throw new IllegalArgumentException("Check your email and password requirements.");
-        if (!AccountValidation.profileErrors(student).isEmpty()) throw new IllegalArgumentException("Complete the highlighted student details.");
-        if (termsVersion == null || termsVersion.isEmpty()) throw new IllegalArgumentException("Review and accept the approved Terms first.");
-        long request = generation();
-        JSONObject result = client.object("POST", "/functions/v1/register-student", new JSONObject().put("email",email).put("password",password)
-                .put("profile",profileJson(student)).put("terms_version",termsVersion).put("idempotency_key",operationKey), null);
-        requireGeneration(request);
-        if (!result.getBoolean("account_created") || !"sign_in".equals(result.getString("next_action"))) throw new IllegalStateException("The server could not confirm account creation. Please retry.");
-        return result.getString("email");
+        throw new IllegalStateException("New registration requires your verified TIP Google account. Continue with TIP Google.");
     }
     public SessionProfile updateAccount(long version, String termsVersion, StudentProfile student, String operationKey) throws Exception {
         SessionLease lease = sessionLease();
@@ -235,137 +250,28 @@ public final class AuthRepository {
         store.put("refresh_token",refresh); accessToken = access; expiresAt = System.currentTimeMillis() + seconds * 1000L;
     }
     public void requestRecovery(String email) throws Exception {
-        if (!AccountValidation.isValidEmail(email)) throw new IllegalArgumentException("Enter a valid email address.");
-        long request = beginAuthentication(); String verifier = random(), state = random();
-        JSONObject attempt = new JSONObject().put("verifier",verifier).put("state",state).put("flow","recovery")
-                .put("redirect",RECOVERY_CALLBACK).put("started_at",System.currentTimeMillis()).put("generation",request);
-        synchronized (this) { requireGeneration(request); store.remove("oauth_pending"); store.put("recovery_pending",attempt.toString()); }
-        try {
-            JSONObject response = client.object("POST", "/functions/v1/recovery-request",new JSONObject().put("email",email)
-                    .put("code_challenge",challenge(verifier)).put("code_challenge_method","s256").put("state",state),null);
-            requireGeneration(request);
-            if (!response.getBoolean("request_received")) throw new IllegalStateException("Recovery request could not be confirmed. Please retry.");
-        } catch (Exception error) { synchronized (this) { if (request == generation) store.remove("recovery_pending"); } throw error; }
+        synchronized(this){store.remove("recovery_pending");}
+        throw new IllegalStateException("Email recovery is retired. Use your saved GoServe recovery code.");
     }
     public void finishRecovery(Uri callback) throws Exception {
-        JSONObject attempt; long request;
-        supersedeSession();
-        synchronized (this) {
-            String saved = store.get("recovery_pending");
-            if (saved == null) throw unavailable();
-            attempt = new JSONObject(saved); store.remove("recovery_pending");
-            exactCallback(callback,RECOVERY_CALLBACK); matching(callback,"state",attempt.getString("state")); matching(callback,"flow","recovery");
-            if (!"recovery".equals(attempt.getString("flow")) || !RECOVERY_CALLBACK.equals(attempt.getString("redirect"))) throw unavailable();
-            validAge(attempt); validCode(callback);
-            if (!attempt.getString("verifier").matches("[A-Za-z0-9_-]{43}")) throw unavailable();
-            request = generation;
-        }
-        try {
-            JSONObject tokens = client.object("POST", "/auth/v1/token?grant_type=pkce",new JSONObject().put("auth_code",callback.getQueryParameter("code"))
-                    .put("code_verifier",attempt.getString("verifier")),null);
-            requireGeneration(request); String access = tokens.getString("access_token");
-            // Verify this exact bearer with Auth before inspecting its recovery AMR.
-            JSONObject user = client.object("GET", "/auth/v1/user",null,access); requireGeneration(request); verifyRecovery(access,user);
-            long seconds = tokens.getLong("expires_in"); if (seconds <= 0 || seconds > 31_536_000) throw unavailable();
-            synchronized (this) { requireGeneration(request); recoveryAccess = access; recoveryExpiresAt = System.currentTimeMillis() + seconds * 1000L; recoveryGeneration = request; }
-        } catch (Exception error) {
-            synchronized (this) { if (request == generation) { recoveryAccess = null; recoveryExpiresAt = 0; } }
-            throw error;
-        }
+        synchronized(this){store.remove("recovery_pending");}
+        throw new IllegalStateException("Email recovery is retired. Use your saved GoServe recovery code.");
     }
-    public void changePassword(SessionLease lease,String currentPassword,String password,String confirmation,String nonce) throws Exception {
+    public void changePassword(SessionLease lease,String currentPassword,String password,String confirmation,String code) throws Exception {
         requireCurrent(lease);
-        if(currentPassword==null || currentPassword.isEmpty())throw new IllegalArgumentException("Enter your current password.");
-        if(AccountValidation.passwordError(password,confirmation)!=null)throw new IllegalArgumentException("Check the password requirements and confirmation.");
-        if(currentPassword.equals(password))throw new IllegalArgumentException("Choose a different password.");
-        String access=token(lease);
-        JSONObject body=new JSONObject().put("current_password",currentPassword).put("password",password);
-        if(nonce!=null && !nonce.isEmpty())body.put("nonce",nonce);
-        JSONObject user;
-        try { user=client.object("PUT","/auth/v1/user",body,access); }
-        catch(SupabaseClient.ApiException rejected) {
-            requireCurrent(lease);
-            if(rejected.status>=500) {
-                finishPasswordChange(lease,PasswordChangeNotice.UNCERTAIN);
-                throw new PasswordChangeException("OUTCOME_UNCERTAIN","The password change could not be confirmed. Sign in with your new password, or use Forgot password.");
-            }
-            if(rejected.status==401 || rejected.status==403)invalidateIfCurrent(lease.generation,false);
-            throw passwordChangeError(rejected);
-        } catch(java.io.IOException | org.json.JSONException uncertain) {
-            finishPasswordChange(lease,PasswordChangeNotice.UNCERTAIN);
-            throw new PasswordChangeException("OUTCOME_UNCERTAIN","The password change could not be confirmed. Sign in with your new password, or use Forgot password.");
-        }
-        requireCurrent(lease);
-        if(user==null || !lease.accountId.equals(user.optString("id",null))) {
-            finishPasswordChange(lease,PasswordChangeNotice.UNCERTAIN);
-            throw new PasswordChangeException("OUTCOME_UNCERTAIN","The password change could not be confirmed. Sign in again or use Forgot password.");
-        }
-        try { client.object("POST","/auth/v1/logout?scope=local",null,access); }
-        catch(Exception cleanupUnavailable) {}
-        finishPasswordChange(lease,PasswordChangeNotice.CHANGED);
+        throw new IllegalStateException("Email password changes are retired. Use a saved GoServe recovery code to set your password.");
     }
-    private void finishPasswordChange(SessionLease lease,PasswordChangeNotice notice) {
-        synchronized(this) {
-            requireCurrent(lease); advanceLocked(true); passwordChangeNotice=notice;
-        }
-        notifyInvalidation();
-    }
+
     public void requestPasswordReauthentication(SessionLease lease) throws Exception {
-        String access=token(lease);
-        try { client.object("GET","/auth/v1/reauthenticate",null,access); }
-        catch(SupabaseClient.ApiException rejected) {
-            requireCurrent(lease);
-            if(rejected.status==401 || rejected.status==403)invalidateIfCurrent(lease.generation,false);
-            throw passwordChangeError(rejected);
-        }
         requireCurrent(lease);
+        throw new IllegalStateException("Email password changes are retired. Use a saved GoServe recovery code to set your password.");
     }
-    private static PasswordChangeException passwordChangeError(SupabaseClient.ApiException error) {
-        if("invalid_credentials".equals(error.code) || "current_password_invalid".equals(error.code))
-            return new PasswordChangeException("CURRENT_PASSWORD_INVALID","Your current password was not accepted.");
-        if("reauthentication_needed".equals(error.code))
-            return new PasswordChangeException("REAUTHENTICATION_REQUIRED","Request an email code to confirm this password change.");
-        if("reauthentication_not_valid".equals(error.code))
-            return new PasswordChangeException("CODE_INVALID","The code was not accepted. Request a new code and retry.");
-        if("same_password".equals(error.code))return new PasswordChangeException("PASSWORD_REUSED","Choose a different password.");
-        if("weak_password".equals(error.code))return new PasswordChangeException("PASSWORD_WEAK","Choose a stronger password.");
-        if(error.status==401 || error.status==403)return new PasswordChangeException("SESSION_EXPIRED","Your session expired. Sign in again.");
-        if(error.status==429)return new PasswordChangeException("RATE_LIMITED","Too many attempts. Wait a moment and retry.");
-        return new PasswordChangeException("PASSWORD_CHANGE_FAILED","The password change was not accepted. Check the details and retry.");
-    }
+
     public void resetPassword(String password,String confirmation) throws Exception {
-        if (AccountValidation.passwordError(password,confirmation) != null) throw new IllegalArgumentException("Check the password requirements and confirmation.");
-        String access; long request;
-        synchronized (this) {
-            request = generation;
-            if (recoveryAccess == null || recoveryGeneration != generation || recoveryExpiresAt <= System.currentTimeMillis()) throw new RecoveryUnavailableException();
-            access = recoveryAccess;
-        }
-        try { client.object("PUT", "/auth/v1/user",new JSONObject().put("password",password),access); }
-        catch (SupabaseClient.ApiException error) {
-            if (error.status==401 || error.status==403) {
-                invalidateIfCurrent(request,true);
-            }
-            throw error;
-        }
-        requireGeneration(request);
-        try { client.object("POST", "/auth/v1/logout?scope=local",null,access); }
-        finally { invalidateIfCurrent(request,false); }
+        synchronized(this){store.remove("recovery_pending");}
+        throw new IllegalStateException("Email recovery is retired. Use your saved GoServe recovery code.");
     }
-    private void verifyRecovery(String access,JSONObject user) throws Exception {
-        try {
-            String[] parts = access.split("\\."); if (parts.length != 3) throw unavailable();
-            JSONObject claims = new JSONObject(new String(Base64.getUrlDecoder().decode(parts[1]),StandardCharsets.UTF_8));
-            Object audience = claims.get("aud"); boolean authenticated = "authenticated".equals(audience);
-            if (audience instanceof JSONArray) for (int i=0;i<((JSONArray)audience).length();i++) authenticated |= "authenticated".equals(((JSONArray)audience).get(i));
-            if (!user.getString("id").equals(claims.getString("sub")) || !(client.baseUrl()+"/auth/v1").equals(claims.getString("iss"))
-                    || !"authenticated".equals(claims.getString("role")) || !authenticated || claims.getBoolean("is_anonymous")
-                    || claims.getLong("exp") <= System.currentTimeMillis()/1000) throw unavailable();
-            JSONArray methods = claims.getJSONArray("amr");
-            for (int i=0;i<methods.length();i++) if ("recovery".equals(methods.getJSONObject(i).getString("method"))) return;
-        } catch (Exception invalid) { throw unavailable(); }
-        throw unavailable();
-    }
+
     private SessionProfile parseProfile(JSONObject row) throws Exception {
         if (!(row.opt("version") instanceof Number) || !(row.opt("profile_complete") instanceof Boolean)
                 || !(row.opt("terms") instanceof JSONObject) || !(row.opt("next_action") instanceof String))
@@ -373,10 +279,15 @@ public final class AuthRepository {
         JSONObject terms = row.getJSONObject("terms");
         if (!terms.has("current_version")) throw new IllegalStateException("This server needs the GoServe account update.");
         String action = row.getString("next_action");
-        if (!"home".equals(action) && !"accept_terms".equals(action) && !"complete_profile".equals(action)) throw new IllegalStateException("The server account state is unavailable.");
+        if (!"home".equals(action) && !"accept_terms".equals(action) && !"complete_profile".equals(action) && !"setup_recovery".equals(action)) throw new IllegalStateException("The server account state is unavailable.");
         Role role;
         try { role=Role.fromWire(row.getString("role")); } catch (IllegalArgumentException invalid) { throw new IllegalStateException("This account needs trusted server setup."); }
         boolean complete=row.getBoolean("profile_complete"); String accepted=nullable(terms,"accepted_version");
+        if("home".equals(action) || "setup_recovery".equals(action)){
+            ph.edu.tip.goserve.domain.RecoveryData.Status recovery=ph.edu.tip.goserve.domain.RecoveryData.status(row.getJSONObject("recovery"));
+            if(!complete || accepted==null || "setup_recovery".equals(action) && !recovery.requiresSetup)throw new IllegalStateException("This account needs trusted recovery setup.");
+            if(recovery.requiresSetup)action="setup_recovery";
+        }
         if (role != Role.STUDENT && !complete || "home".equals(action) && (!complete || accepted == null)) throw new IllegalStateException("This account needs trusted server setup.");
         StudentProfile student=new StudentProfile(nullable(row,"first_name"),nullable(row,"middle_name"),row.optBoolean("no_middle_name",false),nullable(row,"last_name"),
                 nullable(row,"student_id"),nullable(row,"course_program"),nullable(row,"year_level"),nullable(row,"mobile_number"),nullable(row,"gender"));
@@ -395,6 +306,7 @@ public final class AuthRepository {
                 .put("year_level",value(p.yearLevel)).put("mobile_number",value(p.mobileNumber)).put("gender",value(p.gender));
     }
     private static Object value(String value) { return value == null ? JSONObject.NULL : value; }
+
     private static String nullable(JSONObject row,String key) { return row.isNull(key) ? null : row.optString(key,null); }
     private static IllegalArgumentException unavailable() { return new IllegalArgumentException("This reset link is unavailable. Request a new link."); }
     private static void exactCallback(Uri callback,String expected) {

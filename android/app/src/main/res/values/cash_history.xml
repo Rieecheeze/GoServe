@@ -4,12 +4,12 @@
     <color name="cash_summary_ink">#FFFFFF</color>
     <string name="cash_search_tab">Search</string>
     <string name="cash_pending_tab">Pending</string>
-    <string name="cash_no_selection">No payment selected</string>
+    <string name="cash_no_selection">No Payment Selected</string>
     <string name="cash_no_selection_body">Search a payment reference to review its current cash amount.</string>
-    <string name="cash_history_toolbar">Cash history</string>
-    <string name="cash_history_heading">Confirmed by tellers</string>
+    <string name="cash_history_toolbar">Cash History</string>
+    <string name="cash_history_heading">Confirmed By Tellers</string>
     <string name="cash_history_body">Auditable reference, actor, and time.</string>
-    <string name="cash_history_empty">No confirmed cash payments</string>
+    <string name="cash_history_empty">No Confirmed Cash Payments</string>
     <string name="cash_history_empty_body">Confirmed cash payments will appear here.</string>
     <string name="cash_history_loading">Loading cash history…</string>
     <string name="cash_history_refresh">Refresh cash history</string>

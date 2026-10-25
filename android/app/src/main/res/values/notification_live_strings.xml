@@ -1,8 +1,8 @@
 <resources>
     <string name="notification_live_title">Notifications</string>
-    <string name="notification_live_section">Updates inside GoServe</string>
+    <string name="notification_live_section">Updates Inside GoServe</string>
     <string name="notification_live_support">No email or device push messages are sent.</string>
-    <string name="notification_live_empty">You’re up to date</string>
+    <string name="notification_live_empty">You’re Up To Date</string>
     <string name="notification_live_empty_body">Updates about your requests, payments, and appointments will appear here.</string>
     <string name="notification_live_browse">Browse offices</string>
     <string name="notification_live_inquiry">Inquiry update</string>

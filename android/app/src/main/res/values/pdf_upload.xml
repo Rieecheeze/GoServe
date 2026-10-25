@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pdf_toolbar">Verified PDF</string>
-    <string name="pdf_heading">Deliver a verified file</string>
+    <string name="pdf_heading">Deliver A Verified File</string>
     <string name="pdf_support">Use a private PDF. The owning student downloads only when the request and payment gates pass.</string>
     <string name="pdf_label">PDF file</string>
     <string name="pdf_choose">Choose verified PDF</string>
     <string name="pdf_change">Change PDF</string>
     <string name="pdf_policy">PDF · Up to %1$s</string>
-    <string name="pdf_payment_title">Payment gate</string>
+    <string name="pdf_payment_title">Payment Gate</string>
     <string name="pdf_payment_body">The student can download only a current verified PDF when the request is ready and any required payment is confirmed.</string>
-    <string name="pdf_empty_title">Upload needs a PDF</string>
+    <string name="pdf_empty_title">Upload Needs A PDF</string>
     <string name="pdf_empty_body">Choose a PDF to review before uploading it for this request.</string>
-    <string name="pdf_selected_title">PDF selected</string>
+    <string name="pdf_selected_title">PDF Selected</string>
     <string name="pdf_selected_body">Review this file before confirming the upload. Verification happens on the server.</string>
     <string name="pdf_selected_name">%1$s · %2$s</string>
-    <string name="pdf_review_title">Review this PDF</string>
+    <string name="pdf_review_title">Review This PDF</string>
     <string name="pdf_review_body">Nothing is uploaded until you confirm. A newly verified PDF replaces the current deliverable for %1$s.</string>
     <string name="pdf_review_sent">The PDF for %1$s has been submitted for verification. Wait for its result.</string>
     <string name="pdf_uncertain">The upload outcome for %1$s is unconfirmed. Retry the same PDF to check its result.</string>

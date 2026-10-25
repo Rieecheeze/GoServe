@@ -25,7 +25,7 @@ public final class TermsFragment extends AccountFragment {
         model.state().observe(getViewLifecycleOwner(),state -> {
             common(view,state); boolean available=state.terms!=null;
             binding.termsContent.setVisibility(available?View.VISIBLE:View.GONE); binding.termsVersion.setVisibility(available?View.VISIBLE:View.GONE);
-            if (available) { binding.termsContent.setText(state.terms.content); binding.termsVersion.setText(state.terms.version); }
+            if (available) { binding.termsContent.setText(LegalTextRenderer.render(state.terms.content)); binding.termsVersion.setText(state.terms.version); }
             binding.termsStatus.setVisibility(available?View.GONE:View.VISIBLE);
             binding.termsStatus.setText(state.loading?R.string.account_terms_loading:R.string.account_terms_unavailable);
             binding.retryButton.setVisibility(!available&&!state.loading?View.VISIBLE:View.GONE);

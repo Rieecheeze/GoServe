@@ -65,7 +65,7 @@ public final class PickupInteractionTest {
         v(R.id.pickupScan).performClick(); scanner.result.unavailable(); flush(); assertTrue(v(R.id.pickupInput).isEnabled()); assertTrue(text(R.id.pickupMessage).contains("manually"));
     }
     @Test public void handoverRequiresItsOwnExplicitButtonAfterReview() {
-        open(true); review(); assertEquals(0,actions.handovers); v(R.id.pickupPrimary).performClick(); assertFalse(v(R.id.pickupPrimary).isEnabled()); flush(); assertEquals(1,actions.handovers); assertEquals("Handover confirmed",text(R.id.pickupHeading));
+        open(true); review(); assertEquals(0,actions.handovers); v(R.id.pickupPrimary).performClick(); assertFalse(v(R.id.pickupPrimary).isEnabled()); flush(); assertEquals(1,actions.handovers); assertEquals("Handover Confirmed",text(R.id.pickupHeading));
     }
     @Test public void consumedCodeDoesNotBecomeACompletedHandover() {
         open(true); review(); actions.handoverError=new RequestRepository.WorkflowException("CODE_CONSUMED"); v(R.id.pickupPrimary).performClick(); flush(); assertEquals(PickupViewModel.Mode.INPUT,model.state().getValue().mode); assertTrue(text(R.id.pickupMessage).contains("already been used"));

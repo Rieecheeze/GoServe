@@ -25,7 +25,7 @@ import ph.edu.tip.goserve.domain.StudentProfile;
 import ph.edu.tip.goserve.domain.TermsDocument;
 
 public final class AuthViewModel extends AndroidViewModel {
-    public enum Route { RESTORING, SIGN_IN, TERMS, CREDENTIALS, PROFILE, ACCOUNT_CREATED, RESET_EMAIL, RESET_SENT, RESET_PASSWORD, RESET_COMPLETE, RESET_UNAVAILABLE, SESSION_RETRY, HOME }
+    public enum Route { RESTORING, SIGN_IN, REGISTER_GOOGLE, TERMS, CREDENTIALS, PROFILE, RECOVERY_SETUP, ACCOUNT_CREATED, RESET_EMAIL, RESET_SENT, RESET_PASSWORD, RESET_COMPLETE, RESET_UNAVAILABLE, SESSION_RETRY, HOME }
     private enum TermsMode { REGISTER, ACCOUNT, READ_ONLY }
     public static final class Draft {
         public String email="",recoveryEmail="";
@@ -67,7 +67,7 @@ public final class AuthViewModel extends AndroidViewModel {
     private StudentProfile submittedProfile;
     private long submittedVersion;
     private String submittedTerms;
-    private boolean initialized,registration;
+    private boolean initialized,registration,accountPasswordRecovery;
     private AuthRepository.PasswordChangeNotice passwordNotice;
     private int generation;
     public AuthViewModel(Application app) { this(app,new SavedStateHandle()); }
@@ -89,6 +89,16 @@ public final class AuthViewModel extends AndroidViewModel {
     public boolean readOnlyTerms() { return termsMode==TermsMode.READ_ONLY; }
     public boolean registering() { return registration; }
     public boolean hasAuthenticatedProfile() { return auth.profile()!=null; }
+    public boolean accountPasswordRecovery() { return accountPasswordRecovery; }
+    public boolean startAccountPasswordRecovery(String expectedOwner) {
+        synchronized(auth) {
+            SessionProfile current=auth.profile();
+            if(current==null || !current.ready() || !current.id.equals(expectedOwner))return false;
+            auth.requireCurrent(auth.sessionLease());
+            initialized=true;++generation;clearSecrets();registration=false;accountPasswordRecovery=true;
+            emit(Route.RESET_EMAIL,false,null);return true;
+        }
+    }
     public void initialize(Uri callback) {
         if (initialized) return; initialized=true;
         if (callback!=null) { finishGoogle(callback); return; }
@@ -99,11 +109,17 @@ public final class AuthViewModel extends AndroidViewModel {
         work(() -> auth.resumeSession(null),result -> {
             if (result!=null) routeAccount((SessionProfile)result);
             else if ("CREDENTIALS".equals(saved.get("step")) || "PROFILE".equals(saved.get("step"))) {
-                registration=true; emit(Route.CREDENTIALS,false,"Re-enter your password to continue your saved registration.");
+                clearSecrets();registration=false;emit(Route.REGISTER_GOOGLE,false,"Continue with your verified TIP Google account to register.");
             } else emit(Route.SIGN_IN,false,null);
         },Route.SESSION_RETRY);
     }
     public void retrySession() { if (!loading()) work(() -> auth.resumeSession(null),result -> { if (result==null) emit(Route.SIGN_IN,false,null); else routeAccount((SessionProfile)result); },Route.SESSION_RETRY); }
+    public void refreshAccountRoute(){retrySession();}
+    public void recoverySignedIn(SessionProfile profile){
+        if(profile==null || profile!=auth.profile())return;
+        ++generation;clearSecrets();accountPasswordRecovery=false;routeAccount(profile);
+    }
+    public void reauthenticateForRecovery(){++generation;auth.invalidateSession();signInScreen();}
     public void password(String email,String password) {
         if (loading()) return; passwordNotice=null; draft.email=email; signinPassword=password; saveDraft();
         work(() -> auth.signInPassword(email,password),result -> { clearSecrets(); routeAccount((SessionProfile)result); },Route.SIGN_IN);
@@ -118,12 +134,10 @@ public final class AuthViewModel extends AndroidViewModel {
         if (callbacks.size()>32) callbacks.remove(callbacks.iterator().next());
         boolean recovery="/recovery".equals(callback.getPath()) || "recovery".equals(callback.getQueryParameter("flow"));
         ++generation;
-        try { if (recovery) auth.supersedeSession(); else auth.prepareGoogleCallback(); }
+        if(recovery){clearSecrets();emit(Route.RESET_UNAVAILABLE,false,"Email reset links are retired. Use your saved GoServe recovery code.");return;}
+        try { auth.prepareGoogleCallback(); }
         catch (Exception error) { emit(recovery?Route.RESET_UNAVAILABLE:Route.SIGN_IN,false,message(error)); return; }
-        if (recovery) {
-            clearSecrets(); emit(Route.RESET_PASSWORD,true,null);
-            work(() -> { auth.finishRecovery(callback); return null; },result -> emit(Route.RESET_PASSWORD,false,null),Route.RESET_UNAVAILABLE);
-        } else work(() -> auth.resumeSession(callback),result -> { if (result==null) emit(Route.SIGN_IN,false,null); else routeAccount((SessionProfile)result); },Route.SIGN_IN);
+        work(() -> auth.resumeSession(callback),result -> { if (result==null) emit(Route.SIGN_IN,false,null); else routeAccount((SessionProfile)result); },Route.SIGN_IN);
     }
     private void routeAccount(SessionProfile profile) {
         if (profile!=auth.profile()) return;
@@ -135,11 +149,11 @@ public final class AuthViewModel extends AndroidViewModel {
             saveDraft();
         }
         if ("accept_terms".equals(profile.nextAction)) { termsMode=TermsMode.ACCOUNT; terms=null; emit(Route.TERMS,false,null); loadTerms(); }
+        else if("setup_recovery".equals(profile.nextAction))emit(Route.RECOVERY_SETUP,false,null);
         else emit(Route.PROFILE,false,null);
     }
     public void startRegistration() {
-        if (loading()) return; clearSecrets(); registration=true; acceptedTerms=null; terms=null; termsMode=TermsMode.REGISTER; termsReturn=Route.SIGN_IN;
-        emit(Route.TERMS,false,null); loadTerms();
+        if (loading()) return;clearSecrets();registration=false;acceptedTerms=null;terms=null;saved.set("step",null);emit(Route.REGISTER_GOOGLE,false,null);
     }
     public void showTerms(boolean readOnly) {
         if (loading() && state.getValue().route!=Route.RESTORING) return; termsReturn=state.getValue().route; termsMode=readOnly?TermsMode.READ_ONLY:TermsMode.REGISTER; terms=null;
@@ -152,19 +166,14 @@ public final class AuthViewModel extends AndroidViewModel {
     }
     public void acceptTerms() {
         if (loading() || terms==null || readOnlyTerms()) return;
-        if (termsMode==TermsMode.REGISTER) { acceptedTerms=terms.version; saved.set("terms_version",acceptedTerms); registration=true; emit(Route.CREDENTIALS,false,null); return; }
+        if (termsMode==TermsMode.REGISTER) {startRegistration();return;}
         SessionProfile current=auth.profile(); if (current==null) { signInScreen(); return; }
         String key=updateOperation(current.version,terms.version,null);
         work(() -> auth.updateAccount(current.version,terms.version,null,key),result -> routeAccount((SessionProfile)result),Route.TERMS);
     }
     public void acceptConsent() { acceptTerms(); }
     public void credentials(String email,String password,String confirmation) {
-        setEmail(email); setRegistrationPasswords(password,confirmation);
-        Map<String,String> errors=passwordErrors(password,confirmation);
-        if (!AccountValidation.isValidEmail(email)) errors.put("email","Enter a valid email address.");
-        if (!errors.isEmpty()) { fields(Route.CREDENTIALS,errors); return; }
-        if (acceptedTerms==null) { startRegistration(); return; }
-        registration=true; emit(Route.PROFILE,false,null);
+        startRegistration();
     }
     public void setEmail(String email) { if (!Objects.equals(draft.email,email)) registrationKey=null; draft.email=email; saveDraft(); }
     public void setRegistrationPasswords(String password,String confirmation) {
@@ -183,16 +192,9 @@ public final class AuthViewModel extends AndroidViewModel {
         for (Map.Entry<String,AccountValidation.ProfileError> error:AccountValidation.profileErrors(profile).entrySet())
             errors.put(error.getKey(),error.getValue()==AccountValidation.ProfileError.MIDDLE_NAME_CONFLICT?"Clear the middle name or turn off No middle name.":"Enter "+label(error.getKey())+".");
         if (!errors.isEmpty()) { fields(Route.PROFILE,errors); return; }
-        if (registration) {
-            if (registrationPassword.isEmpty()) { emit(Route.CREDENTIALS,false,"Re-enter your password to continue."); return; }
-            if (registrationKey==null) registrationKey=UUID.randomUUID().toString();
-            String email=draft.email,password=registrationPassword,key=registrationKey,version=acceptedTerms;
-            work(() -> auth.registerStudent(email,password,profile,version,key),result -> { draft.email=(String)result; clearSecrets(); emit(Route.ACCOUNT_CREATED,false,null); },Route.PROFILE);
-        } else {
-            SessionProfile current=auth.profile(); if (current==null) { signInScreen(); return; }
-            String key=updateOperation(current.version,null,profile);
-            work(() -> auth.updateAccount(current.version,null,profile,key),result -> routeAccount((SessionProfile)result),Route.PROFILE);
-        }
+        SessionProfile current=auth.profile();if(current==null){signInScreen();return;}
+        String key=updateOperation(current.version,null,profile);
+        work(()->auth.updateAccount(current.version,null,profile,key),result->routeAccount((SessionProfile)result),Route.PROFILE);
     }
     private String updateOperation(long version,String terms,StudentProfile profile) {
         if (updateKey==null || version!=submittedVersion || !Objects.equals(terms,submittedTerms) || !sameProfile(profile,submittedProfile)) updateKey=UUID.randomUUID().toString();
@@ -207,18 +209,13 @@ public final class AuthViewModel extends AndroidViewModel {
     public void recoveryEmail() { ++generation; clearSecrets(); emit(Route.RESET_EMAIL,false,null); }
     public void setRecoveryEmail(String email) { draft.recoveryEmail=email; saveDraft(); }
     public void requestRecovery() {
-        if (loading()) return;
-        if (!AccountValidation.isValidEmail(draft.recoveryEmail)) { fields(Route.RESET_EMAIL,Collections.singletonMap("email","Enter a valid email address.")); return; }
-        String email=draft.recoveryEmail;
-        work(() -> { auth.requestRecovery(email); return null; },result -> emit(Route.RESET_SENT,false,null),Route.RESET_EMAIL);
+        if(!loading())emit(Route.RESET_EMAIL,false,"Use your saved GoServe recovery code. No recovery email is sent.");
     }
     public void resetPassword(String password,String confirmation) {
-        if (loading()) return; setResetPasswords(password,confirmation);
-        Map<String,String> errors=passwordErrors(password,confirmation); if (!errors.isEmpty()) { fields(Route.RESET_PASSWORD,errors); return; }
-        work(() -> { auth.resetPassword(password,confirmation); return null; },result -> { clearSecrets(); emit(Route.RESET_COMPLETE,false,null); },Route.RESET_PASSWORD);
+        clearSecrets();emit(Route.RESET_UNAVAILABLE,false,"Verify a saved GoServe recovery code before setting a password.");
     }
     public void signInScreen() {
-        ++generation; clearSecrets(); registration=false; saved.set("step",null);
+        ++generation; clearSecrets(); registration=false; accountPasswordRecovery=false; saved.set("step",null);
         if (auth.profile()==null) auth.invalidateSession();
         emit(Route.SIGN_IN,false,null);
     }

@@ -226,6 +226,16 @@ public final class AuthLifecycleTest {
 
     @Test public void signupShowsOnlyTheBrandWhileConnecting() throws Exception { checkBrandLoading(true); }
 
+    @Test public void googleSignInRemainsActionableInBothThemes() throws Exception {
+        try{
+            for(boolean night:new boolean[]{false,true}){
+                RuntimeEnvironment.setQualifiers("w390dp-h760dp-port-"+(night?"night":"notnight")+"-mdpi");
+                androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(night?androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES:androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO);
+                resetProcess();checkBrandLoading(false);closeActivities();
+            }
+        }finally{androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);}
+    }
+
     private void checkBrandLoading(boolean signup) throws Exception {
         ActivityController<AuthActivity> controller = launch(null, null);
         AuthActivity activity = controller.get();
@@ -234,11 +244,11 @@ public final class AuthLifecycleTest {
         Object attachInfo = ReflectionHelpers.getField(decor, "mAttachInfo");
         ReflectionHelpers.setField(attachInfo, "mWindowVisibility", android.view.View.VISIBLE);
         decor.dispatchWindowVisibilityChanged(android.view.View.VISIBLE);
-        if (signup) { ShadowServer.termsEntered=new CountDownLatch(1); ShadowServer.termsRelease=new CountDownLatch(1); }
-        else { ShadowServer.settingsEntered=new CountDownLatch(1); ShadowServer.settingsRelease=new CountDownLatch(1); }
+        ShadowServer.settingsEntered=new CountDownLatch(1); ShadowServer.settingsRelease=new CountDownLatch(1);
         try {
             activity.findViewById(signup?R.id.signupTab:R.id.googleButton).performClick();
-            assertTrue((signup?ShadowServer.termsEntered:ShadowServer.settingsEntered).await(5, TimeUnit.SECONDS));
+            if(signup)activity.findViewById(R.id.registrationGoogleContinue).performClick();
+            assertTrue(ShadowServer.settingsEntered.await(5, TimeUnit.SECONDS));
             android.view.View panel = activity.findViewById(R.id.activityRoot).findViewWithTag("authBrandLoading");
             assertNotNull("Authentication needs a branded loading state.", panel);
             assertEquals(android.view.View.VISIBLE, panel.getVisibility());
@@ -250,7 +260,7 @@ public final class AuthLifecycleTest {
             assertEquals(android.view.View.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS,
                     activity.findViewById(R.id.authContainer).getImportantForAccessibility());
         } finally {
-            if (signup) ShadowServer.termsRelease.countDown(); else ShadowServer.settingsRelease.countDown();
+            ShadowServer.settingsRelease.countDown();
         }
         await(() -> !model(activity).state().getValue().loading, "The loading state must finish with the request.");
         assertEquals(android.view.View.GONE,
@@ -423,7 +433,8 @@ public final class AuthLifecycleTest {
                     .put("version",consent?2:1).put("profile_complete",true)
                     .put("terms",new JSONObject().put("current_version","approved-v1")
                             .put("accepted_version",consent?"approved-v1":JSONObject.NULL))
-                    .put("next_action",consent?"home":"accept_terms");
+                    .put("next_action",consent?"home":"accept_terms")
+                    .put("recovery",new JSONObject().put("codes_configured",true).put("codes_acknowledged",true).put("remaining_codes",10).put("generation","884cd499-a440-48ef-a6ef-b8ddfe1bc304").put("requires_setup",false));
         }
     }
 }

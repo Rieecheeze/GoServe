@@ -44,7 +44,7 @@ public final class RequestPreviewTest {
 
     @Test public void requiredRequestShowsCompletedChecksAndCurrentProcessing() throws Exception {
         openList();
-        click("Enrollment certificate");
+        click("Enrollment Certificate");
         assertEquals("RequestDetailFragment", current().getClass().getSimpleName());
         assertNotNull(described(current().requireView(), "Submitted: Complete"));
         assertNotNull(described(current().requireView(), "Awaiting Payment: Complete"));
@@ -55,12 +55,12 @@ public final class RequestPreviewTest {
 
     @Test public void freeRequestSkipsPaymentAndVerifiedPreviewExplainsDownload() throws Exception {
         openList();
-        click("Verified document copy");
+        click("Verified Document Copy");
         assertNull(described(current().requireView(), "Awaiting Payment: Complete"));
         assertNotNull(text(current().requireView(), "Free · Declared by the office in this example"));
         click("View verified file");
         assertEquals("VerifiedFileFragment", current().getClass().getSimpleName());
-        assertNotNull(text(current().requireView(), "Preview verification complete"));
+        assertNotNull(text(current().requireView(), "Preview Verification Complete"));
         assertNotNull(described(current().requireView(), "File verification: Complete"));
         click("About downloads");
         assertNotNull(text(current().requireView(), "This preview contains no private file. Download access will be available when an office issues a real document."));
@@ -79,8 +79,8 @@ public final class RequestPreviewTest {
         RequestListViewModel.State state=new ViewModelProvider(activity).get(RequestListViewModel.class).state().getValue();
         assertEquals(RequestListViewModel.Mode.UNAVAILABLE,state.mode); assertTrue(state.items.isEmpty());
         assertNotNull(text(root,"This account cannot access this request workspace."));
-        assertNull(text(current().requireView(), "Enrollment certificate"));
-        assertNull(text(current().requireView(), "Verified document copy"));
+        assertNull(text(current().requireView(), "Enrollment Certificate"));
+        assertNull(text(current().requireView(), "Verified Document Copy"));
     }
 
     private void openList() throws Exception {

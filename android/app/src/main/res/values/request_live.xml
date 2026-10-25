@@ -2,16 +2,16 @@
 <resources>
     <string name="request_live_title">Requests</string>
     <string name="request_live_support">Track requests you submit to campus offices.</string>
-    <string name="request_live_section">Your requests</string>
+    <string name="request_live_section">Your Requests</string>
     <string name="request_live_office_section">Office queue</string>
     <string name="request_live_office_support">Requests assigned to your office.</string>
     <string name="request_live_loading">Loading requests…</string>
     <string name="request_live_refresh">Refresh requests</string>
     <string name="request_live_retry">Retry</string>
     <string name="request_live_more">Load more</string>
-    <string name="request_live_empty_title">No requests yet</string>
+    <string name="request_live_empty_title">No Requests Yet</string>
     <string name="request_live_empty_body">Your requests will appear here after you submit one to a campus office.</string>
-    <string name="request_live_empty_office">No requests assigned</string>
+    <string name="request_live_empty_office">No Requests Assigned</string>
     <string name="request_live_empty_office_body">Requests sent to your office will appear here.</string>
     <string name="request_live_browse">Browse offices</string>
     <string name="request_live_failed">Requests could not be refreshed. Displayed details may be out of date. Try again.</string>

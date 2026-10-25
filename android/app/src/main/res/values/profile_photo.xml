@@ -1,5 +1,5 @@
 <resources>
-    <string name="profile_photo_title">Profile picture</string>
+    <string name="profile_photo_title">Profile Picture</string>
     <string name="profile_photo_choose">Choose photo</string>
     <string name="profile_photo_remove">Remove photo</string>
     <string name="profile_photo_reload">Reload saved photo</string>

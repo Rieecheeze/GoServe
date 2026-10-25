@@ -46,7 +46,7 @@ public final class EgovPayInteractionTest {
         Intent opened=Shadows.shadowOf(activity).getNextStartedActivity(); assertNotNull(opened);
         assertEquals(Intent.ACTION_VIEW,opened.getAction()); assertEquals(EgovPayViewModelTest.URL,opened.getDataString());
         view(R.id.egovpayBrowser).performClick(); assertNull(Shadows.shadowOf(activity).getNextStartedActivity());
-        controller.pause().resume(); idle(); finish(); assertEquals(2,actions.refreshes); assertEquals("Test payment pending",text(R.id.egovpayHeading));
+        controller.pause().resume(); idle(); finish(); assertEquals(2,actions.refreshes); assertEquals("Test Payment Pending",text(R.id.egovpayHeading));
     }
 
     @Test public void unknownOutcomeBlocksBackAndRetriesTheHeldCheckoutWithoutShowingPrivateErrors() {
@@ -61,9 +61,9 @@ public final class EgovPayInteractionTest {
 
     @Test public void paidLabelRequiresTheCanonicalRowAndAccountChangeClearsPaymentDetails() {
         launch(); finish(); actions.providerStatus="paid"; view(R.id.egovpayRefresh).performClick(); finish();
-        assertEquals("Test payment pending",text(R.id.egovpayHeading));
+        assertEquals("Test Payment Pending",text(R.id.egovpayHeading));
         actions.record=EgovPayViewModelTest.record(PaymentStatus.PAID); view(R.id.egovpayRefresh).performClick(); finish();
-        assertEquals("Test payment confirmed",text(R.id.egovpayHeading)); assertEquals(View.GONE,view(R.id.egovpayPrepare).getVisibility());
+        assertEquals("Test Payment Confirmed",text(R.id.egovpayHeading)); assertEquals(View.GONE,view(R.id.egovpayPrepare).getVisibility());
         assertEquals("PHP 123.45",text(R.id.egovpayAmount));
         actions.current=false; model.checkCurrentAccount(); idle(); assertEquals("",text(R.id.egovpayAmount));
         assertEquals(View.GONE,view(R.id.egovpayBrowser).getVisibility()); assertEquals(View.GONE,view(R.id.egovpayRefresh).getVisibility());
@@ -94,7 +94,7 @@ public final class EgovPayInteractionTest {
         view(R.id.egovpayPrepare).performClick(); finish(); layout(390,844); capture("egovpay-ready-light.png",390,844);
         actions.record=EgovPayViewModelTest.record(PaymentStatus.PAID); view(R.id.egovpayRefresh).performClick(); finish();
         layout(390,844); capture("egovpay-paid-light.png",390,844);
-        assertEquals("Test payment confirmed",text(R.id.egovpayHeading)); assertEquals(View.GONE,view(R.id.egovpayBrowser).getVisibility());
+        assertEquals("Test Payment Confirmed",text(R.id.egovpayHeading)); assertEquals(View.GONE,view(R.id.egovpayBrowser).getVisibility());
     }
 
     @Test public void unresolvedCheckoutHasExplicitSafeReturnWithoutAnotherFinancialAction() {
